@@ -1,0 +1,44 @@
+.c{margin:0 auto; width:1000px; margin-top:10px;}
+.conent{background:url(../images/w_bj_03.png) no-repeat; width:1000px; height:27px;}
+
+.conent_02{background:url(../images/w_bj02.png) repeat-y; width:1000px; height:800px;}
+.conent_02 .left{float:left; padding-left:30px;}
+.conent_02 .left .c_text1{width:277px; height:246px; background:url(../images/conent_01_03.jpg);}
+.conent_02 .left .c_text1 .img{ float:left; width:19px; padding:5px 0 0 85px;line-height:24px;}
+.conent_02 .left .c_text1 .text{float:left; width:80px; padding:5px 0 0 10px; font-size:14px; color:#333;}
+.conent_02 .left .c_text1 .lable1{padding:30px 0 0 20px;}
+.conent_02 .left .c_text1 .lable2{ padding:0 0 0 20px;}
+.conent_02 .left .c_text1 .sub{ width:61px; height:34px;  margin:30px 0 0 46px; color:#060; background:url(../images/tj.png) no-repeat; border:0; cursor:pointer;}
+.conent_02 .left .c_text1 .sub2{width:77px; height:37px;  margin:30px 0 0 30px; color:#666; background:url(../images/pwd_04.png) no-repeat; border:0; cursor:pointer;}
+
+
+
+.conent_02 .left .c_text2{background:url(../images/conent_02_03.jpg) no-repeat; width:277px; height:229px;}
+.conent_02 .left .c_text2 .img{ float:left; width:19px; padding:5px 0 0 85px;line-height:24px;}
+.conent_02 .left .c_text2 .text{float:left; width:80px; padding:5px 0 0 10px; font-size:14px; color:#333;}
+.conent_02 .left .c_text2 ul{ font-size:13px; color:#666; width:250px; padding:20px 15px 0 15px; line-height:22px;}
+
+.conent_02 .left .c_text3{background:url(../images/conent_03_03.jpg) no-repeat; width:277px; height:207px;}
+.conent_02 .left .c_text3 .img{ float:left; width:19px; padding:5px 0 0 85px;line-height:24px;}
+.conent_02 .left .c_text3 .text{float:left; width:80px; padding:5px 0 0 10px; font-size:14px; color:#333;}
+.conent_02 .left .c_text3 ul{ font-size:13px; color:#666; width:250px; padding:20px 15px 0 15px; line-height:22px;}
+.conent_02 .left .c_text3 ul li{background:url(../images/index_27.png) no-repeat left center; width:200px; padding-left:16px;}
+
+.conent_02 .right{float:left; padding-left:10px; width:654px;}
+.conent_02 .right .por{background:url(../images/bj_03.png) no-repeat ;width:654px; height:25px;}
+.conent_02 .right .por .p_tex{float:left; color:#FFF; padding-left:40px; line-height:25px;}
+.conent_02 .right .por a{ float:right; color:#FFF; margin-right:20px; border-bottom:1px solid #FFF; }
+.conent_02 .right .conent{ background:url(../images/hui_06.jpg) repeat-y; height:202px; width:654px;}
+
+.conent_02 .right .gg{background:url(../images/bj_10.png) no-repeat ;width:654px; height:25px;}
+.conent_02 .right .gg .g_tex{float:left; color:#FFF; padding-left:40px; line-height:25px;}
+.conent_02 .right .gg a{ float:right; color:#FFF; margin-right:20px; border-bottom:1px solid #FFF; }
+
+.conent_02 .right .zy{background:url(../images/bj_13.jpg) no-repeat ;width:654px; height:25px;}
+.conent_02 .right .zy .zy_tex{float:left; color:#FFF; padding-left:40px; line-height:25px;}
+.conent_02 .right .zy a{ float:right; color:#FFF; margin-right:20px; border-bottom:1px solid #FFF; }
+.conent_02 .right .cone{ background:url(../images/hui_06.jpg) repeat-y; height:189px;width:654px;}
+.conent_02 .right .cone ul{ font-size:13px; padding:15px 10px 10px 10px; line-height:23px;}
+.conent_02 .right .cone ul li {background:url(../images/index_27.png) no-repeat left center; width:620px; padding-left:10px;}
+.conent_02 .right .cone ul li a{ float:left; padding-left:10px; color:#333; width:500px;}
+.conent_02 .right .cone ul li font{float:right; padding-right:10px; color:#333; font-size:13px;}

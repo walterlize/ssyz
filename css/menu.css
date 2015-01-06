@@ -1,0 +1,89 @@
+#identifier {
+            margin:0;
+            list-style-type:none;
+            line-height:120%;
+        }
+
+#identifier .closed {
+        }
+
+#identifier .closed, #identifier .opened {
+            padding-right:10px;
+            background-position:98% 50%;
+            background-repeat:no-repeat;
+        }
+
+#identifier .header {
+        }
+
+#identifier .opened {
+        }
+
+#identifier a {
+            display:block;
+            font-weight:bold;
+            text-decoration:none;
+            text-align: left;
+            margin-left: 10px;
+            margin-bottom: 0;
+            margin-right: 0;
+            margin-top: 0;
+            font-size: 14px;
+        }
+
+#identifier a.hover {
+            color:#38A200;
+            text-align: left;
+            font-size: 14px;
+        }
+
+#identifier ul {
+            overflow: hidden;
+            margin-left: 10px;
+            margin-bottom: 0;
+            margin-right: 0;
+            margin-top: 0;
+            font-size: 14px;
+        }
+
+#identifier li {
+            list-style-type:none;
+            color:#000000;
+            text-align: left;
+            margin-left: 10px;
+            margin-bottom: 0;
+            margin-right: 0;
+            margin-top: 0;
+            font-size: 14px;
+        }
+
+#identifier li a {
+            padding:2px 20px 2px 4px;
+            color:#000000;
+            text-align: left;
+            margin-left: 20px;
+            margin-bottom: 0;
+            margin-right: 0;
+            margin-top: 0;
+        }
+
+#identifier li a.hover {
+            padding:2px 20px 2px 4px;
+            color:#38A200;
+            text-align: left;
+            margin-left: 20px;
+            margin-bottom: 0;
+            margin-right: 0;
+            margin-top: 0;
+        }
+
+#identifier li.active a, #identifier li li.active a {
+            color:#38A200;
+            text-align: left;
+        }
+
+#identifier li.active li a, #identifier li li a {
+            padding:2px 20px 2px 8px;
+            color:#000000;
+            text-align: left;
+        }

@@ -1,0 +1,120 @@
+<?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
+
+class Index extends CI_Controller {
+
+        function __construct(){
+            parent::__construct();
+            $this->load->helper('url');
+            $this->load->helper('form');
+            $this->load->library('session');
+	}
+
+	public function index(){
+            $data['title'] = "农业生物质特性及其共享平台技术的研究";
+
+            // 公告信息什么的
+            $array = array('trendType' => 1);
+            $data['bullentins'] = $this->getTrend($array);
+            
+            $array = array('trendType' => 2);
+            $data['instruments'] = $this->getTrend($array);
+
+            $array = array('trendType' => 3);
+            $data['trends'] = $this->getTrend($array);
+            
+            // 用户登录部分
+            $name = $this->session->userdata('userName');
+            $data['userId'] = $this->session->userdata('userId');;
+            if($name == '' ||  $name ==null ){                
+                $data['form'] = '';
+                $data['welcome'] = 'display:none';
+            } else {
+                $data['username'] = $name;
+                $data['form'] = 'display:none';
+                $data['welcome'] = '';                
+            }
+
+            $this->load->view('includes/header', $data);
+            $this->load->view('outside/index');
+            $this->load->view('includes/footer');
+	}
+
+        // 登陆
+        public function login(){
+            $userName = $this->input->post('userName');
+            $password = $this->input->post('password');
+            
+            $array = array('userName' => $userName, 'password' => $password, 'state' => 0);
+            $this->load->model('m_user');
+            $result = $this->m_user->getUser($array);
+            $data = array();
+            foreach($result as $r){
+                $data = $r;
+            }
+
+             if(isset($data->userName)){
+                $array = array('userId' => $data->userId, 'userName' => $data->userName,
+                    'roleId' => $data->roleId, 'subjectId' => $data->subjectId);
+                $this->session->set_userdata($array);
+
+                if($data->roleId == 1){
+                    redirect('admin/frame/index');
+                } else {
+                    redirect('manager/frame/index');
+                }
+            } else {
+                redirect(base_url());
+            }
+        }
+        
+        // 登陆2
+        public function getin(){
+            $id = $this->uri->segment(3);
+            $this->load->model('m_user');
+            $result = $this->m_user->getOneInfo($id);
+            $data = array();
+            foreach($result as $r){
+                $data = $r;
+            }
+
+             if(isset($data->userName)){
+                if($data->roleId == 1){
+                    redirect('admin/frame/index');
+                } else {
+                    redirect('manager/frame/index');
+                }
+            } else {
+                redirect(base_url());
+            }
+        }
+
+        public function top(){
+            $data['name'] = $this->session->userdata('userName');
+            $this->load->view('common/top', $data);
+        }
+
+        public function foot(){
+            $this->load->view('common/foot');
+        }
+
+        public function getTrend($array){
+            $this->load->model('m_trend');
+            $data = $this->m_trend->getTrends($array, 3, 0);
+            return $data;
+        }
+
+        public function timeOut(){
+            $array = array();
+            $this->session->set_userdata($array);
+            $this->session->sess_destroy();
+            $this->load->view('time_out');
+        }
+
+        public function logOut(){
+            $array = array();
+            $this->session->set_userdata($array);
+            $this->session->sess_destroy();
+            redirect(base_url());
+        }
+}
+?>

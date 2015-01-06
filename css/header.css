@@ -1,0 +1,13 @@
+.hed_bg{ background:url(../images/hed_02.png) no-repeat; width:1003px; height:234px; margin:0 auto;}
+.dv_img{padding:30px 0 0 60px;}
+.a{ width:938px; padding:34px 0 0 66px; font-size:14px;}
+.a a{ float:left; color:#FFF;}
+.a a:hover{background:url(../images/a_hover_01.png); height:22px;}
+.a .a1{ width:57px; padding:14px 0 0 20px;}
+.a .a2{width:77px; padding:14px 0 0 20px;}
+.a .a3,.a4{ width:74px; padding:14px 0 0 20px;}
+.a .a5{width:85px; padding:14px 0 0 20px;}
+.a .a6{width:72px; padding:14px 0 0 20px;}
+.a .a7{width:83px;padding:14px 0 0 20px;}
+.a .a8{width:97px; padding:14px 0 0 25px;}
+.a .a9{width:68px; padding:14px 0 0 25px;}

@@ -1,0 +1,69 @@
+.pr_left{ width:206px; float:left; padding-left:35px;}
+.pr_left .pr1{background:url(../images/pr_03.png) no-repeat; width:206px; height:27px;}
+.pr_left .pr1 h3{ background:url(../images/bai_s_03.png) no-repeat left  center; width:80px; margin:0 auto 2px; padding-left:20px; line-height:27px;}
+.pr_left .pr1 h3 a{font-size:13px; color:#FFF; }
+.pr_left .pr1 h3 a:hover{color:#933;}
+.pr_right{width:711px; float:right; padding-right:30px;}
+.pr_right .tit{ background:url(../images/pr_lv.png) no-repeat; width:691px; height:32px; padding-left:20px; line-height:32px; color:#FFF;}
+.pr_right .pr_bj{ background:url(../images/pr_bj.png) repeat-y; width:674px; height:100%; text-indent:2em; padding:20px 20px 10px 16px; font-size:13px; color:#333;}
+
+#detail
+{
+	width: 960px;
+	margin: 0 auto;
+	background: #fff;
+}
+.detail_border
+{
+	margin: 5px;
+	border: 1px solid #C2D6ED;
+	padding: 5px 5px 0 5px;
+}
+.detail_title
+{
+	font-size: 18px;
+	font-weight: bold;
+	color: #333;
+	text-align: center;
+	border-bottom: 1px silver dashed;
+	padding-bottom: 4px;
+	margin-bottom: 5px;
+	padding-top: 10px;
+}
+.job_title
+{
+	background: #F2F6F8;
+	font-weight: bold;
+	color: #B10420;
+	font-size: 14px;
+	padding-left: 10px;
+	height: 30px;
+}
+#detail p
+{
+	line-height: 23px;
+	width: 99%;
+	text-indent: 20px;
+}
+#detail .catelogy
+{
+	font-weight: bold;
+	color: #3F3F3F;
+	padding-left: 20px;
+	background: url(../images/ar_logo.gif) no-repeat 5px 9px;
+	height: 32px;
+}
+#detail .td
+{
+	padding-left: 30px;
+}
+
+.yonghudown2 {
+	background-repeat: no-repeat;
+	font-family: "宋体";
+	font-size: 13px;
+	text-align: center;
+	vertical-align: middle;
+	white-space: pre;
+	padding-top: 40px;
+}

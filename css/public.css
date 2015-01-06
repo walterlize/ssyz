@@ -1,0 +1,53 @@
+@charset "utf-8";
+body { margin:0; padding:0; width:100%; background:url(../images/bj_01.jpg) top repeat-x;}
+*{ margin:0; padding:0;}
+img{ display:block; border:0;}
+li{ list-style:none;}
+a{ text-decoration:none; display:block;}
+.clear{ clear:both; font-size:0; height:0; line-height:0; *font-size:1px; *height:1px; *line-height:1px;}
+.main {width:1000px; padding:0; margin:0 auto; }
+
+.qh{ margin:0 auto; width:960px; padding:10px 0 0 0;}
+<!--
+.style2 {color: #FF0000}
+-->
+.color_red{ color:#F00;}
+.AD_sk {
+	
+}
+#album {
+	position:relative;
+	width:960px;
+	height:250px;
+	overflow:hidden;
+}
+#album dt {
+	margin:0;
+	padding:0;
+	width:790px;
+	height:300px;
+	overflow:hidden;
+}
+#album dd {
+	position:absolute;
+	right:-1px;
+	bottom:4px;
+}
+#album a {
+	display:block;
+	float:left;
+	margin-right:9px;
+	width:20px;
+	height:15px;
+	line-height:15px;
+	text-align:center;
+	text-decoration:none;
+	color: #EBEBEB;
+	background:#707070;
+	border:1px solid #CCC;
+}
+#album a:hover, #album a.hover {
+	color: #1C92B3;
+	background: #363636;
+	background-position:0 0;
+}
