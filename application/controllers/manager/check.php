@@ -24,7 +24,7 @@ class Check extends CI_Controller {
         $subjectId = $this->session->userdata('subjectId');
         $array = array('inherit' => $subjectId);
         $num = $this->m_baoxiao->getNumManage($array);
-        $s1=$this->uri->segment(4);
+        $s1 = $this->uri->segment(4);
         $offset = $this->uri->segment(4);
         $data['baoxiao'] = $this->getBaoxiaoMange($array, $offset);
         $config['base_url'] = base_url() . 'index.php/manager/check/baoxiaoManage';
@@ -47,7 +47,6 @@ class Check extends CI_Controller {
         $this->load->view('manager/check/baoxiaoList', $data);
         $this->load->view('common/footer');
     }
-
 
     // 普通报销情况列表
     public function travelManage() {
@@ -112,7 +111,7 @@ class Check extends CI_Controller {
     public function borrowBaoxiao() {
         $this->timeOut();
         $subjectId = $this->session->userdata('subjectId');
-        $array = array('inherit' => $subjectId,  'state' => '5');
+        $array = array('inherit' => $subjectId, 'state' => '5');
         $num = $this->m_borrow->getNumManage_2($array);
         $offset = $this->uri->segment(4);
         $data['baoxiao'] = $this->getBorrowMange_2($array, $offset);
@@ -174,11 +173,9 @@ class Check extends CI_Controller {
         if ($state == '4') {
             $data['stateShow'] = '审核通过，收到发票';
             //echo $data['stateShow'] . $data['stateShow'] . date('YmdHis');
-
-        }elseif($state=='5'){
-            $data['stateShow']='已经报销';
-        }
-        elseif ($state == '3' or $state == '2') {
+        } elseif ($state == '5') {
+            $data['stateShow'] = '已经报销';
+        } elseif ($state == '3' or $state == '2') {
             $data['stateShow'] = '用户已经提交,请您审核!';
         }
         $this->load->view('common/header3');
@@ -194,35 +191,33 @@ class Check extends CI_Controller {
         $data['travel'] = $this->getTravel($id);
         $state = $data['travel']->state;
 
-       /* if ($state == '4') {
-            $data['stateShow'] = '审核通过，收到发票';
-            //echo $data['stateShow'] . $data['stateShow'] . date('YmdHis');
-            $this->load->view('common/header3');
-            $this->load->view('manager/check/travelDetail', $data);
-            $this->load->view('manager/check/checkDetailTravel', $data);
-            $this->load->view('common/footer');
-        } elseif ($state == '3' or $state == '2') {
-            $this->load->view('common/header3');
-            $this->load->view('manager/check/travelDetail', $data);
-            $this->load->view('manager/check/checkTravel', $data);
-            $this->load->view('common/footer');
-        }elseif($state=='5'){
-            $data['stateShow'] = '已完成报销';
+        /* if ($state == '4') {
+          $data['stateShow'] = '审核通过，收到发票';
+          //echo $data['stateShow'] . $data['stateShow'] . date('YmdHis');
+          $this->load->view('common/header3');
+          $this->load->view('manager/check/travelDetail', $data);
+          $this->load->view('manager/check/checkDetailTravel', $data);
+          $this->load->view('common/footer');
+          } elseif ($state == '3' or $state == '2') {
+          $this->load->view('common/header3');
+          $this->load->view('manager/check/travelDetail', $data);
+          $this->load->view('manager/check/checkTravel', $data);
+          $this->load->view('common/footer');
+          }elseif($state=='5'){
+          $data['stateShow'] = '已完成报销';
 
-            $this->load->view('common/header3');
-            $this->load->view('manager/check/travelDetail', $data);
-            $this->load->view('manager/check/checkTravel', $data);
-            $this->load->view('common/footer');
-        }*/
+          $this->load->view('common/header3');
+          $this->load->view('manager/check/travelDetail', $data);
+          $this->load->view('manager/check/checkTravel', $data);
+          $this->load->view('common/footer');
+          } */
 
         if ($state == '4') {
             $data['stateShow'] = '审核通过，收到发票!';
-
         } elseif ($state == '3' or $state == '2') {
             $data['stateShow'] = '未审核，请您审核!';
-        }elseif($state=='5'){
+        } elseif ($state == '5') {
             $data['stateShow'] = '已完成报销.';
-
         }
         $this->load->view('common/header3');
         $this->load->view('manager/check/travelDetail', $data);
@@ -258,18 +253,18 @@ class Check extends CI_Controller {
         $id = $this->uri->segment(4);
         $data['laowu'] = $this->getLaowu($id);
         $state = $data['laowu']->state;
-        $money=$data['laowu']->money;
-        $tax=$data['laowu']->tax;
-        $data['money1']=$money-$tax;
+        $money = $data['laowu']->money;
+        $tax = $data['laowu']->tax;
+        $data['money1'] = $money - $tax;
         if ($state == '4') {
             $data['stateShow'] = '收到发票';
-            /*$this->load->view('common/header3');
-            $this->load->view('manager/check/laowuDetail', $data);
-            $this->load->view('manager/check/checkDetailLaowu', $data);
-            $this->load->view('common/footer');*/
+            /* $this->load->view('common/header3');
+              $this->load->view('manager/check/laowuDetail', $data);
+              $this->load->view('manager/check/checkDetailLaowu', $data);
+              $this->load->view('common/footer'); */
         } elseif ($state == '3' or $state == '2') {
             $data['stateShow'] = '未审核';
-        }elseif ($state == '5') {
+        } elseif ($state == '5') {
             $data['stateShow'] = '劳务费/专家咨询费申请成功!';
         }
 
@@ -307,12 +302,12 @@ class Check extends CI_Controller {
         $data['baoxiao'] = $this->getBaoxiao($id);
         $state = $data['baoxiao']->state;
 
-            $this->load->view('common/header3');
-            $this->load->view('manager/check/baoxiaoDetail', $data);
-            $this->load->view('manager/check/check', $data);
-            $this->load->view('common/footer');
-
+        $this->load->view('common/header3');
+        $this->load->view('manager/check/baoxiaoDetail', $data);
+        $this->load->view('manager/check/check', $data);
+        $this->load->view('common/footer');
     }
+
     //审核编辑
     public function checkEditTravel() {
         $id = $this->uri->segment(4);
@@ -323,7 +318,6 @@ class Check extends CI_Controller {
         $this->load->view('manager/check/travelDetail', $data);
         $this->load->view('manager/check/check', $data);
         $this->load->view('common/footer');
-
     }
 
     // 报销变换显示
@@ -474,7 +468,7 @@ class Check extends CI_Controller {
             $data['State'] = $this->getState();
             $data['Unit'] = $this->getUnit();
             $this->load->view('manager/check/baoxiaoList', $data);
-        }elseif ($type == '4') {
+        } elseif ($type == '4') {
             $num = $this->m_laowu->getNumManage($array);
             $offset = $this->uri->segment(5);
             $data['laowu'] = $this->getLaowuMange($array, $offset);
@@ -499,6 +493,7 @@ class Check extends CI_Controller {
             $this->load->view('common/footer');
         }
     }
+
     // 报销变换显示
     function changeOptionTravel() {
         extract($_REQUEST);
@@ -629,28 +624,28 @@ class Check extends CI_Controller {
                 }
             }
         }
-            $num = $this->m_travel->getNumManage($array);
-            $offset = $this->uri->segment(4);
-            $data['baoxiao'] = $this->getTravelMange($array, $offset);
-            $config['base_url'] = base_url() . 'index.php/manager/check/travelManage';
-            $config['total_rows'] = $num;
-            $config['uri_segment'] = 4;
-            $this->pagination->initialize($config);
-            $data['page'] = $this->pagination->create_links();
-            $data['title'] = '差旅报销审核列表';
-            $data['num'] = $num;
-            $data['searchType'] = $this->getTypeTravel();
-            $data['Year'] = $this->getSearchYear();
-            $data['Month'] = $this->getSearchMonth();
-            $data['State'] = $this->getState();
-            $data['Unit'] = $this->getUnit();
-            $data['type1'] = '2';
+        $num = $this->m_travel->getNumManage($array);
+        $offset = $this->uri->segment(4);
+        $data['baoxiao'] = $this->getTravelMange($array, $offset);
+        $config['base_url'] = base_url() . 'index.php/manager/check/travelManage';
+        $config['total_rows'] = $num;
+        $config['uri_segment'] = 4;
+        $this->pagination->initialize($config);
+        $data['page'] = $this->pagination->create_links();
+        $data['title'] = '差旅报销审核列表';
+        $data['num'] = $num;
+        $data['searchType'] = $this->getTypeTravel();
+        $data['Year'] = $this->getSearchYear();
+        $data['Month'] = $this->getSearchMonth();
+        $data['State'] = $this->getState();
+        $data['Unit'] = $this->getUnit();
+        $data['type1'] = '2';
 
 
-            $this->load->view('manager/check/travelList', $data);
-            $this->load->view('common/footer');
-
+        $this->load->view('manager/check/travelList', $data);
+        $this->load->view('common/footer');
     }
+
     // 报销变换显示
     function changeOptionBorrow() {
         extract($_REQUEST);
@@ -831,6 +826,7 @@ class Check extends CI_Controller {
             show_error($message);
         }
     }
+
     // 报销变换显示
     function changeOptionLaowu() {
         extract($_REQUEST);
@@ -983,8 +979,8 @@ class Check extends CI_Controller {
         $data['state'] = '已提交';
         $this->load->view('manager/check/laowuList', $data);
         $this->load->view('common/footer');
-
     }
+
     public function getBaoxiao($id) {
         $data = array();
         $result = $this->m_baoxiao->getOneInfo($id);
@@ -1080,7 +1076,7 @@ class Check extends CI_Controller {
 
         $subjectId = $this->session->userdata('subjectId');
         $array = array('inherit' => $subjectId);
-        $num = $this->m_baoxiao->getNumManage($array);
+        $num = $this->m_travel->getNumManage($array);
         $offset = $this->uri->segment(6);
         $data['baoxiao'] = $this->getTravelMange($array, $offset);
         $config['base_url'] = base_url() . 'index.php/manager/check/travelManage';
@@ -1354,6 +1350,7 @@ class Check extends CI_Controller {
         $this->load->view('manager/check/laowuList', $data);
         $this->load->view('common/footer');
     }
+
     //按报销按照金额,报销代码查询
     public function baoxiaoSearch() {
         $this->timeOut();
@@ -1398,7 +1395,7 @@ class Check extends CI_Controller {
     }
 
     // 分页获取报销经费信息
-    public function     getBaoxiaoMange($array, $offset) {
+    public function getBaoxiaoMange($array, $offset) {
 
         $data = array();
         $result = $this->m_baoxiao->getBaoxiaoMange($array, PER_PAGE, $offset);

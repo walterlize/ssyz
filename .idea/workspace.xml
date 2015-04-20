@@ -1,222 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="4458a0b3-bf35-4704-a504-29a7c58a225e" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/views/ordinary/baoxiao/baoxiaoAdd.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/views/ordinary/baoxiao/baoxiaoDetail.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/views/ordinary/borrow/baoxiaoDetail.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/views/ordinary/money/baoxiaoDetail.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/views/ordinary/borrow/baoxiaoEdit.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/views/manager/check/baoxiaoList.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/views/ordinary/borrow/baoxiaoList.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/views/ordinary/borrow/borrow.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/views/manager/check/borrowDetail.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/views/ordinary/borrow/borrowDetail.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/views/ordinary/money/borrowDetail.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/views/manager/check/borrowList.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/views/manager/check/borrowList_2.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/views/manager/check/checkLaowu.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/views/ordinary/money/expenseList.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/views/common/foot_1.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/views/index/head_1.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/controllers/ordinary/laowu.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/views/manager/check/laowuDetail.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/views/ordinary/laowu/laowuDetail.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/views/ordinary/money/laowuDetail.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/views/ordinary/laowu/laowuEdit.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/views/manager/check/laowuList.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/views/ordinary/laowu/laowuList.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/views/manager/check/laowuSearch.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/models/m_baoxiaohead.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/models/m_laowu.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/models/m_manage.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/models/m_zhengce.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/controllers/admin/manage.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/views/admin/subject/manage.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/views/admin/subject/manageDetail.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/views/admin/subject/manageEdit.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/views/manager/money/monthNew.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/views/ordinary/laowu/projectBudget.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/views/ordinary/travel/projectBudget.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/controllers/head/subject.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/views/manager/money/totalDetail.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/views/ordinary/money/totalDetail.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/views/manager/money/totalEdit.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/views/manager/money/totalList.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/views/manager/money/totalNew.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/views/ordinary/travel/travelAdd.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/views/ordinary/money/travelDetail.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/views/ordinary/travel/travelDetail.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/views/manager/check/travelList.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/views/ordinary/travel/travelList.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/views/manager/check/travelSearch.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/views/ordinary/laowu/yearBudget.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/views/ordinary/money/yearDetail.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/views/ordinary/money/yearList.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/controllers/admin/zhengce.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/controllers/ordinary/zhengce.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/views/admin/zhengce/zhengce.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/views/admin/zhengce/zhengceDetail.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/views/admin/zhengce/zhengceEdit.php" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Pig.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/application/views/outside/index.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/css/update8.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/flash/复件 gai.fla" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/images/another.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/images/another1.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/images/manager.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/images/te.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/images/top.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/kindeditor/attached/file/20111116/20111116054145_32250.doc" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/kindeditor/attached/file/20111116/20111116054221_14367.xls" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/kindeditor/attached/file/20111116/20111116133826_22705.doc" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/kindeditor/attached/file/20111123/20111123084303_46878.doc" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/kindeditor/attached/file/20111123/20111123130647_48377.doc" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/kindeditor/attached/file/20111123/20111123131021_79661.doc" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/kindeditor/attached/file/20111123/20111123131404_30695.doc" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/kindeditor/attached/file/20111123/20111123131612_44307.doc" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/kindeditor/attached/file/20111123/20111123131952_40671.doc" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/kindeditor/attached/file/20111123/20111123132246_79419.doc" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/kindeditor/attached/file/20111123/20111123132614_33584.doc" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/kindeditor/attached/file/20111124/20111124071101_93864.doc" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/kindeditor/attached/file/20111124/20111124071203_84267.doc" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/kindeditor/attached/file/20111125/20111125064319_11194.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/kindeditor/attached/file/20120206/20120206025853_70507.doc" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/kindeditor/attached/file/20120719/20120719062228_75440.doc" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/kindeditor/attached/file/20120724/20120724023835_22958.ppt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/kindeditor/attached/file/20120724/20120724032532_39036.rar" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/kindeditor/attached/file/20120724/20120724035832_95863.rar" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/kindeditor/attached/file/20130112/20130112120716_40662.doc" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/kindeditor/attached/image/20111116/20111116133721_80631.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/kindeditor/attached/image/20111116/20111116133743_64571.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/kindeditor/attached/image/20120226/20120226063129_21961.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/kindeditor/attached/image/20120226/20120226063242_72226.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/kindeditor/attached/image/20120226/20120226063518_76601.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/kindeditor/attached/image/20120226/20120226063542_79603.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/kindeditor/attached/image/20120723/20120723073225_92240.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/kindeditor/attached/image/20120723/20120723073457_96272.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/kindeditor/attached/image/20120723/20120723073509_54156.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/kindeditor/attached/image/20120723/20120723073533_94682.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/kindeditor/attached/image/20120723/20120723073551_79966.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/kindeditor/attached/image/20120723/20120723074037_26811.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/kindeditor/attached/image/20120723/20120723074121_39934.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/kindeditor/attached/image/20120723/20120723074153_28852.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/kindeditor/attached/image/20120723/20120723074232_96333.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/kindeditor/attached/image/20120723/20120723074256_47831.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/kindeditor/attached/image/20120723/20120723074317_74989.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/kindeditor/attached/image/20120723/20120723074333_75343.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/kindeditor/attached/image/20120723/20120723074348_20588.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/kindeditor/attached/image/20120723/20120723074405_40662.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/kindeditor/attached/image/20121217/20121217071327_63146.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/kindeditor/attached/image/20121217/20121217071428_23422.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/upload/201308/month_17/40.docx" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/upload/201308/month_17/60.docx" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/upload/201308/month_17/70.docx" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/upload/201308/month_28/75.docx" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/upload/201308/month_28/76.docx" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/upload/201309/month_17/40.doc" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/upload/201309/month_17/40.docx" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/upload/201309/month_17/60.docx" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/upload/201309/month_17/71.docx" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/upload/201310/_17/40.doc" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/upload/201310/_17/71.doc" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/upload/201310/month_17/58.docx" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/upload/201310/month_17/60.docx" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/upload/201310/month_17/71.docx" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/upload/201310/year_17/40.doc" afterPath="" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/application/controllers/outside/award.php" afterPath="$PROJECT_DIR$/application/controllers/head/award.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/application/controllers/outside/book.php" afterPath="$PROJECT_DIR$/application/controllers/head/book.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/application/controllers/outside/contact.php" afterPath="$PROJECT_DIR$/application/controllers/head/contact.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/application/controllers/outside/demonstration.php" afterPath="$PROJECT_DIR$/application/controllers/head/demonstration.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/application/controllers/outside/other.php" afterPath="$PROJECT_DIR$/application/controllers/head/other.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/application/controllers/outside/paper.php" afterPath="$PROJECT_DIR$/application/controllers/head/paper.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/application/controllers/outside/patent.php" afterPath="$PROJECT_DIR$/application/controllers/head/patent.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/application/controllers/outside/report.php" afterPath="$PROJECT_DIR$/application/controllers/head/report.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/application/controllers/outside/result.php" afterPath="$PROJECT_DIR$/application/controllers/head/result.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/application/controllers/outside/software.php" afterPath="$PROJECT_DIR$/application/controllers/head/software.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/application/controllers/outside/standard.php" afterPath="$PROJECT_DIR$/application/controllers/head/standard.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/application/controllers/outside/subject.php" afterPath="$PROJECT_DIR$/application/controllers/head/organize.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/application/controllers/outside/trend.php" afterPath="$PROJECT_DIR$/application/controllers/head/trend.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/application/views/admin/workReport/weekreport.php" afterPath="$PROJECT_DIR$/application/views/admin/workReport/weekReport.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/application/views/ordinary/baoxiao/monthDetail.php" afterPath="$PROJECT_DIR$/application/views/manager/check/baoxiaoDetail.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/application/views/ordinary/borrow/monthDetail.php" afterPath="$PROJECT_DIR$/application/views/manager/check/travelDetail.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/system/core/Common.php" afterPath="$PROJECT_DIR$/system/core/Common.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/system/core/Controller.php" afterPath="$PROJECT_DIR$/system/core/Controller.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/controllers/ordinary/baoxiao.php" afterPath="$PROJECT_DIR$/application/controllers/ordinary/baoxiao.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/ordinary/baoxiao/baoxiaoEdit.php" afterPath="$PROJECT_DIR$/application/views/ordinary/baoxiao/baoxiaoEdit.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/ordinary/baoxiao/baoxiaoList.php" afterPath="$PROJECT_DIR$/application/views/ordinary/baoxiao/baoxiaoList.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/controllers/ordinary/borrow.php" afterPath="$PROJECT_DIR$/application/controllers/ordinary/borrow.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/ordinary/borrow/borrowEdit.php" afterPath="$PROJECT_DIR$/application/views/ordinary/borrow/borrowEdit.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/ordinary/borrow/borrowList.php" afterPath="$PROJECT_DIR$/application/views/ordinary/borrow/borrowList.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/javascript/common.js" afterPath="$PROJECT_DIR$/javascript/common.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/models/common.php" afterPath="$PROJECT_DIR$/application/models/common.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/admin/contact/contactDetail.php" afterPath="$PROJECT_DIR$/application/views/admin/contact/contactDetail.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/admin/contact/contactEdit.php" afterPath="$PROJECT_DIR$/application/views/admin/contact/contactEdit.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/outside/contactList.php" afterPath="$PROJECT_DIR$/application/views/outside/contactList.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/admin/trend/detail.php" afterPath="$PROJECT_DIR$/application/views/admin/trend/detail.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/controllers/download.php" afterPath="$PROJECT_DIR$/application/controllers/download.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/controllers/admin/expert.php" afterPath="$PROJECT_DIR$/application/controllers/admin/expert.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/admin/subject/expert.php" afterPath="$PROJECT_DIR$/application/views/admin/subject/expert.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/admin/subject/expertDetail.php" afterPath="$PROJECT_DIR$/application/views/admin/subject/expertDetail.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/admin/subject/expertEdit.php" afterPath="$PROJECT_DIR$/application/views/admin/subject/expertEdit.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/common/foot.php" afterPath="$PROJECT_DIR$/application/views/common/foot.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/controllers/manager/frame.php" afterPath="$PROJECT_DIR$/application/controllers/manager/frame.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/manager/frame.php" afterPath="$PROJECT_DIR$/application/views/manager/frame.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/ordinary/frame.php" afterPath="$PROJECT_DIR$/application/views/ordinary/frame.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/common/head.php" afterPath="$PROJECT_DIR$/application/views/common/head.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/index/head.php" afterPath="$PROJECT_DIR$/application/views/index/head.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/common/header.php" afterPath="$PROJECT_DIR$/application/views/common/header.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/common/header2.php" afterPath="$PROJECT_DIR$/application/views/common/header2.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/common/header3.php" afterPath="$PROJECT_DIR$/application/views/common/header3.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/css/index.css" afterPath="$PROJECT_DIR$/css/index.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/controllers/index.php" afterPath="$PROJECT_DIR$/application/controllers/index.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/index/index.php" afterPath="$PROJECT_DIR$/application/views/index/index.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/admin/left.php" afterPath="$PROJECT_DIR$/application/views/admin/left.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/includes/left.php" afterPath="$PROJECT_DIR$/application/views/includes/left.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/manager/left.php" afterPath="$PROJECT_DIR$/application/views/manager/left.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/ordinary/left.php" afterPath="$PROJECT_DIR$/application/views/ordinary/left.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/models/m_baoxiao.php" afterPath="$PROJECT_DIR$/application/models/m_baoxiao.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/models/m_borrow.php" afterPath="$PROJECT_DIR$/application/models/m_borrow.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/models/m_choice.php" afterPath="$PROJECT_DIR$/application/models/m_choice.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/models/m_expert.php" afterPath="$PROJECT_DIR$/application/models/m_expert.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/models/m_projectintroduce.php" afterPath="$PROJECT_DIR$/application/models/m_projectintroduce.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/models/m_subject.php" afterPath="$PROJECT_DIR$/application/models/m_subject.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/models/m_totalmoney.php" afterPath="$PROJECT_DIR$/application/models/m_totalmoney.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/models/m_user.php" afterPath="$PROJECT_DIR$/application/models/m_user.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/models/m_yearmoney.php" afterPath="$PROJECT_DIR$/application/models/m_yearmoney.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/ordinary/main.php" afterPath="$PROJECT_DIR$/application/views/ordinary/main.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/controllers/admin/money.php" afterPath="$PROJECT_DIR$/application/controllers/admin/money.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/controllers/manager/money.php" afterPath="$PROJECT_DIR$/application/controllers/manager/money.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/controllers/ordinary/money.php" afterPath="$PROJECT_DIR$/application/controllers/ordinary/money.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/config/pagination.php" afterPath="$PROJECT_DIR$/application/config/pagination.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/password.php" afterPath="$PROJECT_DIR$/application/views/password.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/controllers/admin/project.php" afterPath="$PROJECT_DIR$/application/controllers/admin/project.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/index/project.php" afterPath="$PROJECT_DIR$/application/views/index/project.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/nbproject/project.properties" afterPath="$PROJECT_DIR$/nbproject/project.properties" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/nbproject/project.xml" afterPath="$PROJECT_DIR$/nbproject/project.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/admin/subject/projectIntroduce.php" afterPath="$PROJECT_DIR$/application/views/admin/subject/projectIntroduce.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/admin/subject/projectIntroduceEdit.php" afterPath="$PROJECT_DIR$/application/views/admin/subject/projectIntroduceEdit.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/css/style.css" afterPath="$PROJECT_DIR$/css/style.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/ordinary/subject/subjectDetail.php" afterPath="$PROJECT_DIR$/application/views/ordinary/subject/subjectDetail.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/ordinary/subject/subjectEdit.php" afterPath="$PROJECT_DIR$/application/views/ordinary/subject/subjectEdit.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/common/top.php" afterPath="$PROJECT_DIR$/application/views/common/top.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/admin/money/totalEdit.php" afterPath="$PROJECT_DIR$/application/views/admin/money/totalEdit.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/controllers/admin/trend.php" afterPath="$PROJECT_DIR$/application/controllers/admin/trend.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/outside/trend.php" afterPath="$PROJECT_DIR$/application/views/outside/trend.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/outside/trendList.php" afterPath="$PROJECT_DIR$/application/views/outside/trendList.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/kindeditor/php/upload_json.php" afterPath="$PROJECT_DIR$/kindeditor/php/upload_json.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/controllers/user.php" afterPath="$PROJECT_DIR$/application/controllers/user.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/controllers/admin/user.php" afterPath="$PROJECT_DIR$/application/controllers/admin/user.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/admin/user/user.php" afterPath="$PROJECT_DIR$/application/views/admin/user/user.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/admin/user/userDetail.php" afterPath="$PROJECT_DIR$/application/views/admin/user/userDetail.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/admin/user/userEdit.php" afterPath="$PROJECT_DIR$/application/views/admin/user/userEdit.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/javascript/validation.js" afterPath="$PROJECT_DIR$/javascript/validation.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/admin/money/yearDetail.php" afterPath="$PROJECT_DIR$/application/views/admin/money/yearDetail.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/admin/money/yearEdit.php" afterPath="$PROJECT_DIR$/application/views/admin/money/yearEdit.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/manager/money/yearEdit.php" afterPath="$PROJECT_DIR$/application/views/manager/money/yearEdit.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/admin/money/yearList.php" afterPath="$PROJECT_DIR$/application/views/admin/money/yearList.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/manager/money/yearList.php" afterPath="$PROJECT_DIR$/application/views/manager/money/yearList.php" />
-    </list>
+    <list default="true" id="4458a0b3-bf35-4704-a504-29a7c58a225e" name="Default" comment="" />
     <ignored path="ssyz.iws" />
     <ignored path=".idea/workspace.xml" />
     <ignored path=".idea/dataSources.local.xml" />
@@ -263,7 +48,7 @@
       <file leaf-file-name="check.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/application/controllers/manager/check.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.31780365" vertical-offset="4615" max-vertical-offset="29844">
+            <state vertical-scroll-proportion="0.4076539" vertical-offset="4561" max-vertical-offset="29844">
               <caret line="267" column="34" selection-start-line="267" selection-start-column="34" selection-end-line="267" selection-end-column="34" />
               <folding />
             </state>
@@ -418,7 +203,6 @@
       <sortByType />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -565,26 +349,9 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="ssyz" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="ssyz" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="application" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="models" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -634,6 +401,9 @@
       <BehatRunner />
       <method />
     </configuration>
+    <configuration default="true" type="PhpUnitRemoteRunConfigurationType" factoryName="PHPUnit on Server">
+      <method />
+    </configuration>
     <configuration default="true" type="js.build_tools.gulp" factoryName="Gulp.js">
       <node-options />
       <gulpfile />
@@ -641,9 +411,6 @@
       <arguments />
       <pass-parent-envs>true</pass-parent-envs>
       <envs />
-      <method />
-    </configuration>
-    <configuration default="true" type="PhpUnitRemoteRunConfigurationType" factoryName="PHPUnit on Server">
       <method />
     </configuration>
     <list size="1">
@@ -704,13 +471,13 @@
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32786885" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32935917" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32935917" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="3" side_tool="false" content_ui="combo" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
   <component name="Vcs.Log.UiProperties">
@@ -1101,7 +868,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/application/controllers/manager/check.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.31780365" vertical-offset="4615" max-vertical-offset="29844">
+        <state vertical-scroll-proportion="0.4076539" vertical-offset="4561" max-vertical-offset="29844">
           <caret line="267" column="34" selection-start-line="267" selection-start-column="34" selection-end-line="267" selection-end-column="34" />
           <folding />
         </state>
