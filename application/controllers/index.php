@@ -25,6 +25,7 @@ class Index extends CI_Controller {
         // 用户登录部分
         $name = $this->session->userdata('userName');
         $data['userId'] = $this->session->userdata('userId');
+        $data['userName'] = $name;
         if ($name == '' || $name == null) {
             $data['form'] = '';
             $data['welcome'] = 'display:none';
@@ -34,7 +35,7 @@ class Index extends CI_Controller {
             $data['welcome'] = '';
         }
         $this->load->view('index/head', $data);
-        $this->load->view('index/index');
+        $this->load->view('index/index', $data);
         $this->load->view('index/footer');
     }
 
@@ -42,8 +43,10 @@ class Index extends CI_Controller {
     public function login() {
         $userName = $this->input->post('userName');
         $password = $this->input->post('password');
-        $array = array('userName' => $userName, 'password' => $password);
-
+        $pass = md5($password);
+        $passwordtrimmed = trim($pass);
+        $array = array('userName' => $userName, 'password' => $passwordtrimmed);
+        //$array = array('userName' => $userName, 'password' => $password);
         $result = $this->m_user->getUser($array);
         $data = array();
         foreach ($result as $r) {
@@ -66,23 +69,45 @@ class Index extends CI_Controller {
     }
 
     // 已登陆再次登陆
+    /*  public function getin() {
+      $userName = $this->session->userdata('userName');
+      $password = $this->session->userdata('password');
+      $id = $this->uri->segment(3);
+      $result = $this->m_user->getOneInfo($id);
+
+      $data = array();
+      foreach ($result as $r) {
+      $data = $r;
+      }
+      echo"ssss";
+      if ($data->roleId == 1) {
+      echo "１";
+      redirect('admin/frame/index');
+      } elseif ($data->roleId == 2) {
+      echo "２";
+      redirect('manager/frame/index');
+      } elseif ($data->roleId == 3) {
+      echo "３";
+      redirect('ordinary/frame/index');
+
+      } else {
+      echo "万有五";
+      redirect(base_url());
+      }
+      } */
     public function getin() {
-        $id = $this->uri->segment(3);
-        $result = $this->m_user->getOneInfo($id);
-   
-        $data = array();
-        foreach ($result as $r) {
-            $data = $r;
-        }
-        if (isset($data->userName)) {
-            if ($data->roleId == 1) {
+        $userName = $this->session->userdata('userName');
+        $password = $this->session->userdata('password');
+        $roleId = $this->session->userdata('roleId');
+
+            if ($roleId == 1) {
                 redirect('admin/frame/index');
-            } else {
+            } elseif ($roleId == 2) {
                 redirect('manager/frame/index');
+            } elseif ($roleId == 3) {
+                redirect('ordinary/frame/index');
             }
-        } else {
-            redirect(base_url());
-        }
+
     }
 
     public function top() {

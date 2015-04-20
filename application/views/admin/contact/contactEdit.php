@@ -1,6 +1,6 @@
 <div style="margin-left:20px; margin-right:20px">
 <br />
-<h3>联系我们编辑</h3>
+<div class="title_lee">联系我们编辑</div>
 <form name="form1" method="post" action="<?=base_url()?>index.php/admin/contact/save" id="form1">
 <input type="hidden" value="<?=$contact->contactId?>" name="contactId" id="contactId" />
   <table cellpadding="0" cellspacing="1" class="tablist2">

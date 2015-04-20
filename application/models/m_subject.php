@@ -56,7 +56,14 @@ class m_subject extends CI_Model {
     function getSubject1() {
         $this->db->select();
         $this->db->from('lz_money_total');
-        //$this->db->where($array);
+        $q = $this->db->get();
+        return $q->result();
+    }
+
+    function getSubject3($array) {
+        $this->db->select();
+        $this->db->from('subject');
+        $this->db->where($array);
         $q = $this->db->get();
         return $q->result();
     }

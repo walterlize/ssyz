@@ -1,0 +1,1111 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="4458a0b3-bf35-4704-a504-29a7c58a225e" name="Default" comment="">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/views/ordinary/baoxiao/baoxiaoAdd.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/views/ordinary/baoxiao/baoxiaoDetail.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/views/ordinary/borrow/baoxiaoDetail.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/views/ordinary/money/baoxiaoDetail.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/views/ordinary/borrow/baoxiaoEdit.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/views/manager/check/baoxiaoList.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/views/ordinary/borrow/baoxiaoList.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/views/ordinary/borrow/borrow.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/views/manager/check/borrowDetail.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/views/ordinary/borrow/borrowDetail.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/views/ordinary/money/borrowDetail.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/views/manager/check/borrowList.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/views/manager/check/borrowList_2.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/views/manager/check/checkLaowu.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/views/ordinary/money/expenseList.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/views/common/foot_1.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/views/index/head_1.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/controllers/ordinary/laowu.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/views/manager/check/laowuDetail.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/views/ordinary/laowu/laowuDetail.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/views/ordinary/money/laowuDetail.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/views/ordinary/laowu/laowuEdit.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/views/manager/check/laowuList.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/views/ordinary/laowu/laowuList.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/views/manager/check/laowuSearch.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/models/m_baoxiaohead.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/models/m_laowu.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/models/m_manage.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/models/m_zhengce.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/controllers/admin/manage.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/views/admin/subject/manage.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/views/admin/subject/manageDetail.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/views/admin/subject/manageEdit.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/views/manager/money/monthNew.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/views/ordinary/laowu/projectBudget.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/views/ordinary/travel/projectBudget.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/controllers/head/subject.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/views/manager/money/totalDetail.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/views/ordinary/money/totalDetail.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/views/manager/money/totalEdit.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/views/manager/money/totalList.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/views/manager/money/totalNew.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/views/ordinary/travel/travelAdd.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/views/ordinary/money/travelDetail.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/views/ordinary/travel/travelDetail.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/views/manager/check/travelList.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/views/ordinary/travel/travelList.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/views/manager/check/travelSearch.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/views/ordinary/laowu/yearBudget.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/views/ordinary/money/yearDetail.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/views/ordinary/money/yearList.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/controllers/admin/zhengce.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/controllers/ordinary/zhengce.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/views/admin/zhengce/zhengce.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/views/admin/zhengce/zhengceDetail.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/views/admin/zhengce/zhengceEdit.php" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Pig.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/application/views/outside/index.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/css/update8.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/flash/复件 gai.fla" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/images/another.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/images/another1.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/images/manager.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/images/te.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/images/top.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/kindeditor/attached/file/20111116/20111116054145_32250.doc" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/kindeditor/attached/file/20111116/20111116054221_14367.xls" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/kindeditor/attached/file/20111116/20111116133826_22705.doc" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/kindeditor/attached/file/20111123/20111123084303_46878.doc" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/kindeditor/attached/file/20111123/20111123130647_48377.doc" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/kindeditor/attached/file/20111123/20111123131021_79661.doc" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/kindeditor/attached/file/20111123/20111123131404_30695.doc" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/kindeditor/attached/file/20111123/20111123131612_44307.doc" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/kindeditor/attached/file/20111123/20111123131952_40671.doc" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/kindeditor/attached/file/20111123/20111123132246_79419.doc" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/kindeditor/attached/file/20111123/20111123132614_33584.doc" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/kindeditor/attached/file/20111124/20111124071101_93864.doc" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/kindeditor/attached/file/20111124/20111124071203_84267.doc" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/kindeditor/attached/file/20111125/20111125064319_11194.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/kindeditor/attached/file/20120206/20120206025853_70507.doc" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/kindeditor/attached/file/20120719/20120719062228_75440.doc" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/kindeditor/attached/file/20120724/20120724023835_22958.ppt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/kindeditor/attached/file/20120724/20120724032532_39036.rar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/kindeditor/attached/file/20120724/20120724035832_95863.rar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/kindeditor/attached/file/20130112/20130112120716_40662.doc" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/kindeditor/attached/image/20111116/20111116133721_80631.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/kindeditor/attached/image/20111116/20111116133743_64571.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/kindeditor/attached/image/20120226/20120226063129_21961.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/kindeditor/attached/image/20120226/20120226063242_72226.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/kindeditor/attached/image/20120226/20120226063518_76601.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/kindeditor/attached/image/20120226/20120226063542_79603.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/kindeditor/attached/image/20120723/20120723073225_92240.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/kindeditor/attached/image/20120723/20120723073457_96272.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/kindeditor/attached/image/20120723/20120723073509_54156.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/kindeditor/attached/image/20120723/20120723073533_94682.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/kindeditor/attached/image/20120723/20120723073551_79966.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/kindeditor/attached/image/20120723/20120723074037_26811.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/kindeditor/attached/image/20120723/20120723074121_39934.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/kindeditor/attached/image/20120723/20120723074153_28852.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/kindeditor/attached/image/20120723/20120723074232_96333.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/kindeditor/attached/image/20120723/20120723074256_47831.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/kindeditor/attached/image/20120723/20120723074317_74989.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/kindeditor/attached/image/20120723/20120723074333_75343.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/kindeditor/attached/image/20120723/20120723074348_20588.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/kindeditor/attached/image/20120723/20120723074405_40662.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/kindeditor/attached/image/20121217/20121217071327_63146.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/kindeditor/attached/image/20121217/20121217071428_23422.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/upload/201308/month_17/40.docx" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/upload/201308/month_17/60.docx" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/upload/201308/month_17/70.docx" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/upload/201308/month_28/75.docx" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/upload/201308/month_28/76.docx" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/upload/201309/month_17/40.doc" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/upload/201309/month_17/40.docx" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/upload/201309/month_17/60.docx" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/upload/201309/month_17/71.docx" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/upload/201310/_17/40.doc" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/upload/201310/_17/71.doc" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/upload/201310/month_17/58.docx" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/upload/201310/month_17/60.docx" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/upload/201310/month_17/71.docx" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/upload/201310/year_17/40.doc" afterPath="" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/application/controllers/outside/award.php" afterPath="$PROJECT_DIR$/application/controllers/head/award.php" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/application/controllers/outside/book.php" afterPath="$PROJECT_DIR$/application/controllers/head/book.php" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/application/controllers/outside/contact.php" afterPath="$PROJECT_DIR$/application/controllers/head/contact.php" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/application/controllers/outside/demonstration.php" afterPath="$PROJECT_DIR$/application/controllers/head/demonstration.php" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/application/controllers/outside/other.php" afterPath="$PROJECT_DIR$/application/controllers/head/other.php" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/application/controllers/outside/paper.php" afterPath="$PROJECT_DIR$/application/controllers/head/paper.php" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/application/controllers/outside/patent.php" afterPath="$PROJECT_DIR$/application/controllers/head/patent.php" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/application/controllers/outside/report.php" afterPath="$PROJECT_DIR$/application/controllers/head/report.php" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/application/controllers/outside/result.php" afterPath="$PROJECT_DIR$/application/controllers/head/result.php" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/application/controllers/outside/software.php" afterPath="$PROJECT_DIR$/application/controllers/head/software.php" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/application/controllers/outside/standard.php" afterPath="$PROJECT_DIR$/application/controllers/head/standard.php" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/application/controllers/outside/subject.php" afterPath="$PROJECT_DIR$/application/controllers/head/organize.php" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/application/controllers/outside/trend.php" afterPath="$PROJECT_DIR$/application/controllers/head/trend.php" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/application/views/admin/workReport/weekreport.php" afterPath="$PROJECT_DIR$/application/views/admin/workReport/weekReport.php" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/application/views/ordinary/baoxiao/monthDetail.php" afterPath="$PROJECT_DIR$/application/views/manager/check/baoxiaoDetail.php" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/application/views/ordinary/borrow/monthDetail.php" afterPath="$PROJECT_DIR$/application/views/manager/check/travelDetail.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/system/core/Common.php" afterPath="$PROJECT_DIR$/system/core/Common.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/system/core/Controller.php" afterPath="$PROJECT_DIR$/system/core/Controller.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/controllers/ordinary/baoxiao.php" afterPath="$PROJECT_DIR$/application/controllers/ordinary/baoxiao.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/ordinary/baoxiao/baoxiaoEdit.php" afterPath="$PROJECT_DIR$/application/views/ordinary/baoxiao/baoxiaoEdit.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/ordinary/baoxiao/baoxiaoList.php" afterPath="$PROJECT_DIR$/application/views/ordinary/baoxiao/baoxiaoList.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/controllers/ordinary/borrow.php" afterPath="$PROJECT_DIR$/application/controllers/ordinary/borrow.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/ordinary/borrow/borrowEdit.php" afterPath="$PROJECT_DIR$/application/views/ordinary/borrow/borrowEdit.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/ordinary/borrow/borrowList.php" afterPath="$PROJECT_DIR$/application/views/ordinary/borrow/borrowList.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/javascript/common.js" afterPath="$PROJECT_DIR$/javascript/common.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/models/common.php" afterPath="$PROJECT_DIR$/application/models/common.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/admin/contact/contactDetail.php" afterPath="$PROJECT_DIR$/application/views/admin/contact/contactDetail.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/admin/contact/contactEdit.php" afterPath="$PROJECT_DIR$/application/views/admin/contact/contactEdit.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/outside/contactList.php" afterPath="$PROJECT_DIR$/application/views/outside/contactList.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/admin/trend/detail.php" afterPath="$PROJECT_DIR$/application/views/admin/trend/detail.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/controllers/download.php" afterPath="$PROJECT_DIR$/application/controllers/download.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/controllers/admin/expert.php" afterPath="$PROJECT_DIR$/application/controllers/admin/expert.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/admin/subject/expert.php" afterPath="$PROJECT_DIR$/application/views/admin/subject/expert.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/admin/subject/expertDetail.php" afterPath="$PROJECT_DIR$/application/views/admin/subject/expertDetail.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/admin/subject/expertEdit.php" afterPath="$PROJECT_DIR$/application/views/admin/subject/expertEdit.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/common/foot.php" afterPath="$PROJECT_DIR$/application/views/common/foot.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/controllers/manager/frame.php" afterPath="$PROJECT_DIR$/application/controllers/manager/frame.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/manager/frame.php" afterPath="$PROJECT_DIR$/application/views/manager/frame.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/ordinary/frame.php" afterPath="$PROJECT_DIR$/application/views/ordinary/frame.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/common/head.php" afterPath="$PROJECT_DIR$/application/views/common/head.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/index/head.php" afterPath="$PROJECT_DIR$/application/views/index/head.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/common/header.php" afterPath="$PROJECT_DIR$/application/views/common/header.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/common/header2.php" afterPath="$PROJECT_DIR$/application/views/common/header2.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/common/header3.php" afterPath="$PROJECT_DIR$/application/views/common/header3.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/css/index.css" afterPath="$PROJECT_DIR$/css/index.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/controllers/index.php" afterPath="$PROJECT_DIR$/application/controllers/index.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/index/index.php" afterPath="$PROJECT_DIR$/application/views/index/index.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/admin/left.php" afterPath="$PROJECT_DIR$/application/views/admin/left.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/includes/left.php" afterPath="$PROJECT_DIR$/application/views/includes/left.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/manager/left.php" afterPath="$PROJECT_DIR$/application/views/manager/left.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/ordinary/left.php" afterPath="$PROJECT_DIR$/application/views/ordinary/left.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/models/m_baoxiao.php" afterPath="$PROJECT_DIR$/application/models/m_baoxiao.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/models/m_borrow.php" afterPath="$PROJECT_DIR$/application/models/m_borrow.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/models/m_choice.php" afterPath="$PROJECT_DIR$/application/models/m_choice.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/models/m_expert.php" afterPath="$PROJECT_DIR$/application/models/m_expert.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/models/m_projectintroduce.php" afterPath="$PROJECT_DIR$/application/models/m_projectintroduce.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/models/m_subject.php" afterPath="$PROJECT_DIR$/application/models/m_subject.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/models/m_totalmoney.php" afterPath="$PROJECT_DIR$/application/models/m_totalmoney.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/models/m_user.php" afterPath="$PROJECT_DIR$/application/models/m_user.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/models/m_yearmoney.php" afterPath="$PROJECT_DIR$/application/models/m_yearmoney.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/ordinary/main.php" afterPath="$PROJECT_DIR$/application/views/ordinary/main.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/controllers/admin/money.php" afterPath="$PROJECT_DIR$/application/controllers/admin/money.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/controllers/manager/money.php" afterPath="$PROJECT_DIR$/application/controllers/manager/money.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/controllers/ordinary/money.php" afterPath="$PROJECT_DIR$/application/controllers/ordinary/money.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/config/pagination.php" afterPath="$PROJECT_DIR$/application/config/pagination.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/password.php" afterPath="$PROJECT_DIR$/application/views/password.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/controllers/admin/project.php" afterPath="$PROJECT_DIR$/application/controllers/admin/project.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/index/project.php" afterPath="$PROJECT_DIR$/application/views/index/project.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/nbproject/project.properties" afterPath="$PROJECT_DIR$/nbproject/project.properties" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/nbproject/project.xml" afterPath="$PROJECT_DIR$/nbproject/project.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/admin/subject/projectIntroduce.php" afterPath="$PROJECT_DIR$/application/views/admin/subject/projectIntroduce.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/admin/subject/projectIntroduceEdit.php" afterPath="$PROJECT_DIR$/application/views/admin/subject/projectIntroduceEdit.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/css/style.css" afterPath="$PROJECT_DIR$/css/style.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/ordinary/subject/subjectDetail.php" afterPath="$PROJECT_DIR$/application/views/ordinary/subject/subjectDetail.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/ordinary/subject/subjectEdit.php" afterPath="$PROJECT_DIR$/application/views/ordinary/subject/subjectEdit.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/common/top.php" afterPath="$PROJECT_DIR$/application/views/common/top.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/admin/money/totalEdit.php" afterPath="$PROJECT_DIR$/application/views/admin/money/totalEdit.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/controllers/admin/trend.php" afterPath="$PROJECT_DIR$/application/controllers/admin/trend.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/outside/trend.php" afterPath="$PROJECT_DIR$/application/views/outside/trend.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/outside/trendList.php" afterPath="$PROJECT_DIR$/application/views/outside/trendList.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/kindeditor/php/upload_json.php" afterPath="$PROJECT_DIR$/kindeditor/php/upload_json.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/controllers/user.php" afterPath="$PROJECT_DIR$/application/controllers/user.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/controllers/admin/user.php" afterPath="$PROJECT_DIR$/application/controllers/admin/user.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/admin/user/user.php" afterPath="$PROJECT_DIR$/application/views/admin/user/user.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/admin/user/userDetail.php" afterPath="$PROJECT_DIR$/application/views/admin/user/userDetail.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/admin/user/userEdit.php" afterPath="$PROJECT_DIR$/application/views/admin/user/userEdit.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/javascript/validation.js" afterPath="$PROJECT_DIR$/javascript/validation.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/admin/money/yearDetail.php" afterPath="$PROJECT_DIR$/application/views/admin/money/yearDetail.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/admin/money/yearEdit.php" afterPath="$PROJECT_DIR$/application/views/admin/money/yearEdit.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/manager/money/yearEdit.php" afterPath="$PROJECT_DIR$/application/views/manager/money/yearEdit.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/admin/money/yearList.php" afterPath="$PROJECT_DIR$/application/views/admin/money/yearList.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/manager/money/yearList.php" afterPath="$PROJECT_DIR$/application/views/manager/money/yearList.php" />
+    </list>
+    <ignored path="ssyz.iws" />
+    <ignored path=".idea/workspace.xml" />
+    <ignored path=".idea/dataSources.local.xml" />
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="TRACKING_ENABLED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ChangesViewManager" flattened_view="true" show_ignored="false" />
+  <component name="CreatePatchCommitExecutor">
+    <option name="PATCH_PATH" value="" />
+  </component>
+  <component name="DaemonCodeAnalyzer">
+    <disable_hints />
+  </component>
+  <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
+  <component name="FavoritesManager">
+    <favorites_list name="ssyz" />
+  </component>
+  <component name="FileEditorManager">
+    <leaf>
+      <file leaf-file-name="borrow.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/application/controllers/ordinary/borrow.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0" vertical-offset="7470" max-vertical-offset="16596">
+              <caret line="431" column="55" selection-start-line="431" selection-start-column="55" selection-end-line="431" selection-end-column="55" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="laowu.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/application/controllers/ordinary/laowu.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0" vertical-offset="6370" max-vertical-offset="9594">
+              <caret line="373" column="109" selection-start-line="373" selection-start-column="109" selection-end-line="373" selection-end-column="109" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="check.php" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/application/controllers/manager/check.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.31780365" vertical-offset="4615" max-vertical-offset="29844">
+              <caret line="267" column="34" selection-start-line="267" selection-start-column="34" selection-end-line="267" selection-end-column="34" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="laowuList.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/application/views/manager/check/laowuList.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0" vertical-offset="351" max-vertical-offset="1116">
+              <caret line="44" column="38" selection-start-line="44" selection-start-column="38" selection-end-line="44" selection-end-column="38" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="laowuList.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/application/views/ordinary/laowu/laowuList.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0" vertical-offset="126" max-vertical-offset="972">
+              <caret line="33" column="25" selection-start-line="33" selection-start-column="25" selection-end-line="33" selection-end-column="25" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="travel.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/application/controllers/ordinary/travel.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0" vertical-offset="3564" max-vertical-offset="12888">
+              <caret line="213" column="37" selection-start-line="213" selection-start-column="37" selection-end-line="213" selection-end-column="37" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="m_laowu.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/application/models/m_laowu.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0" vertical-offset="2289" max-vertical-offset="3420">
+              <caret line="138" column="58" selection-start-line="138" selection-start-column="58" selection-end-line="138" selection-end-column="58" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="IdeDocumentHistory">
+    <option name="CHANGED_PATHS">
+      <list>
+        <option value="$PROJECT_DIR$/system/core/Controller.php" />
+        <option value="$PROJECT_DIR$/application/models/m_projectintroduce.php" />
+        <option value="$PROJECT_DIR$/application/views/admin/subject/projectIntroduceEdit.php" />
+        <option value="$PROJECT_DIR$/application/views/index/head.php" />
+        <option value="$PROJECT_DIR$/application/views/admin/subject/projectIntroduce.php" />
+        <option value="$PROJECT_DIR$/application/controllers/admin/project.php" />
+        <option value="$PROJECT_DIR$/application/controllers/head/subject.php" />
+        <option value="$PROJECT_DIR$/application/controllers/head/trend.php" />
+        <option value="$PROJECT_DIR$/application/views/includes/left.php" />
+        <option value="$PROJECT_DIR$/application/controllers/download.php" />
+        <option value="$PROJECT_DIR$/application/views/ordinary/baoxiao/baoxiaoSearch.php" />
+        <option value="$PROJECT_DIR$/application/controllers/index.php" />
+        <option value="$PROJECT_DIR$/application/views/password.php" />
+        <option value="$PROJECT_DIR$/application/controllers/ordinary/frame.php" />
+        <option value="$PROJECT_DIR$/application/models/m_choice.php" />
+        <option value="$PROJECT_DIR$/application/views/ordinary/travel/travelAdd.php" />
+        <option value="$PROJECT_DIR$/application/views/manager/check/travelDetail.php" />
+        <option value="$PROJECT_DIR$/javascript/common.js" />
+        <option value="$PROJECT_DIR$/application/models/m_borrow.php" />
+        <option value="$PROJECT_DIR$/application/models/m_travel.php" />
+        <option value="$PROJECT_DIR$/application/views/manager/check/baoxiaoList.php" />
+        <option value="$PROJECT_DIR$/application/views/manager/check/travelList.php" />
+        <option value="$PROJECT_DIR$/application/views/manager/check/borrowList.php" />
+        <option value="$PROJECT_DIR$/application/views/manager/left.php" />
+        <option value="$PROJECT_DIR$/application/models/m_baoxiao.php" />
+        <option value="$PROJECT_DIR$/application/views/ordinary/laowu/laowuEdit.php" />
+        <option value="$PROJECT_DIR$/application/views/manager/check/laowuDetail.php" />
+        <option value="$PROJECT_DIR$/application/views/manager/check/checkLaowu.php" />
+        <option value="$PROJECT_DIR$/application/views/manager/check/checkDetailTravel.php" />
+        <option value="$PROJECT_DIR$/application/views/manager/check/travelSearch.php" />
+        <option value="$PROJECT_DIR$/application/views/ordinary/baoxiao/baoxiaoList.php" />
+        <option value="$PROJECT_DIR$/application/views/ordinary/borrow/borrowList.php" />
+        <option value="$PROJECT_DIR$/application/views/ordinary/borrow/baoxiaoList.php" />
+        <option value="$PROJECT_DIR$/application/views/ordinary/travel/travelList.php" />
+        <option value="$PROJECT_DIR$/application/models/m_laowu.php" />
+        <option value="$PROJECT_DIR$/application/views/manager/check/laowuSearch.php" />
+        <option value="$PROJECT_DIR$/application/views/ordinary/borrow/baoxiaoDetail.php" />
+        <option value="$PROJECT_DIR$/application/views/ordinary/borrow/borrowDetail.php" />
+        <option value="$PROJECT_DIR$/application/views/ordinary/laowu/laowuDetail.php" />
+        <option value="$PROJECT_DIR$/application/views/ordinary/travel/travelDetail.php" />
+        <option value="$PROJECT_DIR$/application/views/ordinary/baoxiao/baoxiaoAdd.php" />
+        <option value="$PROJECT_DIR$/application/views/ordinary/baoxiao/baoxiaoDetail.php" />
+        <option value="$PROJECT_DIR$/application/controllers/ordinary/baoxiao.php" />
+        <option value="$PROJECT_DIR$/application/controllers/ordinary/travel.php" />
+        <option value="$PROJECT_DIR$/application/controllers/ordinary/borrow.php" />
+        <option value="$PROJECT_DIR$/application/views/ordinary/laowu/laowuList.php" />
+        <option value="$PROJECT_DIR$/application/controllers/ordinary/laowu.php" />
+        <option value="$PROJECT_DIR$/application/views/manager/check/laowuList.php" />
+        <option value="$PROJECT_DIR$/application/controllers/manager/check.php" />
+      </list>
+    </option>
+  </component>
+  <component name="JsGulpfileManager">
+    <detection-done>true</detection-done>
+  </component>
+  <component name="PhpWorkspaceProjectConfiguration" backward_compatibility_performed="true" />
+  <component name="ProjectFrameBounds">
+    <option name="y" value="24" />
+    <option name="width" value="1366" />
+    <option name="height" value="744" />
+  </component>
+  <component name="ProjectInspectionProfilesVisibleTreeState">
+    <entry key="Project Default">
+      <profile-state>
+        <expanded-state>
+          <State>
+            <id />
+          </State>
+        </expanded-state>
+        <selected-state>
+          <State>
+            <id>Blade files</id>
+          </State>
+        </selected-state>
+      </profile-state>
+    </entry>
+  </component>
+  <component name="ProjectLevelVcsManager" settingsEditedManually="false">
+    <OptionsSetting value="true" id="Add" />
+    <OptionsSetting value="true" id="Remove" />
+    <OptionsSetting value="true" id="Checkout" />
+    <OptionsSetting value="true" id="Update" />
+    <OptionsSetting value="true" id="Status" />
+    <OptionsSetting value="true" id="Edit" />
+    <ConfirmationsSetting value="0" id="Add" />
+    <ConfirmationsSetting value="0" id="Remove" />
+  </component>
+  <component name="ProjectView">
+    <navigator currentView="ProjectPane" proportions="" version="1">
+      <flattenPackages />
+      <showMembers />
+      <showModules />
+      <showLibraryContents />
+      <hideEmptyPackages />
+      <abbreviatePackageNames />
+      <autoscrollToSource />
+      <autoscrollFromSource />
+      <sortByType />
+    </navigator>
+    <panes>
+      <pane id="Scope" />
+      <pane id="ProjectPane">
+        <subPane>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ssyz" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ssyz" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ssyz" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ssyz" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ssyz" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="application" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ssyz" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ssyz" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="application" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="views" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ssyz" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ssyz" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="application" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="views" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ordinary" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ssyz" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ssyz" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="application" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="views" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ordinary" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="laowu" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ssyz" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ssyz" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="application" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="views" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="manager" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ssyz" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ssyz" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="application" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="views" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="manager" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="check" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ssyz" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ssyz" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="application" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="models" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+        </subPane>
+      </pane>
+    </panes>
+  </component>
+  <component name="PropertiesComponent">
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../guojichu" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="options.lastSelected" value="configurable.group.editor" />
+    <property name="options.splitter.main.proportions" value="0.3" />
+    <property name="options.splitter.details.proportions" value="0.2" />
+    <property name="full.screen.before.presentation.mode" value="true" />
+    <property name="FullScreen" value="false" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_flatWidth0" value="91" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_flatOrder0" value="0" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_flatWidth1" value="111" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_flatOrder1" value="1" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_flatWidth2" value="118" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_flatOrder2" value="2" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_flatWidth3" value="1016" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_flatOrder3" value="3" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_treeWidth0" value="91" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_treeOrder0" value="0" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_treeWidth1" value="111" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_treeOrder1" value="1" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_treeWidth2" value="118" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_treeOrder2" value="2" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_treeWidth3" value="1016" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_treeOrder3" value="3" />
+    <property name="recentsLimit" value="5" />
+  </component>
+  <component name="RunManager" selected="PHPUnit.ssyz">
+    <configuration default="false" name="ssyz" type="PHPUnitRunConfigurationType" factoryName="PHPUnit" temporary="true">
+      <TestRunner directory="$PROJECT_DIR$" />
+      <RunnerSettings RunnerId="PhpUnitDebugRunner" />
+      <ConfigurationWrapper RunnerId="PhpUnitDebugRunner" />
+      <method />
+    </configuration>
+    <configuration default="true" type="PHPUnitRunConfigurationType" factoryName="PHPUnit">
+      <TestRunner />
+      <method />
+    </configuration>
+    <configuration default="true" type="PhpLocalRunConfigurationType" factoryName="PHP Console">
+      <method />
+    </configuration>
+    <configuration default="true" type="JavascriptDebugType" factoryName="JavaScript Debug">
+      <method />
+    </configuration>
+    <configuration default="true" type="PhpBehatConfigurationType" factoryName="Behat">
+      <BehatRunner />
+      <method />
+    </configuration>
+    <configuration default="true" type="js.build_tools.gulp" factoryName="Gulp.js">
+      <node-options />
+      <gulpfile />
+      <tasks />
+      <arguments />
+      <pass-parent-envs>true</pass-parent-envs>
+      <envs />
+      <method />
+    </configuration>
+    <configuration default="true" type="PhpUnitRemoteRunConfigurationType" factoryName="PHPUnit on Server">
+      <method />
+    </configuration>
+    <list size="1">
+      <item index="0" class="java.lang.String" itemvalue="PHPUnit.ssyz" />
+    </list>
+    <recent_temporary>
+      <list size="1">
+        <item index="0" class="java.lang.String" itemvalue="PHPUnit.ssyz" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="ShelveChangesManager" show_recycled="false" />
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="4458a0b3-bf35-4704-a504-29a7c58a225e" name="Default" comment="" />
+      <created>1424332222283</created>
+      <option name="number" value="Default" />
+      <updated>1424332222283</updated>
+    </task>
+    <servers />
+  </component>
+  <component name="TodoView" selected-index="0">
+    <todo-panel id="selected-file">
+      <are-packages-shown value="false" />
+      <are-modules-shown value="false" />
+      <flatten-packages value="false" />
+      <is-autoscroll-to-source value="false" />
+    </todo-panel>
+    <todo-panel id="all">
+      <are-packages-shown value="false" />
+      <are-modules-shown value="false" />
+      <flatten-packages value="false" />
+      <is-autoscroll-to-source value="false" />
+    </todo-panel>
+    <todo-panel id="default-changelist">
+      <are-packages-shown value="false" />
+      <are-modules-shown value="false" />
+      <flatten-packages value="false" />
+      <is-autoscroll-to-source value="false" />
+    </todo-panel>
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="0" y="24" width="1366" height="744" extended-state="6" />
+    <editor active="false" />
+    <layout>
+      <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32872504" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32872504" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32872504" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
+      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24980111" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.21449487" sideWeight="0.5" order="1" side_tool="false" content_ui="combo" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="true" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3295129" sideWeight="0.5" order="1" side_tool="true" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32786885" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32935917" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="3" side_tool="false" content_ui="combo" />
+    </layout>
+  </component>
+  <component name="Vcs.Log.UiProperties">
+    <option name="RECENTLY_FILTERED_USER_GROUPS">
+      <collection />
+    </option>
+    <option name="RECENTLY_FILTERED_BRANCH_GROUPS">
+      <collection />
+    </option>
+  </component>
+  <component name="VcsContentAnnotationSettings">
+    <option name="myLimit" value="2678400000" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="myTodoPanelSettings">
+      <TodoPanelSettings />
+    </option>
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="php">
+          <url>file://$PROJECT_DIR$/application/views/ordinary/borrow/baoxiaoDetail.php</url>
+          <line>56</line>
+        </line-breakpoint>
+      </breakpoints>
+      <option name="time" value="3" />
+    </breakpoint-manager>
+    <watches-manager />
+  </component>
+  <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/application/views/ordinary/travel/travelAdd.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-5.3333335" vertical-offset="1026" max-vertical-offset="2934">
+          <caret line="65" column="59" selection-start-line="65" selection-start-column="59" selection-end-line="65" selection-end-column="59" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/system/libraries/Calendar.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="92.0" vertical-offset="2484" max-vertical-offset="8640">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$APPLICATION_HOME_DIR$/plugins/php/lib/php.jar!/com/jetbrains/php/lang/psi/stubs/data/standard_6.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-1.1980033" vertical-offset="810" max-vertical-offset="21582">
+          <caret line="5" column="48" selection-start-line="5" selection-start-column="48" selection-end-line="5" selection-end-column="48" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/index.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="2477" max-vertical-offset="3078">
+          <caret line="159" column="20" selection-start-line="159" selection-start-column="20" selection-end-line="159" selection-end-column="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$APPLICATION_HOME_DIR$/plugins/php/lib/php.jar!/com/jetbrains/php/lang/psi/stubs/data/session.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="1404" max-vertical-offset="7146">
+          <caret line="78" column="9" selection-start-line="78" selection-start-column="9" selection-end-line="78" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/system/libraries/Session.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.46905538" vertical-offset="540" max-vertical-offset="5148">
+          <caret line="46" column="30" selection-start-line="46" selection-start-column="30" selection-end-line="46" selection-end-column="30" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/system/core/CodeIgniter.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.70358306" vertical-offset="432" max-vertical-offset="6966">
+          <caret line="48" column="19" selection-start-line="48" selection-start-column="19" selection-end-line="48" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/libraries/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="641">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/javascript/manager.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="641">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/controllers/index.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="450" max-vertical-offset="2682">
+          <caret line="25" column="40" selection-start-line="25" selection-start-column="32" selection-end-line="25" selection-end-column="40" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/models/m_choice.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-0.0" vertical-offset="198" max-vertical-offset="1566">
+          <caret line="11" column="131" selection-start-line="11" selection-start-column="131" selection-end-line="11" selection-end-column="131" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/views/manager/check/borrowList.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="234" max-vertical-offset="1242">
+          <caret line="13" column="14" selection-start-line="13" selection-start-column="14" selection-end-line="13" selection-end-column="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/views/manager/left.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="108" max-vertical-offset="1476">
+          <caret line="24" column="96" selection-start-line="24" selection-start-column="96" selection-end-line="24" selection-end-column="96" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/javascript/common.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="594" max-vertical-offset="2268">
+          <caret line="36" column="21" selection-start-line="36" selection-start-column="21" selection-end-line="36" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/views/manager/check/baoxiaoList.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="7.740741" vertical-offset="461" max-vertical-offset="1332">
+          <caret line="14" column="41" selection-start-line="14" selection-start-column="14" selection-end-line="14" selection-end-column="41" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/views/manager/check/laowuDetail.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="234" max-vertical-offset="630">
+          <caret line="13" column="17" selection-start-line="13" selection-start-column="17" selection-end-line="13" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/views/manager/check/checkLaowu.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="36" max-vertical-offset="1008">
+          <caret line="2" column="91" selection-start-line="2" selection-start-column="91" selection-end-line="2" selection-end-column="91" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/views/manager/check/checkBorrow.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1008">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/views/manager/check/travelList.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="551" max-vertical-offset="1260">
+          <caret line="46" column="120" selection-start-line="46" selection-start-column="120" selection-end-line="46" selection-end-column="120" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/views/manager/check/travelDetail.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-22.25926" vertical-offset="371" max-vertical-offset="1458">
+          <caret line="54" column="47" selection-start-line="54" selection-start-column="47" selection-end-line="54" selection-end-column="47" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/views/manager/check/check.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="407" max-vertical-offset="1008">
+          <caret line="13" column="21" selection-start-line="13" selection-start-column="21" selection-end-line="13" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/views/manager/check/checkDetailTravel.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-10.0" vertical-offset="0" max-vertical-offset="468">
+          <caret line="15" column="154" selection-start-line="15" selection-start-column="154" selection-end-line="15" selection-end-column="154" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/models/m_travel.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="4012" max-vertical-offset="4626">
+          <caret line="117" column="57" selection-start-line="117" selection-start-column="57" selection-end-line="117" selection-end-column="57" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/views/manager/check/checkTravel.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-1.3333334" vertical-offset="0" max-vertical-offset="1008">
+          <caret line="2" column="97" selection-start-line="2" selection-start-column="86" selection-end-line="2" selection-end-column="97" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/views/manager/check/checkDetail.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-10.0" vertical-offset="0" max-vertical-offset="450">
+          <caret line="15" column="161" selection-start-line="15" selection-start-column="161" selection-end-line="15" selection-end-column="161" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/views/manager/check/travelSearch.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="1343" max-vertical-offset="1944">
+          <caret line="74" column="227" selection-start-line="74" selection-start-column="227" selection-end-line="74" selection-end-column="227" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/views/ordinary/travel/travelList.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="1.1381031" vertical-offset="54" max-vertical-offset="1152">
+          <caret line="41" column="86" selection-start-line="41" selection-start-column="86" selection-end-line="41" selection-end-column="86" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/views/ordinary/borrow/baoxiaoList.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.49084857" vertical-offset="317" max-vertical-offset="936">
+          <caret line="34" column="86" selection-start-line="34" selection-start-column="86" selection-end-line="34" selection-end-column="86" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/views/ordinary/borrow/borrowList.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.4309484" vertical-offset="353" max-vertical-offset="990">
+          <caret line="34" column="24" selection-start-line="34" selection-start-column="24" selection-end-line="34" selection-end-column="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/views/ordinary/baoxiao/baoxiaoList.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.718802" vertical-offset="162" max-vertical-offset="972">
+          <caret line="33" column="61" selection-start-line="33" selection-start-column="28" selection-end-line="33" selection-end-column="61" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/views/manager/check/laowuSearch.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-9.592592" vertical-offset="1217" max-vertical-offset="2088">
+          <caret line="82" column="226" selection-start-line="82" selection-start-column="209" selection-end-line="82" selection-end-column="226" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/views/manager/check/baoxiaoSearch.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.23960066" vertical-offset="0" max-vertical-offset="1980">
+          <caret line="13" column="221" selection-start-line="0" selection-start-column="0" selection-end-line="109" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/views/ordinary/laowu/laowuEdit.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.07154742" vertical-offset="875" max-vertical-offset="1800">
+          <caret line="51" column="9" selection-start-line="51" selection-start-column="9" selection-end-line="51" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/views/manager/main.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.718802" vertical-offset="0" max-vertical-offset="720">
+          <caret line="24" column="11" selection-start-line="24" selection-start-column="11" selection-end-line="24" selection-end-column="11" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/views/common/header.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="954">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/views/ordinary/travel/travelDetail.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.8502496" vertical-offset="983" max-vertical-offset="1764">
+          <caret line="83" column="33" selection-start-line="83" selection-start-column="30" selection-end-line="83" selection-end-column="33" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/views/ordinary/laowu/laowuDetail.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.5091514" vertical-offset="216" max-vertical-offset="954">
+          <caret line="29" column="73" selection-start-line="29" selection-start-column="73" selection-end-line="29" selection-end-column="73" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/views/ordinary/borrow/borrowDetail.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.58069885" vertical-offset="479" max-vertical-offset="1224">
+          <caret line="46" column="17" selection-start-line="42" selection-start-column="8" selection-end-line="46" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/views/ordinary/borrow/baoxiaoDetail.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.37104824" vertical-offset="605" max-vertical-offset="1206">
+          <caret line="46" column="69" selection-start-line="46" selection-start-column="69" selection-end-line="46" selection-end-column="69" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/controllers/ordinary/baoxiao.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="4939" max-vertical-offset="15948">
+          <caret line="296" column="35" selection-start-line="296" selection-start-column="35" selection-end-line="296" selection-end-column="35" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/views/ordinary/baoxiao/baoxiaoDetail.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.33275262" vertical-offset="403" max-vertical-offset="1044">
+          <caret line="33" column="31" selection-start-line="33" selection-start-column="27" selection-end-line="33" selection-end-column="31" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/views/ordinary/baoxiao/baoxiaoAdd.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="659" max-vertical-offset="2016">
+          <caret line="61" column="73" selection-start-line="61" selection-start-column="61" selection-end-line="61" selection-end-column="73" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/models/m_laowu.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="2289" max-vertical-offset="3420">
+          <caret line="138" column="58" selection-start-line="138" selection-start-column="58" selection-end-line="138" selection-end-column="58" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/controllers/ordinary/travel.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="3564" max-vertical-offset="12888">
+          <caret line="213" column="37" selection-start-line="213" selection-start-column="37" selection-end-line="213" selection-end-column="37" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/models/m_baoxiao.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="540" max-vertical-offset="3780">
+          <caret line="45" column="0" selection-start-line="45" selection-start-column="0" selection-end-line="45" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/models/m_borrow.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="5182" max-vertical-offset="5796">
+          <caret line="125" column="9" selection-start-line="125" selection-start-column="9" selection-end-line="125" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/controllers/ordinary/borrow.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="7470" max-vertical-offset="16596">
+          <caret line="431" column="55" selection-start-line="431" selection-start-column="55" selection-end-line="431" selection-end-column="55" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/views/ordinary/laowu/laowuList.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="126" max-vertical-offset="972">
+          <caret line="33" column="25" selection-start-line="33" selection-start-column="25" selection-end-line="33" selection-end-column="25" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/controllers/ordinary/laowu.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="6370" max-vertical-offset="9594">
+          <caret line="373" column="109" selection-start-line="373" selection-start-column="109" selection-end-line="373" selection-end-column="109" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/views/manager/check/laowuList.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="351" max-vertical-offset="1116">
+          <caret line="44" column="38" selection-start-line="44" selection-start-column="38" selection-end-line="44" selection-end-column="38" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/controllers/manager/check.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.31780365" vertical-offset="4615" max-vertical-offset="29844">
+          <caret line="267" column="34" selection-start-line="267" selection-start-column="34" selection-end-line="267" selection-end-column="34" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+  </component>
+</project>

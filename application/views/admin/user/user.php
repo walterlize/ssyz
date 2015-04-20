@@ -23,7 +23,7 @@
                     <td class="td1">
                         <?= $r['subjectUnit'] ?></td>
                     <td class="td3">
-                        <a id="" href="<?= base_url() ?>index.php/admin/user/userDetail/<?= $r['userId'] ?>">详细</a>
+                        <a id="" href="<?= base_url() ?>index.php/admin/user/userDetail/<?= $r['userId'] ?>/<?= $r['roleId']?>">详细</a>
                     </td>
                 </tr>
             <?php endforeach; ?>

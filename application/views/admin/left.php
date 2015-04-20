@@ -15,7 +15,7 @@
                         </ul></li>
                     <li><a href="#" ><span>经费管理</span></a>
                         <ul>
-                         
+
                             <li><a href="<?= base_url(); ?>index.php/admin/money/totalList" target="mainFrame"><span>课题总经费填写</span></a></li>
                             <li><a href="<?= base_url(); ?>index.php/admin/money/yearList/1" target="mainFrame"><span>年度经费填写</span></a></li>
                             <li><a href="<?= base_url(); ?>index.php/admin/money/yearExecutionList/1" target="mainFrame"><span>年度经费执行</span></a></li>
@@ -30,12 +30,14 @@
                             <li><a href="<?= base_url(); ?>index.php/admin/trend/trendList/2" target="mainFrame"><span>项目动态</span></a></li>
                             <li><a href="<?= base_url(); ?>index.php/admin/trend/trendList/3" target="mainFrame"><span>管理办法</span></a></li>
                         </ul></li>
-                    <li><a href="#"><span>项目信息管理</span></a>
+                    <li><a href="#"><span>课题信息管理</span></a>
                         <ul>
-                            <li><a href="<?= base_url(); ?>index.php/admin/project/projectDetail" target="mainFrame"><span>项目简介</span></a></li>
+                            <li><a href="<?= base_url(); ?>index.php/admin/project/projectDetail/1" target="mainFrame"><span>课题简介</span></a></li>
+                            <li><a href="<?= base_url(); ?>index.php/admin/project/projectDetail/2" target="mainFrame"><span>课题管理规范</span></a></li>
                             <li><a href="<?= base_url(); ?>index.php/admin/subject/subjectManage" target="mainFrame"><span>课题管理</span></a></li>
                             <li><a href="<?= base_url(); ?>index.php/admin/database/databaseDetail" target="mainFrame"><span>数据库平台介绍</span></a></li>
-                            <li><a href="<?= base_url(); ?>index.php/admin/expert/expertList" target="mainFrame"><span>项目执行专家组</span></a></li>
+                            <li><a href="<?= base_url(); ?>index.php/admin/expert/expertList" target="mainFrame"><span>课题执行专家组</span></a></li>
+                            <li><a href="<?= base_url(); ?>index.php/admin/manage/manageList" target="mainFrame"><span>课题管理组</span></a></li>
                             <li><a href="<?= base_url(); ?>index.php/admin/contact/contactList" target="mainFrame"><span>联系我们</span></a></li>
                         </ul></li>
                     <li><a href="#"><span>研究成果管理</span></a>
@@ -50,6 +52,11 @@
                             <li><a href="<?= base_url(); ?>index.php/admin/award/awardList" target="mainFrame"><span>报奖材料</span></a></li>
                             <li><a href="<?= base_url(); ?>index.php/admin/demonstration/demonstrationList" target="mainFrame"><span>应用示范</span></a></li>
                             <li><a href="<?= base_url(); ?>index.php/admin/other/otherList" target="mainFrame"><span>其他</span></a></li>
+                        </ul></li>
+                    <li><a href="#"><span>政策规定管理</span></a>
+                        <ul>
+                            <li><a href="<?= base_url(); ?>index.php/admin/zhengce/zhengceList" target="mainFrame"><span>政策规定管理</span></a></li>
+
                         </ul></li>
                     <li><a href="#"><span>用户管理</span></a>
                         <ul>

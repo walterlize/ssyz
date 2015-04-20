@@ -59,7 +59,7 @@ class Expert extends CI_Controller {
         public function expertNew(){
             $this->timeOut();
 
-            $expert->expertId = 0;
+           @$expert->expertId = 0;
             $expert->name = '';
             $expert->type = '';
             $expert->firm = '';

@@ -1,6 +1,6 @@
 <div style="margin-left:20px; margin-right:20px;">
 <br />
-<h3>项目执行专家信息</h3>
+<div class="title_lee">课题执行专家组详情</div>
   <table cellpadding="0" cellspacing="1" class="tablist2">
     <tr>
       <td class="td1" style="width: 111px">姓名</td>

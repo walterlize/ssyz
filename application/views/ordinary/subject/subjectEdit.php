@@ -62,7 +62,7 @@
       	<textarea name="content" id="content" style="visibility:hidden; width:80%;"><?=$content?></textarea>
       </td>
     </tr>
-    <tr>
+    <!--<tr>
       <td class="td1" style="width: 111px"> 课题完成情况</td>
       <td class="td2" >
       	<script type="text/javascript">
@@ -95,7 +95,7 @@
       <td class="td2">
       	<textarea name="remark" cols="50" rows="5" id="remark"><?=$remark?></textarea>
       </td>
-    </tr>
+    </tr>-->
     <tr>
       <td colspan="2" class="td3" align="center">
       	  <input type="submit" name="btnSave" value="保 存" onclick="return check('form1');" id="btnSave" class="input" />

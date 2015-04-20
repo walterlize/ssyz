@@ -3,17 +3,17 @@
     <div class="title_lee">年度经费列表</div>
     <table class="tablist2" cellpadding="0" cellspacing="1" style="width:100%;border-collapse:collapse;" border="1">
         <tr class="HeaderStyle">
-            <th class="td1">全选<input type="checkbox" /></th>
-            <th class="td3">年度</th>
-            <th class="td1">子课题</th>
+            <th class="td1">序号</th>
+             <th class="td1">年度</th>
+            <th class="td1">子课题名称</th>
             <th class="td3">子课题组单位</th>
-            <th class="td1">经费总额(万元)</th>
+            <th class="td1">年度经费(万元)</th>
             <th class="td3">操作</th>
         </tr>
-        <?php if (is_array($money)) foreach ($money as $r): ?>
+        <?php if (is_array($money)) foreach ($money as $key=>$r): ?>
                 <tr class="RowStyle" align="center">
                     <td class="td1">
-                        <input type="checkbox" /></td>
+                        <?=$key+1?></td>
                     <td class="td3"> 
                         <?= $r['year'] ?>年</td>
                     <td class="td1">

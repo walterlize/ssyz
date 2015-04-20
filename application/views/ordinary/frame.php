@@ -3,7 +3,7 @@
 
 <head>
 <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
-<title>优质高效富硒农产品关键技术研究与集成示范研究管理平台</title>
+<title>设施养殖数字化智能管理技术设备研究</title>
 
 </head>
 <frameset rows="87,*,32" id="_top_" name="_top_" frameborder="NO" border="0" framespacing="0">

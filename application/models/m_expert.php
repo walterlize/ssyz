@@ -73,6 +73,8 @@ class m_expert extends CI_Model {
                 return "组长";
             case 'Member':
                 return "成员";
+            case 'Assistance':
+                return "秘书";
         }
     }
 

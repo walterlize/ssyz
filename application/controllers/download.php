@@ -19,12 +19,32 @@ class Download extends CI_Controller {
     // 下载
     function downloadfile() {
         $year = $this->uri->segment(3);
+        $name1 = $this->uri->segment(4);
+        $name = iconv("utf-8", "gbk", $name1);
+        $file_dir = getcwd() . "/upload/$year/";
 
-        $folder = $this->uri->segment(4);
-        $folder = iconv("utf-8", "gbk", $folder);
-        $name = $this->uri->segment(5);
-        $name = iconv("utf-8", "gbk", $name);
-        $file_dir = getcwd() . "/upload/$year/$folder/";
+        if (!file_exists($file_dir . $name)) {
+            Header("Content-type: text/html; charset=utf-8");
+            echo $file_dir . $name . "<br>";
+            echo "文件不存在！";
+            exit;
+        } else {
+            $file = fopen($file_dir . $name, "r");
+            Header("Content-type: application/octet-stream");
+            Header("Accept-Ranges: bytes");
+            Header("Accept-Length: " . filesize($file_dir . $name));
+            Header("Content-Disposition: attachment; filename=" . $name);
+            echo fread($file, filesize($file_dir . $name));
+            fclose($file);
+        }
+    }
+
+    // 下载模板
+    function downloadTemplate() {
+
+        $name1 = $this->uri->segment(4);
+        $name = iconv("utf-8", "gbk", $name1);
+        $file_dir = getcwd() . "/template/";
 
         if (!file_exists($file_dir . $name)) {
             Header("Content-type: text/html; charset=utf-8");

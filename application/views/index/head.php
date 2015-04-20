@@ -5,7 +5,7 @@
         <meta http-equiv=X-UA-Compatible content=IE=EmulateIE7 />
         <title><?= $title ?></title>
         <link href="<?= base_url(); ?>css/index.css" rel="stylesheet" type="text/css" />
-     
+
         <script src="<?= base_url(); ?>javascript/jquery.js" type="text/javascript"></script>
         <script src="<?= base_url(); ?>javascript/JQuery.MenuTree.js" type="text/javascript"></script>
         <script src="<?= base_url(); ?>javascript/update8.js" type="text/javascript"></script>
@@ -24,12 +24,13 @@
             <div align="center">
                 <div class="daohang" id="allwd">
                     <div class="daohangword"><a href="<?= base_url() ?>">首页</a></div>
-                    <div class="daohangword"><a href="<?= base_url() ?>index.php/outside/subject/project">课题简介</a></div>
-                    <div class="daohangword"><a href="<?= base_url() ?>index.php/outside/subject/index">课题设置</a></div>
-                    <div class="daohangword"><a href="<?= base_url() ?>index.php/outside/paper/paperList">研究成果</a></div>
-                    <div class="daohangword"><a href="<?= base_url() ?>index.php/outside/trend/index/1">重要公告</a></div>
-                    <div class="daohangword"><a href="<?= base_url() ?>index.php/outside/contact/index">联系我们</a></div>
+                    <div class="daohangword"><a href="<?= base_url() ?>index.php/head/subject/project/1">课题简介</a></div>
+                    <div class="daohangword"><a href="<?= base_url() ?>index.php/head/subject/project/2">课题设置</a></div>
+                    <div class="daohangword"><a href="#">研究成果</a></div>
+                    <div class="daohangword"><a href="#">文件下载</a></div>
+                    <div class="daohangword"><a href="mailto:lize@cau.edu.cn">联系我们</a></div>
                 </div>
             </div>
         </div>
+
 

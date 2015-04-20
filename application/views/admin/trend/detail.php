@@ -8,7 +8,7 @@
     	<TD align="center" style="font-family:宋体;font-size:14pt;line-height:20pt;color:#000"><B><?=$trend->trendName?></B></TD>
 	</TR>
     <TR>
-    	<TD align="right"><HR size="1" color="#CC0066"><FONT color="black" style="font-size:10pt">作者:&nbsp;<?=$trend->trendAuthor?>&nbsp;时间:<?=$trend->time?></FONT></TD>
+    	<TD align="right"><HR size="1" color="#006666"><FONT color="black" style="font-size:10pt">作者:&nbsp;<?=$trend->trendAuthor?>&nbsp;时间:<?=$trend->time?></FONT></TD>
 	</TR>
 </TABLE>
 <div>

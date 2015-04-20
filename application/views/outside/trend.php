@@ -4,10 +4,10 @@
 
 
         <div>
-            <td align="center" style="font-family:宋体;font-size:14pt;line-height:20pt;color:#000"><b><font size="4px"><?= $trendName ?></font></b></td>
+            <td align="center" style="font-family:宋体;font-size:14pt;line-height:20pt;color:#000"><b><font size="5px"><?= $trendName ?></font></b></td>
         </div>
         <div>
-            <td align="right"><HR size="1" color="#CC0066"><FONT color="black" style="font-size:10pt">作者:&nbsp;<?= $trendAuthor ?>&nbsp;时间:<?= $time ?> &nbsp;&nbsp;阅读次数:<?= $linkNum ?></FONT></TD>
+            <td align="right"><HR size="1" color="#006666"><FONT color="black" style="font-size:10pt">作者:&nbsp;<?= $trendAuthor ?>&nbsp;时间:<?= $time ?> &nbsp;&nbsp;阅读次数:<?= $linkNum ?></FONT></TD>
             <td>
         </div>
 

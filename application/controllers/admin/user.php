@@ -17,11 +17,9 @@ class User extends CI_Controller {
 
     public function userList() {
         $this->timeOut();
-
         $this->load->model('m_user');
         $num = $this->m_user->getNum(array());
         $offset = $this->uri->segment(4);
-
         $data['user'] = $this->getUsers($offset);
         $config['base_url'] = base_url() . 'index.php/admin/user/userList';
         $config['total_rows'] = $num;
@@ -38,16 +36,16 @@ class User extends CI_Controller {
     public function userDetail() {
         $this->timeOut();
         $id = $this->uri->segment(4);
-        $data = $this->getUser($id);
-        $type = $data->type;
-        if ($type == 'super') {
+        $data['user'] = $this->getUser($id);
+        $type = $this->uri->segment(5);
+        if ($type == '1') {
             $show = 'display:none';
         } else {
             $show = 'display';
         }
-
+        $data['show'] = $show;
         $this->load->view('common/header3');
-        $this->load->view('admin/user/userDetail', $data,$show);
+        $this->load->view('admin/user/userDetail', $data);
         $this->load->view('common/footer');
     }
 
@@ -148,8 +146,14 @@ class User extends CI_Controller {
 
         $this->load->model('m_user');
         $id = $this->m_user->saveInfo();
-        $data = $this->getUser($id);
-
+        $data['user'] = $this->getUser($id);
+        $type = $this->uri->segment(5);
+        if ($type == '1') {
+            $show = 'display:none';
+        } else {
+            $show = 'display';
+        }
+        $data['show']=$show;
         $this->load->view('common/header3');
         $this->load->view('admin/user/userDetail', $data);
         $this->load->view('common/footer');

@@ -8,20 +8,20 @@
                         <div class="yonghudown" style="<?= $form ?>">
                             <form name="form1" method="post" action="<?= base_url() ?>index.php/index/login" id="form1">
                                 <div class="biaodan">
-                                    <input name="userName" type="text"  size="16" />
+                                    <input name="userName" type="text"  size="8" />
                                 </div>
                                 <div class="biaodan2">
-                                    <input type="password" name="password" size="16" />
+                                    <input type="password" name="password" size="8" />
                                 </div>
                                 <div class="up-main-wd1"><input type="submit" value="提交" class="input2"/></div>
                                 <div class="up-main-kong"></div>
-                                <div class="up-main-wd2"><input type="button" value="找回密码" class="input2"/></div>
+                                <div class="up-main-wd2"><input type="button" value="遗忘密码"  onclick="window.location.href = '<?=  base_url()?>index.php/password';" class="input2"/></div>
                             </form>
                         </div>
-                        <div class="yonghudown2" style="<?= $welcome ?>">欢迎你，<?php
-                            if (isset($username))
-                                echo $username;
-                            ?><br /><br/><br/><a class="titleLink" href="<?= base_url() ?>index.php/index/getin/<?= $userId ?>">登陆</a>&nbsp; &nbsp;&nbsp; &nbsp; &nbsp;<a class="titleLink" href="<?= base_url() ?>index.php/index/logOut">退出</a></div>
+                        <div class="yonghudown2" style="<?= $welcome ?>">欢迎您，<?php
+                            if (isset($userName))
+                                echo $userName;
+                            ?><br /><br/><br/><a class="titleLink"  href="<?= base_url() ?>index.php/index/getin/<?= $userId ?>">登陆</a>&nbsp; &nbsp;&nbsp; &nbsp; &nbsp;<a class="titleLink" href="<?= base_url() ?>index.php/index/logOut">退出</a></div>
 
                     </div>
                 </div>
@@ -67,13 +67,13 @@
                 </div>
 
                 <div class="mi-up3" id="mi-up3">
-                    <span class="more"><a class="titleLink" href="<?= base_url() ?>index.php/outside/trend/index/1">&gt;&gt;more </a>&nbsp; &nbsp; &nbsp; </span>
+
                     <div class="allword">
                         <?php
                         if (is_array($bullentins))
                             foreach ($bullentins as $r):
                                 ?>
-                                <li><a class="titleLink" href="<?= base_url() ?>index.php/outside/trend/detail/<?= $r->trendId ?>" target="_blank" title="<?= $r->trendName ?>">
+                                <li><a class="titleLink" href="<?= base_url() ?>index.php/head/trend/detail/<?= $r->trendId ?>" target="_blank" title="<?= $r->trendName ?>">
                                         &middot;<?php
                                         if (strLength($r->trendName, $charset = 'utf-8') > 18) {
                                             echo utf8Substr($r->trendName, $from = 0, 18);
@@ -85,7 +85,7 @@
                                 </li>
                             <?php endforeach; ?>	
                     </div>
-
+                    <div class="more"><a  href="<?= base_url() ?>index.php/head/trend/index/1">&gt;&gt;... </a>&nbsp; &nbsp; &nbsp; </div>
                 </div>
             </div>
 
@@ -107,7 +107,7 @@
                         if (is_array($instruments))
                             foreach ($instruments as $r):
                                 ?>
-                                <li><a class="titleLink" href="<?= base_url() ?>index.php/outside/trend/detail/<?= $r->trendId ?>" target="_blank" title="<?= $r->trendName ?>">
+                                <li><a class="titleLink" href="<?= base_url() ?>index.php/head/trend/detail/<?= $r->trendId ?>" target="_blank" title="<?= $r->trendName ?>">
                                         &middot;<?php
                                         if (strLength($r->trendName, $charset = 'utf-8') > 18) {
                                             echo utf8Substr($r->trendName, $from = 0, 18);
@@ -119,7 +119,7 @@
                                 </li>
                             <?php endforeach; ?>
                     </div>
-                    <div class="more"><a class="titleLink" href="<?= base_url() ?>index.php/outside/trend/index/2">&gt;&gt;more </a>&nbsp; &nbsp; &nbsp; </div>
+                    <div class="more"><a c href="<?= base_url() ?>index.php/head/trend/index/2">&gt;&gt;... </a>&nbsp; &nbsp; &nbsp; </div>
                 </div>
 
                 <div class="guanli">
@@ -128,7 +128,7 @@
                         if (is_array($trends))
                             foreach ($trends as $r):
                                 ?>
-                                <li><a class="titleLink" href="<?= base_url() ?>index.php/outside/trend/detail/<?= $r->trendId ?>" target="_blank" title="<?= $r->trendName ?>">
+                                <li><a  href="<?= base_url() ?>index.php/head/trend/detail/<?= $r->trendId ?>" target="_blank" title="<?= $r->trendName ?>">
                                         &middot;<?php
                                         if (strLength($r->trendName, $charset = 'utf-8') > 18) {
                                             echo utf8Substr($r->trendName, $from = 0, 18);
@@ -140,7 +140,7 @@
                                 </li>
                             <?php endforeach; ?>
                     </div>
-                    <div class="more"><a class="titleLink" href="<?= base_url() ?>index.php/outside/trend/index/3">&gt;&gt;more</a> &nbsp; &nbsp; &nbsp; &nbsp; </div>
+                    <div class="more"><a  href="<?= base_url() ?>index.php/head/trend/index/3">&gt;&gt;...</a> &nbsp; &nbsp; &nbsp; &nbsp; </div>
                 </div>
             </div>
         </div>

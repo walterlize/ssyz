@@ -7,6 +7,8 @@ body {
     background-color: #E3E6D6;
     background-position: center center;
     background-repeat: repeat-y;
+    height:100%;
+    width: 100%;
 
 }
 #allwd a:link {
@@ -67,12 +69,12 @@ a:hover { text-decoration: none; color:#33CC99; font-size:13px; }
     margin: 0px;
     padding: 0px;
     width: 1000px;
-    height: 528px;
+    height: 80%;
     text-align:center;
     margin-left:auto; 
     margin-right:auto;
-    //background-color: #FFF;
-    background-image: url(../images/index/body.jpg);
+    background-color: #FFF;
+    // background-image: url(../images/index/body.jpg);
 }
 .content {
     font-family: "宋体";
@@ -81,14 +83,16 @@ a:hover { text-decoration: none; color:#33CC99; font-size:13px; }
     margin: 20px;
     padding: 0px;
     width: 900px;
+    height: 85%;
     background-color: #ffffff;
     text-align:left;
     margin-left:auto; 
     margin-right:auto;
+    margin-top:25px;
 
 }
 .content .content_1 {
- padding: 10px 15px 10px 15px;
+    padding: 10px 15px 10px 15px;
 
 }
 
@@ -101,7 +105,7 @@ a:hover { text-decoration: none; color:#33CC99; font-size:13px; }
 .context .context_content{
     padding: 20px 50px 0 50px;
     width: 900px;
-    height: 400px;
+    height:80%;
     text-align:left
 }
 .context .context_content_2{

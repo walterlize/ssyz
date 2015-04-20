@@ -19,9 +19,9 @@ a:link { text-decoration:none;
 
 <body>
 	<div class="top_wrap">
-            <div class="logo"></div>
+            <div class="logo"><a target="_top" href="<?=  base_url()?>"></a></div>
 
-            <div class="welcome">您好！<?=$name?>，欢迎登录!</div>
+            <div class="welcome">您好，<?=$name?>！欢迎登录!</div>
             <div class="function">
                 <a class="header_logout" href="<?=base_url()?>" target="_top">首&nbsp;&nbsp;页</a>
                 <a class="header_modify" href="<?=base_url()?>index.php/user/password" target="mainFrame" >修改密码</a>

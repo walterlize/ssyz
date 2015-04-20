@@ -70,7 +70,7 @@ class Trend extends CI_Controller {
         }
 
         $this->load->view('common/header3');
-        $this->load->view('admin/trend/detail', $data);
+        $this->load->view('admin/trend/trendDetail', $data);
         $this->load->view('common/footer');
     }
 

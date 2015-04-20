@@ -20,7 +20,10 @@ class m_yearMoney extends CI_Model {
     var $information = '';
     var $service = '';
     var $consultative = '';
+    var $other = '';
     var $management = '';
+    var $indirect_cost = '';
+    var $ji_xiao = '';
     var $equipmentCaption = '';
     var $buyEquipmentCaption = '';
     var $tryEquipmentCaption = '';
@@ -35,6 +38,7 @@ class m_yearMoney extends CI_Model {
     var $serviceCaption = '';
     var $consultativeCaption = '';
     var $managementCaption = '';
+ 
     var $total = '';
 
     function saveInfo() {
@@ -56,6 +60,9 @@ class m_yearMoney extends CI_Model {
         $this->service = $this->input->post('service');
         $this->consultative = $this->input->post('consultative');
         $this->management = $this->input->post('management');
+        $this->other = $this->input->post('other');
+        $this->ji_xiao = $this->input->post('ji_xiao');
+        $this->indirect_cost = $this->input->post('indirect_cost');
         $this->equipmentCaption = $this->input->post('equipmentCaption');
         $this->buyEquipmentCaption = $this->input->post('buyEquipmentCaption');
         $this->tryEquipmentCaption = $this->input->post('tryEquipmentCaption');
@@ -70,6 +77,9 @@ class m_yearMoney extends CI_Model {
         $this->serviceCaption = $this->input->post('serviceCaption');
         $this->consultativeCaption = $this->input->post('consultativeCaption');
         $this->managementCaption = $this->input->post('managementCaption');
+        $this->otherCaption = $this->input->post('otherCaption');
+        $this->ji_xiaoCaption = $this->input->post('ji_xiaoCaption');
+        $this->indirectCaption = $this->input->post('indirectCaption');
         $this->total = $this->input->post('total');
         $id = $this->yearMoneyId;
         if ($id == 0) {
@@ -88,7 +98,7 @@ class m_yearMoney extends CI_Model {
 
     function getYearMoney($array) {
         $this->db->select();
-        $this->db->from('ws_money_year');
+        $this->db->from('lz_money_year');
         $this->db->where($array);
         $this->db->order_by("year", "asc");
         $q = $this->db->get();
@@ -97,7 +107,7 @@ class m_yearMoney extends CI_Model {
 
     function getYearMoney2($id) {
         $this->db->select();
-        $this->db->from('ws_money_year');
+        $this->db->from('lz_money_year');
         $this->db->where('subjectId', $id);
         $this->db->order_by("year", "asc");
         $q = $this->db->get();
@@ -106,7 +116,7 @@ class m_yearMoney extends CI_Model {
 
     function getYearMoney1($id) {
         $this->db->select();
-        $this->db->from('ws_money_year');
+        $this->db->from('lz_money_year');
         $this->db->where("yearMoneyId", $id);
         $this->db->order_by("year", "asc");
         $q = $this->db->get();
@@ -115,7 +125,7 @@ class m_yearMoney extends CI_Model {
 
     function getOneInfo($id) {
         $this->db->select();
-        $this->db->from('ws_money_year');
+        $this->db->from('lz_money_year');
         $this->db->where('yearMoneyId', $id);
         $q = $this->db->get();
         return $q->result();
@@ -123,7 +133,7 @@ class m_yearMoney extends CI_Model {
 
     function getOneInfo1($id) {
         $this->db->select();
-        $this->db->from('ws_money_year');
+        $this->db->from('lz_money_year');
         $this->db->where('subjectId', $id);
         $q = $this->db->get();
         return $q->result();
@@ -134,7 +144,7 @@ class m_yearMoney extends CI_Model {
         $this->db->where($array);
         $this->db->order_by("year", "desc");
         $this->db->order_by("yearMoneyId", "desc");
-        $q = $this->db->get('ws_money_year', $per_page, $offset);
+        $q = $this->db->get('lz_money_year', $per_page, $offset);
         return $q->result();
     }
 
@@ -143,7 +153,7 @@ class m_yearMoney extends CI_Model {
         $this->db->where($array);
         $this->db->order_by("year", "desc");
         $this->db->order_by("yearMoneyId", "desc");
-        $q = $this->db->get('ws_money_year', $per_page);
+        $q = $this->db->get('lz_money_year', $per_page);
         return $q->result();
     }
 
@@ -164,7 +174,7 @@ class m_yearMoney extends CI_Model {
       $this->db->select_sum('management');
       $this->db->select_sum('total');
 
-      $this->db->from('ws_money_year');
+      $this->db->from('lz_money_year');
       $this->db->where($array);
       $this->db->group_by($array1);
       $q = $this->db->get();
@@ -193,7 +203,7 @@ class m_yearMoney extends CI_Model {
         $this->db->select('subjectName');
         $this->db->select('year');
 
-        $this->db->from('ws_money_year');
+        $this->db->from('lz_money_year');
 
         $this->db->where($array);
         $this->db->group_by($array1);

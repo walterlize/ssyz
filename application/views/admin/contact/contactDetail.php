@@ -1,6 +1,6 @@
 <div style="margin-left:20px; margin-right:20px;">
 <br />
-<h3>联系我们信息</h3>
+<div class="title_lee">联系我们详情</div>
   <table cellpadding="0" cellspacing="1" class="tablist2">
     <tr>
       <td class="td1" style="width: 111px">负责人姓名</td>

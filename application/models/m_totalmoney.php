@@ -76,7 +76,6 @@ class m_totalmoney extends CI_Model {
         return $q->result();
     }
 
-
     function getOneInfo1($subjectId) {
         $this->db->select();
         $this->db->from('lz_money_total');
@@ -85,10 +84,26 @@ class m_totalmoney extends CI_Model {
         return $q->result();
     }
 
+    function getOneInfo_1($id) {
+        $this->db->select();
+        $this->db->from('lz_money_total');
+        $this->db->where('totalMoneyId', $id);
+        $q = $this->db->get();
+        return $q->result();
+    }
+
+    function getOneInfo3($array) {
+        $this->db->select();
+        $this->db->from('lz_money_total');
+        $this->db->where($array);
+        $q = $this->db->get();
+        return $q->result();
+    }
+
     function getTotalMoneyS($array, $per_page, $offset) {
         $this->db->select();
         $this->db->where($array);
-        // $this->db->order_by("year", "desc");
+        $this->db->order_by("totalMoneyId", "asc");
 
         $q = $this->db->get('lz_money_total', $per_page, $offset);
         return $q->result();
@@ -137,6 +152,12 @@ class m_totalmoney extends CI_Model {
 
     function getNum($array) {
         $this->db->from('totalmoney');
+        $this->db->where($array);
+        return $this->db->count_all_results();
+    }
+
+    function getNum_zi($array) {
+        $this->db->from('lz_money_total');
         $this->db->where($array);
         return $this->db->count_all_results();
     }

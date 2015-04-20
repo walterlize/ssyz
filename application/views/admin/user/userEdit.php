@@ -1,7 +1,7 @@
 <div style="margin-left:20px; margin-right:20px">
     <br />
     <div class="title_lee">用户信息编辑</div>
-    <form name="form1" method="post" action="<?= base_url() ?>index.php/admin/user/save" id="form1">
+    <form name="form1" method="post" action="<?= base_url() ?>index.php/admin/user/save/<?= $user->roleId ?>" id="form1">
         <input type="hidden" value="<?= $user->userId ?>" name="userId" id="userId" />
         <input type="hidden" value="<?= $user->state ?>" name="state" id="state" />
         <table cellpadding="0" cellspacing="1" class="tablist2">
@@ -11,9 +11,22 @@
                     <font color="red">*</font><span id="userNameMsg" class="MsgHide">用户名不能为空！</span></td>
             </tr>
             <tr>
-                <td class="td1" style="width: 111px">密码</td>
-                <td class="td2" ><input name="password" type="text" id="password" value="<?= $user->password ?>" size="50"  isRequired="true" />
-                    <font color="red">*</font><span id="passwordMsg" class="MsgHide">密码不能为空！</span></td>
+                <td class="td1" style="width: 179px">
+                    密码</td>
+                <td class="td2">
+                    <input name="password" size="50" type="password" value="" id="password" isRequired="true" onblur="valid_password('password', 'passValid')" />
+                    <font color="red">*</font> <span id="passwordMsg" class="MsgHide">新密码不能为空！</span>
+                    <span id="passValid">请使用字母和数字的组合，长度在6-20之间</span>
+                </td>
+            </tr>
+            <tr>
+                <td class="td1" style="width: 179px">
+                    再次输入密码</td>
+                <td class="td2">
+                    <input name="password2"size="50"  type="password" value="" id="password2" isrequired="true"  onblur="check_next_password('password', 'password2', 'pass2Valid')"/>
+                    <font color="red">*</font> <span id="password2Msg" class="MsgHide">再次输入密码不能为空！</span>
+                    <span id="pass2Valid">请使用字母和数字的组合，长度在6-20之间</span>
+                </td>
             </tr>
             <tr>
                 <td class="td1" style="width: 111px">用户类别</td>

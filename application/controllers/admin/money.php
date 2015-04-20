@@ -20,19 +20,15 @@ class Money extends CI_Controller {
     // 课题总经费管理页面
     public function totalList() {
         $this->timeOut();
-
-        $array = array();
-
-        $num = $this->m_totalmoney->getNum($array);
+        $array = array('type' => 'Subject');
+        $num = $this->m_totalmoney->getNum_zi($array);
         $offset = $this->uri->segment(4);
-
         $data['money'] = $this->getTotalMoneyS($array, $offset);
         $config['base_url'] = base_url() . 'index.php/admin/money/totalList';
         $config['total_rows'] = $num;
         $config['uri_segment'] = 3;
         $this->pagination->initialize($config);
         $data['page'] = $this->pagination->create_links();
-
         $this->load->view('common/header3');
         $this->load->view('admin/money/totalList', $data);
         $this->load->view('common/footer');
@@ -76,48 +72,10 @@ class Money extends CI_Controller {
         $id = $this->uri->segment(4);
         $data['money'] = $this->getYearMoney($id);
         $subjectId = $data['money']->subjectId;
-        if ($subjectId) {
-            echo "$subjectId";
-        } else {
-            show_404();
-        }
-        $data['upload'] = $this->m_upload->get_info1($id);
         $array1 = array('moneyId' => $id, 'subjectId' => $subjectId);
-        if ($data['upload']) {
-
-
-            $data['moneyId'] = $id;
-            $data['subjectId'] = $subjectId;
-            $data['type'] = 'month';
-
-            $data['show4'] = 'display';
-            $data['isuploaded'] = "<br /><font color='ff0000'>(已上传)</font>";
-            $result = $this->get_upload_info($array1);
-            $year = date('Ym');
-
-            $data['url'] = base_url() . 'index.php/download/downloadfile/' . $year . '/' . $result->type . '_' . $subjectId .
-                    '/' . $result->upload_name;
-            $data['uploadId'] = $result->uploadId;
-        } else {
-            $data['show4'] = 'display:none';
-            $data['uploadId'] = '';
-            $data['type'] = 'month';
-            $data['subjectId'] = $subjectId;
-            $data['isuploaded'] = "<br /><font color='ff0000'>(未上传任何文件！)</font>";
-        }
-
-
-
-        $data['uploadId'] = '';
-        //$data['state'] = '';
-        $data['type'] = 'month';
-        $data['subjectId'] = $subjectId;
-
-
-
         $this->load->view('common/header3');
         $this->load->view('admin/money/yearDetail', $data);
-        $this->load->view('admin/upload/uploadYear', $data);
+        //$this->load->view('admin/upload/uploadYear', $data);
         $this->load->view('common/footer');
     }
 
@@ -212,7 +170,8 @@ class Money extends CI_Controller {
     // 年度经费详细信息新增页面
     public function yearMoneyNew() {
         $this->timeOut();
-
+        $subjectId = $this->uri->segment(4);
+        $array = array('subjectId' => $subjectId);
         @$money->yearMoneyId = 0;
         $money->type = '';
         $money->subjectId = '';
@@ -235,7 +194,7 @@ class Money extends CI_Controller {
         $money->other = '';
         $money->indirect_cost = '';
         $money->ji_xiao = '';
-         $money->directCaption = '';
+        $money->directCaption = '';
         $money->equipmentCaption = '';
         $money->buyEquipmentCaption = '';
         $money->tryEquipmentCaption = '';
@@ -256,11 +215,78 @@ class Money extends CI_Controller {
         $money->total = '';
         $money->totalgive = '';
         $data['money'] = $money;
-        $data['subject'] = $this->getSubjects1();
-
+        $data['subject'] = $this->getSubjects2();
+        $data['moneyTotal'] = $this->getTotalMoney3($array);
         $this->load->view('common/header3');
+        $this->load->view('admin/money/changeSubject', $data);
         $this->load->view('admin/money/yearEdit', $data);
         $this->load->view('common/footer');
+    }
+
+    // 变换显示
+    function changeSubject() {
+        extract($_REQUEST);
+        if (strcmp($subjectId, '1') == 0) {
+            $array = array('subjectId' => '1');
+        } else {
+            if (strcmp($subjectId, '2') == 0) {
+                $array = array('subjectId' => '2');
+            } else {
+                if (strcmp($subjectId, '3') == 0) {
+                    $array = array('subjectId' => '3');
+                } else {
+                    $array = array('');
+                }
+            }
+        }
+        @$money->yearMoneyId = '';
+        $money->subjectId = '';
+        $money->startDate = '';
+        $money->endDate = '';
+        $money->direct_cost = '';
+        $money->equipment = '';
+        $money->buyEquipment = '';
+        $money->tryEquipment = '';
+        $money->alterEquipment = '';
+        $money->material = '';
+        $money->experiment = '';
+        $money->fuel = '';
+        $money->travel = '';
+        $money->conference = '';
+        $money->international = '';
+        $money->information = '';
+        $money->service = '';
+        $money->consultative = '';
+        $money->management = '';
+        $money->other = '';
+        $money->indirect_cost = '';
+        $money->ji_xiao = '';
+        $money->equipmentCaption = '';
+        $money->buyEquipmentCaption = '';
+        $money->tryEquipmentCaption = '';
+        $money->alterEquipmentCaption = '';
+        $money->materialCaption = '';
+        $money->experimentCaption = '';
+        $money->fuelCaption = '';
+        $money->travelCaption = '';
+        $money->conferenceCaption = '';
+        $money->internationalCaption = '';
+        $money->informationCaption = '';
+        $money->serviceCaption = '';
+        $money->consultativeCaption = '';
+        $money->managementCaption = '';
+        $money->otherCaption = '';
+        $money->indirectCaption = '';
+        $money->directCaption = '';
+        $money->ji_xiaoCaption = '';
+        $money->total = '';
+        $data['money'] = $money;
+        $data['moneyTotal'] = $this->getTotalMoney3($array);
+        $data['money'] = $money;
+        $data['subject'] = $this->getSubjects2();
+
+
+        $this->load->view('admin/money/yearEdit', $data);
     }
 
     public function getEmptyYearMoney() {
@@ -288,19 +314,15 @@ class Money extends CI_Controller {
     // 保存年度经费信息
     public function yearMoneySave() {
         $this->timeOut();
-
         $id = $this->m_yearmoney->saveInfo();
-
         $data['subject'] = $this->getSubjects();
         $data['yearmoney'] = $this->getYearMoney($id);
         $subjectId = $data['yearmoney']->subjectId;
         $data['totalmoney'] = $this->getTotalMoney2($subjectId);
         $total = $data['totalmoney']->total;
         $array = array('totalgive' => $total);
-
         $this->m_yearmoney->saveInfo1($subjectId, $array);
         $data['money'] = $this->getYearMoney($id);
-
         $this->load->view('common/header3');
         $this->load->view('admin/money/yearDetail', $data);
         $this->load->view('common/footer');
@@ -707,6 +729,15 @@ class Money extends CI_Controller {
     }
 
     // 在分配完总课题经费之后获取年度课题信息
+    public function getSubjects2() {
+        $this->timeOut();
+        $this->load->model('m_subject');
+        $arr = array('type' => 'Subject');
+        $result = $this->m_subject->getSubject3($arr);
+        return $result;
+    }
+
+    // 在分配完总课题经费之后获取年度课题信息
     public function getSubjects1() {
         $this->timeOut();
         $this->load->model('m_subject');
@@ -815,6 +846,19 @@ class Money extends CI_Controller {
         $this->load->model('m_totalmoney');
         $data = array();
         $result = $this->m_totalmoney->getOneInfo1($id);
+
+        foreach ($result as $r) {
+            $data = $r;
+        }
+        return $data;
+    }
+
+    // 分页获取课题总经费信息
+    public function getTotalMoney3($array) {
+        $this->timeOut();
+        $this->load->model('m_totalmoney');
+        $data = array();
+        $result = $this->m_totalmoney->getOneInfo3($array);
 
         foreach ($result as $r) {
             $data = $r;
@@ -1311,11 +1355,14 @@ class Money extends CI_Controller {
         }
     }
 
-    function get_year() {
-        $this->load->model('common');
-        $data = $this->common->getYear();
-        return $data;
-    }
+     function get_year() {
+      $this->load->model('common');
+      $data = $this->common->getYear();
+      return $data;
+      }
+     
+
+  
 
     function get_month() {
         $this->load->model('common');

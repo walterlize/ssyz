@@ -1,3 +1,4 @@
+<div id="money_result">
 <div style="margin-left:20px; margin-right:20px">
     <br />
     <h3 align="center"><font color="#003366" size="5px">课题总经费预算表</font></h3>
@@ -35,7 +36,7 @@
                 <td class="td1">经费总额(万元)</td>
                 <td class="td1">预算说明</td>
             </tr>
-                <tr>
+            <tr>
                 <td class="td1"><div align="left" >（一）直接使用</div></td>
                 <td class="td3"><input type="text" name="direct_cost" id="direct_cost" value="<?= $money->direct_cost ?>" /></td>
                 <td class="td3"><input type="text" name="directCaption" id="directCaption" value="<?= $money->directCaption ?>" size="50" /></td>
@@ -115,7 +116,7 @@
                 <td class="td3"><input type="text" name="indirect_cost" id="indirect_cost" value="<?= $money->indirect_cost ?>" /></td>
                 <td class="td3"><input type="text" name="indirectCaption" id="indirectCaption" value="<?= $money->indirectCaption ?>" size="50" /></td>
             </tr>
-             <tr>
+            <tr>
                 <td class="td1"><div align="left">其中：绩效支出</div></td>
                 <td class="td3"><input type="text" name="ji_xiao" id="management" value="<?= $money->ji_xiao ?>" /></td>
                 <td class="td3"><input type="text" name="ji_xiaoCaption" id="ji_xiaoCaption" value="<?= $money->ji_xiaoCaption ?>" size="50" /></td>
@@ -131,3 +132,4 @@
         </table>
     </form>
 </div>
+    </div>

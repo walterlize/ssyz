@@ -1,6 +1,6 @@
-<div style="margin-left:20px; margin-right:20px; width:600px">
+<div style="margin-left:20px; margin-right:20px; width:70%">
 <br />
-<h3>更改密码</h3>
+<div class="title_lee">更改密码</div>
 <form name="form1" method="post" action="<?=base_url()?>index.php/user/changePassword" id="form1">
 <table cellpadding="0" cellspacing="1" class="tablist2">
         <tr>

@@ -4,6 +4,7 @@ class m_projectIntroduce extends CI_Model{
     var $id = '';
     var $content = '';
 
+
     function saveInfo(){
         $this->id = $this->input->post('id');
         $this->content = $this->input->post('content');
@@ -34,12 +35,13 @@ class m_projectIntroduce extends CI_Model{
         return $q->result();
     }
 
-    function getProjectIntroduces(){
-        $this->db->select();
-        $this->db->from('projectintroduce');
-        $q = $this->db->get();
-        return $q->result();
-    }
+//    function getProjectIntroduces($type){
+//        $this->db->select();
+//        $this->db->from('projectintroduce');
+//        $this->db->where('type',  $type);
+//        $q = $this->db->get();
+//        return $q->result();
+//    }
 
     function getNum(){
         $this->db->from('projectintroduce');

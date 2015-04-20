@@ -133,7 +133,7 @@ ul, li
     text-align: center;
     font-size: 14px;
     font-weight: bold;
- 
+
 }
 .tablist2 .td1
 {
@@ -141,7 +141,7 @@ ul, li
     background: #ebf7ff;
     text-align: center;
     white-space: nowrap;
-   
+
 }
 .tablist2 .td2
 {
@@ -149,7 +149,7 @@ ul, li
     text-align: left;
     background: #fff;
     padding: 5px;
- 
+
 }
 .tablist2 .td3
 {
@@ -165,9 +165,16 @@ ul, li
     text-align: right;
     background: #fff;
     padding: 5px;
- 
-}
 
+}
+.tablist2 .td5
+{
+    height: 40px;
+    text-align: center;
+    background: #fff;
+    padding: 5px;
+
+}
 a:link
 {
     color: #2f4e9d;
@@ -400,6 +407,7 @@ a:active
     font-weight: bold;
     font-size: 25px;
     color: #3A6EA5;
+    // border-bottom: 1px #b2dfee solid;
     text-align: center;
 
 }
@@ -414,4 +422,32 @@ a:active
 {
     width: 50%;
     padding:15px 20px 5px auto;
+}
+.select_head
+{
+    height: 30px;
+    width: 100%;
+    margin: 15px 50px 5px  10px;
+
+}
+
+.footer {
+    clear: both;
+    color: #585b5d;
+    font-family: Arial,Helvetica,sans-serif;
+    font-size: 15px;
+    height: 15px;
+   // margin: 7px 0px 1px 0px;
+    margin-bottom: 1px;
+    text-align: center;
+ 
+}
+.footer .line {
+    border-bottom: 1px solid #ccc;
+    line-height: 1px;
+    overflow: hidden;
+    width: 100%;
+    background: none repeat scroll 0 0 #a0d1e9;
+    height: 5px;
+    margin-bottom: 3px;
 }

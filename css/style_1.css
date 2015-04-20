@@ -1,0 +1,372 @@
+body
+{
+	margin: 0 auto;
+	font-size: 12px;
+	background-color:#FFF;
+}
+ul, li
+{
+	padding: 0px;
+	margin: 0px;
+	list-style: none;
+}
+.pagego
+{
+	width: 30px;
+	text-align: center;
+	font-size: 12px;
+	border: 1px solid #ededed;
+	color: blue;
+}
+.fontred
+{
+	color: red;
+}
+
+.title
+{
+	width: 100%;
+	height: 27px;
+	background: url(title.jpg) no-repeat;
+	border-bottom: 1px solid #6b97b2;
+	margin-top: 5px;
+}
+.title td
+{
+	padding-left: 20px;
+	font-weight: bold;
+	color: white;
+}
+.list
+{
+	margin: 5px 15px 15px 5px;
+}
+.list li
+{
+	padding: 8px 0 6px 24px;
+	background: url(icon.gif) no-repeat 0 7px;
+	border-bottom: 1px silver dotted;
+}
+.list li a
+{
+	color: #666;
+	text-decoration: none;
+}
+.list li a:hover
+{
+	color: #103e91;
+	text-decoration: underline;
+}
+.tabtitle
+{
+	background: url(tabtitle.jpg) no-repeat;
+	height: 31px;
+	color: white;
+	font-weight: bold;
+	padding: 5px 0 0 20px;
+}
+.tabbg
+{
+	background: #ebebeb;
+}
+
+.list2
+{
+	margin: 10px 5px 5px 15px;
+}
+.list2 li
+{
+	padding: 7px 0 5px 20px;
+	background: url(icon2.gif) no-repeat 0 7px;
+	border-bottom: 1px silver dotted;
+}
+.list2 li a
+{
+	text-decoration: none;
+	color: #103e91;
+}
+.list2 li a:hover
+{
+	text-decoration: underline;
+	color: #666;
+}
+
+.tablist
+{
+	width: 100%;
+}
+.tablist thead tr
+{
+	background: url(tablisttop.jpg) repeat-x;
+	height: 27px;
+}
+.tablist thead tr td
+{
+	text-align: center;
+}
+
+.tablist tbody tr td
+{
+	padding: 0px 0px 3px 0px;
+	text-align: center;
+}
+.tablist tbody .ontd
+{
+	height: 20px;
+	vertical-align: bottom;
+	background: #ecf8ff;
+	cursor: pointer;
+}
+.tablist2
+{
+	width: 100%;
+	background: #b8c7d1;
+	margin-top: 0px;
+	font-size: 12px;
+}
+.tablist2 .td0
+{
+	height: 30px;
+	background: #ebf7ff;
+	text-align: center;
+	font-size: 14px;
+	font-weight: bold;
+}
+.tablist2 .td1
+{
+	height: 20px;
+	background: #ebf7ff;
+	text-align: center;
+	white-space: nowrap;
+}
+.tablist2 .td2
+{
+	height: 20px;
+	text-align: left;
+	background: #fff;
+	padding: 5px;
+}
+.tablist2 .td3
+{
+	height: 20px;
+	text-align: center;
+	background: #fff;
+	padding: 5px;
+}
+.tablist2 .td4
+{
+	height: 20px;
+	text-align: right;
+	background: #fff;
+	padding: 5px;
+}
+
+a:link
+{
+	color: #2f4e9d;
+	text-decoration: none;
+	font-family: 宋体;
+}
+a:visited
+{
+	color: #2f4e9d;
+	text-decoration: none;
+	font-family: 宋体;
+}
+a:hover
+{
+	color: #444;
+	text-decoration: underline;
+	font-family: 宋体;
+}
+a:active
+{
+	color: #444;
+	text-decoration: underline;
+	font-family: 宋体;
+}
+
+.textbox
+{
+	font-size: 12px;
+	border-top: 1px solid #ddd;
+	border-left: 1px solid #ddd;
+	border-bottom: 1px solid #ccc;
+	border-right: 1px solid #ccc;
+	vertical-align: text-bottom;
+	width: 70%;
+}
+
+.input
+{
+	border-style: none;
+	border-color: inherit;
+	border-width: 0px;
+	background: url('../images/btnbg.gif') no-repeat;
+	width: 83px;
+	text-align: center;
+	color: white;
+	height: 22px;
+}
+
+.input_small
+{
+	background: url(btnbgsmall.gif) no-repeat;
+	width: 40px;
+	height: 20px;
+	text-align: center;
+	color: white;
+	border: 0px;
+}
+
+.menubg
+{
+	background: url(menubg.gif) repeat-y;
+	height: inherit;
+}
+
+.menu1
+{
+	background: url(menutop.gif) no-repeat;
+	height: 26px;
+	width: 200px;
+	padding: 1px 0 0 35px;
+	color: #fff;
+	font-weight: bold;
+}
+.menu2
+{
+	background: url(icon3.gif) no-repeat 10px 10px;
+	padding: 7px 0 7px 35px;
+	color: #1a699b;
+	border-bottom: 1px #bfd1dd dotted;
+	width: 200px;
+}
+
+.hidden
+{
+	display: none;
+}
+
+.GridViewStyle
+{
+	font-family: Arial, Sans-Serif;
+	font-size: small;
+	table-layout: auto;
+	border-collapse: collapse;
+	border: #1d1d1d 1px solid;
+}
+
+
+.HeaderStyle
+{
+	background-image: url(userbg.jpg);
+	background-position: left;
+	background-repeat: repeat-x;
+	height: 30px;
+}
+
+.RowStyle
+{
+	background-position: left;
+	background-repeat: repeat-x;
+	height: 20px;
+	
+}
+
+.select.nice
+{
+	position: relative;
+	left: -2px;
+	top: -2px;
+	font-size: 12px;
+	width: 183px;
+	line-height: 14px;
+	border: 0px;
+	color: #414141;
+}
+
+.MsgHide
+{
+	display: none;
+}
+.MsgShow
+{
+	display: inline;
+	color: Red;
+}
+
+#detail
+{
+	width: 100%;
+	margin: 0 auto;
+	background: #fff;
+}
+.detail_border
+{
+	margin: 5px;
+	border: 1px solid #C2D6ED;
+	padding: 5px 5px 0 5px;
+}
+.detail_title
+{
+	font-size: 18px;
+	font-weight: bold;
+	color: #333;
+	text-align: center;
+	border-bottom: 1px silver dashed;
+	padding-bottom: 4px;
+	margin-bottom: 5px;
+	padding-top: 10px;
+}
+.job_title
+{
+	background: #F2F6F8;
+	font-weight: bold;
+	color: #B10420;
+	font-size: 14px;
+	padding-left: 10px;
+	height: 30px;
+}
+#detail p
+{
+	line-height: 23px;
+	width: 99%;
+	text-indent: 20px;
+}
+#detail .catelogy
+{
+	font-weight: bold;
+	color: #3F3F3F;
+	padding-left: 20px;
+	background: url(../images/ar_logo.gif) no-repeat 5px 9px;
+	height: 32px;
+}
+#detail .td
+{
+	padding-left: 30px;
+}
+
+.news
+{
+	margin-top: 5px;
+	line-height: 24px;
+	width: 99%;
+}
+.news td
+{
+	border-bottom: 1px dashed #999999;
+}
+
+.job_btn
+{
+	background: url(../images/job.jpg);
+	height: 30px;
+	width: 120px;
+	border: 0px;
+	padding-top: 0px;
+	font-weight: bold;
+	font-size: 14px;
+	color: #fff;
+	margin: 5px;
+}

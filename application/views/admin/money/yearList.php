@@ -29,7 +29,7 @@
             <?php endforeach; ?>
         <tr>
             <td colspan="6" align="center" class="td3">
-                <input type="button" name="btnDelete" value="新 增" onclick="window.location.href = '<?= base_url() ?>index.php/admin/money/yearMoneyNew';" id="btnDelete" class="input" />
+                <input type="button" name="btnDelete" value="新 增" onclick="window.location.href = '<?= base_url() ?>index.php/admin/money/yearMoneyNew/1';" id="btnDelete" class="input" />
                 <input type="button" name="btnReturn" value="删 除" onclick="window.location.href = '<?= base_url() ?>index.php/admin/subject/subjectManage';" id="btnReturn" class="input"  style="display:none"/>
             </td>
         </tr>

@@ -11,9 +11,11 @@ class m_user extends CI_Model {
     var $state = '';
 
     function saveInfo() {
+        $pass1 = $this->input->post('password');
+        $pass = md5($pass1);
         $this->userId = $this->input->post('userId');
         $this->userName = $this->input->post('userName');
-        $this->password = $this->input->post('password');
+        $this->password = $pass;
         $this->roleId = $this->input->post('roleId');
         $this->subjectId = $this->input->post('subjectId');
         // $this->subjectUnit = $this->input->post('subjectUnit');
@@ -29,9 +31,18 @@ class m_user extends CI_Model {
         return $id;
     }
 
+    /*   function getUser($array) {
+      $this->db->select();
+      $this->db->from('lz_user_role_subject');
+      $this->db->where($array);
+      $q = $this->db->get();
+      return $q->result();
+      }
+     */
+
     function getUser($array) {
         $this->db->select();
-        $this->db->from('lz_user_role_subject');
+        $this->db->from('users');
         $this->db->where($array);
         $q = $this->db->get();
         return $q->result();
@@ -44,7 +55,8 @@ class m_user extends CI_Model {
         $q = $this->db->get('lz_user_role_subject', $per_page, $offset);
         return $q->result();
     }
-      function getUsers1($per_page, $offset,$array) {
+
+    function getUsers1($per_page, $offset, $array) {
         $this->db->select();
         $this->db->where($array);
         $this->db->order_by("roleId", "asc");
@@ -55,6 +67,13 @@ class m_user extends CI_Model {
     function getOneInfo($id) {
         $this->db->select();
         $this->db->from('lz_user_role_subject');
+        $this->db->where('userId', $id);
+        $q = $this->db->get();
+        return $q->result();
+    }
+   function getOneInfo1($id) {
+        $this->db->select();
+        $this->db->from('users');
         $this->db->where('userId', $id);
         $q = $this->db->get();
         return $q->result();

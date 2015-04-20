@@ -4,7 +4,7 @@
  * and open the template in the editor.
  */
 
-define('PER_PAGE', 15);
+define('PER_PAGE', 10);
 
 $config['per_page'] = PER_PAGE;
 $config['num_links'] = 2;

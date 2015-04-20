@@ -1,6 +1,6 @@
 <div style="margin-left:20px; margin-right:20px">
 <br />
-<h3>项目执行专家信息编辑</h3>
+ <div class="title_lee">课题执行专家组编辑</div>
 <form name="form1" method="post" action="<?=base_url()?>index.php/admin/expert/save" id="form1">
 <input type="hidden" value="<?=$expert->expertId?>" name="expertId" id="expertId" />
 <input type="hidden" value="Subject" name="type" id="type" />
@@ -37,8 +37,8 @@
     <tr>
       <td class="td1" style="width: 111px">邮箱地址</td>
       <td class="td2">
-      	<input name="email" type="text" id="email" value="<?=$expert->email?>" size="50" validEnum="Email"/>
-        <font color="red">*</font><span id="emailMsg" class="MsgHide">请填写正确的邮箱地址课题！</span>
+      	<input name="email" type="text" id="email" value="<?=$expert->email?>" size="50" />
+       
       </td>
     </tr>
     <tr>

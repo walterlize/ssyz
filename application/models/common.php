@@ -5,9 +5,11 @@ class common extends CI_Model {
     // 获取专家类别
     function getExpertType() {
         $data = array(
-            array('type' => 'Chief', 'name' => '首席'),
+           // array('type' => 'Chief', 'name' => '首席'),
             array('type' => 'Leader', 'name' => '组长'),
-            array('type' => 'Member', 'name' => '成员'));
+            array('type' => 'Member', 'name' => '成员'),
+            array('type' => 'Assistance', 'name' => '秘书')
+            );
         return $data;
     }
 
@@ -78,7 +80,7 @@ class common extends CI_Model {
     }
  // 获取获奖状态
     function getYear() {
-        $data = array('2012','2013', '2014', '2015', '2016', '2016');
+        $data = array('2012','2013', '2014', '2015', '2016', );
         return $data;
     }
      // 获取获奖状态

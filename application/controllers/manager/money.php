@@ -29,6 +29,26 @@ class Money extends CI_Controller {
         $this->table->set_template($tmpl);
     }
 
+// 子课题总经费预算页面
+    public function totalList() {
+        $this->timeOut();
+        $subjectId = $this->session->userdata('subjectId');
+        $this->load->model('m_totalmoney');
+        $array = array('inherit' => $subjectId);
+        $num = $this->m_totalmoney->getNum_zi($array);
+        $subjectId = $this->session->userdata('subjectId');
+        $offset = $this->uri->segment(4);
+        $data['money'] = $this->getTotalMoneyS($array, $offset);
+        $config['base_url'] = base_url() . 'index.php/admin/money/totalList';
+        $config['total_rows'] = $num;
+        $config['uri_segment'] = 4;
+        $this->pagination->initialize($config);
+        $data['page'] = $this->pagination->create_links();
+        $this->load->view('common/header3');
+        $this->load->view('manager/money/totalList', $data);
+        $this->load->view('common/footer');
+    }
+
 // 月度经费管理页面
     public function monthList() {
         $this->timeOut();
@@ -65,12 +85,12 @@ class Money extends CI_Controller {
             $this->load->view('common/footer');
         } else {
 
-
             $type = $this->uri->segment(4);
             $subjectId = $this->session->userdata('subjectId');
-            $array = array('inherit' => $subjectId, 'type' => $type);
-
+            // $array = array('inherit' => $subjectId, 'type' => $type);
+            $array = array('inherit' => $subjectId);
             $num = $this->m_yearmoney->getNum($array);
+
             $offset = $this->uri->segment(5);
 
             $data['money'] = $this->getYearMoneyS($array, $offset);
@@ -86,6 +106,7 @@ class Money extends CI_Controller {
         }
     }
 
+    
 // 月度经费管理页面
     public function monthCheck() {
         $this->timeOut();
@@ -302,6 +323,17 @@ class Money extends CI_Controller {
         $this->load->view('common/footer');
     }
 
+    //子课题总经费编辑
+    public function totalMoneyEdit() {
+        $this->timeOut();
+        $id = $this->uri->segment(4);
+        $data['money'] = $this->getTotalMoney($id);
+        $data['subject'] = $this->getSubjects2();
+        $this->load->view('common/header3');
+        $this->load->view('manager/money/totalEdit', $data);
+        $this->load->view('common/footer');
+    }
+
 // 年度经费详细信息编辑页面
     public function yearMoneyEdit() {
         $this->timeOut();
@@ -333,11 +365,64 @@ class Money extends CI_Controller {
         $this->load->view('common/footer');
     }
 
+    // 子课题总经费详细信息新增页面
+    public function totalMoneyNew() {
+        $this->timeOut();
+
+        @ $money->totalMoneyId = 0;
+        $money->type = '';
+        $money->direct_cost = '';
+        $money->equipment = '';
+        $money->buyEquipment = '';
+        $money->tryEquipment = '';
+        $money->alterEquipment = '';
+        $money->material = '';
+        $money->experiment = '';
+        $money->fuel = '';
+        $money->travel = '';
+        $money->conference = '';
+        $money->international = '';
+        $money->information = '';
+        $money->service = '';
+        $money->consultative = '';
+        $money->other = '';
+        $money->indirect_cost = '';
+        $money->ji_xiao = '';
+        $money->directCaption = '';
+        $money->equipmentCaption = '';
+        $money->buyEquipmentCaption = '';
+        $money->tryEquipmentCaption = '';
+        $money->alterEquipmentCaption = '';
+        $money->materialCaption = '';
+        $money->experimentCaption = '';
+        $money->fuelCaption = '';
+        $money->travelCaption = '';
+        $money->conferenceCaption = '';
+        $money->internationalCaption = '';
+        $money->informationCaption = '';
+        $money->serviceCaption = '';
+        $money->consultativeCaption = '';
+        $money->otherCaption = '';
+        $money->indirectCaption = '';
+        $money->ji_xiaoCaption = '';
+        $money->total = '';
+
+        $data['money'] = $money;
+        $subjectId = $this->session->userdata('subjectId');
+        $array = array('type' => 'Ordinary', 'inherit' => $subjectId);
+        $data['subject'] = $this->getSubjects3($array);
+        $data['subjectId'] = $this->session->userdata('subjectId');
+
+        $this->load->view('common/header3');
+        $this->load->view('manager/money/totalNew', $data);
+        $this->load->view('common/footer');
+    }
+
 // 年度经费详细信息新增页面
     public function yearMoneyNew() {
         $this->timeOut();
 
-       @ $money->yearMoneyId = 0;
+        @ $money->yearMoneyId = 0;
         $money->type = '';
 
         $money->year = date('Y');
@@ -426,6 +511,20 @@ class Money extends CI_Controller {
             // $this->load->view('manager/upload/uploadNew', $data);
             $this->load->view('common/footer');
         }
+    }
+
+    // 保存子课题总经费信息
+    public function totalMoneySave() {
+        $this->timeOut();
+
+        $id = $this->m_totalmoney->saveInfo();
+
+
+        $data['money'] = $this->getTotalMoney_1($id);
+
+        $this->load->view('common/header3');
+        $this->load->view('manager/money/totalDetail', $data);
+        $this->load->view('common/footer');
     }
 
 // 保存年度经费信息
@@ -524,6 +623,17 @@ class Money extends CI_Controller {
     }
 
 // 年度经费详细信息页面
+    public function totalMoneyDetail() {
+        $this->timeOut();
+        $id = $this->uri->segment(4);
+        $data['money'] = $this->getTotalMoney($id);
+
+        $this->load->view('common/header3');
+        $this->load->view('manager/money/totalDetail', $data);
+        $this->load->view('common/footer');
+    }
+
+// 年度经费详细信息页面
     public function yearMoneyDetail() {
         $this->timeOut();
         $id = $this->uri->segment(4);
@@ -568,7 +678,6 @@ class Money extends CI_Controller {
     public function yearBudget() {
         $this->timeOut();
         $result = $this->getYears();
-
         $year = date('Y');
         $flag = false;
         foreach ($result['years'] as $y) {
@@ -579,10 +688,6 @@ class Money extends CI_Controller {
         }
         if (!$flag)
             @$year = $result['years'][0];
-
-
-
-
         $this->yearBudgetOperate($year);
     }
 
@@ -596,7 +701,6 @@ class Money extends CI_Controller {
 // 年度预算操作
     public function yearBudgetOperate($year) {
         $subjectId = $this->session->userdata('subjectId');
-
         $this->load->model('m_yearMoney');
         $num = $this->m_yearMoney->getNum(array('subjectId' => $subjectId));
         if ($num == 0) {
@@ -777,6 +881,20 @@ class Money extends CI_Controller {
         return $result;
     }
 
+    // 分页获取全部经费信息
+    public function getTotalMoneyS($array, $offset) {
+        $this->timeOut();
+        $data = array();
+        $result = $this->m_totalmoney->getTotalMoneyS($array, PER_PAGE, $offset);
+        foreach ($result as $r) {
+            $arr = array('totalMoneyId' => $r->totalMoneyId, 'subjectId' => $r->subjectId,
+                'subjectName' => $r->subjectName, 'subjectUnit' => $r->subjectUnit, 'total' => $r->total, 'inherit' => $r->inherit,
+                'subjectNum' => $r->subjectNum);
+            array_push($data, $arr);
+        }
+        return $data;
+    }
+
 // 分页获取全部年度经费信息
     public function getYearMoneyS($array, $offset) {
         $this->timeOut();
@@ -864,6 +982,19 @@ class Money extends CI_Controller {
         $this->load->model('m_totalmoney');
         $data = array();
         $result = $this->m_totalmoney->getOneInfo1($subjectId);
+
+        foreach ($result as $r) {
+            $data = $r;
+        }
+        return $data;
+    }
+
+// 分页获取课题总经费信息
+    public function getTotalMoney_1($id) {
+        $this->timeOut();
+        $this->load->model('m_totalmoney');
+        $data = array();
+        $result = $this->m_totalmoney->getOneInfo_1($id);
 
         foreach ($result as $r) {
             $data = $r;
