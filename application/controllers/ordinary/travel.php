@@ -230,6 +230,7 @@ class Travel extends CI_Controller {
             $this->m_travel->update($id, $array);
             $this->m_money_record->update($mc_id, $array1);
             $data['show'] = $show;
+            $data['show2'] = $show2;
             $this->load->view('common/header3');
             $this->load->view('ordinary/travel/travelDetail', $data);
             $this->load->view('common/footer');
