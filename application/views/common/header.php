@@ -4,6 +4,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 <link href="<?= base_url(); ?>css/frame.css" rel="stylesheet" type="text/css" />
 <script src="<?=base_url();?>javascript/jquery.js" type="text/javascript"></script>
+    <link rel="shortcut icon" href="<?= base_url(); ?>/images/admin/ssyz.ico" >
 <script src="<?=base_url();?>javascript/frameMenu.js" type="text/javascript"></script>
 <script type="text/javascript">
     $(document).ready(

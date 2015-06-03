@@ -5,8 +5,8 @@
         <title>设施养殖数字化智能管理技术设备研究-综合管理系统</title>
         <link href="<?= base_url(); ?>css/style.css" rel="stylesheet" type="text/css" />
         <link href="<?= base_url(); ?>jquery_ui/css/cupertino/jquery-ui.css" rel="stylesheet" type="text/css" />
-        <script src="<?= base_url(); ?>javascript/common.js" type="text/javascript"></script>   
-
+        <script src="<?= base_url(); ?>javascript/common.js" type="text/javascript"></script>
+        <link rel="shortcut icon" href="<?= base_url(); ?>/images/admin/ssyz.ico" >
     </head>
 
     <body>

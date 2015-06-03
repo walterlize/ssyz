@@ -11,6 +11,7 @@
         <script src="<?= base_url(); ?>javascript/jquery.js" type="text/javascript"></script>
         <script src="<?= base_url(); ?>javascript/JQuery.MenuTree.js" type="text/javascript"></script>
         <script src="<?= base_url(); ?>javascript/update8.js" type="text/javascript"></script>
+        <link rel="shortcut icon" href="<?= base_url(); ?>/images/admin/ssyz.ico" >
         <script type="text/javascript">
             $(function () {
                 $('#left_menu').menuTree();

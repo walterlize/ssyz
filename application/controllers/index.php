@@ -14,7 +14,7 @@ class Index extends CI_Controller {
     }
 
     public function index() {
-        $data['title'] = "设施养殖数字化智能管理技术设备研究";
+        $data['title'] = "设施养殖数字化智能管理技术设备研究-综合管理系统";
         // 公告信息
         $array = array('trendType' => 1, 'state' => 2);
         $data['bullentins'] = $this->getTrend($array);

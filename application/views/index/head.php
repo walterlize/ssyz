@@ -5,7 +5,7 @@
         <meta http-equiv=X-UA-Compatible content=IE=EmulateIE7 />
         <title><?= $title ?></title>
         <link href="<?= base_url(); ?>css/index.css" rel="stylesheet" type="text/css" />
-
+        <link rel="shortcut icon" href="<?= base_url(); ?>/images/admin/ssyz.ico" >
         <script src="<?= base_url(); ?>javascript/jquery.js" type="text/javascript"></script>
         <script src="<?= base_url(); ?>javascript/JQuery.MenuTree.js" type="text/javascript"></script>
         <script src="<?= base_url(); ?>javascript/update8.js" type="text/javascript"></script>
