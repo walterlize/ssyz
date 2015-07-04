@@ -4,7 +4,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
 <title>设施养殖数字化智能管理技术设备研究</title>
-
+    <link rel="shortcut icon" href="<?= base_url(); ?>/images/admin/ssyz.ico" >
 </head>
 <frameset rows="87,*,32" id="_top_" name="_top_" frameborder="NO" border="0" framespacing="0">
     <frame src='<?=base_url();?>index.php/index/top' name="topFrame"  scrolling="NO" noresize >

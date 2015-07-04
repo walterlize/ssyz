@@ -57,7 +57,7 @@ class m_money_record extends CI_Model {
         $q = $this->db->get();
         return $q->result();
     }
-
+   //子课题读出当前花费的列表
     function getMoney_currentS($array, $per_page, $offset) {
         $this->db->select();
         $this->db->where($array);
@@ -65,9 +65,64 @@ class m_money_record extends CI_Model {
         $q = $this->db->get('money_current', $per_page, $offset);
         return $q->result();
     }
+    //课题读出当前花费的列表
+    function getMoney_currentS_m($array, $per_page, $offset) {
+        $this->db->select();
+        $this->db->where($array);
+        $this->db->order_by("date", "asc");
+        $q = $this->db->get('lz_money_current', $per_page, $offset);
+        return $q->result();
+    }
+    /* function getMoney_currentS($array, $per_page, $offset) {
+        $this->db->select_sum('money');
+        $this->db->select_sum('buyEquipment');
+        $this->db->select_sum('tryEquipment');
+        $this->db->select_sum('alterEquipment');
+        $this->db->select_sum('material');
+        $this->db->select_sum('experiment');
+        $this->db->select_sum('fuel');
+        $this->db->select_sum('travel');
+        $this->db->select_sum('conference');
+        $this->db->select_sum('international');
+        $this->db->select_sum('information');
+        $this->db->select_sum('service');
+        $this->db->select_sum('consultative');
+        $this->db->select_sum('management');
+        $this->db->select_sum('total');
+        $this->db->select('mc_id');
+        $this->db->select('subjectId');
+        $this->db->select('subjectUnit');
+        $this->db->select('subjectName');
+        $this->db->select('year');
 
+        $this->db->from('ws_money_year');
+
+        $this->db->where($array);
+        $this->db->group_by($array1);
+        $q = $this->db->get();
+        return $q->result();
+    }
+*/
+
+
+    //计算出当前花费列表的总金额
+    function getMoney_currentS_sum($array){
+
+        $this->db->select_sum('money');
+        $this->db->from('money_current');
+        $this->db->where($array);
+        $q = $this->db->get();
+        return $q->result();
+    }
+    //子课题查询相应的花费数量
     function getNum($array) {
         $this->db->from('money_current');
+        $this->db->where($array);
+        return $this->db->count_all_results();
+    }
+    //课题查询相应的花费数量
+    function getNum_m($array) {
+        $this->db->from('lz_money_current');
         $this->db->where($array);
         return $this->db->count_all_results();
     }

@@ -74,6 +74,10 @@ class Money extends CI_Controller {
         $subjectId = $this->session->userdata('subjectId');
         $array = array('s_id' => $subjectId);
         $num = $this->m_money_record->getNum($array);
+
+        $su=$this->m_money_record->getMoney_currentS_sum($array);
+        $sum=array_sum($su);
+
         $offset = $this->uri->segment(4);
         $data['money'] = $this->getExpenseS($array, $offset);
         $config['base_url'] = base_url() . 'index.php/ordinary/money/expenseList';
@@ -82,6 +86,8 @@ class Money extends CI_Controller {
         $this->pagination->initialize($config);
         $data['page'] = $this->pagination->create_links();
         $data['num'] = $num;
+        $data['sum'] = $sum;
+
         $data['title'] = '课题经费花费详情';
         $data['Type'] = $this->getType();
         $data['Year'] = $this->getSearchYear();
@@ -93,7 +99,7 @@ class Money extends CI_Controller {
         $this->load->view('common/footer');
     }
 
-    // 变换显示
+    // 子课题经费花费情况 变换显示
     function changeOption() {
         extract($_REQUEST);
         $subjectId = $this->session->userdata('subjectId');
@@ -813,16 +819,26 @@ class Money extends CI_Controller {
 // 分页获取全部花费经费信息
     public function getExpenseS($array, $offset) {
         $this->timeOut();
-        $this->load->model('m_money_record');
         $data = array();
         $result = $this->m_money_record->getMoney_currentS($array, PER_PAGE, $offset);
 
         foreach ($result as $r) {
             $arr = array('mc_id' => $r->mc_id, 's_id' => $r->s_id, 'b_id' => $r->b_id,
                 'date' => $r->date, 'money' => $r->money, 'moneyType' => $r->moneyType,
-                'm_type' => $r->m_type);
+                'm_type' => $r->m_type
+            );
             array_push($data, $arr);
+
         }
+        return $data;
+    }
+    //计算此分页的金额总数
+    public function get_expense_sum($num,$result) {
+     $num=$num;
+        for($n=0;$x<=$num;$n++){
+
+        }
+
         return $data;
     }
 

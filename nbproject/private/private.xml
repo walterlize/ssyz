@@ -3,7 +3,10 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/opt/lampp/htdocs/ssyz/application/controllers/ordinary/baoxiao.php</file>
+            <file>file:/opt/lampp/htdocs/ssyz/application/views/index/index.php</file>
+            <file>file:/opt/lampp/htdocs/ssyz/css/style.css</file>
+            <file>file:/opt/lampp/htdocs/ssyz/application/controllers/index.php</file>
+            <file>file:/opt/lampp/htdocs/ssyz/application/views/admin/trend/trend.php</file>
         </group>
     </open-files>
 </project-private>

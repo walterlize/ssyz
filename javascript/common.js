@@ -44,7 +44,8 @@ function option_change(element1, element2, element3, element4, element5, url) {
         month: month,
         type: type,
         state: state
-    }, function (result) {
+    },
+        function (result) {
         $("#" + element5).empty();
         $("#" + element5).append(result);
     });

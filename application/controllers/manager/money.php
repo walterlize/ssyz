@@ -106,6 +106,89 @@ class Money extends CI_Controller {
         }
     }
 
+    // 课题花费情况列表
+    public function expenseList() {
+        $this->timeOut();
+        $subjectId = $this->session->userdata('subjectId');
+        $array = array('inherit' => $subjectId);
+        $num = $this->m_money_record->getNum_m($array);
+
+        //$su=$this->m_money_record->getMoney_currentS_sum($array);
+        //$sum=array_sum($su);
+
+        $offset = $this->uri->segment(4);
+        $data['money'] = $this->getExpenseS($array, $offset);
+        $config['base_url'] = base_url() . 'index.php/ordinary/money/expenseList';
+        $config['total_rows'] = $num;
+        $config['uri_segment'] = 4;
+        $this->pagination->initialize($config);
+        $data['page'] = $this->pagination->create_links();
+        $data['num'] = $num;
+       //$data['sum'] = $sum;
+
+        $data['title'] = '课题经费花费详情';
+        $data['Type'] = $this->getType();
+        $data['Year'] = $this->getSearchYear();
+        $data['Month'] = $this->getSearchMonth();
+
+        $this->load->view('common/header3');
+        $this->load->view('manager/money/moneySearch', $data);
+        $this->load->view('manager/money/expenseList', $data);
+        $this->load->view('common/footer');
+    }
+// 课题经费花费情况 变换显示
+    function changeOption() {
+        extract($_REQUEST);
+        $subjectId = $this->session->userdata('subjectId');
+        if (strcmp($year, 'all') == 0) {
+            if (strcmp($month, 'all') == 0) {
+                if (strcmp($moneyType, 'all') == 0) {
+                    $array = array('s_id' => $subjectId);
+                } else {
+                    $array = array('moneyType' => $moneyType, 's_id' => $subjectId);
+                }
+            } else {
+                if (strcmp($moneyType, 'all') == 0) {
+                    $array = array('month' => $month, 's_id' => $subjectId);
+                } else {
+                    $array = array('moneyType' => $moneyType, 'month' => $month, 's_id' => $subjectId);
+                }
+            }
+        } else {
+            if (strcmp($month, 'all') == 0) {
+                if (strcmp($moneyType, 'all') == 0) {
+                    $array = array('year' => $year, 's_id' => $subjectId);
+                } else {
+                    $array = array('year' => $year, 'moneyType' => $moneyType, 's_id' => $subjectId);
+                }
+            } else {
+                if (strcmp($moneyType, 'all') == 0) {
+                    $array = array('year' => $year, 'month' => $month, 's_id' => $subjectId);
+                } else {
+                    $array = array('year' => $year, 'moneyType' => $moneyType, 'month' => $month, 's_id' => $subjectId);
+                }
+            }
+        }
+        $num = $this->m_money_record->getNum($array);
+        $offset = $this->uri->segment(4);
+        $data['money'] = $this->getExpenseS($array, $offset);
+        $config['base_url'] = base_url() . 'index.php/ordinary/money/expenseList';
+        $config['total_rows'] = $num;
+        $config['uri_segment'] = 4;
+        $this->pagination->initialize($config);
+        $data['page'] = $this->pagination->create_links();
+        $data['num'] = $num;
+        $data['title'] = '课题经费花费详情';
+        $data['Type'] = $this->getType();
+        $data['Year'] = $this->getSearchYear();
+        $data['Month'] = $this->getSearchMonth();
+
+        // $this->load->view('common/header3');
+        //$this->load->view('ordinary/money/moneySearch');
+        $this->load->view('ordinary/money/expenseList', $data);
+        // $this->load->view('common/footer');
+    }
+
     
 // 月度经费管理页面
     public function monthCheck() {
@@ -844,6 +927,24 @@ class Money extends CI_Controller {
         }
     }
 
+
+// 分页获取全部花费经费信息
+    public function getExpenseS($array, $offset) {
+        $this->timeOut();
+        $data = array();
+        $result = $this->m_money_record->getMoney_currentS_m($array, PER_PAGE, $offset);
+
+        foreach ($result as $r) {
+            $arr = array('mc_id' => $r->mc_id, 's_id' => $r->s_id, 'b_id' => $r->b_id,
+                'date' => $r->date, 'money' => $r->money, 'moneyType' => $r->moneyType,
+                'm_type' => $r->m_type,'inherit'=>$r->inherit
+            );
+            array_push($data, $arr);
+
+        }
+        return $data;
+    }
+
 // 获取课题信息
     public function getSubjects() {
         $this->load->model('m_subject');
@@ -1483,7 +1584,26 @@ class Money extends CI_Controller {
         }
         $this->load->view('common/footer');
     }
+//获取报销类型
+    function getType() {
+        $this->load->model('m_choice');
+        $data = $this->m_choice->getBaoxiaoType();
+        return $data;
+    }
 
+//获取查询的年
+    function getSearchYear() {
+        $this->load->model('m_choice');
+        $data = $this->m_choice->getSearchYear();
+        return $data;
+    }
+
+//获取查询的月
+    function getSearchMonth() {
+        $this->load->model('m_choice');
+        $data = $this->m_choice->getSearchMonth();
+        return $data;
+    }
     function getUpload($id) {
         $this->load->model('m_upload');
 

@@ -45,7 +45,95 @@ class Baoxiao extends CI_Controller {
         $this->load->view('ordinary/baoxiao/baoxiaoList', $data);
         $this->load->view('common/footer');
     }
+    // 报销列表查询后的管理页面
+    public function baoxiaoList_search() {
+        extract($_REQUEST);
+        $subjectId = $this->session->userdata('subjectId');
+        $s = $this->m_baoxiao->getState1($state);
+        if (strcmp($year, 'all') == 0) {
+            if (strcmp($month, 'all') == 0) {
+                if (strcmp($type, 'all') == 0) {
+                    if (strcmp($state, 'all') == 0) {
+                        $array = array('s_id' => $subjectId);
+                    } else {
+                        $array = array('s_id' => $subjectId, 'state' => $s);
+                    }
+                } else {
+                    if (strcmp($state, 'all') == 0) {
+                        $array = array('type' => $type, 's_id' => $subjectId);
+                    } else {
+                        $array = array('type' => $type, 's_id' => $subjectId, 'state' => $s);
+                    }
+                }
+            } else {
+                if (strcmp($type, 'all') == 0) {
+                    if (strcmp($state, 'all') == 0) {
+                        $array = array('s_id' => $subjectId, 'month' => $month);
+                    } else {
+                        $array = array('s_id' => $subjectId, 'state' => $s, 'month' => $month);
+                    }
+                } else {
+                    if (strcmp($state, 'all') == 0) {
+                        $array = array('type' => $type, 's_id' => $subjectId, 'month' => $month);
+                    } else {
+                        $array = array('type' => $type, 's_id' => $subjectId, 'state' => $s, 'month' => $month);
+                    }
+                }
+            }
+        } else {
+            if (strcmp($month, 'all') == 0) {
+                if (strcmp($type, 'all') == 0) {
+                    if (strcmp($state, 'all') == 0) {
+                        $array = array('s_id' => $subjectId, 'year' => $year);
+                    } else {
+                        $array = array('s_id' => $subjectId, 'state' => $s, 'year' => $year);
+                    }
+                } else {
+                    if (strcmp($state, 'all') == 0) {
+                        $array = array('type' => $type, 's_id' => $subjectId, 'year' => $year);
+                    } else {
+                        $array = array('type' => $type, 's_id' => $subjectId, 'state' => $s, 'year' => $year);
+                    }
+                }
+            } else {
+                if (strcmp($type, 'all') == 0) {
+                    if (strcmp($state, 'all') == 0) {
+                        $array = array('s_id' => $subjectId, 'month' => $month, 'year' => $year);
+                    } else {
+                        $array = array('s_id' => $subjectId, 'state' => $s, 'month' => $month, 'year' => $year);
+                    }
+                } else {
+                    if (strcmp($state, 'all') == 0) {
+                        $array = array('type' => $type, 's_id' => $subjectId, 'month' => $month, 'year' => $year);
+                    } else {
+                        $array = array('type' => $type, 's_id' => $subjectId, 'state' => $s, 'month' => $month, 'year' => $year);
+                    }
+                }
+            }
+        }
 
+        $num = $this->m_baoxiao->getNum($array);
+        $offset = $this->uri->segment(4);
+
+        $data['baoxiao'] = $this->getBaoxiaoS($array, $offset);
+        $config['base_url'] = base_url() . 'index.php/ordinary/baoxiao/baoxiaoList_search';
+        $config['total_rows'] = $num;
+        $config['uri_segment'] = 4;
+        $this->pagination->initialize($config);
+        $data['page'] = $this->pagination->create_links();
+        $data['title'] = '报销列表';
+        $data['num'] = $num;
+        $data['searchType'] = $this->getType();
+        $data['Year'] = $this->getSearchYear();
+        $data['Month'] = $this->getSearchMonth();
+        //$data['year'] = date("Y");
+        //$data['month'] = date("m");
+
+        $this->load->view('common/header3');
+        $this->load->view('ordinary/baoxiao/baoxiaoSearch', $data);
+        $this->load->view('ordinary/baoxiao/baoxiaoList', $data);
+        $this->load->view('common/footer');
+    }
     // 变换显示
     function changeOption() {
         extract($_REQUEST);
@@ -112,11 +200,12 @@ class Baoxiao extends CI_Controller {
                 }
             }
         }
+
         $num = $this->m_baoxiao->getNum($array);
         $offset = $this->uri->segment(4);
 
         $data['baoxiao'] = $this->getBaoxiaoS($array, $offset);
-        $config['base_url'] = base_url() . 'index.php/ordinary/baoxiao/baoxiaoList';
+        $config['base_url'] = base_url() . 'index.php/ordinary/baoxiao/baoxiaoList_search';
         $config['total_rows'] = $num;
         $config['uri_segment'] = 4;
         $this->pagination->initialize($config);
@@ -130,6 +219,7 @@ class Baoxiao extends CI_Controller {
         //$data['month'] = date("m");
 
         $this->load->view('ordinary/baoxiao/baoxiaoList', $data);
+
     }
 
     //报销详细信息页面
@@ -199,7 +289,7 @@ class Baoxiao extends CI_Controller {
         $this->form_validation->set_rules('type', 'Type', 'required');
         //$this->form_validation->set_rules('num', 'Num', 'required');
         $this->form_validation->set_rules('money', 'Money', 'required');
-
+        //检查必要信息
         if ($this->form_validation->run() === FALSE) {
             $data['detail'] = "保存报销信息有误！请检查填写的相应信息！";
             $this->load->view('common/header3');
