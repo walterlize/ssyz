@@ -27,7 +27,7 @@
                 <?php endforeach; ?>
 
         </table>
-         <div align="right"><font color="#3A6EA5" size="3px">总金额<?=$sum?>元,共有<?= $num ?>条记录，每页10条。</font></div>
+         <div align="right"><font color="#3A6EA5" size="3px">总金额<?=$sum?>元。<br/>共有<?= $num ?>条记录，每页10条。</font></div>
         <div align="center"><?= $page ?></div>
     </div>
 </div>

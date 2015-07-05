@@ -239,21 +239,23 @@ class Laowu extends CI_Controller {
         }
         $num = $this->m_laowu->getNum($array);
         $offset = $this->uri->segment(4);
-        $data['laowu'] = $this->getlaowuS($array, $offset);
+        $data['laowu'] = $this->getlaowuS_1($array, $offset);
+        $data['title'] = '劳务费/专家咨询费申请列表';
+        $data['num'] = $num;
+        /*
         $config['base_url'] = base_url() . 'index.php/ordinary/laowu/laowuList';
         $config['total_rows'] = $num;
         $config['uri_segment'] = 4;
-        $data['title'] = '劳务费/专家咨询费申请列表';
-        $data['num'] = $num;
         $this->pagination->initialize($config);
         $data['page'] = $this->pagination->create_links();
+        */
         $data['searchType'] = $this->getType();
         $data['moneyType'] = $this->getLaowuType();
         $data['Year'] = $this->getSearchYear();
         $data['Month'] = $this->getSearchMonth();
         $data['State'] = $this->getState();
 
-        $this->load->view('ordinary/laowu/laowuList', $data);
+        $this->load->view('ordinary/laowu/laowuList_1', $data);
         $this->load->view('common/footer');
     }
 
@@ -363,12 +365,25 @@ class Laowu extends CI_Controller {
         return $result;
     }
 
-    // 分页劳务申报信息
+    // 分页劳务申报所有信息
     public function getLaowuS($array, $offset) {
 
         $data = array();
         $result = $this->m_laowu->getLaowuS($array, PER_PAGE, $offset);
 
+        foreach ($result as $r) {
+            $arr = array('laowu_id' => $r->laowu_id, 'date' => $r->date, 'code' => $r->code, 'peopleNum' => $r->peopleNum,
+                'type' => $r->type, 'money1' => ($r->money)-($r->tax),'money' => $r->money, 'tax' => $r->tax,
+                'state' => $this->m_laowu->getState($r->state),'color' => $this->getColor($r->state),
+            );
+            array_push($data, $arr);
+        }
+        return $data;
+    }
+    // 分类劳务申报所有信息--不分页
+    public function getLaowuS_1($array, $offset) {
+        $data = array();
+        $result = $this->m_laowu->getLaowuS_1($array,$offset);
         foreach ($result as $r) {
             $arr = array('laowu_id' => $r->laowu_id, 'date' => $r->date, 'code' => $r->code, 'peopleNum' => $r->peopleNum,
                 'type' => $r->type, 'money1' => ($r->money)-($r->tax),'money' => $r->money, 'tax' => $r->tax,

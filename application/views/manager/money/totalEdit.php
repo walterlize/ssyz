@@ -20,8 +20,8 @@
             </tr>
             <tr>
                 <td class="td1"><div align="left" >（一）直接使用</div></td>
-                <td class="td3"><input type="text" name="direct_cost" id="direct_cost" value="<?= $money->direct_cost ?>" /></td>
-                <td class="td3"><input type="text" name="directCaption" id="directCaption" value="<?= $money->directCaption ?>" size="50" /></td>
+                <td class="td3"><?= $money->direct_cost ?></td>
+                <td class="td3"><?= $money->directCaption ?></td>
             </tr>
             <tr>
                 <td class="td1"><div align="left">1.设备费</div></td>

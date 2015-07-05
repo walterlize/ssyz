@@ -142,12 +142,14 @@ class Borrow extends CI_Controller {
         }
         $num = $this->m_borrow->getNum($array);
         $offset = $this->uri->segment(4);
-        $data['borrow'] = $this->getBorrowS($array, $offset);
+        $data['borrow'] = $this->getBorrowS_1($array, $offset);
+        /*
         $config['base_url'] = base_url() . 'index.php/ordinary/borrow/borrowList';
         $config['total_rows'] = $num;
         $config['uri_segment'] = 4;
         $this->pagination->initialize($config);
         $data['page'] = $this->pagination->create_links();
+        */
         $data['title'] = '汇款/支票列表';
         $data['num'] = $num;
         $data['searchType'] = $this->getType();
@@ -157,7 +159,7 @@ class Borrow extends CI_Controller {
         $data['State'] = $this->getState();
 
 
-        $this->load->view('ordinary/borrow/borrowList', $data);
+        $this->load->view('ordinary/borrow/borrowList_1', $data);
         $this->load->view('common/footer');
     }
 
@@ -230,12 +232,14 @@ class Borrow extends CI_Controller {
 
         $num = $this->m_borrow->getNum($array);
         $offset = $this->uri->segment(4);
-        $data['borrow'] = $this->getBorrowS($array, $offset);
+        $data['borrow'] = $this->getBorrowS_1($array, $offset);
+        /*
         $config['base_url'] = base_url() . 'index.php/ordinary/borrow/borrowList';
         $config['total_rows'] = $num;
         $config['uri_segment'] = 4;
         $this->pagination->initialize($config);
         $data['page'] = $this->pagination->create_links();
+        */
         $data['title'] = '汇款/支票报销列表';
         $data['num'] = $num;
         $data['searchType'] = $this->getType();
@@ -245,7 +249,7 @@ class Borrow extends CI_Controller {
         $data['State'] = $this->getState();
 
 
-        $this->load->view('ordinary/borrow/baoxiaoList', $data);
+        $this->load->view('ordinary/borrow/baoxiaoList_1', $data);
         $this->load->view('common/footer');
     }
 
@@ -704,11 +708,27 @@ class Borrow extends CI_Controller {
         return $data;
     }
 
-    // 分页获取月度经费信息
+    // 分页获取全部借款信息
     public function getBorrowS($array, $offset) {
 
         $data = array();
         $result = $this->m_borrow->getBorrowS($array, PER_PAGE, $offset);
+
+        foreach ($result as $r) {
+            $arr = array('b_id' => $r->b_id, 'type' => $r->type, 'code' => $r->code, 'borrowType' => $r->borrowType, 'money' => $r->money, 'b_name' => $r->b_name,
+                'date' => $r->date, 'date4' => $r->date4, 'moneyType' => $r->moneyType, 'contact' => $r->contact, 'state' => $this->m_borrow->getState($r->state),
+                'state2' => $this->m_borrow->getState4($r->state2),'color' => $this->getColor($r->state),'color' => $this->getColor($r->state),
+            );
+            array_push($data, $arr);
+        }
+        return $data;
+    }
+
+    // 获取分类借款信息--不分页
+    public function getBorrowS_1($array, $offset) {
+
+        $data = array();
+        $result = $this->m_borrow->getBorrowS_1($array,$offset);
 
         foreach ($result as $r) {
             $arr = array('b_id' => $r->b_id, 'type' => $r->type, 'code' => $r->code, 'borrowType' => $r->borrowType, 'money' => $r->money, 'b_name' => $r->b_name,

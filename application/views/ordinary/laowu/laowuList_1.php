@@ -10,6 +10,7 @@
             <th class="td3">类别</th>
             <th class="td1">人数</th>
             <th class="td3">金额（元）</th>
+            <th class="td3">单位</th>
             <th class="td1">状态</th>
             <th class="td1">编辑</th>
         </tr>
@@ -43,6 +44,6 @@
         </tr>
     </table>
     <div align="right"><font color="#3A6EA5" size="3px">共有<?= $num ?>条记录，每页10条。</font></div>
-    <div align="center"><?= $page ?></div>
+    <!--<div align="center"><?= $page ?></div>-->
 </div>
 </div>

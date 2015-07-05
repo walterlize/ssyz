@@ -79,7 +79,7 @@ class m_baoxiao extends CI_Model {
         $q = $this->db->get();
         return $q->result();
     }
-
+    //分页获取报销数据
     function getBaoxiaoS($array, $per_page, $offset) {
         $this->db->select();
         $this->db->where($array);
@@ -88,7 +88,16 @@ class m_baoxiao extends CI_Model {
         $q = $this->db->get('baoxiao', $per_page, $offset);
         return $q->result();
     }
-
+    //分页获取报销数据--分类查询
+    function getBaoxiaoS_1($array,$offset) {
+        $this->db->select();
+        $this->db->where($array);
+        $this->db->order_by("state", "asc");
+        $this->db->order_by("date", "desc");
+        $q = $this->db->get('baoxiao',$offset);
+        return $q->result();
+    }
+    //管理员分页获取全部报销信息
     function getBaoxiaoMange($array, $per_page, $offset) {
         $this->db->select();
         $this->db->where($array);
@@ -96,6 +105,16 @@ class m_baoxiao extends CI_Model {
         $this->db->order_by("state", "asc");
         $this->db->order_by("date", "desc");
         $q = $this->db->get('lz_baoxiao_detail', $per_page, $offset);
+        return $q->result();
+    }
+    //管理员分类别获取全部报销信息--不分页
+    function getBaoxiaoMange_1($array,$offset) {
+        $this->db->select();
+        $this->db->where($array);
+        $this->db->where('state >', 2);
+        $this->db->order_by("state", "asc");
+        $this->db->order_by("date", "desc");
+        $q = $this->db->get('lz_baoxiao_detail',$offset);
         return $q->result();
     }
 

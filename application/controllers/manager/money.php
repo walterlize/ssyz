@@ -15,6 +15,7 @@ class Money extends CI_Controller {
         $this->load->model('m_totalmoney');
         $this->load->model('m_yearmoney');
         $this->load->model('m_monthmoney');
+        $this->load->model('m_money_record');
         $this->load->model('m_upload');
         $this->load->library('table');
         $this->load->helper('file');
@@ -35,15 +36,32 @@ class Money extends CI_Controller {
         $subjectId = $this->session->userdata('subjectId');
         $this->load->model('m_totalmoney');
         $array = array('inherit' => $subjectId);
+
+
         $num = $this->m_totalmoney->getNum_zi($array);
-        $subjectId = $this->session->userdata('subjectId');
         $offset = $this->uri->segment(4);
+
         $data['money'] = $this->getTotalMoneyS($array, $offset);
+        //print_r($data['money']);
+        //求课题的总经费、总分配经费、总剩余经费
+        $result = $this->getTotalMoney($subjectId);
+        $result=(array)$result;
+        //print_r($result);
+        $moneyAll= $result['total'];
+        $all=$this->m_totalmoney->getMoney_all($array);
+        $su=get_object_vars($all[0]);
+        $costAll=$su['total'];
+        $left= $moneyAll-$costAll;
+        $data['moneyAll']=$moneyAll;
+        $data['moneyCost']=$costAll;
+        $data['moneyLeft']=$left;
+
         $config['base_url'] = base_url() . 'index.php/admin/money/totalList';
         $config['total_rows'] = $num;
         $config['uri_segment'] = 4;
         $this->pagination->initialize($config);
         $data['page'] = $this->pagination->create_links();
+
         $this->load->view('common/header3');
         $this->load->view('manager/money/totalList', $data);
         $this->load->view('common/footer');
@@ -107,15 +125,11 @@ class Money extends CI_Controller {
     }
 
     // 课题花费情况列表
-    public function expenseList() {
+  /*  public function expenseList() {
         $this->timeOut();
         $subjectId = $this->session->userdata('subjectId');
         $array = array('inherit' => $subjectId);
         $num = $this->m_money_record->getNum_m($array);
-
-        //$su=$this->m_money_record->getMoney_currentS_sum($array);
-        //$sum=array_sum($su);
-
         $offset = $this->uri->segment(4);
         $data['money'] = $this->getExpenseS($array, $offset);
         $config['base_url'] = base_url() . 'index.php/ordinary/money/expenseList';
@@ -124,7 +138,38 @@ class Money extends CI_Controller {
         $this->pagination->initialize($config);
         $data['page'] = $this->pagination->create_links();
         $data['num'] = $num;
-       //$data['sum'] = $sum;
+
+        $data['title'] = '课题经费花费详情';
+        $data['Type'] = $this->getType();
+        $data['Year'] = $this->getSearchYear();
+        $data['Month'] = $this->getSearchMonth();
+
+        $this->load->view('common/header3');
+        $this->load->view('manager/money/moneySearch', $data);
+        $this->load->view('manager/money/expenseList', $data);
+        $this->load->view('common/footer');
+    }
+  */
+    // 子课题花费情况列表
+    public function expenseList() {
+        $this->timeOut();
+        $subjectId = $this->session->userdata('subjectId');
+        $array = array('inherit' => $subjectId);
+        $num = $this->m_money_record->getNum_manage($array);
+        $su=$this->m_money_record->getMoney_all_manage($array);
+        $su1=get_object_vars($su['0']);
+        $sum=$su1['money'];
+
+
+        $offset = $this->uri->segment(4);
+        $data['money'] = $this->getExpenseS($array, $offset);
+        $config['base_url'] = base_url() . 'index.php/manage/money/expenseList';
+        $config['total_rows'] = $num;
+        $config['uri_segment'] = 4;
+        $this->pagination->initialize($config);
+        $data['page'] = $this->pagination->create_links();
+        $data['num'] = $num;
+        $data['sum'] = $sum;
 
         $data['title'] = '课题经费花费详情';
         $data['Type'] = $this->getType();
@@ -189,7 +234,7 @@ class Money extends CI_Controller {
         // $this->load->view('common/footer');
     }
 
-    
+
 // 月度经费管理页面
     public function monthCheck() {
         $this->timeOut();
@@ -262,7 +307,7 @@ class Money extends CI_Controller {
             $year = date('Ym', strtotime($year1));
 
             $data['url'] = base_url() . 'index.php/download/downloadfile/' . $year . '/' . $result->type . '_' . $subjectId .
-                    '/' . $result->upload_name;
+                '/' . $result->upload_name;
             $data['uploadId'] = $result->uploadId;
         } else {
             $data['show4'] = 'display:none';
@@ -451,10 +496,28 @@ class Money extends CI_Controller {
     // 子课题总经费详细信息新增页面
     public function totalMoneyNew() {
         $this->timeOut();
+        $subjectId = $this->session->userdata('subjectId');
+        $array = array('type' => 'Ordinary', 'inherit' => $subjectId);
+        //求课题的总经费、总分配经费、总剩余经费
+        $result = $this->getTotalMoney($subjectId);
+        $result=(array)$result;
+        $moneyAll= $result['total'];
+
+        $all=$this->m_totalmoney->getMoney_all($array);
+        $su=get_object_vars($all[0]);
+        $result1=$su;
+        $costAll=$su['total'];
+        $left= $moneyAll-$costAll;
+        $data['moneyAll']=$moneyAll;
+        $data['moneyCost']=$costAll;
+        $data['moneyLeft']=$left;
+
 
         @ $money->totalMoneyId = 0;
         $money->type = '';
         $money->direct_cost = '';
+        $money->direct_cost_1 = $result['direct_cost'];
+        $money->direct_cost_2 = $result1['direct_cost'];
         $money->equipment = '';
         $money->buyEquipment = '';
         $money->tryEquipment = '';
@@ -472,6 +535,7 @@ class Money extends CI_Controller {
         $money->indirect_cost = '';
         $money->ji_xiao = '';
         $money->directCaption = '';
+
         $money->equipmentCaption = '';
         $money->buyEquipmentCaption = '';
         $money->tryEquipmentCaption = '';
@@ -489,12 +553,15 @@ class Money extends CI_Controller {
         $money->indirectCaption = '';
         $money->ji_xiaoCaption = '';
         $money->total = '';
+        $money->total_1 = $result['total'];
+        $money->total_2 = $result1['total'];
 
         $data['money'] = $money;
-        $subjectId = $this->session->userdata('subjectId');
-        $array = array('type' => 'Ordinary', 'inherit' => $subjectId);
+
+
         $data['subject'] = $this->getSubjects3($array);
         $data['subjectId'] = $this->session->userdata('subjectId');
+
 
         $this->load->view('common/header3');
         $this->load->view('manager/money/totalNew', $data);
@@ -545,6 +612,16 @@ class Money extends CI_Controller {
         $data['subject'] = $this->getSubjects3($array);
         $data['subjectId'] = $this->session->userdata('subjectId');
         $data['year1'] = date('Y');
+        //求课题的总经费、总分配经费、总剩余经费
+        $result = $this->getTotalMoney($subjectId);
+        $moneyAll= $result->total;
+        $all=$this->m_totalmoney->getMoney_all($array);
+        $su=get_object_vars($all[0]);
+        $costAll=$su['total'];
+        $left= $moneyAll-$costAll;
+        $data['moneyAll']=$moneyAll;
+        $data['moneyCost']=$costAll;
+        $data['moneyLeft']=$left;
         $this->load->view('common/header3');
         $this->load->view('manager/money/yearEdit', $data);
         $this->load->view('common/footer');
@@ -710,6 +787,7 @@ class Money extends CI_Controller {
         $this->timeOut();
         $id = $this->uri->segment(4);
         $data['money'] = $this->getTotalMoney($id);
+        //print_r($data['money']);
 
         $this->load->view('common/header3');
         $this->load->view('manager/money/totalDetail', $data);
@@ -838,7 +916,7 @@ class Money extends CI_Controller {
                 $year = date('Ym', strtotime($year1));
 
                 $data['url'] = base_url() . 'index.php/download/downloadfile/' . $year . '/' . $result->type . '_' . $subjectId .
-                        '/' . $result->upload_name;
+                    '/' . $result->upload_name;
                 $data['uploadId'] = $result->uploadId;
             } else {
                 $data['show4'] = 'display:none';
@@ -902,7 +980,7 @@ class Money extends CI_Controller {
                 $year = date('Ym');
 
                 $data['url'] = base_url() . 'index.php/download/downloadfile/' . $year . '/' . $this->get_name($subjectId) . '_' . $subjectId .
-                        '/' . $result->upload_name;
+                    '/' . $result->upload_name;
             }
             $this->load->view('common/header3');
             $this->load->view('manager/money/projectBudget', $data);
@@ -937,7 +1015,7 @@ class Money extends CI_Controller {
         foreach ($result as $r) {
             $arr = array('mc_id' => $r->mc_id, 's_id' => $r->s_id, 'b_id' => $r->b_id,
                 'date' => $r->date, 'money' => $r->money, 'moneyType' => $r->moneyType,
-                'm_type' => $r->m_type,'inherit'=>$r->inherit
+                'm_type' => $r->m_type,'inherit'=>$r->inherit,'subjectUnit' => $r->subjectUnit,
             );
             array_push($data, $arr);
 
@@ -1524,7 +1602,7 @@ class Money extends CI_Controller {
                 $edit = '<a id="" href="' . $address_edit . '">编辑</a>&nbsp;&nbsp;&nbsp;&nbsp;';
                 $string = "'您确认要删除吗?'";
                 $delete = '<a onclick="return confirm(' .
-                        $string . ');" id="" href="' . $address_delete . '">删除</a>';
+                    $string . ');" id="" href="' . $address_delete . '">删除</a>';
                 $this->table->add_row($this->get_upload_type_name($r->type), $edit . $delete);
             }
             echo $this->table->generate();

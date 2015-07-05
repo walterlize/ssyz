@@ -6,21 +6,22 @@
         <input type="hidden" name="totalMoneyId" id="totalMoneyId" value="<?= $money->totalMoneyId ?>" />
         <input type="hidden" name="type" id="type" value="2" />
         <input type="hidden" name="subjectId" id="subjectId" value="$subjectId" />
+
         <table cellpadding="0" cellspacing="1" class="tablist2">
             <tr>
                 <td class="td2" colspan="3">
                     请选择课题：
                     <select id="subjectId" name="subjectId">
                         <?php foreach ($subject as $r): ?>
-                            <option value="<?= $r->subjectId ?>" 
-                            <?php
-                            if (isset($money->subjectId) && $r->subjectId == $money->subjectId)
-                                echo 'selected';
-                            else
-                                echo '';
-                            ?>
-                                    >
-                                        <?= $r->subjectName ?>
+                            <option value="<?= $r->subjectId ?>"
+                                <?php
+                                if (isset($money->subjectId) && $r->subjectId == $money->subjectId)
+                                    echo 'selected';
+                                else
+                                    echo '';
+                                ?>
+                                >
+                                <?= $r->subjectName ?>
                             </option>
                         <?php endforeach; ?>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                         课题总经费：
@@ -29,13 +30,17 @@
             </tr>
             <tr>
                 <td class="td1">类别</td>
-                <td class="td1">经费总额(万元)</td>
+                <td class="td1">分配经费(万元)</td>
                 <td class="td1">预算说明</td>
+                <td class="td1">课题总经费(万元)</td>
+                <td class="td1">带分配经费(万元)</td>
             </tr>
-                <tr>
+            <tr>
                 <td class="td1"><div align="left" >（一）直接使用</div></td>
                 <td class="td3"><input type="text" name="direct_cost" id="direct_cost" value="<?= $money->direct_cost ?>" /></td>
                 <td class="td3"><input type="text" name="directCaption" id="directCaption" value="<?= $money->directCaption ?>" size="50" /></td>
+                <td class="td3"><?= $money->direct_cost_1?></td>
+                <td class="td3"><?= $money->direct_cost_2?></td>
             </tr>
             <tr>
                 <td class="td1"><div align="left">1.设备费</div></td>
@@ -102,7 +107,7 @@
                 <td class="td3"><input type="text" name="consultative" id="consultative" value="<?= $money->consultative ?>" /></td>
                 <td class="td3"><input type="text" name="consultativeCaption" id="consultativeCaption" value="<?= $money->consultativeCaption ?>" size="50" /></td>
             </tr>
-             <tr>
+            <tr>
                 <td class="td1"><div align="left">11.其他支出</div></td>
                 <td class="td3"><input type="text" name="other" id="other" value="<?= $money->other ?>" /></td>
                 <td class="td3"><input type="text" name="otherCaption" id="managementCaption" value="<?= $money->otherCaption ?>" size="50" /></td>

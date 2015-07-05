@@ -1,6 +1,7 @@
 <div style="margin-left:20px; margin-right:20px">
     <br />
     <div class="title_lee">子课题经费列表</div>
+
     <table class="tablist2" cellpadding="0" cellspacing="1" style="width:100%;border-collapse:collapse;" border="1">
         <tr class="HeaderStyle">
             <th class="td3">课题编号</th>
@@ -31,5 +32,6 @@
             </td>
         </tr>
     </table>
+    <div align="left" style="color: red">课题总经费<?=$moneyAll?>万元，已经分配经费<?=$moneyCost?>万元，剩余经费<?=$moneyLeft?>万元。</div>
     <div align="center"><?= $page ?></div>
 </div>

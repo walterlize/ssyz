@@ -19,15 +19,15 @@ class M_choice extends CI_Model {
         return $data;
     }
 
-// 获取劳务费专家咨询费类别
+// 获取差旅费类别
     function getTravelType() {
-        $data = array('国内差旅', '国际差旅');
+        $data = array('差旅费', '国际合作交流费');
         return $data;
     }
 
-    // 获取劳务费专家咨询费类别
+    // 获取差旅费类别
     function getTravelType1() {
-        $data = array('差旅费', '国际交流合作费');
+        $data = array('国内差旅', '国际差旅');
         return $data;
     }
 

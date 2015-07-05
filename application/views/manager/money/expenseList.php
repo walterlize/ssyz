@@ -21,7 +21,7 @@
                         <td class="td3">
                             <?= $r['money'] ?></td>
                         <td class="td1">
-                            <a id="" href="<?= base_url() ?>index.php/ordinary/money/expenseDetail/<?= $r['b_id'] ?>/<?= $r['m_type'] ?>">详情</a>
+                            <a id="" href="<?= base_url() ?>index.php/manage/money/expenseDetail/<?= $r['b_id'] ?>/<?= $r['m_type'] ?>">详情</a>
                         </td>
                     </tr>
                 <?php endforeach; ?>

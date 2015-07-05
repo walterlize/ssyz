@@ -38,7 +38,7 @@
                         </ul></li>
                     <li><a href="#"><span>子课题经费管理</span></a>
                         <ul>
-                            <li><a href="<?= base_url(); ?>index.php/manager/money/totalList" target="mainFrame"><span>子课题总经费填写</span></a></li>
+                            <li><a href="<?= base_url(); ?>index.php/manager/money/totalList" target="mainFrame"><span>子课题经费填写</span></a></li>
                             <li><a href="<?= base_url(); ?>index.php/manager/money/yearList" target="mainFrame"><span>子课题年度经费填写</span></a></li>
                             <li><a href="<?= base_url(); ?>index.php/manager/money/monthCheck/2" target="mainFrame"><span>子课题月度经费审核</span></a></li>
 

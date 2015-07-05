@@ -105,7 +105,7 @@ class m_travel extends CI_Model {
         $q = $this->db->get();
         return $q->result();
     }
-
+    //分页查询除所有的差旅报销信息
     function getTravelS($array, $per_page, $offset) {
         $this->db->select();
         $this->db->where($array);
@@ -114,7 +114,16 @@ class m_travel extends CI_Model {
         $q = $this->db->get('travel', $per_page, $offset);
         return $q->result();
     }
-
+    //查询除所有的差旅报销信息--分类别
+    function getTravelS_1($array,$offset) {
+        $this->db->select();
+        $this->db->where($array);
+        $this->db->order_by("state", "asc");
+        $this->db->order_by("date", "desc");
+        $q = $this->db->get('travel',$offset);
+        return $q->result();
+    }
+    //管理员分页获取全部差旅报销
     function getTravelMange($array, $per_page, $offset) {
         $this->db->select();
         $this->db->where($array);
@@ -122,6 +131,16 @@ class m_travel extends CI_Model {
         $this->db->order_by("state", "asc");
         $this->db->order_by("date", "desc");
         $q = $this->db->get('lz_travel_detail', $per_page, $offset);
+        return $q->result();
+    }
+    //管理员获取不同类别差旅报销--不分页
+    function getTravelMange_1($array,$offset) {
+        $this->db->select();
+        $this->db->where($array);
+        $this->db->where('state >', 2);
+        $this->db->order_by("state", "asc");
+        $this->db->order_by("date", "desc");
+        $q = $this->db->get('lz_travel_detail', $offset);
         return $q->result();
     }
 

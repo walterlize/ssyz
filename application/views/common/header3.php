@@ -8,7 +8,7 @@
         <link href="<?= base_url(); ?>jquery_ui/css/cupertino/jquery-ui.css" rel="stylesheet" type="text/css" />
         <script src="<?= base_url(); ?>javascript/jquery.js" type="text/javascript"></script>
         <script src="<?= base_url(); ?>calender/WdatePicker.js" type="text/javascript"></script>
-        <script src="<?= base_url(); ?>11111111111kindeditor/1kindeditor.js" type="text/javascript"></script>
+        <script src="<?= base_url(); ?>kindeditor/kindeditor.js" type="text/javascript"></script>
         <script src="<?= base_url(); ?>kindeditor/lang/zh_CN.js" type="text/javascript"></script>
         <script src="<?= base_url(); ?>javascript/validation.js" type="text/javascript"></script>
         <script src="<?= base_url(); ?>javascript/common.js" type="text/javascript"></script>   

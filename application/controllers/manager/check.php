@@ -40,8 +40,6 @@ class Check extends CI_Controller {
         $data['State'] = $this->getState();
         $data['Unit'] = $this->getUnit();
         $data['type1'] = '1';
-
-
         $this->load->view('common/header3');
         $this->load->view('manager/check/baoxiaoSearch', $data);
         $this->load->view('manager/check/baoxiaoList', $data);
@@ -69,8 +67,6 @@ class Check extends CI_Controller {
         $data['State'] = $this->getState();
         $data['Unit'] = $this->getUnit();
         $data['type1'] = '2';
-
-
         $this->load->view('common/header3');
         $this->load->view('manager/check/travelSearch', $data);
         $this->load->view('manager/check/travelList', $data);
@@ -81,7 +77,7 @@ class Check extends CI_Controller {
     public function borrowManage() {
         $this->timeOut();
         $subjectId = $this->session->userdata('subjectId');
-        $array = array('inherit' => $subjectId, 'year' => date("Y"), 'month' => date("m"));
+        $array = array('inherit' => $subjectId);
         $num = $this->m_borrow->getNumManage($array);
         $offset = $this->uri->segment(4);
         $data['baoxiao'] = $this->getBorrowMange($array, $offset);
@@ -98,8 +94,8 @@ class Check extends CI_Controller {
         $data['State'] = $this->getState();
         $data['Unit'] = $this->getUnit();
         $data['type1'] = '1';
-        $data['year'] = date("Y");
-        $data['month'] = date("m");
+        //$data['year'] = date("Y");
+        //$data['month'] = date("m");
 
         $this->load->view('common/header3');
         $this->load->view('manager/check/borrowSearch', $data);
@@ -131,7 +127,7 @@ class Check extends CI_Controller {
 
 
         $this->load->view('common/header3');
-        $this->load->view('manager/check/borrowSearch', $data);
+        $this->load->view('manager/check/borrowBaoxiaoSearch', $data);
         $this->load->view('manager/check/borrowList_2', $data);
         $this->load->view('common/footer');
     }
@@ -158,7 +154,7 @@ class Check extends CI_Controller {
         $data['Unit'] = $this->getUnit();
         $data['type1'] = '4';
         $this->load->view('common/header3');
-        $this->load->view('manager/check/baoxiaoSearch', $data);
+        $this->load->view('manager/check/laowuSearch', $data);
         $this->load->view('manager/check/laowuList', $data);
         $this->load->view('common/footer');
     }
@@ -454,12 +450,14 @@ class Check extends CI_Controller {
         if ($type == '1') {
             $num = $this->m_baoxiao->getNumManage($array);
             $offset = $this->uri->segment(5);
-            $data['baoxiao'] = $this->getBaoxiaoMange($array, $offset);
+            $data['baoxiao'] = $this->getBaoxiaoMange_1($array, $offset);
+            /*
             $config['base_url'] = base_url() . 'index.php/manager/check/baoxiaoManage';
             $config['total_rows'] = $num;
             $config['uri_segment'] = 4;
             $this->pagination->initialize($config);
             $data['page'] = $this->pagination->create_links();
+            */
             $data['title'] = '普通报销审核列表';
             $data['num'] = $num;
             $data['searchType'] = $this->getType();
@@ -467,7 +465,7 @@ class Check extends CI_Controller {
             $data['Month'] = $this->getSearchMonth();
             $data['State'] = $this->getState();
             $data['Unit'] = $this->getUnit();
-            $this->load->view('manager/check/baoxiaoList', $data);
+            $this->load->view('manager/search/baoxiaoList', $data);
         } elseif ($type == '4') {
             $num = $this->m_laowu->getNumManage($array);
             $offset = $this->uri->segment(5);
@@ -626,12 +624,14 @@ class Check extends CI_Controller {
         }
         $num = $this->m_travel->getNumManage($array);
         $offset = $this->uri->segment(4);
-        $data['baoxiao'] = $this->getTravelMange($array, $offset);
+        $data['baoxiao'] = $this->getTravelMange_1($array, $offset);
+        /*
         $config['base_url'] = base_url() . 'index.php/manager/check/travelManage';
         $config['total_rows'] = $num;
         $config['uri_segment'] = 4;
         $this->pagination->initialize($config);
         $data['page'] = $this->pagination->create_links();
+        */
         $data['title'] = '差旅报销审核列表';
         $data['num'] = $num;
         $data['searchType'] = $this->getTypeTravel();
@@ -642,7 +642,7 @@ class Check extends CI_Controller {
         $data['type1'] = '2';
 
 
-        $this->load->view('manager/check/travelList', $data);
+        $this->load->view('manager/search/travelList', $data);
         $this->load->view('common/footer');
     }
 
@@ -662,9 +662,9 @@ class Check extends CI_Controller {
                         }
                     } else {
                         if (strcmp($state, 'all') == 0) {
-                            $array = array('type' => $type, 'inherit' => $subjectId);
+                            $array = array('moneyType' => $type, 'inherit' => $subjectId);
                         } else {
-                            $array = array('type' => $type, 'inherit' => $subjectId, 'state' => $s);
+                            $array = array('moneyType' => $type, 'inherit' => $subjectId, 'state' => $s);
                         }
                     }
                 } else {
@@ -676,9 +676,9 @@ class Check extends CI_Controller {
                         }
                     } else {
                         if (strcmp($state, 'all') == 0) {
-                            $array = array('type' => $type, 'inherit' => $subjectId, 'month' => $month);
+                            $array = array('moneyType' => $type, 'inherit' => $subjectId, 'month' => $month);
                         } else {
-                            $array = array('type' => $type, 'inherit' => $subjectId, 'state' => $s, 'month' => $month);
+                            $array = array('moneyType' => $type, 'inherit' => $subjectId, 'state' => $s, 'month' => $month);
                         }
                     }
                 }
@@ -692,9 +692,9 @@ class Check extends CI_Controller {
                         }
                     } else {
                         if (strcmp($state, 'all') == 0) {
-                            $array = array('type' => $type, 'inherit' => $subjectId, 'year' => $year);
+                            $array = array('moneyType' => $type, 'inherit' => $subjectId, 'year' => $year);
                         } else {
-                            $array = array('type' => $type, 'inherit' => $subjectId, 'state' => $s, 'year' => $year);
+                            $array = array('moneyType' => $type, 'inherit' => $subjectId, 'state' => $s, 'year' => $year);
                         }
                     }
                 } else {
@@ -706,9 +706,9 @@ class Check extends CI_Controller {
                         }
                     } else {
                         if (strcmp($state, 'all') == 0) {
-                            $array = array('type' => $type, 's_id' => $subjectId, 'month' => $month, 'year' => $year);
+                            $array = array('moneyType' => $type, 's_id' => $subjectId, 'month' => $month, 'year' => $year);
                         } else {
-                            $array = array('type' => $type, 's_id' => $subjectId, 'state' => $s, 'month' => $month, 'year' => $year);
+                            $array = array('moneyType' => $type, 's_id' => $subjectId, 'state' => $s, 'month' => $month, 'year' => $year);
                         }
                     }
                 }
@@ -724,9 +724,9 @@ class Check extends CI_Controller {
                         }
                     } else {
                         if (strcmp($state, 'all') == 0) {
-                            $array = array('type' => $type, 'inherit' => $subjectId, 'subjectUnit' => $unit);
+                            $array = array('moneyType' => $type, 'inherit' => $subjectId, 'subjectUnit' => $unit);
                         } else {
-                            $array = array('type' => $type, 'inherit' => $subjectId, 'state' => $s, 'subjectUnit' => $unit);
+                            $array = array('moneyType' => $type, 'inherit' => $subjectId, 'state' => $s, 'subjectUnit' => $unit);
                         }
                     }
                 } else {
@@ -738,9 +738,9 @@ class Check extends CI_Controller {
                         }
                     } else {
                         if (strcmp($state, 'all') == 0) {
-                            $array = array('type' => $type, 'inherit' => $subjectId, 'month' => $month, 'subjectUnit' => $unit);
+                            $array = array('moneyType' => $type, 'inherit' => $subjectId, 'month' => $month, 'subjectUnit' => $unit);
                         } else {
-                            $array = array('type' => $type, 'inherit' => $subjectId, 'state' => $s, 'month' => $month, 'subjectUnit' => $unit);
+                            $array = array('moneyType' => $type, 'inherit' => $subjectId, 'state' => $s, 'month' => $month, 'subjectUnit' => $unit);
                         }
                     }
                 }
@@ -754,9 +754,9 @@ class Check extends CI_Controller {
                         }
                     } else {
                         if (strcmp($state, 'all') == 0) {
-                            $array = array('type' => $type, 'inherit' => $subjectId, 'year' => $year, 'subjectUnit' => $unit);
+                            $array = array('moneyType' => $type, 'inherit' => $subjectId, 'year' => $year, 'subjectUnit' => $unit);
                         } else {
-                            $array = array('type' => $type, 'inherit' => $subjectId, 'state' => $s, 'year' => $year, 'subjectUnit' => $unit);
+                            $array = array('moneyType' => $type, 'inherit' => $subjectId, 'state' => $s, 'year' => $year, 'subjectUnit' => $unit);
                         }
                     }
                 } else {
@@ -768,65 +768,190 @@ class Check extends CI_Controller {
                         }
                     } else {
                         if (strcmp($state, 'all') == 0) {
-                            $array = array('type' => $type, 's_id' => $subjectId, 'month' => $month, 'year' => $year, 'subjectUnit' => $unit);
+                            $array = array('moneyType' => $type, 's_id' => $subjectId, 'month' => $month, 'year' => $year, 'subjectUnit' => $unit);
                         } else {
-                            $array = array('type' => $type, 's_id' => $subjectId, 'state' => $s, 'month' => $month, 'year' => $year, 'subjectUnit' => $unit);
+                            $array = array('moneyType' => $type, 's_id' => $subjectId, 'state' => $s, 'month' => $month, 'year' => $year, 'subjectUnit' => $unit);
                         }
                     }
                 }
             }
         }
-        $type = $this->uri->segment(4);
-        if ($type == '1') {
-            $num = $this->m_borrow->getNumManage($array);
-            $offset = $this->uri->segment(5);
-            $data['baoxiao'] = $this->getBorrowMange($array, $offset);
-            $config['base_url'] = base_url() . 'index.php/manager/check/borrowManage';
-            $config['total_rows'] = $num;
-            $config['uri_segment'] = 4;
-            $this->pagination->initialize($config);
-            $data['page'] = $this->pagination->create_links();
-            $data['title'] = '借款审核列表';
-            $data['num'] = $num;
-            $data['searchType'] = $this->getType();
-            $data['Year'] = $this->getSearchYear();
-            $data['Month'] = $this->getSearchMonth();
-            $data['State'] = $this->getState();
-            $data['Unit'] = $this->getUnit();
-            $data['type1'] = '1';
-            $data['year'] = date("Y");
-            $data['month'] = date("m");
-            $data['state'] = '已提交';
 
-            $this->load->view('manager/check/borrowList', $data);
-            $this->load->view('common/footer');
-        } elseif ($type == '2') {
-            $num = $this->m_travel->getNumManage($array);
-            $offset = $this->uri->segment(5);
-            $data['baoxiao'] = $this->getTravelMange($array, $offset);
-            $config['base_url'] = base_url() . 'index.php/manager/check/travelManage';
-            $config['total_rows'] = $num;
-            $config['uri_segment'] = 4;
-            $this->pagination->initialize($config);
-            $data['page'] = $this->pagination->create_links();
-            $data['title'] = '差旅报销审核列表';
-            $data['num'] = $num;
-            $data['searchType'] = $this->getTypeTravel();
-            $data['Year'] = $this->getSearchYear();
-            $data['Month'] = $this->getSearchMonth();
-            $data['State'] = $this->getState();
-            $data['Unit'] = $this->getUnit();
-            $data['type1'] = '2';
+        $num = $this->m_borrow->getNumManage($array);
+        $offset = $this->uri->segment(5);
+        $data['baoxiao'] = $this->getBorrowMange_1($array, $offset);
 
+        /*$config['base_url'] = base_url() . 'index.php/manager/check/borrowManage';
+        $config['total_rows'] = $num;
+        $config['uri_segment'] = 4;
+        $this->pagination->initialize($config);
+        $data['page'] = $this->pagination->create_links();
+        */
+        $data['title'] = '借款审核列表';
+        $data['num'] = $num;
+        $data['searchType'] = $this->getType();
+        $data['Year'] = $this->getSearchYear();
+        $data['Month'] = $this->getSearchMonth();
+        $data['State'] = $this->getState();
+        $data['Unit'] = $this->getUnit();
+        $data['type1'] = '1';
 
-            $this->load->view('manager/check/travelList', $data);
-            $this->load->view('common/footer');
-        } else {
-            $message = '有误';
-            show_error($message);
-        }
+        $data['state'] = '已提交';
+
+        $this->load->view('manager/search/borrowList', $data);
+        $this->load->view('common/footer');
+
     }
+// 借款报销变换显示
+    function changeOptionBorrowBaoxiao() {
+        extract($_REQUEST);
+        $subjectId = $this->session->userdata('subjectId');
+        $s = $this->m_baoxiao->getState1($state);
+        if (strcmp($unit, 'all') == 0) {
+            if (strcmp($year, 'all') == 0) {
+                if (strcmp($month, 'all') == 0) {
+                    if (strcmp($type, 'all') == 0) {
+                        if (strcmp($state, 'all') == 0) {
+                            $array = array('inherit' => $subjectId,'state' => 5);
+                        } else {
+                            $array = array('inherit' => $subjectId, 'state' => 5,'state2' => $s);
+                        }
+                    } else {
+                        if (strcmp($state, 'all') == 0) {
+                            $array = array('moneyType' => $type,'state' => 5, 'inherit' => $subjectId);
+                        } else {
+                            $array = array('moneyType' => $type, 'inherit' => $subjectId, 'state' => 5,'state2' => $s);
+                        }
+                    }
+                } else {
+                    if (strcmp($type, 'all') == 0) {
+                        if (strcmp($state, 'all') == 0) {
+                            $array = array('inherit' => $subjectId,'state' => 5, 'month' => $month);
+                        } else {
+                            $array = array('inherit' => $subjectId, 'state' => 5, 'state2' => $s,'month' => $month);
+                        }
+                    } else {
+                        if (strcmp($state, 'all') == 0) {
+                            $array = array('moneyType' => $type, 'inherit' => $subjectId,'state' => 5, 'month' => $month);
+                        } else {
+                            $array = array('moneyType' => $type, 'inherit' => $subjectId, 'state' => 5,'state2' => $s ,'month' => $month);
+                        }
+                    }
+                }
+            } else {
+                if (strcmp($month, 'all') == 0) {
+                    if (strcmp($type, 'all') == 0) {
+                        if (strcmp($state, 'all') == 0) {
+                            $array = array('inherit' => $subjectId,'state' => 5, 'year' => $year);
+                        } else {
+                            $array = array('inherit' => $subjectId, 'state' => 5,'state2' => $s ,'year' => $year);
+                        }
+                    } else {
+                        if (strcmp($state, 'all') == 0) {
+                            $array = array('moneyType' => $type, 'inherit' => $subjectId,'state' => 5, 'year' => $year);
+                        } else {
+                            $array = array('moneyType' => $type, 'inherit' => $subjectId, 'state' => 5, 'state2' => $s,'year' => $year);
+                        }
+                    }
+                } else {
+                    if (strcmp($type, 'all') == 0) {
+                        if (strcmp($state, 'all') == 0) {
+                            $array = array('inherit' => $subjectId, 'month' => $month,'state' => 5, 'year' => $year);
+                        } else {
+                            $array = array('inherit' => $subjectId, 'state' => 5,'state2' => $s ,'month' => $month, 'year' => $year);
+                        }
+                    } else {
+                        if (strcmp($state, 'all') == 0) {
+                            $array = array('moneyType' => $type, 's_id' => $subjectId, 'state' => 5,'month' => $month, 'year' => $year);
+                        } else {
+                            $array = array('moneyType' => $type, 's_id' => $subjectId, 'state' => 5,'state2' => $s ,'month' => $month, 'year' => $year);
+                        }
+                    }
+                }
+            }
+        } else {
+            if (strcmp($year, 'all') == 0) {
+                if (strcmp($month, 'all') == 0) {
+                    if (strcmp($type, 'all') == 0) {
+                        if (strcmp($state, 'all') == 0) {
+                            $array = array('inherit' => $subjectId, 'state' => 5,'subjectUnit' => $unit);
+                        } else {
+                            $array = array('inherit' => $subjectId, 'state' => 5, 'state2' => $s,'subjectUnit' => $unit);
+                        }
+                    } else {
+                        if (strcmp($state, 'all') == 0) {
+                            $array = array('moneyType' => $type, 'inherit' => $subjectId,'state' => 5, 'subjectUnit' => $unit);
+                        } else {
+                            $array = array('moneyType' => $type, 'inherit' => $subjectId, 'state' => 5, 'state2' => $s,'subjectUnit' => $unit);
+                        }
+                    }
+                } else {
+                    if (strcmp($type, 'all') == 0) {
+                        if (strcmp($state, 'all') == 0) {
+                            $array = array('inherit' => $subjectId, 'month' => $month, 'state' => 5,'subjectUnit' => $unit);
+                        } else {
+                            $array = array('inherit' => $subjectId, 'state' => 5,'state2' => $s, 'month' => $month, 'subjectUnit' => $unit);
+                        }
+                    } else {
+                        if (strcmp($state, 'all') == 0) {
+                            $array = array('moneyType' => $type, 'inherit' => $subjectId,'state' => 5, 'month' => $month, 'subjectUnit' => $unit);
+                        } else {
+                            $array = array('moneyType' => $type, 'inherit' => $subjectId, 'state' => 5, 'state2' => $s,'month' => $month, 'subjectUnit' => $unit);
+                        }
+                    }
+                }
+            } else {
+                if (strcmp($month, 'all') == 0) {
+                    if (strcmp($type, 'all') == 0) {
+                        if (strcmp($state, 'all') == 0) {
+                            $array = array('inherit' => $subjectId, 'year' => $year, 'state' => 5,'subjectUnit' => $unit);
+                        } else {
+                            $array = array('inherit' => $subjectId, 'state' => 5, 'state2' => $s,'year' => $year, 'subjectUnit' => $unit);
+                        }
+                    } else {
+                        if (strcmp($state, 'all') == 0) {
+                            $array = array('moneyType' => $type, 'inherit' => $subjectId,'state' => 5, 'year' => $year, 'subjectUnit' => $unit);
+                        } else {
+                            $array = array('moneyType' => $type, 'inherit' => $subjectId, 'state' => 5, 'state2' => $s,'year' => $year, 'subjectUnit' => $unit);
+                        }
+                    }
+                } else {
+                    if (strcmp($type, 'all') == 0) {
+                        if (strcmp($state, 'all') == 0) {
+                            $array = array('inherit' => $subjectId, 'month' => $month,'state' => 5, 'year' => $year, 'subjectUnit' => $unit);
+                        } else {
+                            $array = array('inherit' => $subjectId, 'state' => 5, 'state2' => $s,'month' => $month, 'year' => $year, 'subjectUnit' => $unit);
+                        }
+                    } else {
+                        if (strcmp($state, 'all') == 0) {
+                            $array = array('moneyType' => $type, 's_id' => $subjectId,'state' => 5, 'month' => $month, 'year' => $year, 'subjectUnit' => $unit);
+                        } else {
+                            $array = array('moneyType' => $type, 's_id' => $subjectId, 'state' => 5,'state2' => $s, 'month' => $month, 'year' => $year, 'subjectUnit' => $unit);
+                        }
+                    }
+                }
+            }
+        }
 
+        $num = $this->m_borrow->getNumManage($array);
+        $offset = $this->uri->segment(5);
+        $data['baoxiao'] = $this->getBorrowMange_1($array, $offset);
+
+        $data['title'] = '借款报销列表';
+        $data['num'] = $num;
+        $data['searchType'] = $this->getType();
+        $data['Year'] = $this->getSearchYear();
+        $data['Month'] = $this->getSearchMonth();
+        $data['State'] = $this->getState();
+        $data['Unit'] = $this->getUnit();
+        $data['type1'] = '1';
+
+        $data['state'] = '已提交';
+
+        $this->load->view('manager/search/borrowList_2', $data);
+        $this->load->view('common/footer');
+
+    }
     // 报销变换显示
     function changeOptionLaowu() {
         extract($_REQUEST);
@@ -960,12 +1085,14 @@ class Check extends CI_Controller {
         $type = $this->uri->segment(4);
         $num = $this->m_laowu->getNumManage($array);
         $offset = $this->uri->segment(5);
-        $data['laowu'] = $this->getLaowuMange($array, $offset);
-        $config['base_url'] = base_url() . 'index.php/manager/check/laowuManage';
-        $config['total_rows'] = $num;
-        $config['uri_segment'] = 4;
-        $this->pagination->initialize($config);
-        $data['page'] = $this->pagination->create_links();
+        $data['laowu'] = $this->getLaowuMange_1($array, $offset);
+        /*
+         $config['base_url'] = base_url() . 'index.php/manager/check/laowuManage';
+         $config['total_rows'] = $num;
+         $config['uri_segment'] = 4;
+         $this->pagination->initialize($config);
+         $data['page'] = $this->pagination->create_links();
+        */
         $data['title'] = '劳务费/专家费审核列表';
         $data['num'] = $num;
         $data['searchType'] = $this->getTypeLaowu();
@@ -977,7 +1104,7 @@ class Check extends CI_Controller {
         $data['year'] = date("Y");
         $data['month'] = date("m");
         $data['state'] = '已提交';
-        $this->load->view('manager/check/laowuList', $data);
+        $this->load->view('manager/search/laowuList', $data);
         $this->load->view('common/footer');
     }
 
@@ -1238,7 +1365,7 @@ class Check extends CI_Controller {
         $data['Unit'] = $this->getUnit();
 
         $this->load->view('common/header3');
-        $this->load->view('manager/check/baoxiaoSearch', $data);
+        $this->load->view('manager/check/travelSearch', $data);
         $this->load->view('manager/check/travelList', $data);
         $this->load->view('common/footer');
     }
@@ -1273,7 +1400,7 @@ class Check extends CI_Controller {
         $data['Unit'] = $this->getUnit();
 
         $this->load->view('common/header3');
-        $this->load->view('manager/check/baoxiaoSearch', $data);
+        $this->load->view('manager/check/borrowSearch', $data);
         $this->load->view('manager/check/borrowList', $data);
         $this->load->view('common/footer');
     }
@@ -1346,39 +1473,84 @@ class Check extends CI_Controller {
         $data['Unit'] = $this->getUnit();
 
         $this->load->view('common/header3');
-        $this->load->view('manager/check/baoxiaoSearch', $data);
+        $this->load->view('manager/check/laowuSearch', $data);
         $this->load->view('manager/check/laowuList', $data);
         $this->load->view('common/footer');
     }
 
     //按报销按照金额,报销代码查询
+    /* public function baoxiaoSearch() {
+         $this->timeOut();
+         $searchType1 = $_POST['searchType'];
+         $searchTerm = trim($_POST['searchTerm']);
+         if (!get_magic_quotes_gpc()) {
+             $searchType1 = addslashes($searchType1);
+             $searchTerm = addslashes($searchTerm);
+         }
+         if ($searchType1 == '1') {
+             $array = array('code' => $searchTerm);
+         } elseif ($searchType1 == '2') {
+             $array = array('money' => $searchTerm);
+         } else {
+             $message = 's_id有误';
+             show_error($message);
+         }
+         $data['searchType'] = $this->getType();
+         $data['Year'] = $this->getSearchYear();
+         $data['Month'] = $this->getSearchMonth();
+         $data['State'] = $this->getState();
+         $data['Unit'] = $this->getUnit();
+         $num = $this->m_baoxiao->getNum($array);
+         $offset = $this->uri->segment(4);
+         $data['baoxiao'] = $this->getBaoxiaoMange($array, $offset);
+         $config['base_url'] = base_url() . 'index.php/manager/check/baoxiaoManage';
+         $config['total_rows'] = $num;
+         $config['uri_segment'] = 4;
+         $this->pagination->initialize($config);
+         $data['page'] = $this->pagination->create_links();
+         $data['title'] = '普通报销审核列表';
+         $data['num'] = $num;
+         $data['type1'] = '1';
+         $this->load->view('common/header3');
+         $this->load->view('manager/check/baoxiaoSearch', $data);
+         $this->load->view('manager/check/baoxiaoList', $data);
+         $this->load->view('common/footer');
+     }
+ */
+    //按报销按照金额,报销代码查询
     public function baoxiaoSearch() {
         $this->timeOut();
-
         $searchType1 = $_POST['searchType'];
         $searchTerm = trim($_POST['searchTerm']);
         if (!get_magic_quotes_gpc()) {
             $searchType1 = addslashes($searchType1);
             $searchTerm = addslashes($searchTerm);
         }
-        if ($searchType1 == '1') {
-            $array = array('code' => $searchTerm);
-        } elseif ($searchType1 == '2') {
-            $array = array('money' => $searchTerm);
-        } else {
-            $message = 's_id有误';
-            show_error($message);
-        }
+        $array1=array('code' => $searchTerm);
+        $array2 = array('money' => $searchTerm);
+
+
         $data['searchType'] = $this->getType();
         $data['Year'] = $this->getSearchYear();
         $data['Month'] = $this->getSearchMonth();
         $data['State'] = $this->getState();
         $data['Unit'] = $this->getUnit();
 
-
-        $num = $this->m_baoxiao->getNum($array);
         $offset = $this->uri->segment(4);
-        $data['baoxiao'] = $this->getBaoxiaoMange($array, $offset);
+        $result1 = $this->getBaoxiaoMange($array1, $offset);
+        $result2 = $this->getBaoxiaoMange($array2, $offset);
+        if($result1==null and $result2 !==null){
+            $array=$array2;
+            $num = $this->m_baoxiao->getNumManage($array);
+            $data['baoxiao']=$result2;
+        }elseif($result2==null and $result1 !==null){
+            $array=$array1;
+            $num = $this->m_baoxiao->getNumManage($array);
+            $data['baoxiao']=$result1;
+        }else{
+            echo "查询结果不存在，请检查输入内容！";
+        }
+
         $config['base_url'] = base_url() . 'index.php/manager/check/baoxiaoManage';
         $config['total_rows'] = $num;
         $config['uri_segment'] = 4;
@@ -1386,19 +1558,222 @@ class Check extends CI_Controller {
         $data['page'] = $this->pagination->create_links();
         $data['title'] = '普通报销审核列表';
         $data['num'] = $num;
-
         $data['type1'] = '1';
         $this->load->view('common/header3');
         $this->load->view('manager/check/baoxiaoSearch', $data);
         $this->load->view('manager/check/baoxiaoList', $data);
         $this->load->view('common/footer');
     }
+    //按差旅报销按照金额,报销代码查询--差旅查询
+    public function travelSearch() {
+        $this->timeOut();
+        $searchType1 = $_POST['searchType'];
+        $searchTerm = trim($_POST['searchTerm']);
+        if (!get_magic_quotes_gpc()) {
+            $searchType1 = addslashes($searchType1);
+            $searchTerm = addslashes($searchTerm);
+        }
+        $array1=array('code' => $searchTerm);
+        $array2 = array('totalMoney' => $searchTerm);
 
+
+        $data['searchType'] = $this->getType();
+        $data['Year'] = $this->getSearchYear();
+        $data['Month'] = $this->getSearchMonth();
+        $data['State'] = $this->getState();
+        $data['Unit'] = $this->getUnit();
+
+        $offset = $this->uri->segment(4);
+        $result1 = $this->getTravelMange($array1, $offset);
+        $result2 = $this->getTravelMange($array2, $offset);
+        if($result1==null and $result2 !==null){
+            $array=$array2;
+            $num = $this->m_travel->getNumManage($array);
+            $data['baoxiao']=$result2;
+        }elseif($result2==null and $result1 !==null){
+            $array=$array1;
+            $num = $this->m_travel->getNumManage($array);
+            $data['baoxiao']=$result1;
+        }else{
+            echo "查询结果不存在，请检查输入内容！";
+        }
+
+        $config['base_url'] = base_url() . 'index.php/manager/check/travelManage';
+        $config['total_rows'] = $num;
+        $config['uri_segment'] = 4;
+        $this->pagination->initialize($config);
+        $data['page'] = $this->pagination->create_links();
+        $data['title'] = '差旅报销审核列表';
+        $data['num'] = $num;
+        $data['type1'] = '1';
+        $this->load->view('common/header3');
+        $this->load->view('manager/check/travelSearch', $data);
+        $this->load->view('manager/check/travelList', $data);
+        $this->load->view('common/footer');
+    }
+    //借款查询
+    public function borrowSearch() {
+        $this->timeOut();
+        $searchType1 = $_POST['searchType'];
+        $searchTerm = trim($_POST['searchTerm']);
+        if (!get_magic_quotes_gpc()) {
+            $searchType1 = addslashes($searchType1);
+            $searchTerm = addslashes($searchTerm);
+        }
+        $array1=array('code' => $searchTerm);
+        $array2 = array('money' => $searchTerm);
+
+
+        $data['searchType'] = $this->getType();
+        $data['Year'] = $this->getSearchYear();
+        $data['Month'] = $this->getSearchMonth();
+        $data['State'] = $this->getState();
+        $data['Unit'] = $this->getUnit();
+
+        $offset = $this->uri->segment(4);
+        $result1 = $this->getBorrowMange($array1, $offset);
+        $result2 = $this->getBorrowMange($array2, $offset);
+        if($result1==null and $result2 !==null){
+            $array=$array2;
+            $num = $this->m_borrow->getNumManage($array);
+            $data['baoxiao']=$result2;
+        }elseif($result2==null and $result1 !==null){
+            $array=$array1;
+            $num = $this->m_borrow->getNumManage($array);
+            $data['baoxiao']=$result1;
+        }else{
+            echo "查询结果不存在，请检查输入内容！";
+        }
+
+        $config['base_url'] = base_url() . 'index.php/manager/check/borrowManage';
+        $config['total_rows'] = $num;
+        $config['uri_segment'] = 4;
+        $this->pagination->initialize($config);
+        $data['page'] = $this->pagination->create_links();
+        $data['title'] = '借款审核列表';
+        $data['num'] = $num;
+        $data['type1'] = '1';
+        $this->load->view('common/header3');
+        $this->load->view('manager/check/borrowSearch', $data);
+        $this->load->view('manager/check/borrowList', $data);
+        $this->load->view('common/footer');
+    }
+    //借款报销查询
+    public function borrowBaoxiaoSearch() {
+        $this->timeOut();
+        $searchType1 = $_POST['searchType'];
+        $searchTerm = trim($_POST['searchTerm']);
+        if (!get_magic_quotes_gpc()) {
+            $searchType1 = addslashes($searchType1);
+            $searchTerm = addslashes($searchTerm);
+        }
+        $array1=array('code' => $searchTerm);
+        $array2 = array('money' => $searchTerm);
+
+
+        $data['searchType'] = $this->getType();
+        $data['Year'] = $this->getSearchYear();
+        $data['Month'] = $this->getSearchMonth();
+        $data['State'] = $this->getState();
+        $data['Unit'] = $this->getUnit();
+
+        $offset = $this->uri->segment(4);
+        $result1 = $this->getBorrowMange_2($array1, $offset);
+        $result2 = $this->getBorrowMange_2($array2, $offset);
+        if($result1==null and $result2 !==null){
+            $array=$array2;
+            $num = $this->m_borrow->getNumManage_2($array);
+            $data['baoxiao']=$result2;
+        }elseif($result2==null and $result1 !==null){
+            $array=$array1;
+            $num = $this->m_borrow->getNumManage_2($array);
+            $data['baoxiao']=$result1;
+        }else{
+            echo "查询结果不存在，请检查输入内容！";
+        }
+
+        $config['base_url'] = base_url() . 'index.php/manager/check/borrowBaoxiao';
+        $config['total_rows'] = $num;
+        $config['uri_segment'] = 4;
+        $this->pagination->initialize($config);
+        $data['page'] = $this->pagination->create_links();
+        $data['title'] = '借款报销审核列表';
+        $data['num'] = $num;
+        $data['type1'] = '1';
+        $this->load->view('common/header3');
+        $this->load->view('manager/check/borrowBaoxiaoSearch', $data);
+        $this->load->view('manager/check/borrowList_2', $data);
+        $this->load->view('common/footer');
+    }
+    //劳务费查询
+    public function laowuSearch() {
+        $this->timeOut();
+        $searchType1 = $_POST['searchType'];
+        $searchTerm = trim($_POST['searchTerm']);
+        if (!get_magic_quotes_gpc()) {
+            $searchType1 = addslashes($searchType1);
+            $searchTerm = addslashes($searchTerm);
+        }
+        $array1=array('code' => $searchTerm);
+        $array2 = array('money' => $searchTerm);
+
+
+        $data['searchType'] = $this->getType();
+        $data['Year'] = $this->getSearchYear();
+        $data['Month'] = $this->getSearchMonth();
+        $data['State'] = $this->getState();
+        $data['Unit'] = $this->getUnit();
+
+        $offset = $this->uri->segment(4);
+        $result1 = $this->getlaowuMange($array1, $offset);
+        $result2 = $this->getlaowuMange($array2, $offset);
+        if($result1==null and $result2 !==null){
+            $array=$array2;
+            $num = $this->m_laowu->getNumManage($array);
+            $data['laowu']=$result2;
+        }elseif($result2==null and $result1 !==null){
+            $array=$array1;
+            $num = $this->m_laowu->getNumManage($array);
+            $data['laowu']=$result1;
+        }else{
+            echo "查询结果不存在，请检查输入内容！";
+        }
+
+        $config['base_url'] = base_url() . 'index.php/manager/check/laowuManage';
+        $config['total_rows'] = $num;
+        $config['uri_segment'] = 4;
+        $this->pagination->initialize($config);
+        $data['page'] = $this->pagination->create_links();
+        $data['title'] = '劳务费/专家费审核列表';
+        $data['num'] = $num;
+        $data['type1'] = '1';
+        $this->load->view('common/header3');
+        $this->load->view('manager/check/laowuSearch', $data);
+        $this->load->view('manager/check/laowuList', $data);
+        $this->load->view('common/footer');
+    }
     // 分页获取报销经费信息
     public function getBaoxiaoMange($array, $offset) {
 
         $data = array();
         $result = $this->m_baoxiao->getBaoxiaoMange($array, PER_PAGE, $offset);
+
+        foreach ($result as $r) {
+            $arr = array('bao_id' => $r->bao_id, 'date' => $r->date, 'code' => $r->code, 'baoxiaoType' => $r->baoxiaoType, 'num' => $r->num, 'money' => $r->money,
+                'subjectNum' => $r->subjectNum, 'subjectUnit' => $r->subjectUnit, 'subjectName' => $r->subjectName,
+                'inherit' => $r->inherit, 'state' => $this->m_baoxiao->getState($r->state), 'state3' => $this->getState3($r->state),
+                'display' => $this->getDisplay($r->state), 'display1' => $this->getDisplay1($r->state), 'stateShow3' => $this->getStateShow3($r->state),
+                'state4' => $this->getState4($r->state), 'stateShow4' => $this->getStateShow4($r->state),
+            );
+            array_push($data, $arr);
+        }
+        return $data;
+    }
+    // 分类别获取报销经费信息--不分页
+    public function getBaoxiaoMange_1($array, $offset) {
+
+        $data = array();
+        $result = $this->m_baoxiao->getBaoxiaoMange_1($array,$offset);
 
         foreach ($result as $r) {
             $arr = array('bao_id' => $r->bao_id, 'date' => $r->date, 'code' => $r->code, 'baoxiaoType' => $r->baoxiaoType, 'num' => $r->num, 'money' => $r->money,
@@ -1429,15 +1804,33 @@ class Check extends CI_Controller {
         }
         return $data;
     }
+    // 分类别获取差旅经费信息--不分页
+    public function getTravelMange_1($array, $offset) {
 
-    // 分页获取差旅经费信息
+        $data = array();
+        $result = $this->m_travel->getTravelMange_1($array,$offset);
+
+        foreach ($result as $r) {
+            $arr = array('bao_id' => $r->t_id, 'date' => $r->date, 'code' => $r->code, 'baoxiaoType' => $r->type, 'num' => $r->num, 'money' => $r->totalMoney,
+                'subjectNum' => $r->subjectNum, 'subjectUnit' => $r->subjectUnit, 'subjectName' => $r->subjectName,
+                'inherit' => $r->inherit, 'state' => $this->m_baoxiao->getState($r->state), 'state3' => $this->getState3($r->state),
+                'display' => $this->getDisplay($r->state), 'display1' => $this->getDisplay1($r->state), 'stateShow3' => $this->getStateShow3($r->state),
+                'state4' => $this->getState4($r->state), 'stateShow4' => $this->getStateShow4($r->state),
+            );
+            array_push($data, $arr);
+        }
+        return $data;
+    }
+
+    // 分页获取借款全部信息
     public function getBorrowMange($array, $offset) {
 
         $data = array();
         $result = $this->m_borrow->getBorrowMange($array, PER_PAGE, $offset);
 
         foreach ($result as $r) {
-            $arr = array('b_id' => $r->b_id, 'date' => $r->date, 'date5' => $r->date5, 'code' => $r->code, 'type' => $r->type, 'money' => $r->money, 'moneyOld' => $r->moneyOld,
+            $arr = array('b_id' => $r->b_id, 'date' => $r->date, 'date5' => $r->date5, 'code' => $r->code, 'type' => $r->type,
+                'borrowType' => $r->borrowType,'moneyType' => $r->moneyType, 'money' => $r->money, 'moneyOld' => $r->moneyOld,
                 'subjectNum' => $r->subjectNum, 'subjectUnit' => $r->subjectUnit, 'subjectName' => $r->subjectName,
                 'inherit' => $r->inherit, 'state' => $this->m_borrow->getState($r->state), 'state2' => $this->m_borrow->getState3($r->state2), 'state3' => $this->getState3($r->state),
                 'display' => $this->getDisplay($r->state), 'display1' => $this->getDisplay1($r->state), 'stateShow3' => $this->getStateShow3($r->state),
@@ -1448,14 +1841,32 @@ class Check extends CI_Controller {
         return $data;
     }
 
-    // 分页获取差旅经费信息
+    // 获取借款分类全部信息--不分页
+    public function getBorrowMange_1($array, $offset) {
+
+        $data = array();
+        $result = $this->m_borrow->getBorrowMange_1($array,$offset);
+
+        foreach ($result as $r) {
+            $arr = array('b_id' => $r->b_id, 'date' => $r->date, 'date5' => $r->date5, 'code' => $r->code, 'type' => $r->type,'moneyType' => $r->moneyType, 'money' => $r->money, 'moneyOld' => $r->moneyOld,
+                'subjectNum' => $r->subjectNum, 'subjectUnit' => $r->subjectUnit, 'subjectName' => $r->subjectName,
+                'inherit' => $r->inherit, 'state' => $this->m_borrow->getState($r->state), 'state2' => $this->m_borrow->getState3($r->state2), 'state3' => $this->getState3($r->state),
+                'display' => $this->getDisplay($r->state), 'display1' => $this->getDisplay1($r->state), 'stateShow3' => $this->getStateShow3($r->state),
+                'state4' => $this->getState4($r->state), 'stateShow4' => $this->getStateShow4($r->state),'borrowType' => $r->borrowType,'moneyType' => $r->moneyType,
+            );
+            array_push($data, $arr);
+        }
+        return $data;
+    }
+
+    // 分页借款报销信息
     public function getBorrowMange_2($array, $offset) {
 
         $data = array();
         $result = $this->m_borrow->getBorrowMange_2($array, PER_PAGE, $offset);
 
         foreach ($result as $r) {
-            $arr = array('b_id' => $r->b_id, 'date' => $r->date, 'date5' => $r->date5, 'code' => $r->code, 'type' => $r->type, 'money' => $r->money, 'moneyOld' => $r->moneyOld,
+            $arr = array('b_id' => $r->b_id, 'date' => $r->date, 'date5' => $r->date5, 'code' => $r->code, 'type' => $r->type, 'money' => $r->money, 'moneyType' => $r->moneyType, 'moneyOld' => $r->moneyOld,
                 'subjectNum' => $r->subjectNum, 'subjectUnit' => $r->subjectUnit, 'subjectName' => $r->subjectName,
                 'inherit' => $r->inherit, 'state' => $this->m_borrow->getState($r->state), 'state2' => $this->m_borrow->getState($r->state2), 'state3' => $this->getState3($r->state2),
                 'display' => $this->getDisplay($r->state2), 'display1' => $this->getDisplay1($r->state2), 'stateShow3' => $this->getStateShow3($r->state2),
@@ -1483,6 +1894,23 @@ class Check extends CI_Controller {
         }
         return $data;
     }
+    // 分类别获取差旅经费信息--不分页
+    public function getLaowuMange_1($array, $offset) {
+
+        $data = array();
+        $result = $this->m_laowu->getLaowuMange_1($array,$offset);
+
+        foreach ($result as $r) {
+            $arr = array('laowu_id' => $r->laowu_id, 'date' => $r->date, 'code' => $r->code, 'type' => $r->type, 'peopleNum' => $r->peopleNum, 'money' => $r->money,
+                'subjectNum' => $r->subjectNum, 'subjectUnit' => $r->subjectUnit, 'subjectName' => $r->subjectName,
+                'inherit' => $r->inherit, 'state' => $this->m_baoxiao->getState($r->state), 'state3' => $this->getState3($r->state),
+                'display' => $this->getDisplay($r->state), 'display1' => $this->getDisplay1($r->state), 'stateShow3' => $this->getStateShow3($r->state),
+                'state4' => $this->getState4($r->state), 'stateShow4' => $this->getStateShow4($r->state),
+            );
+            array_push($data, $arr);
+        }
+        return $data;
+    }
 
 //获取报销类型
     function getType() {
@@ -1494,7 +1922,7 @@ class Check extends CI_Controller {
     //获取报销类型
     function getTypeTravel() {
         $this->load->model('m_choice');
-        $data = $this->m_choice->getTravelType1();
+        $data = $this->m_choice->getTravelType();
         return $data;
     }
 

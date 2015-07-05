@@ -100,7 +100,7 @@ class m_borrow extends CI_Model {
         $q = $this->db->get();
         return $q->result();
     }
-
+    //分页获取全部的借款信息
     function getBorrowS($array, $per_page, $offset) {
         $this->db->select();
         $this->db->where($array);
@@ -108,7 +108,15 @@ class m_borrow extends CI_Model {
         $q = $this->db->get('borrow', $per_page, $offset);
         return $q->result();
     }
-
+    //获取分类的借款信息--不分页
+    function getBorrowS_1($array,$offset) {
+        $this->db->select();
+        $this->db->where($array);
+        $this->db->order_by("date", "asc");
+        $q = $this->db->get('borrow',$offset);
+        return $q->result();
+    }
+    //管理员分页获取全部的借款信息
     function getBorrowMange($array, $per_page, $offset) {
         $this->db->select();
         $this->db->where($array);
@@ -116,6 +124,16 @@ class m_borrow extends CI_Model {
         $this->db->order_by("state", "asc");
         $this->db->order_by("date", "desc");
         $q = $this->db->get('lz_borrow_detail', $per_page, $offset);
+        return $q->result();
+    }
+    //管理员获取分类全部的借款信息--不分页
+    function getBorrowMange_1($array,$offset) {
+        $this->db->select();
+        $this->db->where($array);
+        $this->db->where('state >', 2);
+        $this->db->order_by("state", "asc");
+        $this->db->order_by("date", "desc");
+        $q = $this->db->get('lz_borrow_detail',$offset);
         return $q->result();
     }
      function getBorrowMange_2($array, $per_page, $offset) {

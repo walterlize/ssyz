@@ -15,7 +15,6 @@
                 <th class="td1">查看详情</th>
                 <th class="td3">审核</th>
                 <th class="td1">完成</th>
-
             </tr>
             <?php if (is_array($baoxiao)) foreach ($baoxiao as $key => $r): ?>
                     <tr class="RowStyle" align="center">
@@ -40,30 +39,27 @@
                         <td class="td1">
                             <?= $r['subjectUnit'] ?>
                         </td>
+
                         <td class="td3">
                             <?= $r['state'] ?>
                         </td>
                         <td class="td1">
-                            <a id="" href="<?= base_url() ?>index.php/manager/check/baoxiaoDetail/<?= $r['bao_id'] ?>">详细</a>
+                            <a id="" href="<?= base_url() ?>index.php/manager/check/travelDetail/<?= $r['bao_id'] ?>">详细</a>
                         </td>
-
                         <td class="td3">
                               <div style="<?= $r['display1'] ?>"> 
-                                  <input type="button" name="btnSave" value="<?= $r['stateShow3'] ?>" onclick="window.location.href = '<?= base_url() ?>index.php/manager/check/update/<?=$r['bao_id']?>/<?=$r['state3']?>/1';"  class="input"  />
-
+                                  <input type="button" name="btnSave" value="<?= $r['stateShow3'] ?>" onclick="window.location.href = '<?= base_url() ?>index.php/manager/check/updateTravel/<?=$r['bao_id']?>/<?=$r['state3']?>/1';"  class="input"  />
                       </div>
                         </td>
                         <td class="td1"style="<?= $r['display'] ?>">
-                            <div style="<?= $r['display'] ?>"> 
-                                <input type="button" name="btnSave" value="<?= $r['stateShow4'] ?>" onclick="window.location.href = '<?= base_url() ?>index.php/manager/check/update/<?=$r['bao_id']?>/<?=$r['state4']?>/2';"  class="input"  />
-
-                            </div>
+                            <div style="<?= $r['display'] ?>">
+                                <input type="button" name="btnSave" value="<?= $r['stateShow4'] ?>" onclick="window.location.href = '<?= base_url() ?>index.php/manager/check/updateTravel/<?=$r['bao_id']?>/<?=$r['state4']?>/2';"  class="input"  />
+                       </div> 
                         </td>
-
                     </tr>
                 <?php endforeach; ?>
 
         </table>
         <div align="right"><font color="#3A6EA5" size="3px">共有<?= $num ?>条记录，每页10条。</font></div>
-        <div align="center"><?= $page ?></div>
+        <!--<div align="center"><?= $page ?></div>-->
     </div></div>

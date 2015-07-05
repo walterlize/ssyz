@@ -100,12 +100,39 @@ class m_totalmoney extends CI_Model {
         return $q->result();
     }
 
+    //管理员获取全部分配可以经费的情况
     function getTotalMoneyS($array, $per_page, $offset) {
         $this->db->select();
         $this->db->where($array);
         $this->db->order_by("totalMoneyId", "asc");
 
         $q = $this->db->get('lz_money_total', $per_page, $offset);
+        return $q->result();
+    }
+
+    //管理员获取全部分配可以经费的情况
+    function getMoney_all($array) {
+        $this->db->select_sum('equipment');
+        $this->db->select_sum('buyEquipment');
+        $this->db->select_sum('tryEquipment');
+        $this->db->select_sum('alterEquipment');
+        $this->db->select_sum('material');
+        $this->db->select_sum('experiment');
+        $this->db->select_sum('fuel');
+        $this->db->select_sum('travel');
+        $this->db->select_sum('conference');
+        $this->db->select_sum('international');
+        $this->db->select_sum('information');
+        $this->db->select_sum('service');
+        $this->db->select_sum('consultative');
+        $this->db->select_sum('management');
+        $this->db->select_sum('other');
+        $this->db->select_sum('indirect_cost');
+        $this->db->select_sum('direct_cost');
+        $this->db->select_sum('ji_xiao');
+        $this->db->select_sum('total');
+        $this->db->where($array);
+        $q = $this->db->get('lz_money_total');
         return $q->result();
     }
 
@@ -124,7 +151,7 @@ class m_totalmoney extends CI_Model {
         $this->db->select_sum('service');
         $this->db->select_sum('consultative');
         $this->db->select_sum('management');
-        $this->db->select_sum('othert');
+        $this->db->select_sum('other');
         $this->db->select_sum('indirect_cost');
         $this->db->select_sum('ji_xiao');
 

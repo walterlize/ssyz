@@ -57,7 +57,7 @@ class m_money_record extends CI_Model {
         $q = $this->db->get();
         return $q->result();
     }
-   //子课题读出当前花费的列表
+    //子课题读出当前花费的列表
     function getMoney_currentS($array, $per_page, $offset) {
         $this->db->select();
         $this->db->where($array);
@@ -71,6 +71,20 @@ class m_money_record extends CI_Model {
         $this->db->where($array);
         $this->db->order_by("date", "asc");
         $q = $this->db->get('lz_money_current', $per_page, $offset);
+        return $q->result();
+    }
+    //子课题读出当前花费的列表
+    function getMoney_all($array) {
+        $this->db->select_sum('money');
+        $this->db->where($array);
+        $q = $this->db->get('money_current');
+        return $q->result();
+    }
+    //子课题读出当前花费的列表
+    function getMoney_all_manage($array) {
+        $this->db->select_sum('money');
+        $this->db->where($array);
+        $q = $this->db->get('lz_money_current');
         return $q->result();
     }
     /* function getMoney_currentS($array, $per_page, $offset) {
@@ -106,13 +120,24 @@ class m_money_record extends CI_Model {
 
 
     //计算出当前花费列表的总金额
+    /*  function getMoney_currentS_sum($array){
+
+          $this->db->select_sum('money');
+          $this->db->from('money_current');
+          $this->db->where($array);
+          $q = $this->db->get();
+          return $q->result();
+      }
+    */
     function getMoney_currentS_sum($array){
 
         $this->db->select_sum('money');
-        $this->db->from('money_current');
         $this->db->where($array);
-        $q = $this->db->get();
+
+        $q = $this->db->get('money_current');
+
         return $q->result();
+
     }
     //子课题查询相应的花费数量
     function getNum($array) {
@@ -122,6 +147,12 @@ class m_money_record extends CI_Model {
     }
     //课题查询相应的花费数量
     function getNum_m($array) {
+        $this->db->from('lz_money_current');
+        $this->db->where($array);
+        return $this->db->count_all_results();
+    }
+    //课题管理员查询所有花费条数
+    function getNum_manage($array) {
         $this->db->from('lz_money_current');
         $this->db->where($array);
         return $this->db->count_all_results();

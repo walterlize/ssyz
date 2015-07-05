@@ -74,9 +74,10 @@ class Money extends CI_Controller {
         $subjectId = $this->session->userdata('subjectId');
         $array = array('s_id' => $subjectId);
         $num = $this->m_money_record->getNum($array);
+        $su=$this->m_money_record->getMoney_all($array);
+        $su1=get_object_vars($su['0']);
+        $sum=$su1['money'];
 
-        $su=$this->m_money_record->getMoney_currentS_sum($array);
-        $sum=array_sum($su);
 
         $offset = $this->uri->segment(4);
         $data['money'] = $this->getExpenseS($array, $offset);
@@ -133,6 +134,9 @@ class Money extends CI_Controller {
             }
         }
         $num = $this->m_money_record->getNum($array);
+        $su=$this->m_money_record->getMoney_all($array);
+        $su1=get_object_vars($su['0']);
+        $sum=$su1['money'];
         $offset = $this->uri->segment(4);
         $data['money'] = $this->getExpenseS($array, $offset);
         $config['base_url'] = base_url() . 'index.php/ordinary/money/expenseList';
@@ -141,6 +145,7 @@ class Money extends CI_Controller {
         $this->pagination->initialize($config);
         $data['page'] = $this->pagination->create_links();
         $data['num'] = $num;
+        $data['sum'] = $sum;
         $data['title'] = '课题经费花费详情';
         $data['Type'] = $this->getType();
         $data['Year'] = $this->getSearchYear();

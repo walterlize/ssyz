@@ -52,6 +52,7 @@ class Travel extends CI_Controller {
 
         $s = $this->m_travel->getState1($state);
 
+
         if (strcmp($type, 'all') == 0) {
             if (strcmp($year, 'all') == 0) {
                 if (strcmp($month, 'all') == 0) {
@@ -116,18 +117,19 @@ class Travel extends CI_Controller {
         $num = $this->m_travel->getNum($array);
         $offset = $this->uri->segment(4);
 
-        $data['travel'] = $this->getTravelS($array, $offset);
-        $config['base_url'] = base_url() . 'index.php/ordinary/travel/travelList';
+        $data['travel'] = $this->getTravelS_1($array, $offset);
+        /*$config['base_url'] = base_url() . 'index.php/ordinary/travel/travelList';
         $config['total_rows'] = $num;
         $config['uri_segment'] = 4;
         $this->pagination->initialize($config);
         $data['page'] = $this->pagination->create_links();
+        */
         $data['title'] = '差旅费报销列表';
         $data['num'] = $num;
 
         //$this->load->view('common/header3');
         //$this->load->view('ordinary/travel/travelSearch', $data);
-        $this->load->view('ordinary/travel/travelList', $data);
+        $this->load->view('ordinary/travel/travelList_1', $data);
         // $this->load->view('common/footer');
     }
 
@@ -468,11 +470,25 @@ class Travel extends CI_Controller {
         return $data;
     }
 
-    // 分页获取月度经费信息
+    // 分页获取所有差旅经费信息
     public function getTravelS($array, $offset) {
 
         $data = array();
         $result = $this->m_travel->getTravelS($array, PER_PAGE, $offset);
+
+        foreach ($result as $r) {
+            $arr = array('t_id' => $r->t_id, 'type' => $r->type, 'code' => $r->code, 'date' => $r->date, 'outDate' => $r->outDate, 'backDate' => $r->backDate, 'days' => $r->days, 'peopleNum' => $r->peopleNum, 'totalMoney' => $r->totalMoney,
+                'state' => $this->m_travel->getState($r->state),'color' => $this->getColor($r->state),
+            );
+            array_push($data, $arr);
+        }
+        return $data;
+    }
+    // 分页获取所有差旅经费信息--分类表
+    public function getTravelS_1($array, $offset) {
+
+        $data = array();
+        $result = $this->m_travel->getTravelS_1($array, PER_PAGE, $offset);
 
         foreach ($result as $r) {
             $arr = array('t_id' => $r->t_id, 'type' => $r->type, 'code' => $r->code, 'date' => $r->date, 'outDate' => $r->outDate, 'backDate' => $r->backDate, 'days' => $r->days, 'peopleNum' => $r->peopleNum, 'totalMoney' => $r->totalMoney,

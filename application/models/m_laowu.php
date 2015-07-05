@@ -70,13 +70,22 @@ class m_laowu extends CI_Model {
         $q = $this->db->get();
         return $q->result();
     }
-
+    //分页获取全部劳务信息
     function getLaowuS($array, $per_page, $offset) {
         $this->db->select();
         $this->db->where($array);
         $this->db->order_by("state", "asc");
         $this->db->order_by("date", "desc");
         $q = $this->db->get('laowu', $per_page, $offset);
+        return $q->result();
+    }
+    //获取分类全部劳务信息--不分页
+    function getLaowuS_1($array,$offset) {
+        $this->db->select();
+        $this->db->where($array);
+        $this->db->order_by("state", "asc");
+        $this->db->order_by("date", "desc");
+        $q = $this->db->get('laowu',$offset);
         return $q->result();
     }
 
@@ -103,7 +112,7 @@ class m_laowu extends CI_Model {
         $q = $this->db->get('totalmoney');
         return $q->result();
     }
-
+    //管理员分页获取全部劳务信息
     function getLaowuMange($array, $per_page, $offset) {
         $this->db->select();
         $this->db->where($array);
@@ -113,7 +122,16 @@ class m_laowu extends CI_Model {
         $q = $this->db->get('lz_laowu_detail', $per_page, $offset);
         return $q->result();
     }
-
+    //管理员获取全部劳务信息
+    function getLaowuMange_1($array,$offset) {
+        $this->db->select();
+        $this->db->where($array);
+        $this->db->where('state >', 2);
+        $this->db->order_by("state", "asc");
+        $this->db->order_by("date", "desc");
+        $q = $this->db->get('lz_laowu_detail',$offset);
+        return $q->result();
+    }
     function check($id) {
         $check = array(
             'state' => $this->input->post('state'),

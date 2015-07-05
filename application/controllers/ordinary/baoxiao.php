@@ -11,7 +11,7 @@ class Baoxiao extends CI_Controller {
         $this->load->helper('form');
         $this->load->library('form_validation');
         $this->load->library('session');
-        $this->load->library('pagination');
+
         $this->load->model('m_baoxiao');
         $this->load->model('m_money_record');
         ini_set('max_execution_time', '0');
@@ -21,12 +21,14 @@ class Baoxiao extends CI_Controller {
     // 报销列表管理页面
     public function baoxiaoList() {
         $this->timeOut();
+        $this->load->library('pagination');
         $subjectId = $this->session->userdata('subjectId');
         $array = array('s_id' => $subjectId);
         $num = $this->m_baoxiao->getNum($array);
         $offset = $this->uri->segment(4);
 
         $data['baoxiao'] = $this->getBaoxiaoS($array, $offset);
+       // print_r($data['baoxiao']);
         $config['base_url'] = base_url() . 'index.php/ordinary/baoxiao/baoxiaoList';
         $config['total_rows'] = $num;
         $config['uri_segment'] = 4;
@@ -45,95 +47,7 @@ class Baoxiao extends CI_Controller {
         $this->load->view('ordinary/baoxiao/baoxiaoList', $data);
         $this->load->view('common/footer');
     }
-    // 报销列表查询后的管理页面
-    public function baoxiaoList_search() {
-        extract($_REQUEST);
-        $subjectId = $this->session->userdata('subjectId');
-        $s = $this->m_baoxiao->getState1($state);
-        if (strcmp($year, 'all') == 0) {
-            if (strcmp($month, 'all') == 0) {
-                if (strcmp($type, 'all') == 0) {
-                    if (strcmp($state, 'all') == 0) {
-                        $array = array('s_id' => $subjectId);
-                    } else {
-                        $array = array('s_id' => $subjectId, 'state' => $s);
-                    }
-                } else {
-                    if (strcmp($state, 'all') == 0) {
-                        $array = array('type' => $type, 's_id' => $subjectId);
-                    } else {
-                        $array = array('type' => $type, 's_id' => $subjectId, 'state' => $s);
-                    }
-                }
-            } else {
-                if (strcmp($type, 'all') == 0) {
-                    if (strcmp($state, 'all') == 0) {
-                        $array = array('s_id' => $subjectId, 'month' => $month);
-                    } else {
-                        $array = array('s_id' => $subjectId, 'state' => $s, 'month' => $month);
-                    }
-                } else {
-                    if (strcmp($state, 'all') == 0) {
-                        $array = array('type' => $type, 's_id' => $subjectId, 'month' => $month);
-                    } else {
-                        $array = array('type' => $type, 's_id' => $subjectId, 'state' => $s, 'month' => $month);
-                    }
-                }
-            }
-        } else {
-            if (strcmp($month, 'all') == 0) {
-                if (strcmp($type, 'all') == 0) {
-                    if (strcmp($state, 'all') == 0) {
-                        $array = array('s_id' => $subjectId, 'year' => $year);
-                    } else {
-                        $array = array('s_id' => $subjectId, 'state' => $s, 'year' => $year);
-                    }
-                } else {
-                    if (strcmp($state, 'all') == 0) {
-                        $array = array('type' => $type, 's_id' => $subjectId, 'year' => $year);
-                    } else {
-                        $array = array('type' => $type, 's_id' => $subjectId, 'state' => $s, 'year' => $year);
-                    }
-                }
-            } else {
-                if (strcmp($type, 'all') == 0) {
-                    if (strcmp($state, 'all') == 0) {
-                        $array = array('s_id' => $subjectId, 'month' => $month, 'year' => $year);
-                    } else {
-                        $array = array('s_id' => $subjectId, 'state' => $s, 'month' => $month, 'year' => $year);
-                    }
-                } else {
-                    if (strcmp($state, 'all') == 0) {
-                        $array = array('type' => $type, 's_id' => $subjectId, 'month' => $month, 'year' => $year);
-                    } else {
-                        $array = array('type' => $type, 's_id' => $subjectId, 'state' => $s, 'month' => $month, 'year' => $year);
-                    }
-                }
-            }
-        }
 
-        $num = $this->m_baoxiao->getNum($array);
-        $offset = $this->uri->segment(4);
-
-        $data['baoxiao'] = $this->getBaoxiaoS($array, $offset);
-        $config['base_url'] = base_url() . 'index.php/ordinary/baoxiao/baoxiaoList_search';
-        $config['total_rows'] = $num;
-        $config['uri_segment'] = 4;
-        $this->pagination->initialize($config);
-        $data['page'] = $this->pagination->create_links();
-        $data['title'] = '报销列表';
-        $data['num'] = $num;
-        $data['searchType'] = $this->getType();
-        $data['Year'] = $this->getSearchYear();
-        $data['Month'] = $this->getSearchMonth();
-        //$data['year'] = date("Y");
-        //$data['month'] = date("m");
-
-        $this->load->view('common/header3');
-        $this->load->view('ordinary/baoxiao/baoxiaoSearch', $data);
-        $this->load->view('ordinary/baoxiao/baoxiaoList', $data);
-        $this->load->view('common/footer');
-    }
     // 变换显示
     function changeOption() {
         extract($_REQUEST);
@@ -204,12 +118,12 @@ class Baoxiao extends CI_Controller {
         $num = $this->m_baoxiao->getNum($array);
         $offset = $this->uri->segment(4);
 
-        $data['baoxiao'] = $this->getBaoxiaoS($array, $offset);
-        $config['base_url'] = base_url() . 'index.php/ordinary/baoxiao/baoxiaoList_search';
-        $config['total_rows'] = $num;
-        $config['uri_segment'] = 4;
-        $this->pagination->initialize($config);
-        $data['page'] = $this->pagination->create_links();
+        $data['baoxiao'] = $this->getBaoxiaoS_1($array, $offset);
+        //$config['base_url'] = base_url() . 'index.php/ordinary/baoxiao/baoxiaoList_search';
+        //$config['total_rows'] = $num;
+        //$config['uri_segment'] = 4;
+        //$this->pagination->initialize($config);
+        //$data['page'] = $this->pagination->create_links();
         $data['title'] = '报销列表';
         $data['num'] = $num;
         $data['searchType'] = $this->getType();
@@ -218,7 +132,7 @@ class Baoxiao extends CI_Controller {
         //$data['year'] = date("Y");
         //$data['month'] = date("m");
 
-        $this->load->view('ordinary/baoxiao/baoxiaoList', $data);
+        $this->load->view('ordinary/baoxiao/baoxiaoList_1', $data);
 
     }
 
@@ -410,6 +324,7 @@ class Baoxiao extends CI_Controller {
     // 删除费信息
     public function baoxiaoDelete() {
         $this->timeOut();
+        $this->load->library('pagination');
         $id = $this->uri->segment('4');
         $type = 1;
         $this->m_baoxiao->delete($id);
@@ -439,6 +354,7 @@ class Baoxiao extends CI_Controller {
 // 提交信息
     public function submit() {
         $this->timeOut();
+        $this->load->library('pagination');
         $bao_id = $this->uri->segment(4);
         $arraySubmit = array('state' => '3', 'date' => date("Y-m-d"), 'year' => date("Y"), 'month' => date("m"));
         $this->m_baoxiao->update($bao_id, $arraySubmit);
@@ -467,6 +383,7 @@ class Baoxiao extends CI_Controller {
     //按金额查询
     public function baoxiaoSearch() {
         $this->timeOut();
+        $this->load->library('pagination');
         $subjectId = $this->session->userdata('subjectId');
         $searchType1 = $_POST['searchType'];
         $searchTerm = trim($_POST['searchTerm']);
@@ -711,7 +628,23 @@ class Baoxiao extends CI_Controller {
     public function getBaoxiaoS($array, $offset) {
 
         $data = array();
+
         $result = $this->m_baoxiao->getBaoxiaoS($array, PER_PAGE, $offset);
+
+        foreach ($result as $r) {
+            $arr = array('bao_id' => $r->bao_id, 'date' => $r->date, 'type' => $r->type, 'code' => $r->code, 'num' => $r->num, 'money' => $r->money,
+                'state' => $this->m_baoxiao->getState($r->state),'color' => $this->getColor($r->state),
+            );
+            array_push($data, $arr);
+        }
+        return $data;
+    }
+    // 分页获取报销经费信息--分类查询用
+    public function getBaoxiaoS_1($array, $offset) {
+
+        $data = array();
+
+        $result = $this->m_baoxiao->getBaoxiaoS_1($array,$offset);
 
         foreach ($result as $r) {
             $arr = array('bao_id' => $r->bao_id, 'date' => $r->date, 'type' => $r->type, 'code' => $r->code, 'num' => $r->num, 'money' => $r->money,

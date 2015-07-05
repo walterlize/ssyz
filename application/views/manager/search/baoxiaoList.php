@@ -14,7 +14,7 @@
                 <th class="td3">报销状态</th>
                 <th class="td1">查看详情</th>
                 <th class="td3">审核</th>
-                <th class="td1">完成</th>
+                <th class="td3">完成</th>
 
             </tr>
             <?php if (is_array($baoxiao)) foreach ($baoxiao as $key => $r): ?>
@@ -65,5 +65,5 @@
 
         </table>
         <div align="right"><font color="#3A6EA5" size="3px">共有<?= $num ?>条记录，每页10条。</font></div>
-        <div align="center"><?= $page ?></div>
+        <!--<div align="center"><?= $page ?></div>-->
     </div></div>

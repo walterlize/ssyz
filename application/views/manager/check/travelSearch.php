@@ -90,7 +90,7 @@
 
 </div>  </br>
 <div style="margin-left:20px; margin-right:20px">
-    <form name="form2" method="post" action="<?= base_url(); ?>index.php/manager/check/baoxiaoSearch" id="form2">
+    <form name="form2" method="post" action="<?= base_url(); ?>index.php/manager/check/travelSearch" id="form2">
         查询类型：
         <select name="searchType"  id="searchType" >
             <option value="1">报销代码</option>
