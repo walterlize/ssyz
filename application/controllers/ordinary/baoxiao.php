@@ -273,8 +273,8 @@ class Baoxiao extends CI_Controller {
             } elseif (strcmp($data['baoxiao']->type, '间接经费') == 0) {
                 $money = $data['baoxiao']->money;
                 $code = $subjectId . '1' . $id . '12' . date('Ymd');
-                $array = array('ji_xiao' => $money, 'code' => $code);
-                $array1 = array('ji_xiao' => $money, 'moneyType' => '间接经费', 'money' => $money, 'code' => $code);
+                $array = array('indirect_cost' => $money, 'code' => $code);
+                $array1 = array('indirect_cost' => $money, 'moneyType' => '间接经费', 'money' => $money, 'code' => $code);
             }elseif (strcmp($data['baoxiao']->type, '间接经费-用于绩效') == 0) {
                 $money = $data['baoxiao']->money;
                 $code = $subjectId . '1' . $id . '13' . date('Ymd');

@@ -502,38 +502,133 @@ class Money extends CI_Controller {
         }
     }
 
+    /*   public function projectBudget() {
+           $this->timeOut();
+           $subjectId = $this->session->userdata('subjectId');
+           //判断是否已经做了预算
+           $num = $this->m_totalmoney->getNum(array('subjectId' => $subjectId));
+           if ($num == 0) {
+               $data['information'] = '管理员还未填写课题预算，请先联系系统管理员。';
+               $this->load->view('common/header3');
+               $this->load->view('common/information', $data);
+               $this->load->view('common/footer');
+           } else {
+               // 年度预算值
+               $array = array('subjectId' => $subjectId);
+               $array1 = array('subjectId');
+               $data['yearMoney'] = $this->getYearMoneySum($array, $array1);
+
+               $this->load->model('m_monthMoney');
+               $num = $this->m_monthMoney->getNum($array);
+               if ($num == 0) {
+                   $data['monthMoney'] = $this->getEmptyData();
+               } else {
+                   $data['monthMoney'] = $this->getMonthMoneySum($array, $array1);
+               }
+
+               $result = $this->getYearResult($data['yearMoney'], $data['monthMoney']);
+               $data['last'] = $result['last'];
+               $data['rate'] = $result['rate'];
+
+               $this->load->view('common/header3');
+               $this->load->view('ordinary/money/projectBudget', $data);
+               $this->load->view('common/footer');
+           }
+       }
+   */
     public function projectBudget() {
         $this->timeOut();
         $subjectId = $this->session->userdata('subjectId');
-
-        $this->load->model('m_yearmoney');
-        $num = $this->m_yearmoney->getNum(array('subjectId' => $subjectId));
+        //判断是否已经做了预算
+        $num = $this->m_totalmoney->getNum(array('subjectId' => $subjectId));
         if ($num == 0) {
             $data['information'] = '管理员还未填写课题预算，请先联系系统管理员。';
             $this->load->view('common/header3');
             $this->load->view('common/information', $data);
             $this->load->view('common/footer');
         } else {
-            // 年度预算值
-            $array = array('subjectId' => $subjectId);
-            $array1 = array('subjectId');
-            $data['yearMoney'] = $this->getYearMoneySum($array, $array1);
 
-            $this->load->model('m_monthMoney');
-            $num = $this->m_monthMoney->getNum($array);
-            if ($num == 0) {
-                $data['monthMoney'] = $this->getEmptyData();
-            } else {
-                $data['monthMoney'] = $this->getMonthMoneySum($array, $array1);
-            }
+            //show_404();
+            // 计算总预算值
+            $subjectId = $this->session->userdata('subjectId');
+            $array = array('s_id' => $subjectId);
+            $data['money1'] = $this->getTotalMoney($subjectId);
+            $result=get_object_vars($data['money1']);
+            //print_r($result);
+            //已支出的情况
+            $all=$this->m_totalmoney->getMoney_cost($array);
+            $cost=get_object_vars($all[0]);
+            $result1=$cost;
 
-            $result = $this->getYearResult($data['yearMoney'], $data['monthMoney']);
-            $data['last'] = $result['last'];
-            $data['rate'] = $result['rate'];
 
+            @$money->direct_cost_1 = $result['direct_cost'];
+            //$money->direct_cost_2 = round(($result['direct_cost']-$result1['direct_cost']),2);
+            //$money->direct_cost_3 = $result1['direct_cost'];
+            $money->equipment_1 = $result['equipment'];
+            $money->equipment_2 = round(($result['equipment']-($result1['equipment']/10000)),2);
+            $money->equipment_3 = round(($result1['equipment']/10000),2);
+            $money->equipment_rate=round(100*(($result1['equipment']/10000)/$result['equipment']),2);
+            $money->material_1 = $result['material'];
+            $money->material_2 =round(($result['material']-($result1['material']/10000)),2);
+            $money->material_3 = round(($result1['material']/10000),2);
+            $money->material_rate=round(100*(($result1['material']/10000)/$result['material']),2);
+            $money->experiment_1 = $result['experiment'];
+            $money->experiment_2 = round(($result['experiment']-($result1['experiment']/10000)),2);
+            $money->experiment_3 = round(($result1['experiment']/10000),2);
+            @$money->experiment_rate=round(100*(($result1['experiment']/10000)/$result['experiment']),2);
+            $money->fuel_1 = $result['fuel'];
+            $money->fuel_2 =round(abs($result['fuel']-($result1['fuel']/10000)),2);
+            $money->fuel_3 = round(($result1['fuel']/10000),2);
+            $money->fuel_rate=round(100*(($result1['fuel']/10000)/$result['fuel']),2);
+            $money->travel_1 = $result['travel'];
+            $money->travel_2 = round(($result['travel']-($result1['travel']/10000)),2);
+            $money->travel_3 =round(($result1['travel']/10000),2);
+            $money->travel_rate=round(100*(($result1['travel']/10000)/$result['travel']),2);
+            $money->conference_1 = $result['conference'];
+            $money->conference_2 = round(($result['conference']-($result1['conference']/10000)),2);
+            $money->conference_3 = round(($result1['conference']/10000),2);
+            $money->conference_rate=round(100*(($result1['conference']/10000)/$result['conference']),2);
+            $money->international_1 = $result['international'];
+            $money->international_2 =round(($result['international']-($result1['international']/10000)),2);
+            $money->international_3 = round(($result1['international']/10000),2);
+            $money->international_rate=round(100*(($result1['international']/10000)/$result['international']),2);
+            $money->information_1 = $result['information'];
+            $money->information_2 = round(($result['information']-($result1['information']/10000)),2);
+            $money->information_3 = round(($result1['information']/10000),2);
+            $money->information_rate=round(100*(($result1['information']/10000)/$result['information']),2);
+            $money->service_1 = $result['service'];
+            $money->service_2 =round(($result['service']-($result1['service']/10000)),2);
+            $money->service_3 = round(($result1['service']/10000),2);
+            $money->service_rate=round(100*(($result1['service']/10000)/$result['service']),2);
+            $money->consultative_1 = $result['consultative'];
+            $money->consultative_2 = round(($result['consultative']-($result1['consultative']/10000)),2);
+            $money->consultative_3 = round(($result1['consultative']/10000),2);
+            $money->consultative_rate=round(100*(($result1['consultative']/10000)/$result['consultative']),2);
+            $money->other_1 = $result['other'];
+            $money->other_2 = round(($result['other']-($result1['other']/10000)),2);
+            $money->other_3 = round(($result1['other']/10000));
+            @$money->other_rate=round(100*(($result1['other']/10000)/$result['other']),2);
+            $money->indirect_cost_1 = $result['indirect_cost'];
+            $money->indirect_cost_2 = round(($result['indirect_cost']-($result1['indirect_cost']/10000)),2);
+            $money->indirect_cost_3 = round(($result1['indirect_cost']/10000),2);
+            $money->indirect_cost_rate=round(100*(($result1['indirect_cost']/10000)/$result['indirect_cost']),2);
+            $money->ji_xiao_1 = $result['ji_xiao'];
+            $money->ji_xiao_2 = round(($result['ji_xiao']-($result1['ji_xiao']/10000)),2);
+            $money->ji_xiao_3 = round(($result1['ji_xiao']/10000),2);
+            $money->ji_xiao_rate=round(100*(($result1['ji_xiao']/10000)/$result['ji_xiao']),2);
+            $money->total_1 = round($result['total'],2);
+            $money->total_2 =  round(($result['total']-($result1['total']/10000)),2);
+            $money->total_3 = round(($result1['total']/10000),2);
+            $money->total_rate=round(100*(($result1['total']/10000)/$result['total']),2);
+            $data['money1'] = $money;
+
+
+
+            //$data['money'] = $this->getMoneyData();
             $this->load->view('common/header3');
-            $this->load->view('ordinary/money/projectBudget', $data);
+            $this->load->view('ordinary/money/projectBudget',$data);
             $this->load->view('common/footer');
+
         }
     }
 
@@ -839,7 +934,7 @@ class Money extends CI_Controller {
     }
     //计算此分页的金额总数
     public function get_expense_sum($num,$result) {
-     $num=$num;
+        $num=$num;
         for($n=0;$x<=$num;$n++){
 
         }

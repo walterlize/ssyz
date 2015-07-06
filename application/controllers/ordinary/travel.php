@@ -219,12 +219,13 @@ class Travel extends CI_Controller {
             }
             $money = $data['travel']->totalMoney;
             $subjectId = $this->session->userdata('subjectId');
-            if (strcmp($data['travel']->type, '国内差旅') == 0) {
-                //第一位代表课题号码；第二位代表类型（1，普通报销2，差旅报销3，借款，4，劳务5，借款报销）；第三位代表报销Id;第四位代表报销类型（1，设备费，2，材料费。。）；第伍位时间
+            if (strcmp($data['travel']->type, '差旅费') == 0) {
+                //第一位代表课题号码；第二位代表类型（1，普通报销2，差旅报销3，借款，4，劳务5，借款报销）；
+                //第三位代表报销Id;第四位代表报销类型（1，设备费，2，材料费。。）；第伍位时间
                 $code = $subjectId . '2' . $id . '5' . date('Ymd');
                 $array = array('code' => $code,'type' => '差旅费');
                 $array1 = array('travel' => $money, 'moneyType' => '差旅费', 'money' => $money, 'code' => $code);
-            } elseif (strcmp($data['travel']->type, '国际差旅') == 0) {
+            } elseif (strcmp($data['travel']->type, '国际合作交流费') == 0) {
                 $code = $subjectId . '2' . $id . '7' . date('Ymd');
                 $array = array('code' => $code, 'type' => '国际合作交流费');
                 $array1 = array('international' => $money, 'moneyType' => '国际合作交流费', 'money' => $money, 'code' => $code);

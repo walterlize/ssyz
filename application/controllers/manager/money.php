@@ -34,19 +34,13 @@ class Money extends CI_Controller {
     public function totalList() {
         $this->timeOut();
         $subjectId = $this->session->userdata('subjectId');
-        $this->load->model('m_totalmoney');
         $array = array('inherit' => $subjectId);
-
-
         $num = $this->m_totalmoney->getNum_zi($array);
         $offset = $this->uri->segment(4);
-
         $data['money'] = $this->getTotalMoneyS($array, $offset);
-        //print_r($data['money']);
         //求课题的总经费、总分配经费、总剩余经费
         $result = $this->getTotalMoney($subjectId);
         $result=(array)$result;
-        //print_r($result);
         $moneyAll= $result['total'];
         $all=$this->m_totalmoney->getMoney_all($array);
         $su=get_object_vars($all[0]);
@@ -55,7 +49,6 @@ class Money extends CI_Controller {
         $data['moneyAll']=$moneyAll;
         $data['moneyCost']=$costAll;
         $data['moneyLeft']=$left;
-
         $config['base_url'] = base_url() . 'index.php/admin/money/totalList';
         $config['total_rows'] = $num;
         $config['uri_segment'] = 4;
@@ -125,31 +118,31 @@ class Money extends CI_Controller {
     }
 
     // 课题花费情况列表
-  /*  public function expenseList() {
-        $this->timeOut();
-        $subjectId = $this->session->userdata('subjectId');
-        $array = array('inherit' => $subjectId);
-        $num = $this->m_money_record->getNum_m($array);
-        $offset = $this->uri->segment(4);
-        $data['money'] = $this->getExpenseS($array, $offset);
-        $config['base_url'] = base_url() . 'index.php/ordinary/money/expenseList';
-        $config['total_rows'] = $num;
-        $config['uri_segment'] = 4;
-        $this->pagination->initialize($config);
-        $data['page'] = $this->pagination->create_links();
-        $data['num'] = $num;
+    /*  public function expenseList() {
+          $this->timeOut();
+          $subjectId = $this->session->userdata('subjectId');
+          $array = array('inherit' => $subjectId);
+          $num = $this->m_money_record->getNum_m($array);
+          $offset = $this->uri->segment(4);
+          $data['money'] = $this->getExpenseS($array, $offset);
+          $config['base_url'] = base_url() . 'index.php/ordinary/money/expenseList';
+          $config['total_rows'] = $num;
+          $config['uri_segment'] = 4;
+          $this->pagination->initialize($config);
+          $data['page'] = $this->pagination->create_links();
+          $data['num'] = $num;
 
-        $data['title'] = '课题经费花费详情';
-        $data['Type'] = $this->getType();
-        $data['Year'] = $this->getSearchYear();
-        $data['Month'] = $this->getSearchMonth();
+          $data['title'] = '课题经费花费详情';
+          $data['Type'] = $this->getType();
+          $data['Year'] = $this->getSearchYear();
+          $data['Month'] = $this->getSearchMonth();
 
-        $this->load->view('common/header3');
-        $this->load->view('manager/money/moneySearch', $data);
-        $this->load->view('manager/money/expenseList', $data);
-        $this->load->view('common/footer');
-    }
-  */
+          $this->load->view('common/header3');
+          $this->load->view('manager/money/moneySearch', $data);
+          $this->load->view('manager/money/expenseList', $data);
+          $this->load->view('common/footer');
+      }
+    */
     // 子课题花费情况列表
     public function expenseList() {
         $this->timeOut();
@@ -451,15 +444,37 @@ class Money extends CI_Controller {
         $this->load->view('common/footer');
     }
 
-    //子课题总经费编辑
-    public function totalMoneyEdit() {
+    //子课题总经费删除
+    public function totalMoneyDelete() {
         $this->timeOut();
         $id = $this->uri->segment(4);
-        $data['money'] = $this->getTotalMoney($id);
-        $data['subject'] = $this->getSubjects2();
+        $this->m_totalmoney->delete($id);
+        $subjectId = $this->session->userdata('subjectId');
+        $array = array('inherit' => $subjectId);
+        $num = $this->m_totalmoney->getNum_zi($array);
+        $offset = $this->uri->segment(5);
+        $data['money'] = $this->getTotalMoneyS($array, $offset);
+        //求课题的总经费、总分配经费、总剩余经费
+        $result = $this->getTotalMoney($subjectId);
+        $result=(array)$result;
+        $moneyAll= $result['total'];
+        $all=$this->m_totalmoney->getMoney_all($array);
+        $su=get_object_vars($all[0]);
+        $costAll=$su['total'];
+        $left= $moneyAll-$costAll;
+        $data['moneyAll']=$moneyAll;
+        $data['moneyCost']=$costAll;
+        $data['moneyLeft']=$left;
+        $config['base_url'] = base_url() . 'index.php/admin/money/totalList';
+        $config['total_rows'] = $num;
+        $config['uri_segment'] = 4;
+        $this->pagination->initialize($config);
+        $data['page'] = $this->pagination->create_links();
+
         $this->load->view('common/header3');
-        $this->load->view('manager/money/totalEdit', $data);
+        $this->load->view('manager/money/totalList', $data);
         $this->load->view('common/footer');
+
     }
 
 // 年度经费详细信息编辑页面
@@ -499,41 +514,85 @@ class Money extends CI_Controller {
         $subjectId = $this->session->userdata('subjectId');
         $array = array('type' => 'Ordinary', 'inherit' => $subjectId);
         //求课题的总经费、总分配经费、总剩余经费
+        //课题总经费
         $result = $this->getTotalMoney($subjectId);
+        //讲object转为array
         $result=(array)$result;
+        //总经费额
         $moneyAll= $result['total'];
-
+        //已经分配的经费
         $all=$this->m_totalmoney->getMoney_all($array);
+        //转换对象属性
         $su=get_object_vars($all[0]);
-        $result1=$su;
+        //已经分配完的经费总额
         $costAll=$su['total'];
+        //剩余经费总额
         $left= $moneyAll-$costAll;
+
         $data['moneyAll']=$moneyAll;
         $data['moneyCost']=$costAll;
         $data['moneyLeft']=$left;
 
+        $result1=$su;
 
         @ $money->totalMoneyId = 0;
         $money->type = '';
         $money->direct_cost = '';
         $money->direct_cost_1 = $result['direct_cost'];
-        $money->direct_cost_2 = $result1['direct_cost'];
+        $money->direct_cost_2 =round(($result['direct_cost']-$result1['direct_cost']),2);
         $money->equipment = '';
+        $money->equipment_1 = $result['equipment'];
+        //$money->equipment_2 = doubleval($result['equipment'])-doubleval($result1['equipment']);
+        $money->equipment_2 =round(($result['equipment']-$result1['equipment']),2);
+        //购买设备费
         $money->buyEquipment = '';
+        //$money->buyEquipment_1 = $result['buyEquipment'];
+        //$money->buyEquipment_2 = $result1['buyEquipment'];
+        //试制设备费
         $money->tryEquipment = '';
+        //$money->tryEquipment_1 = $result['tryEquipment'];
+        //$money->tryEquipment_2 = $result1['tryEquipment'];
+        //租赁设备费
         $money->alterEquipment = '';
+        //$money->alterEquipment_1 = $result['alterEquipment'];
+        //$money->alterEquipment_2 = $result1['alterEquipment'];
         $money->material = '';
+        $money->material_1 = $result['material'];
+        $money->material_2 =round(($result['material']-$result1['material']),2);
         $money->experiment = '';
+        $money->experiment_1 = $result['experiment'];
+        $money->experiment_2 = round(($result['experiment']-$result1['experiment']),2);
         $money->fuel = '';
+        $money->fuel_1 = $result['fuel'];
+        $money->fuel_2 =round(abs($result['fuel']-$result1['fuel']),2);
+        $money->fuel_3 =round(abs($result1['fuel']),2);
         $money->travel = '';
+        $money->travel_1 = $result['travel'];
+        $money->travel_2 = round(($result['travel']-$result1['travel']),2);
         $money->conference = '';
+        $money->conference_1 = $result['conference'];
+        $money->conference_2 = round(($result['conference']-$result1['conference']),2);
         $money->international = '';
+        $money->international_1 = $result['international'];
+        $money->international_2 =round(($result['international']-$result1['international']),2);
         $money->information = '';
+        $money->information_1 = $result['information'];
+        $money->information_2 = round(($result['information']-$result1['information']),2);
         $money->service = '';
+        $money->service_1 = $result['service'];
+        $money->service_2 = round(($result['service']-$result1['service']),2);
         $money->consultative = '';
+        $money->consultative_1 = $result['consultative'];
+        $money->consultative_2 = round(($result['consultative']-$result1['consultative']),2);
         $money->other = '';
+        $money->other_1 = $result['other'];
+        $money->other_2 = round(($result['other']-$result1['other']),2);
         $money->indirect_cost = '';
+        $money->indirect_cost_1 = $result['indirect_cost'];
+        $money->indirect_cost_2 = round(($result['indirect_cost']-$result1['indirect_cost']),2);
         $money->ji_xiao = '';
+        $money->ji_xiao_1 = $result['ji_xiao'];
+        $money->ji_xiao_2 = round(($result['ji_xiao']-$result1['ji_xiao']),2);
         $money->directCaption = '';
 
         $money->equipmentCaption = '';
@@ -554,7 +613,7 @@ class Money extends CI_Controller {
         $money->ji_xiaoCaption = '';
         $money->total = '';
         $money->total_1 = $result['total'];
-        $money->total_2 = $result1['total'];
+        $money->total_2 =round(($result['total']-$result1['total']),2);
 
         $data['money'] = $money;
 
@@ -568,6 +627,66 @@ class Money extends CI_Controller {
         $this->load->view('common/footer');
     }
 
+    //子课题总经费编辑
+    public function totalMoneyEdit() {
+        $this->timeOut();
+        $subjectId = $this->session->userdata('subjectId');
+        $array = array('type' => 'Ordinary', 'inherit' => $subjectId);
+        //求课题的总经费、总分配经费、总剩余经费
+        $result = $this->getTotalMoney($subjectId);
+        $result=(array)$result;
+        $moneyAll= $result['total'];
+
+        $all=$this->m_totalmoney->getMoney_all($array);
+        $su=get_object_vars($all[0]);
+        $costAll=$su['total'];
+        $left= $moneyAll-$costAll;
+        $data['moneyAll']=$moneyAll;
+        $data['moneyCost']=$costAll;
+        $data['moneyLeft']=$left;
+        $result1=$su;
+
+
+        @$money->direct_cost_1 = $result['direct_cost'];
+        $money->direct_cost_2 = round(($result['direct_cost']-$result1['direct_cost']),2);
+        $money->equipment_1 = $result['equipment'];
+        $money->equipment_2 = round(($result['equipment']-$result1['equipment']),2);
+        $money->material_1 = $result['material'];
+        $money->material_2 =round(($result['material']-$result1['material']),2);
+        $money->experiment_1 = $result['experiment'];
+        $money->experiment_2 = round(($result['experiment']-$result1['experiment']),2);
+        $money->fuel_1 = $result['fuel'];
+        $money->fuel_2 =round(abs($result['fuel']-$result1['fuel']),2);
+        $money->travel_1 = $result['travel'];
+        $money->travel_2 = round(($result['travel']-$result1['travel']),2);
+        $money->conference_1 = $result['conference'];
+        $money->conference_2 = round(($result['conference']-$result1['conference']),2);
+        $money->international_1 = $result['international'];
+        $money->international_2 =round(($result['international']-$result1['international']),2);
+        $money->information_1 = $result['information'];
+        $money->information_2 = round(($result['information']-$result1['information']),2);
+        $money->service_1 = $result['service'];
+        $money->service_2 =round(($result['service']-$result1['service']),2);
+        $money->consultative_1 = $result['consultative'];
+        $money->consultative_2 = round(($result['consultative']-$result1['consultative']),2);
+        $money->other_1 = $result['other'];
+        $money->other_2 = round(($result['other']-$result1['other']),2);
+        $money->indirect_cost_1 = $result['indirect_cost'];
+        $money->indirect_cost_2 = round(($result['indirect_cost']-$result1['indirect_cost']),2);
+        $money->ji_xiao_1 = $result['ji_xiao'];
+        $money->ji_xiao_2 = round(($result['ji_xiao']-$result1['ji_xiao']),2);
+        $money->total_1 = round($result['total'],2);
+        $money->total_2 =  round(($result['total']-$result1['total']),2);
+        $data['money1'] = $money;
+
+        $id = $this->uri->segment(4);
+        //分配课题的经费
+        $data['money'] = $this->getTotalMoney($id);
+        $data['subject'] = $this->getSubjects2();
+        $this->load->view('common/header3');
+        $this->load->view('manager/money/totalEdit', $data);
+        $this->load->view('common/footer');
+    }
 // 年度经费详细信息新增页面
     public function yearMoneyNew() {
         $this->timeOut();
@@ -937,6 +1056,7 @@ class Money extends CI_Controller {
     public function projectBudget() {
         $this->timeOut();
         $subjectId = $this->session->userdata('subjectId');
+
 
         $this->load->model('m_totalmoney');
         $num = $this->m_totalmoney->getNum(array('subjectId' => $subjectId));

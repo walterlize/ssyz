@@ -135,6 +135,28 @@ class m_totalmoney extends CI_Model {
         $q = $this->db->get('lz_money_total');
         return $q->result();
     }
+    //管理员获取全部已经花费经费的情况
+    function getMoney_cost($array) {
+        $this->db->select_sum('equipment');
+        $this->db->select_sum('experiment');
+        $this->db->select_sum('fuel');
+        $this->db->select_sum('travel');
+        $this->db->select_sum('material');
+        $this->db->select_sum('conference');
+        $this->db->select_sum('international');
+        $this->db->select_sum('information');
+        $this->db->select_sum('service');
+        $this->db->select_sum('consultative');
+
+        $this->db->select_sum('other');
+        $this->db->select_sum('indirect_cost');
+        //$this->db->select_sum('direct_cost');
+        $this->db->select_sum('ji_xiao');
+        $this->db->select_sum('total');
+        $this->db->where($array);
+        $q = $this->db->get('lz_money_current');
+        return $q->result();
+    }
 
     function gettotalMoneySum($array, $array1) {
         $this->db->select_sum('equipment');
@@ -193,11 +215,12 @@ class m_totalmoney extends CI_Model {
         $this->db->where('totalMoneyId', $id);
         $this->db->update('totalmoney', $array);
     }
-
+//按ID删除子课题经费分配
     function delete($id) {
         $this->db->where('totalMoneyId', $id);
         $this->db->delete('totalmoney');
     }
+
 
     function getSubjectId($array) {
         $this->db->select('subjectId');
