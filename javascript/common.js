@@ -86,14 +86,30 @@ function travel_change(element1, element2, element3, element4, element5, url) {
 function expenseMoney_change(element1, element2, element3, element4, url) {
     var year = $("#" + element1).val();
     var month = $("#" + element2).val();
-    var moneyType = $("#" + element3).val();
+    var subjectUnit = $("#" + element3).val();
     $.post(url, {
         year: year,
         month: month,
-        moneyType: moneyType
+        subjectUnit: subjectUnit
     }, function (result) {
         $("#" + element4).empty();
         $("#" + element4).append(result);
+    });
+}
+//管理员-“经费花费列表” 变换显示
+function expenseMoney_change_m(element1, element2, element3, element4,element5,url) {
+    var year = $("#" + element1).val();
+    var month = $("#" + element2).val();
+    var moneyType = $("#" + element3).val();
+    var subjectUnit = $("#" + element4).val();
+    $.post(url, {
+        year: year,
+        month: month,
+        moneyType: moneyType,
+        subjectUnit: subjectUnit
+    }, function (result) {
+        $("#" + element5).empty();
+        $("#" + element5).append(result);
     });
 }
 //计算出两个日期之间的天数

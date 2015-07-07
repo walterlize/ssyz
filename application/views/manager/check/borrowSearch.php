@@ -77,7 +77,7 @@
             </option>
         <?php endforeach; ?>
     </select>
-    &nbsp;&nbsp;&nbsp;&nbsp;
+    &nbsp;&nbsp;&nbsp;&nbsp;<br/><br/>
     <font  >单位:</font>
     <select id="unit_select" name="unit_select" onchange="option_change1('year_select', 'month_select', 'type_select', 'state_select', 'unit_select', 'search_result', '<?= base_url() ?>index.php/manager/check/changeOptionBorrow/<?=$type1?>')">
         <option value="all">全部显示</option>

@@ -41,8 +41,9 @@
                         <ul>
                             <li><a href="<?= base_url(); ?>index.php/ordinary/money/expenseList" target="mainFrame"><span>课题经费花费详情</span></a></li>
                             <li><a href="<?= base_url(); ?>index.php/ordinary/money/projectBudget" target="mainFrame"><span>经费执行汇总</span></a></li>
+                            <!--
                             <li><a href="<?= base_url(); ?>index.php/ordinary/money/monthList/2" target="mainFrame"><span>月度经费执行填报</span></a></li>
-
+                             -->
                         </ul></li>
                     <li><a href="#"><span>政策文件下载</span></a>
                         <ul>

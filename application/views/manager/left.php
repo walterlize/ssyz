@@ -32,9 +32,13 @@
                     <li><a href="#"><span>课题经费管理</span></a>
                         <ul>
                             <li><a href="<?= base_url(); ?>index.php/manager/money/expenseList" target="mainFrame"><span>经费花费列表</span></a></li>
-                            <li><a href="<?= base_url(); ?>index.php/manager/money/projectBudget" target="mainFrame"><span>课题总经费执行统计</span></a></li>
+                            <li><a href="<?= base_url(); ?>index.php/manager/money/projectBudget" target="mainFrame"><span>课题总经费执行</span></a></li>
+                            <li><a href="<?= base_url(); ?>index.php/manager/money/moneySum" target="mainFrame"><span>子课题经费汇总</span></a></li>
+                            <!--
                             <li><a href="<?= base_url(); ?>index.php/manager/money/yearBudget" target="mainFrame"><span>年度经费预算执行</span></a></li>
+
                             <li><a href="<?= base_url(); ?>index.php/manager/money/monthList/1" target="mainFrame"><span>月度经费执行填报</span></a></li>
+                        -->
                         </ul></li>
                     <li><a href="#"><span>子课题经费管理</span></a>
                         <ul>

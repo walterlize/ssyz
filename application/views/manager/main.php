@@ -17,14 +17,14 @@
             </div>
             <br/>
             <div class="text_admin_1">
-                <span class="c_left"><a href="<?= base_url(); ?>index.php/admin/trend/trendList/1">工作月报</a></span>
-                <span class="c_center"><a href="<?= base_url(); ?>index.php/admin/workReport/reportList/WeekReport/1/all">工作简报</a></span>
-                <span class="c_right"><a href="<?= base_url(); ?>index.php/admin/workReport/reportList/WorkReport/1/all"></a>汇款审核</span>
+                <span class="c_left"><a href="<?= base_url(); ?>index.php/manager/check/baoxiaoManage">普通报销审核 <?php if(isset($num1) and $num1 !==0)  echo "(".$num1.")";?></a></span>
+                <span class="c_center"><a href="<?= base_url(); ?>index.php/manager/check/travelManage">差旅审核<?php if(isset($num2) and $num2 !==0)  echo "(".$num2.")";?></a></span>
+                <span class="c_right"><a href="<?= base_url(); ?>index.php/manager/check/borrowManage">汇款审核<?php if(isset($num3) and $num3 !==0)  echo "(".$num3.")";?></a></span>
             </div>
             <div class="text_admin_2">
-                <span class="c_left"><a href="<?= base_url(); ?>index.php/admin/money/yearExecutionList/1">年度经费执行</a></span>
-                <span class="c_center"><a href="<?= base_url(); ?>index.php/admin/money/moneySum/all">经费执行汇总</a></span>
-                <span class="c_right"><a href="<?= base_url() ?>index.php/user/password">报销审核</a></span>
+                <span class="c_left"><a href="<?= base_url(); ?>index.php/manager/check/laowuManage">劳务审核<?php if(isset($num4) and $num4 !==0) echo "(".$num4.")";?></a></span>
+                <span class="c_center"><a href="<?= base_url(); ?>index.php/manager/money/expenseList">经费花费列表</a></span>
+                <span class="c_right"><a href="<?= base_url() ?>index.php/manager/money/moneySum">子课题经费汇总</a></span>
             </div>
 
         </div></br></br></br>

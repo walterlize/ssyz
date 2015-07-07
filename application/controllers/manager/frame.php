@@ -26,8 +26,21 @@ class Frame extends CI_Controller {
     }
 
     public function main() {
+        $subjectId = $this->session->userdata('subjectId');
+        $array = array('inherit' => $subjectId,'state'=>'3');
+        $this->load->model('m_baoxiao');
+        $this->load->model('m_travel');
+        $this->load->model('m_borrow');
+        $this->load->model('m_laowu');
+        $data['num1'] = $this->m_baoxiao->getNumManage($array);
+        $data['num2'] = $this->m_travel->getNumManage($array);
+        $data['num3'] = $this->m_borrow->getNumManage($array);
+        $data['num4'] = $this->m_borrow->getNumManage($array);
+
+
+
         //$this->load->view('common/header');
-        $this->load->view('manager/main');
+        $this->load->view('manager/main',$data);
         // $this->load->view('common/footer');
     }
 

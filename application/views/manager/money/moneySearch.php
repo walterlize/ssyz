@@ -64,10 +64,10 @@
     <font  >子课题:</font>
     <select id="subject_select" name="subject_select" onchange="expenseMoney_change_m('year_select', 'month_select','state_select','subject_select','search_result', '<?= base_url() ?>index.php/manager/money/changeOption')">
         <option value="all">全部显示</option>
-        <?php foreach (Subject as $r): ?>
+        <?php foreach ($Unit as $r): ?>
             <option value="<?= $r ?>"
                 <?php
-                if (isset($moneyType) && $r == $moneyType)
+                if (isset($Unit) && $r == $Unit)
                     echo 'selected';
                 else
                     echo '';
@@ -81,7 +81,11 @@
 </div>  </br>
 <div style="margin-left:20px; margin-right:20px">
 <form name="form2" method="post" action="<?= base_url(); ?>index.php/manager/money/expenseMoneySearch" id="form2">
-    按金额查询：  <input type="text" name="searchTerm" id="searchTerm"  isRequired="true" validEnum="Double1"/>
+    查询类型：
+    <select name="searchType"  id="searchType" >
+        <option value="1">报销代码</option>
+        <option value="2">金额</option>
+    </select>  <input type="text" name="searchTerm" id="searchTerm"  isRequired="true" validEnum="Double1"/>
     <span id="searchTermMsg" class="MsgHide">请按照正确的方式填写金额！</span> </td>
   <input type="submit"onclick="return check_base('form2');" name="submit" value="查询" class="input"/>
 </form>

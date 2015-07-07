@@ -99,7 +99,21 @@ class m_totalmoney extends CI_Model {
         $q = $this->db->get();
         return $q->result();
     }
-
+    function getOneInfo_sum($subjectId) {
+        $this->db->select();
+        $this->db->from('lz_money_total');
+        $this->db->where('subjectId', $subjectId);
+        $q = $this->db->get();
+        return $q->result();
+    }
+    //按照ｓｕｂｊｅｃｔＮａｍｅ查询
+    function getOneInfo_By_name($array) {
+        $this->db->select();
+        $this->db->from('lz_money_total');
+        $this->db->where($array);
+        $q = $this->db->get();
+        return $q->result();
+    }
     //管理员获取全部分配可以经费的情况
     function getTotalMoneyS($array, $per_page, $offset) {
         $this->db->select();
@@ -153,6 +167,7 @@ class m_totalmoney extends CI_Model {
         //$this->db->select_sum('direct_cost');
         $this->db->select_sum('ji_xiao');
         $this->db->select_sum('total');
+        $this->db->select_sum('money');
         $this->db->where($array);
         $q = $this->db->get('lz_money_current');
         return $q->result();

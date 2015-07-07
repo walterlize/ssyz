@@ -2,16 +2,25 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="4458a0b3-bf35-4704-a504-29a7c58a225e" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/controllers/ordinary/baoxiao.php" afterPath="$PROJECT_DIR$/application/controllers/ordinary/baoxiao.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/views/manager/money/moneyCostSearch.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/views/manager/money/moneySum.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/views/manager/money/projectCost.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/manager/check/baoxiaoSearch.php" afterPath="$PROJECT_DIR$/application/views/manager/check/baoxiaoSearch.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/manager/check/borrowBaoxiaoSearch.php" afterPath="$PROJECT_DIR$/application/views/manager/check/borrowBaoxiaoSearch.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/manager/check/borrowSearch.php" afterPath="$PROJECT_DIR$/application/views/manager/check/borrowSearch.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/javascript/common.js" afterPath="$PROJECT_DIR$/javascript/common.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/manager/money/expenseList.php" afterPath="$PROJECT_DIR$/application/views/manager/money/expenseList.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/controllers/manager/frame.php" afterPath="$PROJECT_DIR$/application/controllers/manager/frame.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/manager/left.php" afterPath="$PROJECT_DIR$/application/views/manager/left.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/ordinary/left.php" afterPath="$PROJECT_DIR$/application/views/ordinary/left.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/models/m_choice.php" afterPath="$PROJECT_DIR$/application/models/m_choice.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/models/m_money_record.php" afterPath="$PROJECT_DIR$/application/models/m_money_record.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/models/m_totalmoney.php" afterPath="$PROJECT_DIR$/application/models/m_totalmoney.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/manager/main.php" afterPath="$PROJECT_DIR$/application/views/manager/main.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/controllers/manager/money.php" afterPath="$PROJECT_DIR$/application/controllers/manager/money.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/controllers/ordinary/money.php" afterPath="$PROJECT_DIR$/application/controllers/ordinary/money.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/manager/money/moneySearch.php" afterPath="$PROJECT_DIR$/application/views/manager/money/moneySearch.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/ordinary/money/projectBudget.php" afterPath="$PROJECT_DIR$/application/views/ordinary/money/projectBudget.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/manager/money/totalEdit.php" afterPath="$PROJECT_DIR$/application/views/manager/money/totalEdit.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/manager/money/totalList.php" afterPath="$PROJECT_DIR$/application/views/manager/money/totalList.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/manager/money/totalNew.php" afterPath="$PROJECT_DIR$/application/views/manager/money/totalNew.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/controllers/ordinary/travel.php" afterPath="$PROJECT_DIR$/application/controllers/ordinary/travel.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="ssyz.iws" />
@@ -40,82 +49,100 @@
       <file leaf-file-name="money.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/application/controllers/manager/money.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="12013" max-vertical-offset="32976">
-              <caret line="630" column="34" selection-start-line="630" selection-start-column="30" selection-end-line="630" selection-end-column="34" />
+            <state vertical-scroll-proportion="-953.3333" vertical-offset="2106" max-vertical-offset="41652">
+              <caret line="1547" column="60" selection-start-line="1547" selection-start-column="41" selection-end-line="1547" selection-end-column="60" />
               <folding>
-                <marker date="1436105359868" expanded="true" signature="856:906" placeholder="..." />
+                <marker date="1436207496972" expanded="true" signature="856:906" placeholder="..." />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="m_totalmoney.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="m_money_record.php" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/application/models/m_money_record.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.7666099" vertical-offset="1980" max-vertical-offset="4140">
+              <caret line="135" column="0" selection-start-line="135" selection-start-column="0" selection-end-line="135" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="m_baoxiao.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/application/models/m_baoxiao.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-5.4074073" vertical-offset="1888" max-vertical-offset="4122">
+              <caret line="113" column="39" selection-start-line="113" selection-start-column="8" selection-end-line="113" selection-end-column="39" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="left.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/application/views/manager/left.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-4.6666665" vertical-offset="486" max-vertical-offset="1530">
+              <caret line="34" column="130" selection-start-line="34" selection-start-column="130" selection-end-line="34" selection-end-column="130" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="moneyCostSearch.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/application/views/manager/money/moneyCostSearch.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0" vertical-offset="540" max-vertical-offset="1170">
+              <caret line="49" column="0" selection-start-line="49" selection-start-column="0" selection-end-line="49" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="main.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/application/views/manager/main.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0" vertical-offset="92" max-vertical-offset="720">
+              <caret line="26" column="103" selection-start-line="26" selection-start-column="103" selection-end-line="26" selection-end-column="103" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="projectCost.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/application/views/manager/money/projectCost.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0" vertical-offset="18" max-vertical-offset="2610">
+              <caret line="1" column="0" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="m_totalmoney.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/application/models/m_totalmoney.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.8159609" vertical-offset="2271" max-vertical-offset="4572">
-              <caret line="154" column="36" selection-start-line="154" selection-start-column="31" selection-end-line="154" selection-end-column="36" />
+            <state vertical-scroll-proportion="0.0" vertical-offset="1929" max-vertical-offset="4842">
+              <caret line="111" column="39" selection-start-line="111" selection-start-column="25" selection-end-line="111" selection-end-column="39" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="baoxiao.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/application/controllers/ordinary/baoxiao.php">
+      <file leaf-file-name="common.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/javascript/common.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-12.0" vertical-offset="4644" max-vertical-offset="16362">
-              <caret line="276" column="46" selection-start-line="276" selection-start-column="46" selection-end-line="276" selection-end-column="46" />
+            <state vertical-scroll-proportion="0.0" vertical-offset="1272" max-vertical-offset="2574">
+              <caret line="92" column="19" selection-start-line="92" selection-start-column="19" selection-end-line="92" selection-end-column="19" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="check.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/application/controllers/manager/check.php">
+      <file leaf-file-name="moneySearch.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/application/views/manager/money/moneySearch.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-9.962963" vertical-offset="20900" max-vertical-offset="37494">
-              <caret line="1191" column="0" selection-start-line="1191" selection-start-column="0" selection-end-line="1191" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="check.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/application/views/manager/check/check.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-1.3333334" vertical-offset="0" max-vertical-offset="1008">
-              <caret line="2" column="98" selection-start-line="2" selection-start-column="86" selection-end-line="2" selection-end-column="98" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="baoxiaoDetail.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/application/views/manager/check/baoxiaoDetail.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-0.0" vertical-offset="0" max-vertical-offset="630">
-              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-              <folding>
-                <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="money.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/application/controllers/ordinary/money.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-7.740741" vertical-offset="10753" max-vertical-offset="18594">
-              <caret line="609" column="13" selection-start-line="609" selection-start-column="13" selection-end-line="609" selection-end-column="13" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="projectBudget.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/application/views/ordinary/money/projectBudget.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-13.592592" vertical-offset="1775" max-vertical-offset="2538">
-              <caret line="119" column="45" selection-start-line="119" selection-start-column="38" selection-end-line="119" selection-end-column="45" />
+            <state vertical-scroll-proportion="0.0" vertical-offset="821" max-vertical-offset="1656">
+              <caret line="64" column="54" selection-start-line="64" selection-start-column="54" selection-end-line="64" selection-end-column="223" />
               <folding />
             </state>
           </provider>
@@ -129,14 +156,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/application/views/admin/frame.php" />
-        <option value="$PROJECT_DIR$/application/views/manager/money/moneySearch.php" />
-        <option value="$PROJECT_DIR$/javascript/common.js" />
-        <option value="$PROJECT_DIR$/application/views/common/header3.php" />
-        <option value="$PROJECT_DIR$/application/config/pagination.php" />
-        <option value="$PROJECT_DIR$/application/views/ordinary/baoxiao/baoxiaoList_1.php" />
-        <option value="$PROJECT_DIR$/application/views/ordinary/travel/travelList_1.php" />
-        <option value="$PROJECT_DIR$/application/views/ordinary/borrow/borrowList_1.php" />
         <option value="$PROJECT_DIR$/application/controllers/ordinary/borrow.php" />
         <option value="$PROJECT_DIR$/application/views/ordinary/borrow/baoxiaoList_1.php" />
         <option value="$PROJECT_DIR$/application/controllers/ordinary/laowu.php" />
@@ -148,14 +167,10 @@
         <option value="$PROJECT_DIR$/application/models/m_baoxiao.php" />
         <option value="$PROJECT_DIR$/application/views/manager/search/laowuList.php" />
         <option value="$PROJECT_DIR$/application/views/manager/search/travelList.php" />
-        <option value="$PROJECT_DIR$/application/models/m_travel.php" />
-        <option value="$PROJECT_DIR$/application/models/m_choice.php" />
         <option value="$PROJECT_DIR$/application/models/m_borrow.php" />
         <option value="$PROJECT_DIR$/application/models/m_laowu.php" />
         <option value="$PROJECT_DIR$/application/views/manager/check/travelSearch.php" />
         <option value="$PROJECT_DIR$/update_log.html" />
-        <option value="$PROJECT_DIR$/application/views/manager/check/borrowSearch.php" />
-        <option value="$PROJECT_DIR$/application/views/manager/check/borrowBaoxiaoSearch.php" />
         <option value="$PROJECT_DIR$/application/views/manager/check/laowuList.php" />
         <option value="$PROJECT_DIR$/application/views/manager/check/baoxiaoList.php" />
         <option value="$PROJECT_DIR$/application/views/manager/search/baoxiaoList.php" />
@@ -166,20 +181,32 @@
         <option value="$PROJECT_DIR$/application/views/manager/check/laowuSearch.php" />
         <option value="$PROJECT_DIR$/update_log.php" />
         <option value="$PROJECT_DIR$/application/views/ordinary/money/expenseList.php" />
-        <option value="$PROJECT_DIR$/application/views/manager/left.php" />
-        <option value="$PROJECT_DIR$/application/models/m_money_record.php" />
-        <option value="$PROJECT_DIR$/application/views/manager/money/expenseList.php" />
         <option value="$PROJECT_DIR$/application/views/manager/money/totalList.php" />
         <option value="$PROJECT_DIR$/application/views/manager/money/totalEdit.php" />
         <option value="$PROJECT_DIR$/application/views/manager/money/totalNew.php" />
-        <option value="$PROJECT_DIR$/application/views/ordinary/left.php" />
-        <option value="$PROJECT_DIR$/application/controllers/manager/money.php" />
-        <option value="$PROJECT_DIR$/application/models/m_totalmoney.php" />
         <option value="$PROJECT_DIR$/application/controllers/ordinary/travel.php" />
-        <option value="$PROJECT_DIR$/application/views/ordinary/money/projectBudget.php" />
         <option value="$PROJECT_DIR$/application/controllers/ordinary/baoxiao.php" />
+        <option value="$PROJECT_DIR$/application/views/ordinary/left.php" />
+        <option value="$PROJECT_DIR$/application/views/manager/check/baoxiaoSearch.php" />
+        <option value="$PROJECT_DIR$/application/views/manager/check/borrowSearch.php" />
+        <option value="$PROJECT_DIR$/application/views/manager/check/borrowBaoxiaoSearch.php" />
         <option value="$PROJECT_DIR$/application/controllers/manager/check.php" />
+        <option value="$PROJECT_DIR$/application/views/manager/money/moneySearch.php" />
+        <option value="$PROJECT_DIR$/application/models/m_travel.php" />
+        <option value="$PROJECT_DIR$/application/controllers/manager/frame.php" />
+        <option value="$PROJECT_DIR$/application/views/ordinary/money/projectBudget.php" />
+        <option value="$PROJECT_DIR$/application/views/manager/money/expenseList.php" />
         <option value="$PROJECT_DIR$/application/controllers/ordinary/money.php" />
+        <option value="$PROJECT_DIR$/application/views/manager/money/moneySum.php" />
+        <option value="$PROJECT_DIR$/application/models/m_choice.php" />
+        <option value="$PROJECT_DIR$/application/models/m_totalmoney.php" />
+        <option value="$PROJECT_DIR$/application/views/manager/money/projectCost.php" />
+        <option value="$PROJECT_DIR$/javascript/common.js" />
+        <option value="$PROJECT_DIR$/application/controllers/manager/money.php" />
+        <option value="$PROJECT_DIR$/application/views/manager/money/moneyCostSearch.php" />
+        <option value="$PROJECT_DIR$/application/views/manager/main.php" />
+        <option value="$PROJECT_DIR$/application/views/manager/left.php" />
+        <option value="$PROJECT_DIR$/application/models/m_money_record.php" />
       </list>
     </option>
   </component>
@@ -232,7 +259,6 @@
       <sortByType />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -248,6 +274,20 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="ssyz" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ssyz" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ssyz" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="javascript" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -345,6 +385,28 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
+              <option name="myItemId" value="views" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="manager" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ssyz" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ssyz" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="application" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
               <option name="myItemId" value="models" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
@@ -385,34 +447,13 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="ordinary" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="ssyz" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="ssyz" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="application" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="controllers" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
               <option name="myItemId" value="manager" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
         </subPane>
       </pane>
+      <pane id="Scope" />
       <pane id="Scratches" />
     </panes>
   </component>
@@ -474,9 +515,6 @@
       <BehatRunner />
       <method />
     </configuration>
-    <configuration default="true" type="PhpUnitRemoteRunConfigurationType" factoryName="PHPUnit on Server">
-      <method />
-    </configuration>
     <configuration default="true" type="js.build_tools.gulp" factoryName="Gulp.js">
       <node-options />
       <gulpfile />
@@ -484,6 +522,9 @@
       <arguments />
       <pass-parent-envs>true</pass-parent-envs>
       <envs />
+      <method />
+    </configuration>
+    <configuration default="true" type="PhpUnitRemoteRunConfigurationType" factoryName="PHPUnit on Server">
       <method />
     </configuration>
     <list size="1">
@@ -525,7 +566,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="24" width="1366" height="744" extended-state="6" />
-    <editor active="true" />
+    <editor active="false" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32872504" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32872504" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -539,13 +580,13 @@
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32786885" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32935917" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="3" side_tool="false" content_ui="combo" />
-      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="3" side_tool="false" content_ui="combo" />
     </layout>
   </component>
   <component name="Vcs.Log.UiProperties">
@@ -572,111 +613,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/application/views/ordinary/baoxiao/baoxiaoAdd.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.56905156" vertical-offset="0" max-vertical-offset="2016">
-          <caret line="19" column="29" selection-start-line="19" selection-start-column="20" selection-end-line="19" selection-end-column="29" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/views/ordinary/laowu/laowuList_1.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.58069885" vertical-offset="371" max-vertical-offset="972">
-          <caret line="40" column="26" selection-start-line="40" selection-start-column="26" selection-end-line="40" selection-end-column="26" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/controllers/ordinary/laowu.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.94009984" vertical-offset="6527" max-vertical-offset="9864">
-          <caret line="394" column="5" selection-start-line="394" selection-start-column="5" selection-end-line="394" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/models/m_baoxiao.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-17.407408" vertical-offset="1618" max-vertical-offset="4122">
-          <caret line="116" column="48" selection-start-line="116" selection-start-column="48" selection-end-line="116" selection-end-column="48" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/models/m_choice.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-15.333333" vertical-offset="0" max-vertical-offset="1566">
-          <caret line="23" column="37" selection-start-line="23" selection-start-column="37" selection-end-line="23" selection-end-column="37" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/models/m_borrow.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-4.2777777" vertical-offset="3261" max-vertical-offset="6120">
-          <caret line="194" column="8" selection-start-line="194" selection-start-column="8" selection-end-line="194" selection-end-column="8" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/views/ordinary/borrow/baoxiaoSearch_2.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1692">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/controllers/ordinary/borrow.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="2.186356" vertical-offset="3024" max-vertical-offset="16956">
-          <caret line="241" column="10" selection-start-line="241" selection-start-column="10" selection-end-line="241" selection-end-column="10" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/javascript/common.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="774" max-vertical-offset="2286">
-          <caret line="52" column="9" selection-start-line="52" selection-start-column="9" selection-end-line="52" selection-end-column="9" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/models/m_laowu.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="2.286645" vertical-offset="954" max-vertical-offset="3744">
-          <caret line="131" column="46" selection-start-line="131" selection-start-column="46" selection-end-line="131" selection-end-column="46" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/views/manager/check/travelSearch.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-11.592592" vertical-offset="1343" max-vertical-offset="1944">
-          <caret line="92" column="93" selection-start-line="92" selection-start-column="93" selection-end-line="92" selection-end-column="93" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/views/manager/check/borrowSearch.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-11.592592" vertical-offset="1379" max-vertical-offset="1980">
-          <caret line="99" column="93" selection-start-line="99" selection-start-column="93" selection-end-line="99" selection-end-column="93" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/views/manager/check/travelList.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-12.0" vertical-offset="0" max-vertical-offset="1260">
-          <caret line="18" column="36" selection-start-line="18" selection-start-column="31" selection-end-line="18" selection-end-column="39" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/views/manager/check/borrowBaoxiaoSearch.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-11.592592" vertical-offset="1379" max-vertical-offset="1980">
-          <caret line="99" column="94" selection-start-line="99" selection-start-column="94" selection-end-line="99" selection-end-column="94" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/views/manager/search/baoxiaoList.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.74875206" vertical-offset="540" max-vertical-offset="1332">
-          <caret line="55" column="38" selection-start-line="55" selection-start-column="38" selection-end-line="55" selection-end-column="38" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/application/views/manager/search/borrowList.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.4608985" vertical-offset="713" max-vertical-offset="1314">
@@ -761,20 +697,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/application/views/manager/left.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-18.666666" vertical-offset="216" max-vertical-offset="1458">
-          <caret line="40" column="122" selection-start-line="40" selection-start-column="122" selection-end-line="40" selection-end-column="122" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/views/ordinary/money/expenseList.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.73044926" vertical-offset="83" max-vertical-offset="684">
-          <caret line="29" column="75" selection-start-line="29" selection-start-column="75" selection-end-line="29" selection-end-column="75" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/application/views/ordinary/baoxiao/baoxiaoEdit.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.8202995" vertical-offset="1415" max-vertical-offset="2016">
@@ -786,13 +708,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-0.73710483" vertical-offset="443" max-vertical-offset="1044">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/models/m_money_record.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-34.555557" vertical-offset="615" max-vertical-offset="4140">
-          <caret line="86" column="32" selection-start-line="86" selection-start-column="32" selection-end-line="86" selection-end-column="32" />
         </state>
       </provider>
     </entry>
@@ -810,13 +725,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/application/views/manager/check/baoxiaoSearch.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-6.0" vertical-offset="0" max-vertical-offset="1980">
-          <caret line="14" column="41" selection-start-line="14" selection-start-column="7" selection-end-line="14" selection-end-column="41" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/application/views/manager/money/totalNew.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-14.666667" vertical-offset="1242" max-vertical-offset="3186">
@@ -828,20 +736,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.08985025" vertical-offset="0" max-vertical-offset="756">
           <caret line="3" column="43" selection-start-line="3" selection-start-column="43" selection-end-line="3" selection-end-column="43" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/views/manager/money/expenseList.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.55074877" vertical-offset="83" max-vertical-offset="684">
-          <caret line="23" column="96" selection-start-line="23" selection-start-column="83" selection-end-line="23" selection-end-column="96" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/views/ordinary/left.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-12.0" vertical-offset="432" max-vertical-offset="1332">
-          <caret line="42" column="97" selection-start-line="42" selection-start-column="97" selection-end-line="42" selection-end-column="97" />
         </state>
       </provider>
     </entry>
@@ -866,77 +760,226 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/application/controllers/manager/money.php">
+    <entry file="file://$PROJECT_DIR$/application/views/manager/check/baoxiaoDetail.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="12013" max-vertical-offset="32976">
-          <caret line="630" column="34" selection-start-line="630" selection-start-column="30" selection-end-line="630" selection-end-column="34" />
-          <folding>
-            <marker date="1436105359868" expanded="true" signature="856:906" placeholder="..." />
-          </folding>
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="641">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/views/ordinary/left.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.44925123" vertical-offset="540" max-vertical-offset="1350">
+          <caret line="45" column="29" selection-start-line="45" selection-start-column="29" selection-end-line="45" selection-end-column="29" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/views/manager/check/borrowBaoxiaoSearch.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-6.5925927" vertical-offset="1190" max-vertical-offset="1980">
+          <caret line="81" column="72" selection-start-line="81" selection-start-column="58" selection-end-line="81" selection-end-column="72" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/views/manager/check/borrowSearch.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.23627287" vertical-offset="1190" max-vertical-offset="1980">
+          <caret line="79" column="38" selection-start-line="79" selection-start-column="38" selection-end-line="79" selection-end-column="38" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/views/manager/check/baoxiaoSearch.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-14.925926" vertical-offset="1379" max-vertical-offset="1980">
+          <caret line="104" column="17" selection-start-line="100" selection-start-column="7" selection-end-line="104" selection-end-column="17" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/application/models/m_travel.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-3.5370371" vertical-offset="1465" max-vertical-offset="4968">
-          <caret line="92" column="23" selection-start-line="92" selection-start-column="13" selection-end-line="92" selection-end-column="23" />
+        <state vertical-scroll-proportion="0.55740434" vertical-offset="1681" max-vertical-offset="4968">
+          <caret line="112" column="44" selection-start-line="112" selection-start-column="6" selection-end-line="112" selection-end-column="44" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/application/controllers/ordinary/baoxiao.php">
+    <entry file="file://$PROJECT_DIR$/application/views/manager/frame.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-12.0" vertical-offset="4644" max-vertical-offset="16362">
-          <caret line="276" column="46" selection-start-line="276" selection-start-column="46" selection-end-line="276" selection-end-column="46" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/views/manager/check/baoxiaoDetail.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="641">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="628">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/application/views/manager/check/check.php">
+    <entry file="file://$PROJECT_DIR$/application/controllers/manager/frame.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-1.3333334" vertical-offset="0" max-vertical-offset="1008">
-          <caret line="2" column="98" selection-start-line="2" selection-start-column="86" selection-end-line="2" selection-end-column="98" />
-          <folding />
+        <state vertical-scroll-proportion="-10.0" vertical-offset="414" max-vertical-offset="1170">
+          <caret line="38" column="0" selection-start-line="38" selection-start-column="0" selection-end-line="38" selection-end-column="0" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/application/views/ordinary/money/projectBudget.php">
+    <entry file="file://$PROJECT_DIR$/application/views/manager/money/projectBudget.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-13.592592" vertical-offset="1775" max-vertical-offset="2538">
-          <caret line="119" column="45" selection-start-line="119" selection-start-column="38" selection-end-line="119" selection-end-column="45" />
-          <folding />
+        <state vertical-scroll-proportion="-3.5224626" vertical-offset="2117" max-vertical-offset="2718">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/views/ordinary/money/baoxiaoDetail.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-20.0" vertical-offset="0" max-vertical-offset="720">
+          <caret line="30" column="0" selection-start-line="30" selection-start-column="0" selection-end-line="31" selection-end-column="0" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/application/controllers/ordinary/money.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-7.740741" vertical-offset="10753" max-vertical-offset="18594">
-          <caret line="609" column="13" selection-start-line="609" selection-start-column="13" selection-end-line="609" selection-end-column="13" />
-          <folding />
+        <state vertical-scroll-proportion="0.9372822" vertical-offset="10784" max-vertical-offset="18666">
+          <caret line="629" column="0" selection-start-line="629" selection-start-column="0" selection-end-line="629" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/controllers/ordinary/baoxiao.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-0.08985025" vertical-offset="5022" max-vertical-offset="16362">
+          <caret line="276" column="46" selection-start-line="276" selection-start-column="46" selection-end-line="276" selection-end-column="46" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/application/controllers/manager/check.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-9.962963" vertical-offset="20900" max-vertical-offset="37494">
-          <caret line="1191" column="0" selection-start-line="1191" selection-start-column="0" selection-end-line="1191" selection-end-column="0" />
+        <state vertical-scroll-proportion="-13.333333" vertical-offset="324" max-vertical-offset="37494">
+          <caret line="38" column="49" selection-start-line="37" selection-start-column="7" selection-end-line="38" selection-end-column="49" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/views/ordinary/money/projectBudget.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="4.0133114" vertical-offset="0" max-vertical-offset="2574">
+          <caret line="134" column="10" selection-start-line="0" selection-start-column="0" selection-end-line="137" selection-end-column="7" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/models/m_choice.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="918" max-vertical-offset="1566">
+          <caret line="76" column="31" selection-start-line="76" selection-start-column="31" selection-end-line="76" selection-end-column="31" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/views/manager/money/expenseList.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-0.0" vertical-offset="0" max-vertical-offset="738">
+          <caret line="0" column="22" selection-start-line="0" selection-start-column="9" selection-end-line="0" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/views/manager/money/moneySum.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-34.74074" vertical-offset="232" max-vertical-offset="1404">
+          <caret line="65" column="0" selection-start-line="65" selection-start-column="0" selection-end-line="65" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/views/manager/check/check.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="18" max-vertical-offset="1008">
+          <caret line="2" column="98" selection-start-line="2" selection-start-column="86" selection-end-line="2" selection-end-column="98" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/views/ordinary/money/expenseList.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-0.0" vertical-offset="0" max-vertical-offset="684">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="2" selection-end-column="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/views/manager/money/yearBudget.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-0.359401" vertical-offset="216" max-vertical-offset="2826">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/views/manager/money/moneySearch.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="821" max-vertical-offset="1656">
+          <caret line="64" column="54" selection-start-line="64" selection-start-column="54" selection-end-line="64" selection-end-column="223" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/application/models/m_totalmoney.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.8159609" vertical-offset="2271" max-vertical-offset="4572">
-          <caret line="154" column="36" selection-start-line="154" selection-start-column="31" selection-end-line="154" selection-end-column="36" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="1929" max-vertical-offset="4842">
+          <caret line="111" column="39" selection-start-line="111" selection-start-column="25" selection-end-line="111" selection-end-column="39" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/javascript/common.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="1272" max-vertical-offset="2574">
+          <caret line="92" column="19" selection-start-line="92" selection-start-column="19" selection-end-line="92" selection-end-column="19" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/views/manager/money/moneyCostSearch.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="540" max-vertical-offset="1170">
+          <caret line="49" column="0" selection-start-line="49" selection-start-column="0" selection-end-line="49" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/views/manager/money/projectCost.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="18" max-vertical-offset="2610">
+          <caret line="1" column="0" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/views/manager/main.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="92" max-vertical-offset="720">
+          <caret line="26" column="103" selection-start-line="26" selection-start-column="103" selection-end-line="26" selection-end-column="103" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/views/manager/left.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-4.6666665" vertical-offset="486" max-vertical-offset="1530">
+          <caret line="34" column="130" selection-start-line="34" selection-start-column="130" selection-end-line="34" selection-end-column="130" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/models/m_baoxiao.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-5.4074073" vertical-offset="1888" max-vertical-offset="4122">
+          <caret line="113" column="39" selection-start-line="113" selection-start-column="8" selection-end-line="113" selection-end-column="39" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/controllers/manager/money.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-953.3333" vertical-offset="2106" max-vertical-offset="41652">
+          <caret line="1547" column="60" selection-start-line="1547" selection-start-column="41" selection-end-line="1547" selection-end-column="60" />
+          <folding>
+            <marker date="1436207496972" expanded="true" signature="856:906" placeholder="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/models/m_money_record.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.7666099" vertical-offset="1980" max-vertical-offset="4140">
+          <caret line="135" column="0" selection-start-line="135" selection-start-column="0" selection-end-line="135" selection-end-column="0" />
           <folding />
         </state>
       </provider>

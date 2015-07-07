@@ -61,7 +61,7 @@ class m_money_record extends CI_Model {
     function getMoney_currentS($array, $per_page, $offset) {
         $this->db->select();
         $this->db->where($array);
-        $this->db->order_by("date", "asc");
+        $this->db->order_by("date", "desc");
         $q = $this->db->get('money_current', $per_page, $offset);
         return $q->result();
     }
@@ -69,7 +69,7 @@ class m_money_record extends CI_Model {
     function getMoney_currentS_m($array, $per_page, $offset) {
         $this->db->select();
         $this->db->where($array);
-        $this->db->order_by("date", "asc");
+        $this->db->order_by("date", "desc");
         $q = $this->db->get('lz_money_current', $per_page, $offset);
         return $q->result();
     }

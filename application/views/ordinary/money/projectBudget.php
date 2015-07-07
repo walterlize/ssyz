@@ -1,6 +1,6 @@
 <div style="margin-left:20px; margin-right:20px" id="content">
 <br />
-<h3 class="title_lee">课题经费执行统计</h3>
+<h3 class="title_lee"><?=$title?></h3>
 
   <table cellpadding="0" cellspacing="1" class="tablist2">
     <tr>
@@ -19,24 +19,24 @@
     </tr>
     <tr>
       <td class="td1"><div align="left" style="margin-left:20px">其中：购置设备费</div></td>
-      <td class="td3">&nbsp;</td>
+      <td class="td3"><?=$money1->buyEquipment?>&nbsp;</td>
       <td class="td3">&nbsp;</td>
       <td class="td3">&nbsp;</td>
       <td class="td3">&nbsp;</td>
     </tr>
     <tr>
       <td class="td1"><div align="left" style="margin-left:40px">试制设备费</div></td>
-      <td class="td3">&nbsp;</td>
+      <td class="td3"><?=$money1->tryEquipment?>&nbsp;</td>
       <td class="td3">&nbsp;</td>
       <td class="td3">&nbsp;</td>
       <td class="td3">&nbsp;</td>
     </tr>
     <tr>
       <td class="td1"><div align="left" style="margin-left:40px">设备改造与租赁费</div></td>
-      <td class="td3"><?php if(isset($yearMoney->alterEquipment)) echo $yearMoney->alterEquipment;?>&nbsp;</td>
-      <td class="td3"><?php if(isset($monthMoney->alterEquipment)) echo $monthMoney->alterEquipment;?>&nbsp;</td>
-      <td class="td3"><?php if(isset($last->alterEquipment)) echo $last->alterEquipment;?>&nbsp;</td>
-      <td class="td3"><?php if(isset($rate->alterEquipment)) echo $rate->alterEquipment;?>&nbsp;</td>
+      <td class="td3"><?=$money1->alterEquipment?>&nbsp;</td>
+      <td class="td3">&nbsp;</td>
+      <td class="td3">&nbsp;</td>
+      <td class="td3">&nbsp;</td>
     </tr>
     <tr>
       <td class="td1"><div align="left">2.材料费</div></td>
@@ -130,7 +130,9 @@
       <td class="td3"><?=$money1->total_rate?>%&nbsp;</td>
     </tr>
     <tr>
-      <td colspan="5" class="td3" align="center">&nbsp;</td>
+      <td colspan="5" class="td3" align="center">
+          <input type="button" name="btnReturn" value="返 回" onclick="window.location.href = 'javascript:history.go(-1)';" id="btnReturn" class="input" />
+          &nbsp;</td>
     </tr>
   </table>
  </div>

@@ -6,9 +6,10 @@
             <tr class="HeaderStyle">
                 <th class="td1">序号</th>
                 <th class="td3">时间</th>
-                <th class="td1">类型</th>
-                <th class="td3">金额（元）</th>
-                <th class="td1">详情</th>
+                <th class="td1">代码</th>
+                <th class="td3">类型</th>
+                <th class="td1">金额（元）</th>
+                <th class="td3">详情</th>
             </tr>
             <?php if (is_array($money)) foreach ($money as $key => $r): ?>
                     <tr class="RowStyle" align="center">
@@ -17,11 +18,13 @@
                         <td class="td3">
                             <?= $r['date'] ?></td>
                         <td class="td1">
-                            <?= $r['moneyType'] ?></td>
+                            <?= $r['code'] ?></td>
                         <td class="td3">
-                            <?= $r['money'] ?></td>
+                            <?= $r['moneyType'] ?></td>
                         <td class="td1">
-                            <a id="" href="<?= base_url() ?>index.php/manage/money/expenseDetail/<?= $r['b_id'] ?>/<?= $r['m_type'] ?>">详情</a>
+                            <?= $r['money'] ?></td>
+                        <td class="td3">
+                            <a id="" href="<?= base_url() ?>index.php/manager/money/expenseDetail/<?= $r['b_id'] ?>/<?= $r['m_type'] ?>">详情</a>
                         </td>
                     </tr>
                 <?php endforeach; ?>
