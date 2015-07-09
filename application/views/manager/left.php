@@ -15,8 +15,10 @@
 
                     <li><a href="#"><span>工作进度</span></a>
                         <ul>
+                            <!--
                             <li><a href="<?= base_url(); ?>index.php/manager/workReport/reportList/WeekReport/1" target="mainFrame"><span>工作月报</span></a></li>
                             <li><a href="<?= base_url(); ?>index.php/manager/workReport/reportList/WorkReport/1" target="mainFrame"><span>工作简报</span></a></li>
+                           -->
                             <li><a href="<?= base_url(); ?>index.php/manager/workReport/reportListCheck/WeekReport/2" target="mainFrame"><span>子课题工作月报审核</span></a></li>
                             <li><a href="<?= base_url(); ?>index.php/manager/workReport/reportListCheck/WorkReport/2" target="mainFrame"><span>子课题工作简报审核</span></a></li>
                         </ul></li>
