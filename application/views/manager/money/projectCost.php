@@ -13,6 +13,13 @@
             <td class="td1">执行额度（%）</td>
         </tr>
         <tr>
+            <td class="td11">合计</td>
+            <td class="td31"><?=$money1->total_1?>&nbsp;</td>
+            <td class="td32"><?=$money1->total_3?>&nbsp;</td>
+            <td class="td31"><?=$money1->total_2?>&nbsp;</td>
+            <td class="td32"><?=$money1->total_rate?>%&nbsp;</td>
+        </tr>
+        <tr>
             <td class="td1"><div align="left">1.设备费</div></td>
             <td class="td3"><?=$money1->equipment_1?>&nbsp;</td>
             <td class="td3"><?=$money1->equipment_3?></td>
@@ -124,13 +131,7 @@
             <td class="td3"><?=$money1->ji_xiao_2?>&nbsp;</td>
             <td class="td3"><?=$money1->ji_xiao_rate?>%&nbsp;</td>
         </tr>
-        <tr>
-            <td class="td1">合计</td>
-            <td class="td3"><?=$money1->total_1?>&nbsp;</td>
-            <td class="td3"><?=$money1->total_3?>&nbsp;</td>
-            <td class="td3"><?=$money1->total_2?>&nbsp;</td>
-            <td class="td3"><?=$money1->total_rate?>%&nbsp;</td>
-        </tr>
+
         <tr>
             <td colspan="5" class="td3" align="center">
                 <input type="button" name="btnReturn" value="返 回" onclick="window.location.href = 'javascript:history.go(-1)';" id="btnReturn" class="input" />

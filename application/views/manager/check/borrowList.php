@@ -45,10 +45,10 @@
                         <td class="td3">
                             <?= $r['state'] ?>
                         </td>
-                        <td class="td3">
+                        <td class="td1">
                             <a id="" href="<?= base_url() ?>index.php/manager/check/borrowDetail/<?= $r['b_id'] ?>">详细</a>
                         </td>
-                        <td class="td1">
+                        <td class="td3">
                             <div style="<?= $r['display1'] ?>"> 
                                 <input type="button" name="btnSave" value="<?= $r['stateShow3'] ?>" onclick="window.location.href = '<?= base_url() ?>index.php/manager/check/updateBorrow/<?= $r['b_id'] ?>/<?= $r['state3'] ?>/1';"  class="input"  />
                             </div>

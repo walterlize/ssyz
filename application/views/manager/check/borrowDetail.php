@@ -3,7 +3,7 @@
     <div class="title_lee"> 汇款/支票单详情</div>
   
         <table cellpadding="0" cellspacing="1" class="tablist2">
-            <tr>
+            <tr class="HeaderStyle">
                 <td class="td1"><div align="left">申请类别：</div></td>
                 <td class="td3" ><div align="left"><?= $borrow->type ?></div>
                 </td>

@@ -168,7 +168,7 @@ class Check extends CI_Controller {
 
         if ($state == '4') {
             $data['stateShow'] = '审核通过，收到发票';
-            //echo $data['stateShow'] . $data['stateShow'] . date('YmdHis');
+
         } elseif ($state == '5') {
             $data['stateShow'] = '已经报销';
         } elseif ($state == '3' or $state == '2') {
@@ -186,27 +186,6 @@ class Check extends CI_Controller {
         $id = $this->uri->segment(4);
         $data['travel'] = $this->getTravel($id);
         $state = $data['travel']->state;
-
-        /* if ($state == '4') {
-          $data['stateShow'] = '审核通过，收到发票';
-          //echo $data['stateShow'] . $data['stateShow'] . date('YmdHis');
-          $this->load->view('common/header3');
-          $this->load->view('manager/check/travelDetail', $data);
-          $this->load->view('manager/check/checkDetailTravel', $data);
-          $this->load->view('common/footer');
-          } elseif ($state == '3' or $state == '2') {
-          $this->load->view('common/header3');
-          $this->load->view('manager/check/travelDetail', $data);
-          $this->load->view('manager/check/checkTravel', $data);
-          $this->load->view('common/footer');
-          }elseif($state=='5'){
-          $data['stateShow'] = '已完成报销';
-
-          $this->load->view('common/header3');
-          $this->load->view('manager/check/travelDetail', $data);
-          $this->load->view('manager/check/checkTravel', $data);
-          $this->load->view('common/footer');
-          } */
 
         if ($state == '4') {
             $data['stateShow'] = '审核通过，收到发票!';
@@ -228,19 +207,19 @@ class Check extends CI_Controller {
         $data['borrow'] = $this->getBorrow($id);
         $state = $data['borrow']->state;
 
+
         if ($state == '4') {
-            $data['stateShow'] = '审核通过，汇款已寄出';
-            //echo $data['stateShow'] . $data['stateShow'] . date('YmdHis');
-            $this->load->view('common/header3');
-            $this->load->view('manager/check/borrowDetail', $data);
-            $this->load->view('manager/check/checkDetailBorrow', $data);
-            $this->load->view('common/footer');
+            $data['stateShow'] = '审核通过';
+
         } elseif ($state == '3' or $state == '2') {
-            $this->load->view('common/header3');
-            $this->load->view('manager/check/borrowDetail', $data);
-            $this->load->view('manager/check/checkBorrow', $data);
-            $this->load->view('common/footer');
+            $data['stateShow'] = '未审核，请您审核!';
+        }elseif($state=='5'){
+            $date['stateShow']='已完成审核.';
         }
+        $this->load->view('common/header3');
+        $this->load->view('manager/check/borrowDetail', $data);
+        $this->load->view('manager/check/checkBorrow', $data);
+        $this->load->view('common/footer');
     }
 
     //报销详细信息页面
@@ -269,7 +248,32 @@ class Check extends CI_Controller {
         $this->load->view('manager/check/checkLaowu', $data);
         $this->load->view('common/footer');
     }
+    //借款报销详细信息页面
+    public function borrowBaoxiaoDetail() {
+        $this->timeOut();
+        $id = $this->uri->segment(4);
+        $data['borrow'] = $this->getBorrow($id);
+        if (strcmp($data['borrow']->state2, '1') == 0) {
+            $show = 'display';$show2 = 'display:none';
+        } elseif (strcmp($data['borrow']->state2, '2') == 0) {
+            $show = 'display';$show2 = 'display';
+        } elseif (strcmp($data['borrow']->state2, '3') == 0) {
+            $show = 'display:none';$show2 = 'display';
+        } elseif (strcmp($data['borrow']->state2, '4') == 0) {
+            $show = 'display:none';$show2 = 'display';
+        } elseif (strcmp($data['borrow']->state2, '5') == 0) {
+            $show = 'display:none';$show2 = 'display';
+        } else {
+            echo "状态有误";
+        }
 
+
+        $data['show'] = $show;
+        $data['show2'] = $show2;
+        $this->load->view('common/header3');
+        $this->load->view('ordinary/borrow/baoxiaoDetail', $data);
+        $this->load->view('common/footer');
+    }
     //完成详细信息页面
     public function completeDetail() {
         $this->timeOut();

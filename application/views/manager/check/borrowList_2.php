@@ -12,8 +12,9 @@
                 <th class="td3">金额</th>
                 <th class="td1">单位</th>
                 <th class="td3">状态</th>
-                <th class="td1">审核</th>
-                <th class="td3">完成</th>
+                <th class="td1">查看详情</th>
+                <th class="td3">审核</th>
+                <th class="td1">完成</th>
 
 
             </tr>
@@ -45,12 +46,15 @@
                             <?= $r['state2'] ?>
                         </td>
                         <td class="td1">
+                            <a id="" href="<?= base_url() ?>index.php/manager/check/borrowDetail/<?= $r['b_id'] ?>">详细</a>
+                        </td>
+                        <td class="td3">
                             <div style="<?= $r['display1'] ?>"> 
                                 <input type="button" name="btnSave" value="<?= $r['stateShow3'] ?>" onclick="window.location.href = '<?= base_url() ?>index.php/manager/check/updateBorrow_2/<?= $r['b_id'] ?>/<?= $r['state3'] ?>/1';"  class="input"  />
                                 <!--<a id="" href="<?= base_url() ?>index.php/manager/check/borrowDetail/<?= $r['b_id'] ?>">操作</a>-->
                             </div>
                         </td>
-                        <td class="td3">
+                        <td class="td1">
                             <div style="<?= $r['display'] ?>"> 
                                 <input type="button" name="btnSave" value="<?= $r['stateShow4'] ?>" onclick="window.location.href = '<?= base_url() ?>index.php/manager/check/updateBorrow_2/<?= $r['b_id'] ?>/<?= $r['state4'] ?>/2';"  class="input"  />
                                 <!--<a id="" href="<?= base_url() ?>index.php/manager/check/borrowDetail/<?= $r['b_id'] ?>">操作</a>-->

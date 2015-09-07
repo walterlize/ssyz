@@ -143,6 +143,16 @@ ul, li
     white-space: nowrap;
 
 }
+.tablist2 .td11
+{
+    height: 20px;
+    background: #ebf7ff;
+    text-align: center;
+    white-space: nowrap;
+    font-size: 14px;
+    color: red;
+
+}
 .tablist2 .td2
 {
     height: 20px;
@@ -158,6 +168,24 @@ ul, li
     background: #fff;
     padding: 5px;
 
+}
+.tablist2 .td31
+{
+    height: 20px;
+    text-align: center;
+    background: #fff;
+    padding: 5px;
+    font-size: 14px;
+    color: green;
+}
+.tablist2 .td32
+{
+    height: 20px;
+    text-align: center;
+    background: #fff;
+    padding: 5px;
+    font-size: 14px;
+    color: red;
 }
 .tablist2 .td4
 {

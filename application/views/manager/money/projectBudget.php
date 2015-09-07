@@ -4,9 +4,6 @@
 
     <table cellpadding="0" cellspacing="1" class="tablist2">
 
-
-
-
         <tr>
             <td class="td1">类别</td>
             <td class="td1">预算总数（万元）</td>
@@ -15,11 +12,11 @@
             <td class="td1">执行额度（%）</td>
         </tr>
         <tr>
-            <td class="td1"><div align="left">课题总计</td>
-            <td class="td3"><?= $totalMoney->total ?>&nbsp;</td>
-            <td class="td3"><?= $monthMoney->total ?>&nbsp;</td>
-            <td class="td3"><?= $last->total ?>&nbsp;</td>
-            <td class="td3"><?= $rate->total ?>%&nbsp;</td>
+            <td class="td11"><div align="left">课题总计</td>
+            <td class="td31"><?= $totalMoney->total ?>&nbsp;</td>
+            <td class="td32"><?= $monthMoney->total ?>&nbsp;</td>
+            <td class="td31"><?= $last->total ?>&nbsp;</td>
+            <td class="td32"><?= $rate->total ?>%&nbsp;</td>
         </tr>
         <tr>
             <td class="td1"><div align="left">1.设备费</div></td>
