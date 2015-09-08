@@ -239,6 +239,9 @@ class Money extends CI_Controller {
         $array = array('s_id' => $subjectId, 'money' => $searchterm);
         $num = $this->m_money_record->getNum($array);
         $offset = $this->uri->segment(4);
+        $su=$this->m_money_record->getMoney_all($array);
+        $su1=get_object_vars($su['0']);
+        $sum=$su1['money'];
         $data['money'] = $this->getExpenseS($array, $offset);
         $config['base_url'] = base_url() . 'index.php/ordinary/money/expenseList';
         $config['total_rows'] = $num;
@@ -250,6 +253,7 @@ class Money extends CI_Controller {
         $data['Type'] = $this->getType();
         $data['Year'] = $this->getSearchYear();
         $data['Month'] = $this->getSearchMonth();
+        $data['sum']=$sum;
 
         $this->load->view('common/header3');
         $this->load->view('ordinary/money/moneySearch', $data);

@@ -11,7 +11,7 @@
   </tr>
 <div style="margin-left:20px; margin-right:20px;margin-bottom: 20px">
     <font >年份:</font>
-    <select id="year_select" name="year_select" onchange="expenseMoney_change('year_select', 'month_select','state_select','search_result', '<?= base_url() ?>index.php/ordinary/money/changeOption')">
+    <select id="year_select" name="year_select" onchange="expenseMoney_change_1('year_select', 'month_select','moneyType','search_result', '<?= base_url() ?>index.php/ordinary/money/changeOption')">
         <option value="all">全部信息</option>
         <?php foreach ($Year as $r): ?>
             <option value="<?= $r ?>"
@@ -28,7 +28,7 @@
     </select>
     &nbsp;&nbsp;&nbsp;&nbsp;
     <font  >月份:</font>
-    <select id="month_select" name="month_select" onchange="expenseMoney_change('year_select', 'month_select','state_select','search_result', '<?= base_url() ?>index.php/ordinary/money/changeOption')">
+    <select id="month_select" name="month_select" onchange="expenseMoney_change_1('year_select', 'month_select','moneyType','search_result', '<?= base_url() ?>index.php/ordinary/money/changeOption')">
         <option value="all">全部显示</option>
         <?php foreach ($Month as $r): ?>
             <option value="<?= $r ?>"
@@ -45,7 +45,7 @@
     </select>
     &nbsp;&nbsp;&nbsp;&nbsp;
     <font  >经费类型:</font>
-    <select id="state_select" name="state_select" onchange="expenseMoney_change('year_select', 'month_select','state_select','search_result', '<?= base_url() ?>index.php/ordinary/money/changeOption')">
+    <select id="moneyType" name="moneyType" onchange="expenseMoney_change_1('year_select', 'month_select','moneyType','search_result', '<?= base_url() ?>index.php/ordinary/money/changeOption')">
         <option value="all">全部显示</option>
         <?php foreach ($Type as $r): ?>
             <option value="<?= $r ?>"

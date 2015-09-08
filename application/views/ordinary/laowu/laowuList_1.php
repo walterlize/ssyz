@@ -10,8 +10,7 @@
             <th class="td3">类别</th>
             <th class="td1">人数</th>
             <th class="td3">金额（元）</th>
-            <th class="td3">单位</th>
-            <th class="td1">状态</th>
+            <th class="td3">状态</th>
             <th class="td1">编辑</th>
         </tr>
         <?php if (is_array($laowu)) foreach ($laowu as $key => $r): ?>
