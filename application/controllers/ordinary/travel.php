@@ -124,6 +124,16 @@ class Travel extends CI_Controller {
         $this->pagination->initialize($config);
         $data['page'] = $this->pagination->create_links();
         */
+
+
+
+
+        $data['Type'] = $this->getType();
+        $data['State'] = $this->getState();
+        $data['Year'] = $this->getSearchYear();
+        $data['Month'] = $this->getSearchMonth();
+
+
         $data['title'] = '差旅费报销列表';
         $data['num'] = $num;
 
@@ -338,7 +348,7 @@ class Travel extends CI_Controller {
         if ($searchType1 == '1') {
             $array = array('s_id' => $subjectId, 'code' => $searchTerm);
         } elseif ($searchType1 == '2') {
-            $array = array('s_id' => $subjectId, 'money' => $searchTerm);
+            $array = array('s_id' => $subjectId, 'totalMoney' => $searchTerm);
         } else {
             $message = 's_id有误';
             show_error($message);
