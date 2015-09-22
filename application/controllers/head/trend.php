@@ -15,22 +15,17 @@ class Trend extends CI_Controller {
 
     public function index() {
         $title['title'] = '设施养殖数字化智能管理技术设备研究管理系统';
-
         $this->load->model('m_trend');
-
         $type = $this->uri->segment(4);
         $array = array('trendType' => $type, 'state' => 2);
-
         $num = $this->m_trend->getNum($array);
         $offset = $this->uri->segment(5);
-
         $data['trend'] = $this->getTrends($array, $offset);
         $config['base_url'] = base_url() . 'index.php/outside/trend/index/' . $type;
         $config['total_rows'] = $num;
         $config['uri_segment'] = 5;
         $this->pagination->initialize($config);
         $data['page'] = $this->pagination->create_links();
-
         switch ($type) {
             case 1:
                 $data['title'] = '重要公告';
@@ -42,11 +37,11 @@ class Trend extends CI_Controller {
                 $data['title'] = '管理办法';
                 break;
         }
-
-        $this->load->view('index/head_1', $data);
-        $this->load->view('includes/left');
+        $this->load->view('index/head_2', $data);
+        //$this->load->view('includes/left');
         $this->load->view('outside/trendList', $data);
-        //$this->load->view('common/foot2');
+        //$this->load->view('common/foot3');
+        $this->load->view('index/footer_1');
     }
 
     // 公告管理详细信息页面
@@ -60,7 +55,7 @@ class Trend extends CI_Controller {
 
         $this->load->view('index/head', $title);
         $this->load->view('outside/trend', $data);
-        //$this->load->view('index/footer');
+        //$this->load->view('index/footer_1');
         $this->load->view('common/foot2');
     }
 

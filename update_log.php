@@ -35,3 +35,11 @@
 
 
  */
+
+/*
+ * Author:walterlize
+ * Date:20150922
+ * Version:2.2
+ *1、 修复了首页 more显示的问题。屏蔽了左侧导航栏
+ *2、 重新设计了foot
+ */

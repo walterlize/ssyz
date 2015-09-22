@@ -464,9 +464,10 @@ a:hover { text-decoration: none; color:#33CC99; font-size:13px; }
 }
 
 .zhuti {
-	width: 1000px;
-	background-color: #FFFFFF;
-	height: auto;
+	width: 80%;
+	<!--background-color: #FFFFFF;-->
+	<!--height: auto;-->
+	height: 70%;
 }
 .zhuti .zhuti11 {
 	height: 30px;
@@ -535,9 +536,9 @@ a:hover { text-decoration: none; color:#33CC99; font-size:13px; }
 	margin-left: 20px;
 }
 .zhuti2 {
-	float: left;
-	height: auto;
-	width: 73%;
+	float: inherit;
+	height: 70%;
+	width: 85%;
 	margin-top: 10px;
 	margin-right: 10px;
 	margin-bottom: 10px;
@@ -558,7 +559,7 @@ a:hover { text-decoration: none; color:#33CC99; font-size:13px; }
 	border-bottom-color: #FFCC99;
 	font-size: 24px;
 	color: #000000;
-	text-align: left;
+	text-align: center;
 	vertical-align: middle;
 	white-space: pre;
 	font-weight: bold;

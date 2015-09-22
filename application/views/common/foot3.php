@@ -1,5 +1,6 @@
 
-    <div>
+    <div class="bottom">
+        <div class="line">
     <table width="1000" cellspacing="0" cellpadding="0" border="0" bgcolor="#ebf4f9" align="center">
         <tbody>
             <tr>
@@ -7,7 +8,9 @@
             </tr>
         </tbody>
     </table>
-    <table width="1000" height="85" cellspacing="0" cellpadding="0" border="0"  bgcolor="#eeffee" align="center">
+            </div>
+        <div class="bottom_text">
+    <table  cellspacing="0" cellpadding="0" border="0"  bgcolor="#eeffee" align="center">
         <tbody>
             <tr>
                 <td valign="bottom" align="center" bgcolor="#eeffee"style=" border:#ffffff solid 1px; border-bottom:none; padding-top:10px">
@@ -28,4 +31,4 @@
                                     </tbody>
                                     </table>
                                     </div>
-                               
+        </div>

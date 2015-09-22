@@ -1,5 +1,3 @@
-<div align="center" class="titleLink">
-        <div class="zhuti">
 <div class="zhuti2">
 <div class="zhuti21"><?=$title?></div>
 <br />
@@ -14,7 +12,5 @@
         <div align="center"><?=$page?></div>
 </div>
 </div>
-</div>
-</div>
-</div>
+</div></div>
 
