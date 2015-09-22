@@ -6,6 +6,7 @@ if (!defined('BASEPATH'))
 class Money extends CI_Controller {
 
     function __construct() {
+        //::表示引入一个类而非对象的方法。调用父类的_construct()
         parent::__construct();
         $this->load->helper('url');
         $this->load->helper('form');
