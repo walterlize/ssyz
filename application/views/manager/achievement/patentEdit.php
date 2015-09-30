@@ -1,6 +1,6 @@
 <div style="margin-left:20px; margin-right:20px">
 <br />
-<h3>专利详细信息编辑</h3>
+<h3 class="title_lee">专利详细信息编辑</h3>
 <form name="form1" method="post" action="<?=base_url()?>index.php/manager/patent/save" id="form1">
 <input type="hidden" value="<?=$patentId?>" name="patentId" id="patentId" />
 <input type="hidden" value="<?=$subjectId?>" name="subjectId" id="subjectId" />

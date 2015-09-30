@@ -100,13 +100,13 @@ class Index extends CI_Controller {
         $password = $this->session->userdata('password');
         $roleId = $this->session->userdata('roleId');
 
-            if ($roleId == 1) {
-                redirect('admin/frame/index');
-            } elseif ($roleId == 2) {
-                redirect('manager/frame/index');
-            } elseif ($roleId == 3) {
-                redirect('ordinary/frame/index');
-            }
+        if ($roleId == 1) {
+            redirect('admin/frame/index');
+        } elseif ($roleId == 2) {
+            redirect('manager/frame/index');
+        } elseif ($roleId == 3) {
+            redirect('ordinary/frame/index');
+        }
 
     }
 

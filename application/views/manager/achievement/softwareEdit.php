@@ -1,6 +1,6 @@
 <div style="margin-left:20px; margin-right:20px">
 <br />
-<h3>软件著作权详细信息编辑</h3>
+<h3 class="title_lee">软件著作权详细信息编辑</h3>
 <form name="form1" method="post" action="<?=base_url()?>index.php/manager/software/save" id="form1">
 <input type="hidden" value="<?=$softwareId?>" name="softwareId" id="softwareId" />
 <input type="hidden" value="<?=$subjectId?>" name="subjectId" id="subjectId" />

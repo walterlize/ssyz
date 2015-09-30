@@ -1,6 +1,6 @@
 <div style="margin-left:20px; margin-right:20px;">
 <br />
-<h3>论文详细信息</h3>
+<h3 class="title_lee">论文详细信息</h3>
   <table cellpadding="0" cellspacing="1" class="tablist2">
     <tr>
       <td class="td1" style="width: 111px">论文名称</td>
@@ -19,7 +19,7 @@
     <tr>
       <td class="td1" style="width: 111px">论文类型</td>
       <td class="td2" style="width: 319px"><?=$paper->type?>&nbsp;</td>
-      <td class="td1" style="width: 111px">收录</td>
+      <td class="td1" style="width: 111px">收录收录</td>
       <td class="td2"><?=$paper->record?>&nbsp;</td>
     </tr>
     <tr>

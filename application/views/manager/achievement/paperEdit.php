@@ -1,6 +1,6 @@
 <div style="margin-left:20px; margin-right:20px">
 <br />
-<h3>论文详细信息编辑</h3>
+<h3 class="title_lee">论文详细信息编辑</h3>
 <form name="form1" method="post" action="<?=base_url()?>index.php/manager/paper/save" id="form1">
 <input type="hidden" value="<?=$paperId?>" name="paperId" id="paperId" />
 <input type="hidden" value="<?=$subjectId?>" name="subjectId" id="subjectId" />
@@ -24,8 +24,8 @@
       <td colspan="3" class="td2" >
       	<input id="birthday" name="time" value="<?=$time?>" class="Wdate" onfocus="WdatePicker()" type="text" isRequired="true"/>
         <font color="red">*</font><span id="timeMsg" class="MsgHide">发表时间不能为空！</span>
-        卷<input name="volume" type="text" id="volume" value="<?=$volume?>" size="5"/>
-        期<input name="period" type="text" id="period" value="<?=$period?>" size="5"/>
+        <input name="volume" type="text" id="volume" value="<?=$volume?>" size="5"/>卷
+        <input name="period" type="text" id="period" value="<?=$period?>" size="5"/>期
       </td>
     </tr>
     <tr>
@@ -51,7 +51,7 @@
           <?php endforeach; ?>
         </select>
       </td>
-      <td class="td1" style="width: 111px">收录</td>
+      <td class="td1" style="width: 111px">收录类型</td>
       <td class="td2">
       	<select id="record" name="record" >
             	<?php foreach($records as $r): ?>
@@ -80,12 +80,35 @@
       	<input name="authorWorkplace" type="text" id="authorWorkplace" value="<?=$authorWorkplace?>" size="50"/>
       </td>
     </tr>
+
     <tr>
-      <td class="td1" style="width: 111px">备注</td>
-      <td colspan="3" class="td2">
-      	<textarea name="remark" cols="50" rows="5" id="remark"><?=$remark?></textarea>
-      </td>
-    </tr>
+      <td class="td1" style="width: 111px">内容信息：</td>
+      <td class="td2" colspan="3">
+        <script type="text/javascript">
+          KindEditor.ready(function (K) {
+            var editor1 = K.create('textarea[name="remark"]', {
+              cssPath: '<?= base_url() ?>kindeditor/plugins/code/prettify.css',
+              uploadJson: '<?= base_url() ?>kindeditor/php/upload_json.php',
+              fileManagerJson: '<?= base_url() ?>kindeditor/php/file_manager_json.php',
+              allowFileManager: true,
+              afterCreate: function () {
+                var self = this;
+                K.ctrl(document, 13, function () {
+                  self.sync();
+                  K('form[name=content]')[0].submit();
+                });
+                K.ctrl(self.edit.doc, 13, function () {
+                  self.sync();
+                  K('form[name=content]')[0].submit();
+                });
+              }
+            });
+            prettyPrint();
+          });
+        </script>
+        <textarea name="remark" id="remark" style="visibility:hidden; width:80%; height:200px;"><?= $remark ?></textarea>
+      </td></tr>
+
     <tr>
       <td colspan="4" class="td3" align="center">
       	  <input type="submit" name="btnSave" value="保 存" onclick="return check('form1');" id="btnSave" class="input" />

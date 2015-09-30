@@ -1,6 +1,6 @@
 <div style="margin-left:20px; margin-right:20px;">
 <br />
-<h3>应用示范详细信息</h3>
+<h3 class="title_lee">应用示范详细信息</h3>
   <table cellpadding="0" cellspacing="1" class="tablist2">
     <tr>
       <td class="td1" style="width: 111px">示范内容简介</td>

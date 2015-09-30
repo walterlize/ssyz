@@ -1,6 +1,6 @@
 <div style="margin-left:20px; margin-right:20px">
 <br />
-<h3><?=$title?>信息</h3>
+<h3 class="title_lee"><?=$title?>信息</h3>
   <table cellpadding="0" cellspacing="1" class="tablist2">
     <tr>
       <td class="td1" style="width: 111px">标题</td>

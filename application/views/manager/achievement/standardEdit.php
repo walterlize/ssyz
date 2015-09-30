@@ -1,6 +1,6 @@
 <div style="margin-left:20px; margin-right:20px">
 <br />
-<h3>标准详细信息编辑</h3>
+<h3 class="title_lee">标准详细信息编辑</h3>
 <form name="form1" method="post" action="<?=base_url()?>index.php/manager/standard/save" id="form1">
 <input type="hidden" value="<?=$standardId?>" name="standardId" id="standardId" />
 <input type="hidden" value="<?=$subjectId?>" name="subjectId" id="subjectId" />

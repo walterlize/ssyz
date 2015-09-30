@@ -1,6 +1,6 @@
 <div style="margin-left:20px; margin-right:20px">
 <br />
-<h3>报奖材料详细信息编辑</h3>
+<h3 class="title_lee">报奖材料详细信息编辑</h3>
 <form name="form1" method="post" action="<?=base_url()?>index.php/manager/award/save" id="form1">
 <input type="hidden" value="<?=$awardId?>" name="bookId" id="awardId" />
 <input type="hidden" value="<?=$subjectId?>" name="subjectId" id="subjectId" />

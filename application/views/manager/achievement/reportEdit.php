@@ -1,6 +1,6 @@
 <div style="margin-left:20px; margin-right:20px">
 <br />
-<h3>报告详细信息编辑</h3>
+<h3 class="title_lee">报告详细信息编辑</h3>
 <form name="form1" method="post" action="<?=base_url()?>index.php/manager/report/save" id="form1">
 <input type="hidden" value="<?=$reportId?>" name="reportId" id="reportId" />
 <input type="hidden" value="<?=$subjectId?>" name="subjectId" id="subjectId" />

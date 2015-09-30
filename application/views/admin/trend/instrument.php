@@ -3,10 +3,11 @@
     <div class="title_lee">管理办法</div>
     <table class="tablist2" cellpadding="0" cellspacing="1" style="width:100%;border-collapse:collapse;" border="1">
         <tr class="HeaderStyle">
-            <th class="td1">全选<input type="checkbox" /></th>
+            <th class="td1">序号</th>
             <th class="td3">办法标题</th>
             <th class="td1">发布人</th>
-            <th class="td3">发布时间</th><th scope="col">操作</th>
+            <th class="td3">发布时间</th>
+            <th class="td1">操作</th>
         </tr>
         <?php if (is_array($trends)) foreach ($trends as $key=>$r): ?>
                 <tr class="RowStyle" align="center">
