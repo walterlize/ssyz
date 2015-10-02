@@ -22,6 +22,7 @@
             <td class="td1" style="width: 111px">课题简介</td>
             <td class="td2"><?= $introduction ?>&nbsp;</td>
         </tr>
+       <!--
         <tr>
             <td class="td1" style="width: 111px">课题内容</td>
             <td class="td2"><?= $content ?>&nbsp;</td>
@@ -30,6 +31,7 @@
             <td class="td1" style="width: 111px">课题完成情况</td>
             <td class="td2" ><?= $completion ?>&nbsp;</td>
         </tr>
+        -->
         <tr>
             <td class="td1" style="width: 111px">备注</td>
             <td class="td2"><?= $remark ?>&nbsp;</td>

@@ -34,6 +34,7 @@
       	<?=$introduction?>&nbsp;
       </td>
     </tr>
+	  <!--
     <tr>
       <td class="td1" style="width: 111px"> 课题内容</td>
       <td class="td2">
@@ -62,6 +63,7 @@
       	<textarea name="content" id="content" style="visibility:hidden; width:80%;"><?=$content?></textarea>
       </td>
     </tr>
+
     <tr>
       <td class="td1" style="width: 111px"> 课题完成情况</td>
       <td class="td2" >
@@ -90,6 +92,7 @@
       	<textarea name="completion" id="completion" style="visibility:hidden; width:80%;"><?=$completion?></textarea>
       </td>
     </tr>
+    -->
     <tr>
       <td class="td1" style="width: 111px">备注</td>
       <td class="td2">

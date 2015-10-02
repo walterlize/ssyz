@@ -1,6 +1,6 @@
 <div style="margin-left:20px; margin-right:20px;">
     <br />
-    <h3>课题详细信息</h3>
+    <h3 class="title_lee">课题详细信息</h3>
     <table cellpadding="0" cellspacing="1" class="tablist2">
         <tr>
             <td class="td1" style="width: 111px">课题名称</td>
@@ -26,7 +26,7 @@
             <td class="td1" style="width: 111px">课题简介</td>
             <td class="td2"><?= $introduction ?>&nbsp;</td>
         </tr>
-        <tr>
+     <!--   <tr>
             <td class="td1" style="width: 111px">课题内容</td>
             <td class="td2"><?= $content ?>&nbsp;</td>
         </tr>
@@ -34,6 +34,7 @@
             <td class="td1" style="width: 111px">课题完成情况</td>
             <td class="td2" ><?= $completion ?>&nbsp;</td>
         </tr>
+        -->
         <tr>
             <td class="td1" style="width: 111px">备注</td>
             <td class="td2"><?= $remark ?>&nbsp;</td>

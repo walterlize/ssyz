@@ -4,7 +4,7 @@
     <table class="tablist2" cellpadding="0" cellspacing="1" style="width:100%;border-collapse:collapse;" border="1">
         <tr class="HeaderStyle">
             <th class="td1">序号</th>
-             <th class="td1">年度</th>
+             <th class="td3">年度</th>
             <th class="td1">子课题名称</th>
             <th class="td3">子课题组单位</th>
             <th class="td1">年度经费(万元)</th>

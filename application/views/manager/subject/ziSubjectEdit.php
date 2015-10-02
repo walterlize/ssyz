@@ -1,6 +1,6 @@
 <div style="margin-left:20px; margin-right:20px">
     <br />
-    <h3>课题详细信息编辑</h3>
+    <h3 class="title_lee">课题详细信息编辑</h3>
     <form name="form1" method="post" action="<?= base_url() ?>index.php/manager/subject/ziSave" id="form1">
         <input type="hidden" value="<?= $subjectId ?>" name="subjectId" id="subjectId" />
         <input type="hidden" value="ordinary" name="type" id="type" />
@@ -60,6 +60,7 @@
                     <textarea name="introduction" id="introduction" style="visibility:hidden; width:80%;"><?= $introduction ?></textarea>
                 </td>
             </tr>
+            <!--
             <tr>
                 <td class="td1" style="width: 111px"> 课题内容</td>
                 <td class="td2"><?= $content ?>&nbsp;</td>
@@ -68,6 +69,7 @@
                 <td class="td1" style="width: 111px"> 课题完成情况</td>
                 <td class="td2" ><?= $completion ?>&nbsp;</td>
             </tr>
+            -->
             <tr>
                 <td class="td1" style="width: 111px">备注</td>
                 <td class="td2">

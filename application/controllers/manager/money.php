@@ -34,7 +34,7 @@ class Money extends CI_Controller {
     public function totalList() {
         $this->timeOut();
         $subjectId = $this->session->userdata('subjectId');
-        $array = array('inherit' => $subjectId);
+        $array = array('inherit' => $subjectId, 'type'=>'ordinary');
         $num = $this->m_totalmoney->getNum_zi($array);
         $offset = $this->uri->segment(4);
         $data['money'] = $this->getTotalMoneyS($array, $offset);

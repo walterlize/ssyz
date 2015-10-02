@@ -9,7 +9,7 @@
                 <ul id="nav">
                     <li><a href="#"><span>课题组管理</span></a>
                         <ul>
-                            <li><a href="<?= base_url(); ?>index.php/manager/subject/subjectDetail" target="mainFrame"><span>课题管理</span></a></li>
+                            <li><a href="<?= base_url(); ?>index.php/manager/subject/subjectDetail" target="mainFrame"><span>课题介绍</span></a></li>
                             <li><a href="<?= base_url(); ?>index.php/manager/subject/subjectManage" target="mainFrame"><span>子课题管理</span></a></li>
                         </ul></li>
 
@@ -46,8 +46,9 @@
                         <ul>
                             <li><a href="<?= base_url(); ?>index.php/manager/money/totalList" target="mainFrame"><span>子课题经费填写</span></a></li>
                             <li><a href="<?= base_url(); ?>index.php/manager/money/yearList" target="mainFrame"><span>子课题年度经费填写</span></a></li>
+                           <!--
                             <li><a href="<?= base_url(); ?>index.php/manager/money/monthCheck/2" target="mainFrame"><span>子课题月度经费审核</span></a></li>
-
+                             -->
 
                         </ul></li>
                     <li><a href="#"><span>研究成果管理</span></a>
