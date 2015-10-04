@@ -1,6 +1,6 @@
 <div style="margin-left:20px; margin-right:20px">
 <br />
-<h3><?=$title?>编辑</h3>
+<h3  class="title_lee"><?=$title?>编辑</h3>
 <form name="form1" method="post" action="<?=base_url()?>index.php/admin/trend/save" id="form1">
 <input type="hidden" value="<?=$trendId?>" name="trendId" id="trendId" />
 <input type="hidden" value="<?=$linkNum?>" name="linkNum" id="linkNum" />

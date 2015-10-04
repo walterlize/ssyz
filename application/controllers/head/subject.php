@@ -47,7 +47,8 @@ class Subject extends CI_Controller {
         //$this->load->view('index/left');
         $this->load->view('index/project', $data);
         $this->load->view('index/footer');
-    }
+
+        }
 
     // 项目执行专家组简介
     public function expert() {

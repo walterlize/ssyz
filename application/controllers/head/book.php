@@ -28,12 +28,10 @@ class Book extends CI_Controller {
             $config['uri_segment'] = 4;
             $this->pagination->initialize($config);
             $data['page'] = $this->pagination->create_links();
-
-            $this->load->view('includes/header', $title);
-            $this->load->view('includes/left');
+            $this->load->view('index/head', $title);
+            $this->load->view('outside/achievement/left');
             $this->load->view('outside/achievement/bookList', $data);
-            $this->load->view('includes/center_foot');
-            $this->load->view('includes/footer');
+            $this->load->view('index/footer');
         }
 
         // 论文详细信息页面
@@ -42,9 +40,9 @@ class Book extends CI_Controller {
             $id = $this->uri->segment(4);
             $data['book'] = $this->getBook($id);
 
-            $this->load->view('includes/header', $title);
+            $this->load->view('index/head', $title);
             $this->load->view('outside/achievement/book', $data);
-            $this->load->view('includes/footer');
+            $this->load->view('index/footer_1');
         }
 
         // 获取单个课题信息

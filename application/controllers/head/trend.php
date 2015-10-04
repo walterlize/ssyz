@@ -38,10 +38,42 @@ class Trend extends CI_Controller {
                 break;
         }
         $this->load->view('index/head_2', $data);
-        //$this->load->view('includes/left');
+        //$this->load->view('includes/left_1');
         $this->load->view('outside/trendList', $data);
         //$this->load->view('common/foot3');
         $this->load->view('index/footer_1');
+    }
+
+
+    // 政策规定
+    public function zhengce() {
+        $this->load->model('m_zhengce');
+        $title = '设施养殖数字化智能管理技术设备研究';
+        $num = $this->m_zhengce->getNum(array());
+        $offset = $this->uri->segment(4);
+
+        $data['zhengce'] = $this->getZhengces($offset);
+        $config['base_url'] = base_url() . 'index.php/outside/trend/zhengceList';
+        $config['total_rows'] = $num;
+        $config['uri_segment'] = 4;
+        $this->pagination->initialize($config);
+        $data['page'] = $this->pagination->create_links();
+        $data['title']=$title;
+        $this->load->view('index/head_2', $data);
+        $this->load->view('outside/zhengceList', $data);
+        $this->load->view('index/footer_1');
+    }
+    // 课题政策规定详细信息页面
+    public function zhengceDetail() {
+        $this->load->model('m_zhengce');
+        $id = $this->uri->segment(4);
+        $data = $this->getZhengce($id);
+
+        $title['title'] = '设施养殖数字化智能管理技术设备研究管理系统';
+
+        $this->load->view('index/head', $title);
+        $this->load->view('outside/zhengce', $data);
+        $this->load->view('common/foot2');
     }
 
     // 公告管理详细信息页面
@@ -85,6 +117,33 @@ class Trend extends CI_Controller {
         }
         return $data;
     }
+
+    // 分页获取全部政策规定信息
+    public function getZhengces($offset) {
+        $data = array();
+        $result = $this->m_zhengce->getZhengces($data, PER_PAGE, $offset);
+
+        foreach ($result as $r) {
+            $arr = array('z_id' => $r->z_id, 'title' => $r->title,
+                'content' => $r->content, 'state' => $r->state,
+                'date' => $r->date, 'type' => $r->type);
+            array_push($data, $arr);
+        }
+        return $data;
+    }
+
+    // 获取单个政策规定信息
+    function getZhengce($id) {
+
+        $result = $this->m_zhengce->getOneInfo($id);
+        $data = array();
+        foreach ($result as $r) {
+            $data = $r;
+        }
+        return $data;
+    }
+
+
 
     public function updateTrendLinkNum($id) {
         $this->load->model('m_trend');

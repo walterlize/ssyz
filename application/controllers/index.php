@@ -54,7 +54,7 @@ class Index extends CI_Controller {
         }
         if (isset($data->userName)) {
             $array = array('userId' => $data->userId, 'userName' => $data->userName, 'subjectName' => $data->subjectName,
-                'roleId' => $data->roleId, 'subjectId' => $data->subjectId, 'subjectUnit' => $data->subjectUnit);
+                'roleId' => $data->roleId, 'subjectId' => $data->subjectId);
             $this->session->set_userdata($array);
             if ($data->roleId == 1) {
                 redirect('admin/frame/index');

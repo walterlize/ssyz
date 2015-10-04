@@ -34,7 +34,7 @@ class Zhengce extends CI_Controller {
         $this->load->view('common/footer');
     }
 
-    // 课题详细信息页面
+    // 课题政策规定详细信息页面
     public function zhengceDetail() {
         $this->timeOut();
         $id = $this->uri->segment(4);
@@ -116,7 +116,7 @@ class Zhengce extends CI_Controller {
         return $data;
     }
 
-    // 获取单个用户信息
+    // 获取单个政策规定信息
     function getZhengce($id) {
 
         $result = $this->m_zhengce->getOneInfo($id);

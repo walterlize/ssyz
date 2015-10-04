@@ -29,14 +29,9 @@
                     <div class="daohangword"><a href="<?= base_url() ?>">首页</a></div>
                     <div class="daohangword"><a href="<?= base_url() ?>index.php/head/subject/project/1">课题简介</a></div>
                     <div class="daohangword"><a href="<?= base_url() ?>index.php/head/subject/project/2">课题设置</a></div>
-                    <div class="daohangword"><a href="#">研究成果</a></div>
-                    <div class="daohangword"><a href="#">文件下载</a></div>
-                    <div class="daohangword"><a href="mailto:lize@cau.edu.cn">联系我们</a></div>
-                   <!-- <div class="daohangword"><a href="<?= base_url() ?>index.php/head/subject/project">课题简介</a></div>
-                    <div class="daohangword"><a href="<?= base_url() ?>index.php/head/organize/index">课题设置</a></div>
                     <div class="daohangword"><a href="<?= base_url() ?>index.php/head/paper/paperList">研究成果</a></div>
-                    <div class="daohangword"><a href="<?= base_url() ?>index.php/head/trend/index/1">文件下载</a></div>
-                    <div class="daohangword"><a href="<?= base_url() ?>index.php/head/contact/index">联系我们</a></div>-->
+                    <div class="daohangword"><a href="<?= base_url() ?>index.php/head/trend/zhengce">政策规定</a></div>
+                    <div class="daohangword"><a href="mailto:lize@cau.edu.cn">联系我们</a></div>
                 </div>
             </div>
         </div>

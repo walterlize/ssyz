@@ -29,11 +29,10 @@ class Patent extends CI_Controller {
             $this->pagination->initialize($config);
             $data['page'] = $this->pagination->create_links();
 
-            $this->load->view('includes/header', $title);
-            $this->load->view('includes/left');
+            $this->load->view('index/head', $title);
+            $this->load->view('outside/achievement/left');
             $this->load->view('outside/achievement/patentList', $data);
-            $this->load->view('includes/center_foot');
-            $this->load->view('includes/footer');
+            $this->load->view('index/footer');
         }
 
         // 专利详细信息页面
@@ -42,9 +41,9 @@ class Patent extends CI_Controller {
             $id = $this->uri->segment(4);
             $data['patent'] = $this->getPatent($id);
 
-            $this->load->view('includes/header', $title);
+            $this->load->view('index/head', $title);
             $this->load->view('outside/achievement/patent', $data);
-            $this->load->view('includes/footer');
+            $this->load->view('index/footer_1');
         }
 
         // 获取单个专利信息
