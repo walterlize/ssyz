@@ -16,11 +16,9 @@ class Trend extends CI_Controller {
     // 公告管理列表页面
     public function trendList() {
         $this->timeOut();
-
         $this->load->model('m_trend');
-
-
-        $array = array('trendType' => 2);
+        $subjectId = $this->session->userdata('subjectId');
+        $array = array('trendType' => 2,'subject'=>$subjectId);
 
         $num = $this->m_trend->getNum($array);
         $offset = $this->uri->segment(4);
@@ -78,6 +76,8 @@ class Trend extends CI_Controller {
         $data['content'] = $temp->content;
         $data['linkNum'] = $temp->linkNum;
         $data['trendTop'] = $temp->trendTop;
+        $data['publisherRole'] = $temp->publisherRole;
+        $data['subject'] = $temp->subject;
         $data['show'] = '';
         $data['checked'] = '';
         if ($temp->trendTop == 1)
@@ -113,6 +113,8 @@ class Trend extends CI_Controller {
         $data['content'] = '';
         $data['linkNum'] = '';
         $data['trendTop'] = '';
+        $data['subject'] = $this->session->userdata('subjectId');
+        $data['publisherRole'] = $this->session->userdata('roleId');
         $data['state'] = '';
         $data['show'] = 'display:none';
         $data['checked'] = '';
@@ -135,7 +137,9 @@ class Trend extends CI_Controller {
         $this->load->model('m_trend');
         $this->m_trend->delete($id);
         $data['trend'] = $this->getTrend($id);
-        $array = array('trendType' => $type);
+        $subjectId = $this->session->userdata('subjectId');
+
+        $array = array('trendType' => $type,'subject'=>$subjectId);
 
         $num = $this->m_trend->getNum($array);
         $offset = 0;
@@ -205,7 +209,8 @@ class Trend extends CI_Controller {
         foreach ($result as $r) {
             $arr = array('trendId' => $r->trendId, 'trendName' => $r->trendName,
                 'trendType' => $r->trendType, 'trendAuthor' => $r->trendAuthor,
-                'content' => $r->content, 'linkNum' => $r->linkNum, 'state' => $this->m_trend->getState($r->state),
+                'content' => $r->content, 'linkNum' => $r->linkNum,'linkNum' => $r->linkNum,
+                'publisherRole' => $r->publisherRole,'state' => $this->m_trend->getState($r->state),
                 'time' => $r->time, 'trendTop' => $r->trendTop);
             array_push($data, $arr);
         }

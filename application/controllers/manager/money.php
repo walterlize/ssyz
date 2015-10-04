@@ -41,7 +41,7 @@ class Money extends CI_Controller {
         //求课题的总经费、总分配经费、总剩余经费
         $result = $this->getTotalMoney($subjectId);
         $result=(array)$result;
-        $moneyAll= $result['total'];
+        @$moneyAll= $result['total'];
         $all=$this->m_totalmoney->getMoney_all($array);
         $su=get_object_vars($all[0]);
         $costAll=$su['total'];

@@ -3,7 +3,7 @@
 <h3 class="title_lee">其他列表</h3>
 <table class="tablist2" cellpadding="0" cellspacing="1" style="width:100%;border-collapse:collapse;" border="1">
 		<tr class="HeaderStyle">
-			<th class="td1">全选<input type="checkbox" /></th>
+			<th class="td1">序号</th>
             <th class="td3">课题编号</th>
 			<th class="td1">名称</th>
 			<th class="td3">内容</th>

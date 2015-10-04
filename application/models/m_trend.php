@@ -10,6 +10,8 @@ class m_trend extends CI_Model {
     var $content = '';
     var $linkNum = '';
     var $trendTop = '';
+    var $subject = '';
+    var $publisherRole = '';
     var $state = '';
 
     function saveInfo() {
@@ -21,6 +23,8 @@ class m_trend extends CI_Model {
         $this->content = $this->input->post('content');
         $this->linkNum = $this->input->post('linkNum');
         $this->trendTop = $this->input->post('trendTop');
+        $this->subject = $this->input->post('subject');
+        $this->publisherRole = $this->input->post('publisherRole');
         $this->state = $this->input->post('state');
 
         $id = $this->trendId;

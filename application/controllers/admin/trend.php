@@ -16,22 +16,17 @@ class Trend extends CI_Controller {
     // 公告管理列表页面
     public function trendList() {
         $this->timeOut();
-
         $this->load->model('m_trend');
-
         $type = $this->uri->segment(4);
         $array = array('trendType' => $type);
-
         $num = $this->m_trend->getNum($array);
         $offset = $this->uri->segment(5);
-
         $data['trends'] = $this->getTrends($array, $offset);
         $config['base_url'] = base_url() . 'index.php/admin/trend/trendList/' . $type;
         $config['total_rows'] = $num;
         $config['uri_segment'] = 5;
         $this->pagination->initialize($config);
         $data['page'] = $this->pagination->create_links();
-
         $this->load->view('common/header3');
         switch ($type) {
             case 1:

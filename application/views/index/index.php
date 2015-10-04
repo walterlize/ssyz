@@ -73,19 +73,19 @@
                         if (is_array($bullentins))
                             foreach ($bullentins as $r):
                                 ?>
-                                <li><a class="titleLink" href="<?= base_url() ?>index.php/head/trend/detail/<?= $r->trendId ?>" target="_blank" title="<?= $r->trendName ?>">
+                                <li><a class="titleLink" href="<?= base_url() ?>index.php/head/trend/gonggaoDetail/<?= $r->gonggaoId ?>" target="_blank" title="<?= $r->title ?>">
                                         &middot;<?php
-                                        if (strLength($r->trendName, $charset = 'utf-8') > 18) {
-                                            echo utf8Substr($r->trendName, $from = 0, 18);
+                                        if (strLength($r->title, $charset = 'utf-8') > 18) {
+                                            echo utf8Substr($r->title, $from = 0, 18);
                                             echo "...";
                                         } else {
-                                            echo $r->trendName;
+                                            echo $r->title;
                                         }
                                         ?></a>
                                 </li>
                             <?php endforeach; ?>	
                     </div>
-                    <div class="more"><a  href="<?= base_url() ?>index.php/head/trend/index/1">&gt;&gt;... </a>&nbsp; &nbsp; &nbsp; </div>
+                    <div class="more"><a  href="<?= base_url() ?>index.php/head/trend/gonggao/1">&gt;&gt;更多... </a>&nbsp; &nbsp; &nbsp; </div>
                 </div>
             </div>
 
@@ -119,29 +119,10 @@
                                 </li>
                             <?php endforeach; ?>
                     </div>
-                    <div class="more"><a c href="<?= base_url() ?>index.php/head/trend/index/2">&gt;&gt;... </a>&nbsp; &nbsp; &nbsp; </div>
+                    <div class="more"><a c href="<?= base_url() ?>index.php/head/trend/index/2">&gt;&gt;更多... </a>&nbsp; &nbsp; &nbsp; </div>
                 </div>
 
-                <div class="guanli">
-                    <div class="allword">
-                        <?php
-                        if (is_array($trends))
-                            foreach ($trends as $r):
-                                ?>
-                                <li><a  href="<?= base_url() ?>index.php/head/trend/detail/<?= $r->trendId ?>" target="_blank" title="<?= $r->trendName ?>">
-                                        &middot;<?php
-                                        if (strLength($r->trendName, $charset = 'utf-8') > 18) {
-                                            echo utf8Substr($r->trendName, $from = 0, 18);
-                                            echo "...";
-                                        } else {
-                                            echo $r->trendName;
-                                        }
-                                        ?></a>
-                                </li>
-                            <?php endforeach; ?>
-                    </div>
-                    <div class="more"><a  href="<?= base_url() ?>index.php/head/trend/index/3">&gt;&gt;...</a> &nbsp; &nbsp; &nbsp; &nbsp; </div>
-                </div>
+
             </div>
         </div>
     </div>

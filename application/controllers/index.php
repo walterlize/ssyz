@@ -16,8 +16,8 @@ class Index extends CI_Controller {
     public function index() {
         $data['title'] = "设施养殖数字化智能管理技术设备研究-综合管理系统";
         // 公告信息
-        $array = array('trendType' => 1, 'state' => 2);
-        $data['bullentins'] = $this->getTrend($array);
+        $array = array('type' => 1, 'state' => 2);
+        $data['bullentins'] = $this->getGonggao($array);
         $array = array('trendType' => 2, 'state' => 2);
         $data['instruments'] = $this->getTrend($array);
         $array = array('trendType' => 3, 'state' => 2);
@@ -118,10 +118,16 @@ class Index extends CI_Controller {
     public function foot() {
         $this->load->view('common/foot');
     }
-
+   //获取项目动态列表
     public function getTrend($array) {
         $this->load->model('m_trend');
-        $data = $this->m_trend->getTrends($array, 3, 0);
+        $data = $this->m_trend->getTrends($array, 5, 0);
+        return $data;
+    }
+    //获取公告列表
+    public function getGonggao($array) {
+        $this->load->model('m_gonggao');
+        $data = $this->m_gonggao->getGonggaos($array, 5, 0);
         return $data;
     }
 

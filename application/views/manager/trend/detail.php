@@ -18,7 +18,7 @@
     <p align="center">
     	<input type="button" value="修 改" class="input" onclick="window.location.href='<?=base_url()?>index.php/manager/trend/trendEdit/<?=$trend->trendId?>'" style="<?=$show?>">
         <input type="button" value="删 除" class="input" onclick="deleteInfo('<?=base_url()?>index.php/manager/trend/trendDelete/<?=$trend->trendId?>/<?=$trend->trendType?>')" style="<?=$show?>">
-        <input type="button" value="返 回" class="input" onclick="window.location.href='<?=base_url()?>index.php/manager/trend/trendList/<?=$trend->trendType?>'">
+        <input type="button" value="返 回" class="input" onclick="window.location.href='<?=base_url()?>index.php/manager/trend/trendList'">
     </p>
     <br />
 </div>

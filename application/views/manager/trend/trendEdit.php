@@ -1,10 +1,12 @@
 <div style="margin-left:20px; margin-right:20px">
     <br />
-    <h3><?= $title ?>编辑</h3>
+    <h3 class="title_lee"><?= $title ?>编辑</h3>
     <form name="form1" method="post" action="<?= base_url() ?>index.php/manager/trend/save" id="form1">
         <input type="hidden" value="<?= $trendId ?>" name="trendId" id="trendId" />
         <input type="hidden" value="<?= $linkNum ?>" name="linkNum" id="linkNum" />
         <input type="hidden" value="<?= $trendType ?>" name="trendType" id="trendType" />
+        <input type="hidden" value="<?= $subject ?>" name="subject" id="subject" />
+        <input type="hidden" value="<?= $publisherRole ?>" name="publisherRole" id="subject" />
         <input type="hidden" value="0" name="state" id="state" />
         <table cellpadding="0" cellspacing="1" class="tablist2">
             <tr>

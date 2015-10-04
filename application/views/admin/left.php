@@ -19,16 +19,20 @@
                             <li><a href="<?= base_url(); ?>index.php/admin/money/totalList" target="mainFrame"><span>课题总经费填写</span></a></li>
                             <li><a href="<?= base_url(); ?>index.php/admin/money/yearList/1" target="mainFrame"><span>年度经费填写</span></a></li>
                             <li><a href="<?= base_url(); ?>index.php/admin/money/yearExecutionList/1" target="mainFrame"><span>年度经费执行</span></a></li>
-                            <li><a href="<?= base_url(); ?>index.php/admin/money/moneySum/all" target="mainFrame"><span>课题经费汇总</span></a></li>
+
                             <!--
+                            <li><a href="<?= base_url(); ?>index.php/admin/money/moneySum/all" target="mainFrame"><span>课题经费汇总</span></a></li>
+
                             <li><a href="<?= base_url(); ?>index.php/admin/money/monthList/1" target="mainFrame"><span>课题月度经费审核</span></a></li>
                              -->
                         </ul></li>
 
                     <li><a href="#"><span>公告信息管理</span></a>
                         <ul>
-                            <li><a href="<?= base_url(); ?>index.php/admin/trend/trendList/1" target="mainFrame"><span>重要公告</span></a></li>
+                            <li><a href="<?= base_url(); ?>index.php/admin/gonggao/gonggaoList/1" target="mainFrame"><span>重要公告</span></a></li>
+                            <!--
                             <li><a href="<?= base_url(); ?>index.php/admin/trend/trendList/3" target="mainFrame"><span>管理办法</span></a></li>
+                            -->
                         </ul></li>
                     <li><a href="#"><span>项目动态审核</span></a>
                         <ul>

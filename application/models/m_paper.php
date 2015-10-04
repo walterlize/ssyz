@@ -47,6 +47,7 @@ class m_paper extends CI_Model{
     function getPaper($array){
         $this->db->select();
         $this->db->from('ws_paper_subject');
+
         $this->db->where($array);
         $q = $this->db->get();
         return $q->result();
@@ -55,6 +56,7 @@ class m_paper extends CI_Model{
     function getPapers($array, $per_page, $offset){
         $this->db->select();
         $this->db->where($array);
+        $this->db->order_by("state", "asc");
         $q = $this->db->get('ws_paper_subject', $per_page, $offset);
         return $q->result();
     }
