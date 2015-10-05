@@ -21,7 +21,7 @@
             </tr>
             <tr>
                 <td class="td1" style="width: 111px">发布时间</td>
-                <td class="td2" ><input name="time" type="text" id="time" value="<?= $time ?>" size="50"/>
+                <td class="td2" ><input name="time" type="text" id="time" value="<?= $time ?>"  class="Wdate" onfocus="WdatePicker()" size="50"/>
                 </td>
             </tr>
             <tr>
