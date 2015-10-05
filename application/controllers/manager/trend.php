@@ -109,7 +109,7 @@ class Trend extends CI_Controller {
         $data['trendName'] = '';
         $data['trendType'] = $type;
         $data['trendAuthor'] = $this->session->userdata('userName');
-        $data['time'] = '';
+        $data['time'] = date('Y-m-d');
         $data['content'] = '';
         $data['linkNum'] = '';
         $data['trendTop'] = '';

@@ -19,7 +19,7 @@ class m_trend extends CI_Model {
         $this->trendName = $this->input->post('trendName');
         $this->trendType = $this->input->post('trendType');
         $this->trendAuthor = $this->input->post('trendAuthor');
-        $this->time = date('Y-m-d');
+        $this->time = $this->input->post('time');
         $this->content = $this->input->post('content');
         $this->linkNum = $this->input->post('linkNum');
         $this->trendTop = $this->input->post('trendTop');

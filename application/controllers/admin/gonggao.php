@@ -106,7 +106,7 @@ class Gonggao extends CI_Controller {
         $data['type'] = $type;
         $data['author'] = '';
         $data['title'] = '';
-        $data['date'] = '';
+        $data['date'] = date("Y-m-d");
         $data['content'] = '';
         $data['linkNum'] = '';
         $data['gonggaoTop'] = '';

@@ -11,19 +11,17 @@ class WorkReport extends CI_Controller {
         $this->load->helper('form');
         $this->load->library('session');
         $this->load->library('pagination');
+        $this->load->model('m_workReport');
     }
 
     // 工作汇报列表页面
     public function reportList() {
         $this->timeOut();
-
+        $this->load->model('m_subject');
         $type = $this->uri->segment(4);
         $level = $this->uri->segment(5);
         $subjectId = $this->session->userdata('subjectId');
-        $data['subjectUnit'] = $this->session->userdata('subjectUnit');
-        $this->load->model('m_workReport');
         $array = array('type' => $type, 'subjectId' => $subjectId);
-
         $num = $this->m_workReport->getNum($array, $level);
         $offset = $this->uri->segment(6);
 
@@ -33,7 +31,6 @@ class WorkReport extends CI_Controller {
         $config['uri_segment'] = 5;
         $this->pagination->initialize($config);
         $data['page'] = $this->pagination->create_links();
-
         $this->load->view('common/header3');
         switch ($type) {
             case "WeekReport":
@@ -79,9 +76,10 @@ class WorkReport extends CI_Controller {
         $type = $this->uri->segment(4);
         $data['workReportId'] = 0;
         $data['subjectId'] = $this->session->userdata('subjectId');
-        $data['subjectUnit'] = $this->session->userdata('subjectUnit');
-        $data['subjectName'] = $this->session->userdata('subjectName');
+        $data['subject']=$this->getSubject($data['subjectId']);
         $data['author'] = $this->session->userdata('userName');
+        $data['subjectUnit']=$data['subject']->subjectUnit;
+        $data['subjectName']=$data['subject']->subjectName;
         $data['type'] = $type;
         $data['title'] = '';
         //$data['author'] = '';

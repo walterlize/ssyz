@@ -41,23 +41,32 @@ class Money extends CI_Controller {
         //求课题的总经费、总分配经费、总剩余经费
         $result = $this->getTotalMoney($subjectId);
         $result=(array)$result;
-        @$moneyAll= $result['total'];
-        $all=$this->m_totalmoney->getMoney_all($array);
-        $su=get_object_vars($all[0]);
-        $costAll=$su['total'];
-        $left= $moneyAll-$costAll;
-        $data['moneyAll']=$moneyAll;
-        $data['moneyCost']=$costAll;
-        $data['moneyLeft']=$left;
-        $config['base_url'] = base_url() . 'index.php/admin/money/totalList';
-        $config['total_rows'] = $num;
-        $config['uri_segment'] = 4;
-        $this->pagination->initialize($config);
-        $data['page'] = $this->pagination->create_links();
+        if ($result == null) {
+            $data['information'] = '管理员还未填写课题预算，请先联系系统管理员。';
+            $this->load->view('common/header3');
+            $this->load->view('common/information', $data);
+            $this->load->view('common/footer');
+        } else {
 
-        $this->load->view('common/header3');
-        $this->load->view('manager/money/totalList', $data);
-        $this->load->view('common/footer');
+            $moneyAll = $result['total'];
+            $all = $this->m_totalmoney->getMoney_all($array);
+            $su = get_object_vars($all[0]);
+            $costAll = $su['total'];
+            $left = $moneyAll - $costAll;
+            $data['moneyAll'] = $moneyAll;
+            $data['moneyCost'] = $costAll;
+            $data['moneyLeft'] = $left;
+            $config['base_url'] = base_url() . 'index.php/admin/money/totalList';
+            $config['total_rows'] = $num;
+            $config['uri_segment'] = 4;
+            $this->pagination->initialize($config);
+            $data['page'] = $this->pagination->create_links();
+
+
+            $this->load->view('common/header3');
+            $this->load->view('manager/money/totalList', $data);
+            $this->load->view('common/footer');
+        }
     }
 
 // 月度经费管理页面
@@ -1401,34 +1410,34 @@ class Money extends CI_Controller {
         if (strcmp($year, 'all') == 0) {
             if (strcmp($month, 'all') == 0) {
                 if (strcmp($subjectUnit, 'all') == 0) {
-                        $array = array('inherit' => $subjectId);
+                    $array = array('inherit' => $subjectId);
                 }
                 else {
-                        $array = array( 'inherit' => $subjectId,'subjectUnit' => $subjectUnit);
+                    $array = array( 'inherit' => $subjectId,'subjectUnit' => $subjectUnit);
                 }
             } else {
                 if (strcmp($subjectUnit, 'all') == 0) {
-                        $array = array('inherit' => $subjectId,'month' => $month,);
+                    $array = array('inherit' => $subjectId,'month' => $month,);
                 } else {
-                        $array = array('inherit' => $subjectId,'month' => $month,'subjectUnit' => $subjectUnit);
+                    $array = array('inherit' => $subjectId,'month' => $month,'subjectUnit' => $subjectUnit);
                 }
             }
         } else {
             if (strcmp($month, 'all') == 0) {
                 if (strcmp($subjectUnit, 'all') == 0) {
-                        $array = array('inherit' => $subjectId,'year' => $year,);
+                    $array = array('inherit' => $subjectId,'year' => $year,);
                 } else {
-                        $array = array('inherit' => $subjectId,'year' => $year,'subjectUnit' => $subjectUnit);
+                    $array = array('inherit' => $subjectId,'year' => $year,'subjectUnit' => $subjectUnit);
                 }
             } else {
                 if (strcmp($subjectUnit, 'all') == 0) {
 
-                        $array = array('inherit' => $subjectId,'year' => $year,'month' => $month);
+                    $array = array('inherit' => $subjectId,'year' => $year,'month' => $month);
 
 
                 } else {
 
-                        $array = array('year' => $year,'inherit' => $subjectId,'subjectUnit' => $subjectUnit, 'month' => $month);
+                    $array = array('year' => $year,'inherit' => $subjectId,'subjectUnit' => $subjectUnit, 'month' => $month);
 
                 }
             }
@@ -1437,7 +1446,7 @@ class Money extends CI_Controller {
         $data['Year'] = $this->getSearchYear();
         $data['Month'] = $this->getSearchMonth();
         $data['Unit'] = $this->getUnit();
-      // 计算总预算值
+        // 计算总预算值
         $array1=array('subjectUnit' => $subjectUnit);
         $data['money1'] = $this->getTotalMoney_By_name($array1);
 
@@ -1693,7 +1702,6 @@ class Money extends CI_Controller {
 // 分页获取课题总经费信息
     public function getTotalMoney($subjectId) {
         $this->timeOut();
-        $this->load->model('m_totalmoney');
         $data = array();
         $result = $this->m_totalmoney->getOneInfo1($subjectId);
 
@@ -1705,7 +1713,7 @@ class Money extends CI_Controller {
     // 按照课题名称查询
     public function getTotalMoney_By_name($array1) {
         $this->timeOut();
-        $this->load->model('m_totalmoney');
+
         $data = array();
         $result = $this->m_totalmoney->getOneInfo_By_name($array1);
 

@@ -4,8 +4,7 @@
     <form name="form1" method="post" action="<?= base_url() ?>index.php/manager/workReport/save" id="form1">
         <input type="hidden" value="<?= $workReportId ?>" name="workReportId" id="workReportId" />
         <input type="hidden" value="<?= $subjectId ?>" name="subjectId" id="subjectId" />
-        <input type="hidden" value="<?= $subjectId ?>" name="inherit" id="inherit" />
-        <input type="hidden" value="<?= $subjectUnit ?>" name="subjectUnit" id="subjectUnit" />
+
         <input type="hidden" value="<?= $type ?>" name="type" id="type" />
         <input type="hidden" value="1" name="level" id="level" />
         <table cellpadding="0" cellspacing="1" class="tablist2">
@@ -47,6 +46,17 @@
                 <td class="td2" ><input name="author" type="text" id="author" value="<?= $author ?>" size="50"/>
                 </td>
             </tr>
+            <tr>
+                <td class="td1" style="width: 111px">所在单位</td>
+                <td class="td2" ><input name="subjectUnit" type="text" id="subjectUnit" value="<?= $subjectUnit ?>" size="40" readonly="readonly"/>
+                </td>
+            </tr>
+            <tr>
+                <td class="td1" style="width: 111px">所在课题</td>
+                <td class="td2" ><input name="subjectName" type="text" id="subjectName" value="<?= $subjectName ?>" size="50" readonly="readonly"/>
+                </td>
+            </tr>
+
             <tr>
                 <td class="td1" style="width: 111px">内容</td>
                 <td class="td2">
@@ -110,6 +120,7 @@
         </table>
     </form>
 </div>
+<!--
 <div id="dialog" title="上传附件">
     <p id="login_tip"></p>
     <form id="login-form" action="<?= base_url() . "index.php/manager/upload/upload" ?>" enctype="multipart/form-data" method="post" >
@@ -119,4 +130,4 @@
         </fieldset>
     </form>
 </div>
-
+-->

@@ -17,7 +17,7 @@ class m_gonggao extends CI_Model {
         $this->title = $this->input->post('title');
         $this->type = $this->input->post('type');
         $this->author = $this->input->post('author');
-        $this->date = date('Y-m-d');
+        $this->date = $this->input->post('date');
         $this->content = $this->input->post('content');
         $this->linkNum = $this->input->post('linkNum');
         $this->gonggaoTop = $this->input->post('gonggaoType');

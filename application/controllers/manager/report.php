@@ -11,7 +11,7 @@ class Report extends CI_Controller {
             $this->load->library('pagination');
 	}
 
-        // 专利列表页面
+        // 报告列表页面
         public function reportList(){
             $this->timeOut();
 
@@ -34,7 +34,7 @@ class Report extends CI_Controller {
             $this->load->view('common/footer');
         }
 
-        // 专利详细信息页面
+        // 报告详细信息页面
         public function reportDetail(){
             $this->timeOut();
             $id = $this->uri->segment(4);
@@ -50,7 +50,7 @@ class Report extends CI_Controller {
             $this->load->view('common/footer');
         }
 
-        // 专利信息页面
+        // 报告信息页面
         public function reportEdit(){
             $this->timeOut();
             $id = $this->uri->segment(4);
@@ -61,7 +61,7 @@ class Report extends CI_Controller {
             $this->load->view('common/footer');
         }
 
-        // 专利新增页面
+        // 报告新增页面
         public function reportNew(){
             $this->timeOut();
             //$type = $this->uri->segment(4);
@@ -82,7 +82,7 @@ class Report extends CI_Controller {
             $this->load->view('common/footer');
         }
 
-        // 删除专利信息
+        // 删除报告信息
         public function reportDelete(){
             $this->timeOut();
             $id = $this->uri->segment(4);
@@ -108,7 +108,7 @@ class Report extends CI_Controller {
             $this->load->view('common/footer');
         }
 
-        // 更改专利的状态
+        // 更改报告的状态
         public function updateReportState(){
             $this->timeOut();
 
@@ -131,7 +131,7 @@ class Report extends CI_Controller {
             $this->load->view('common/footer');
         }
 
-        // 获取单个专利信息
+        // 获取单个报告信息
         function getReport($id){
             $this->timeOut();
             $this->load->model('m_report');
@@ -145,7 +145,7 @@ class Report extends CI_Controller {
             return $data;
         }
 
-        // 保存专利信息
+        // 保存报告信息
         public function save(){
             $this->timeOut();
 
@@ -159,7 +159,7 @@ class Report extends CI_Controller {
             $this->load->view('common/footer');
         }
 
-        // 分页获取专利信息
+        // 分页获取报告信息
         function getReports($array, $offset){
             $this->timeOut();
             $this->load->model('m_report');
@@ -177,7 +177,7 @@ class Report extends CI_Controller {
             return $data;
         }
 
-        // 获取专利类型
+        // 获取报告类型
         function getTypes(){
             $this->load->model('common');
             $data = $this->common->getReportType();

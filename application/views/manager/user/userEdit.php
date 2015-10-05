@@ -1,6 +1,6 @@
 <div style="margin-left:20px; margin-right:20px">
     <br />
-    <h3>用户信息编辑</h3>
+    <h3 class="title_lee">用户信息编辑</h3>
     <form name="form1" method="post" action="<?= base_url() ?>index.php/manager/user/save" id="form1">
         <input type="hidden" value="<?= $user->userId ?>" name="userId" id="userId" />
         <input type="hidden" value="<?= $user->state ?>" name="state" id="state" />

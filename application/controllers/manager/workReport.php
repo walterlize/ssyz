@@ -20,7 +20,8 @@ class WorkReport extends CI_Controller {
         $type = $this->uri->segment(4);
         $level = $this->uri->segment(5);
         $subjectId = $this->session->userdata('subjectId');
-        $data['subjectUnit'] = $this->session->userdata('subjectUnit');
+        //$data['subjectUnit'] = $this->session->userdata('subjectUnit');
+        $data['subject']=$this->getSubject($subjectId);
         $this->load->model('m_workReport');
         $array = array('type' => $type, 'subjectId' => $subjectId);
 
@@ -33,6 +34,8 @@ class WorkReport extends CI_Controller {
         $config['uri_segment'] = 6;
         $this->pagination->initialize($config);
         $data['page'] = $this->pagination->create_links();
+        $data['subjectUnit']=$data['subject']->subjectUnit;
+        $data['subjectName']=$data['subject']->subjectName;
 
         $this->load->view('common/header3');
         switch ($type) {
@@ -53,20 +56,11 @@ class WorkReport extends CI_Controller {
         $type = $this->uri->segment(4);
         $level = $this->uri->segment(5);
         $subjectId = $this->session->userdata('subjectId');
-        $data['subjectUnit'] = $this->session->userdata('subjectUnit');
         $this->load->model('m_workReport');
         $array = array('type' => $type, 'inherit' => $subjectId);
-
         $num = $this->m_workReport->getNum($array, $level);
-
         $offset = $this->uri->segment(6);
-
         $data['workreports'] = $this->getReports($array, $offset, $level);
-
-
-        //$id = $data['workreports']->subjectId;
-        // $data['subject'] = $this->getSubject($id);
-        //$data['subjectName'] = $data['subject']->subjectName;
         $config['base_url'] = base_url() . 'index.php/manager/workReport/reportList/' . $type;
         $config['total_rows'] = $num;
         $config['uri_segment'] = 6;
@@ -134,17 +128,15 @@ class WorkReport extends CI_Controller {
         $type = $this->uri->segment(4);
         $data['workReportId'] = 0;
         $data['subjectId'] = $this->session->userdata('subjectId');
-        $data['subjectUnit'] = $this->session->userdata('subjectUnit');
-        $data['subjectName'] = $this->session->userdata('subjectName');
+        $data['subject']=$this->getSubject($data['subjectId']);
         $data['author'] = $this->session->userdata('userName');
+        $data['subjectUnit']=$data['subject']->subjectUnit;
+        $data['subjectName']=$data['subject']->subjectName;
         $data['type'] = $type;
         $data['title'] = '';
-        //$data['author'] = '';
         $data['content'] = '';
         $data['level'] = '';
         $data['show'] = 'display:none';
-
-
         $this->load->view('common/header3');
         $this->load->view('manager/workReport/reportEdit', $data);
         $this->load->view('common/footer');
@@ -210,8 +202,7 @@ class WorkReport extends CI_Controller {
         foreach ($result as $r) {
             $data = $r;
             $data->state = $this->m_workReport->getState($r->state);
-            $data->subjectUnit = $this->session->userdata('subjectUnit');
-            $data->subjectName = $this->session->userdata('subjectName');
+
         }
         return $data;
     }
@@ -237,7 +228,8 @@ class WorkReport extends CI_Controller {
         $result = $this->m_workReport->getReports($array, PER_PAGE, $offset, $level);
 
         foreach ($result as $r) {
-            $arr = array('workReportId' => $r->workReportId, 'subjectId' => $r->subjectId, 'subjectName' => $r->subjectName,
+            $arr = array('workReportId' => $r->workReportId, 'subjectId' => $r->subjectId,
+                'subjectName' => $r->subjectName,'subjectUnit' => $r->subjectUnit,
                 'type' => $r->type, 'author' => $r->author,
                 'year' => $r->year, 'month' => $r->month, 'title' => $r->title,
                 'content' => $r->content, 'state' => $this->m_workReport->getState($r->state),

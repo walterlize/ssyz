@@ -31,13 +31,13 @@
                         </ul>
                     </li>
 
-                    <li><a href="#"><span>工作进度</span></a>
+                    <li><a href="#"><span>工作进度汇报</span></a>
                         <ul>
                             <li><a href="<?= base_url(); ?>index.php/ordinary/workReport/reportList/WeekReport/2" target="mainFrame"><span>工作月报</span></a></li>
                             <li><a href="<?= base_url(); ?>index.php/ordinary/workReport/reportList/WorkReport/2" target="mainFrame"><span>工作简报</span></a></li>
                         </ul>
                     </li>
-                    <li><a href="#"><span>经费管理</span></a>
+                    <li><a href="#"><span>经费执行汇总</span></a>
                         <ul>
                             <li><a href="<?= base_url(); ?>index.php/ordinary/money/expenseList" target="mainFrame"><span>课题经费花费详情</span></a></li>
                             <li><a href="<?= base_url(); ?>index.php/ordinary/money/projectBudget" target="mainFrame"><span>经费执行汇总</span></a></li>
@@ -51,12 +51,15 @@
                         </ul>
                     </li>
                     </li>
+
+                    <!--
                     <li><a href="#"><span>文件共享</span></a>
                         <ul>
                             <li><a href="#"><span>文件共享</span></a></li>
 
                         </ul>
                     </li>
+                    -->
                     <li><a href="<?= base_url() ?>index.php/user/password" target="mainFrame"><span>修改密码</span></a>
                 </ul>
             </div>

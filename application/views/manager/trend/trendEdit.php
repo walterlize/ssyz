@@ -20,6 +20,11 @@
                 </td>
             </tr>
             <tr>
+                <td class="td1" style="width: 111px">发布时间</td>
+                <td class="td2" ><input name="time" type="text" id="time" value="<?= $time ?>" size="50"/>
+                </td>
+            </tr>
+            <tr>
                 <td class="td1" style="width: 111px">内容</td>
                 <td class="td2">
                     <script type="text/javascript">

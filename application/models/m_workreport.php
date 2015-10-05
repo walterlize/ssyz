@@ -22,8 +22,8 @@ class m_workReport extends CI_Model {
         $this->workReportId = $this->input->post('workReportId');
         $this->subjectId = $this->input->post('subjectId');
         $this->inherit = $this->input->post('inherit');
-        $this->subjectUnit = $this->session->userdata('subjectUnit');
-        $this->subjectName = $this->session->userdata('subjectName');
+        $this->subjectUnit = $this->input->post('subjectUnit');
+        $this->subjectName = $this->input->post('subjectName');
         $this->type = $this->input->post('type');
         $this->level = $this->input->post('level');
         $this->author = $this->input->post('author');

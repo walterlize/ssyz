@@ -19,6 +19,11 @@
       </td>
     </tr>
     <tr>
+      <td class="td1" style="width: 111px">发布日期</td>
+      <td class="td2" ><input name="date" type="text" id="date" value="<?=$date?>" size="50"  class="Wdate" onfocus="WdatePicker()"/>
+      </td>
+    </tr>
+    <tr>
       <td class="td1" style="width: 111px">内容</td>
       <td class="td2">
 	  	<script type="text/javascript">
