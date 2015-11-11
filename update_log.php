@@ -64,3 +64,11 @@
  *3、 修复了一些小bug
  */
 
+/*
+ * Author:walterlize
+ * Date:20151111
+ * Version:2.5.1
+ *1、 修改了detail的展示方式
+
+ */
+

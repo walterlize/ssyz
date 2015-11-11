@@ -83,9 +83,11 @@
 
                 <input style="<?= $show ?>" type="button" name="btnSave" value="提 交" onclick="javascript:if (confirm('提交将不能修改，有问题请联系管理员！'))
                             window.location.href = '<?= base_url() ?>index.php/ordinary/travel/submit/<?= $travel->t_id ?>';" id="btnSave" class="input" />
-                <input type="button" name="btnReturn" value="继续新增" onclick="window.location.href = '<?= base_url() ?>index.php/ordinary/travel/travelNew';" id="btnReturn" class="input" />
+               <!-- <input type="button" name="btnReturn" value="继续新增" onclick="window.location.href = '<?= base_url() ?>index.php/ordinary/travel/travelNew';" id="btnReturn" class="input" />
 
                 <input type="button" name="btnReturn" value="返回列表" onclick="window.location.href = '<?= base_url() ?>index.php/ordinary/travel/travelList';" id="btnReturn" class="input" />
+           -->
+                <input onclick="javascript:window.close()" type="button"value="关 闭" class="input">
             </td>
         </tr>
     </table>

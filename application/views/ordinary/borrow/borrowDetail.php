@@ -26,10 +26,10 @@
                     </div> </td>
                 <td class="td1"><div align="left">经费类别：</div></td>
                 <td class="td3"><div align="left"><?= $borrow->money ?> 元
-                    </div> 
+                    </div>
                 </td>
-            </tr>   
-          <!--  <tr>
+            </tr>
+            <!--  <tr>
                 <td class="td1"><div align="left">上传附件（合同）：</div></td>
                 <td class="td3" colspan="3"> 
                     <div align="left"><a href="<?= base_url() ?>index.php/download/downloadfile/<?= $borrow->upload_date ?>/<?= $borrow->upload ?>"><?= $borrow->upload ?></a>
@@ -49,13 +49,15 @@
                 <td colspan="5" class="td3" align="center">
                     <input style="<?= $show ?>"type="button" name="btnEdit" value="修改" onclick="window.location.href = '<?= base_url() ?>index.php/ordinary/borrow/borrowEdit/<?= $borrow->b_id ?>';" id="btnSave" class="input" />
                     <input style="<?= $show ?>" type="button" name="btnEdit" value="删除" onclick="javascript:if (confirm('您确定要删除?'))
-                                window.location.href = '<?= base_url() ?>index.php/ordinary/borrow/borrowDelete/<?= $borrow->b_id ?>';" id="btnSave" class="input" />
+                        window.location.href = '<?= base_url() ?>index.php/ordinary/borrow/borrowDelete/<?= $borrow->b_id ?>';" id="btnSave" class="input" />
 
                     <input style="<?= $show ?>" type="button" name="btnSave" value="提 交" onclick="javascript:if (confirm('提交将不能修改，有问题请联系管理员！'))
-                                window.location.href = '<?= base_url() ?>index.php/ordinary/borrow/submit/<?= $borrow->b_id ?>';" id="btnSave" class="input" />
-                    <input type="button" name="btnReturn" value="继续新增" onclick="window.location.href = '<?=  base_url()?>index.php/ordinary/borrow/borrowNew';" id="btnReturn" class="input" />
+                        window.location.href = '<?= base_url() ?>index.php/ordinary/borrow/submit/<?= $borrow->b_id ?>';" id="btnSave" class="input" />
+                    <!-- <input type="button" name="btnReturn" value="继续新增" onclick="window.location.href = '<?=  base_url()?>index.php/ordinary/borrow/borrowNew';" id="btnReturn" class="input" />
 
                     <input type="button" name="btnReturn" value="返回列表" onclick="window.location.href = '<?=  base_url()?>index.php/ordinary/borrow/borrowList';" id="btnReturn" class="input" />
+                -->
+                    <input onclick="javascript:window.close()" type="button"value="关 闭" class="input">
                 </td>
             </tr>
         </table>

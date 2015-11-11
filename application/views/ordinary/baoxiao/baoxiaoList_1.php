@@ -9,7 +9,8 @@
                 <th class="td1">报销时间</th>
                 <th class="td3">类别</th>
                 <th class="td1">报销金额</th>
-                <th class="td3">报销状态</th>
+                <th class="td3">报销人</th>
+                <th class="td1">报销状态</th>
                 <th class="td3">操作</th>
             </tr>
             <?php if (is_array($baoxiao)) foreach ($baoxiao as $key => $r): ?>
@@ -29,12 +30,17 @@
                         <td class="td1">
                             <?= $r['money'] ?>
                         </td>
-
                         <td class="td3">
-                            <font color="<?= $r['color'] ?>"><?= $r['state'] ?></font>
+                            <?= $r['baoxiao_name'] ?>
                         </td>
+
                         <td class="td1">
-                            <a id="" href="<?= base_url() ?>index.php/ordinary/baoxiao/baoxiaoDetail/<?= $r['bao_id'] ?>">编辑</a>
+
+                            <p style="color:<?= $r['color'] ?>"><?= $r['state'] ?></p>
+
+                        </td>
+                        <td class="td3">
+                            <a id="" href="<?= base_url() ?>index.php/ordinary/baoxiao/baoxiaoDetail/<?= $r['bao_id'] ?>" target="_blank">编辑</a>
                         </td>
                     </tr>
                 <?php endforeach; ?>

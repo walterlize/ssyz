@@ -39,10 +39,10 @@
                         </td>
 
                         <td class="td3">
-                            <font color="<?= $r['color'] ?>"> <?= $r['state'] ?></font>
+                            <p style="color:<?= $r['color'] ?>"><?= $r['state'] ?></p>
                         </td>
                         <td class="td1">
-                            <a id="" href="<?= base_url() ?>index.php/ordinary/travel/travelDetail/<?= $r['t_id'] ?>">编辑</a>
+                            <a id="" href="<?= base_url() ?>index.php/ordinary/travel/travelDetail/<?= $r['t_id'] ?>" target="_blank">编辑</a>
                         </td>
                     </tr>
                 <?php endforeach; ?>

@@ -29,10 +29,10 @@
                     <td class="td3">
                        申报：<?= $r['money'] ?>元，其中缴税：<?= $r['money'] ?>元，实际金额<?=$r['money1']?>元。</td>
                     <td class="td1">
-                        <font color="<?= $r['color'] ?>"><?= $r['state'] ?></font>
+                        <p style="color:<?= $r['color'] ?>"><?= $r['state'] ?></p>
                     </td>
                     <td class="td3">
-                        <a id="" href="<?= base_url() ?>index.php/ordinary/laowu/laowuDetail/<?= $r['laowu_id'] ?>">编辑</a>
+                        <a id="" href="<?= base_url() ?>index.php/ordinary/laowu/laowuDetail/<?= $r['laowu_id'] ?>" target="_blank">编辑</a>
                     </td>
                 </tr>
             <?php endforeach; ?>

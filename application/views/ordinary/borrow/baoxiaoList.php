@@ -32,10 +32,11 @@
                         <td class="td1">
                             <?= $r['money'] ?></td>
                         <td class="td3">
-                            <font color="<?= $r['color'] ?>"><?= $r['state2'] ?></font>
+                            <p style="color:<?= $r['color'] ?>"><?= $r['state'] ?></p>
+                        </td>
                         </td>
                         <td class="td1">
-                            <a id="" href="<?= base_url() ?>index.php/ordinary/borrow/baoxiaoDetail/<?= $r['b_id'] ?>">报销</a>
+                            <a id="" href="<?= base_url() ?>index.php/ordinary/borrow/baoxiaoDetail/<?= $r['b_id'] ?>" target="_blank">报销</a>
                         </td>
                     </tr>
                 <?php endforeach; ?>

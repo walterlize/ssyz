@@ -28,7 +28,7 @@ class Baoxiao extends CI_Controller {
         $offset = $this->uri->segment(4);
 
         $data['baoxiao'] = $this->getBaoxiaoS($array, $offset);
-       // print_r($data['baoxiao']);
+        //print_r($data['baoxiao']);
         $config['base_url'] = base_url() . 'index.php/ordinary/baoxiao/baoxiaoList';
         $config['total_rows'] = $num;
         $config['uri_segment'] = 4;
@@ -633,7 +633,7 @@ class Baoxiao extends CI_Controller {
 
         foreach ($result as $r) {
             $arr = array('bao_id' => $r->bao_id, 'date' => $r->date, 'type' => $r->type, 'code' => $r->code, 'num' => $r->num, 'money' => $r->money,
-                'state' => $this->m_baoxiao->getState($r->state),'color' => $this->getColor($r->state),
+                'baoxiao_name' => $r->baoxiao_name,'state' => $this->m_baoxiao->getState($r->state),'color' => $this->getColor($r->state),
             );
             array_push($data, $arr);
         }
@@ -648,7 +648,7 @@ class Baoxiao extends CI_Controller {
 
         foreach ($result as $r) {
             $arr = array('bao_id' => $r->bao_id, 'date' => $r->date, 'type' => $r->type, 'code' => $r->code, 'num' => $r->num, 'money' => $r->money,
-                'state' => $this->m_baoxiao->getState($r->state),'color' => $this->getColor($r->state),
+                'baoxiao_name' => $r->baoxiao_name, 'state' => $this->m_baoxiao->getState($r->state),'color' => $this->getColor($r->state),
             );
             array_push($data, $arr);
         }
