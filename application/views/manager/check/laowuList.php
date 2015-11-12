@@ -36,7 +36,7 @@
                         <td class="td3">
                             <?= $r['state'] ?></td>
                         <td class="td1">
-                            <a id="" href="<?= base_url() ?>index.php/manager/check/laowuDetail/<?= $r['laowu_id'] ?>">详细</a></td>
+                            <a id="" href="<?= base_url() ?>index.php/manager/check/laowuDetail/<?= $r['laowu_id'] ?>" target="_blank">详细</a></td>
                         <td class="td3">
                             <div style="<?= $r['display1'] ?>"> 
                                 <input type="button" name="btnSave" value="<?= $r['stateShow3'] ?>" onclick="window.location.href = '<?= base_url() ?>index.php/manager/check/updateLaowu/<?= $r['laowu_id'] ?>/<?= $r['state3'] ?>/1';"  class="input"  /> <a id="" href="<?= base_url() ?>index.php/manager/check/laowuDetail/<?= $r['laowu_id'] ?>">操作</a>
@@ -51,7 +51,7 @@
                 <?php endforeach; ?>
            
         </table>
-        <div align="right"><font color="#3A6EA5" size="3px">共有<?= $num ?>条记录，每页10条。</font></div>
+        <div align="right"><p style="color:#3A6EA5;font-size: medium">共有<?= $num ?>条记录，每页10条。</p></div>
         <div align="center"><?= $page ?></div>
     </div>
 </div>

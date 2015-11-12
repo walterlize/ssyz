@@ -21,7 +21,9 @@
             </tr>
             <tr>
                 <td class="td1"><div align="left">经费类别：</div></td>
-                <td class="td3"><div align="left"><?= $borrow->borrowType ?>&nbsp;&nbsp;&nbsp;&nbsp;详情：<?= $borrow->borrowDetail ?>
+                <td class="td3">
+                    <div align="left"><?= $borrow->borrowType ?>
+                        &nbsp;&nbsp;&nbsp;&nbsp;详情：<?= $borrow->borrowDetail ?>
                     </div> </td>
                 <td class="td1"><div align="left">经费类别：</div></td>
                 <td class="td3"><div align="left"><?= $borrow->money ?> 元
@@ -34,7 +36,11 @@
                 <td class="td3"  colspan="3"><div align="left"><?= $borrow->description ?></div>
                 </td>
             </tr>
-          
+            <tr>
+                <td class="td3" colspan="4">
+                    <div style="color:red;font-size: large">&nbsp;<?= $stateShow ?>&nbsp;</div>
+                </td>
+            </tr>
         </table>
     </form>
 </div>

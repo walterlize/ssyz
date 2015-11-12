@@ -11,6 +11,7 @@ class Baoxiao extends CI_Controller {
         $this->load->helper('form');
         $this->load->library('form_validation');
         $this->load->library('session');
+        $this->load->library('pagination');
 
         $this->load->model('m_baoxiao');
         $this->load->model('m_money_record');
@@ -144,14 +145,19 @@ class Baoxiao extends CI_Controller {
         $data['baoxiao'] = $this->getBaoxiao($id);
         if (strcmp($data['baoxiao']->state, '1') == 0) {
             $show = 'display'; $show2 = 'display:none';
+            $data['state_show']='草稿';
         } elseif (strcmp($data['baoxiao']->state, '2') == 0) {
             $show = 'display'; $show2 = 'display';
+            $data['state_show']='申请信息有误,请重新申报';
         } elseif (strcmp($data['baoxiao']->state, '3') == 0) {
             $show = 'display:none'; $show2 = 'display';
+            $data['state_show']='已提交,等待审核!';
         } elseif (strcmp($data['baoxiao']->state, '4') == 0) {
             $show = 'display:none'; $show2 = 'display';
+            $data['state_show']='管理员已经收到!';
         } elseif (strcmp($data['baoxiao']->state, '5') == 0) {
             $show = 'display:none'; $show2 = 'display';
+            $data['state_show']='报销完成';
         } else {
             show_404();
         }
@@ -216,70 +222,84 @@ class Baoxiao extends CI_Controller {
             $data['baoxiao'] = $this->getBaoxiao($id);
             if (strcmp($data['baoxiao']->type, '设备费') == 0) {
                 $money = $data['baoxiao']->money;
-                //第一位代表课题号码；第二位代表类型（1，普通报销2，差旅报销3，借款，4，劳务5，借款报销）；第三位代表报销Id;第四位代表报销类型（1，设备费，2，材料费。。）；第伍位时间
+                //第一位代表课题号码；第二位代表类型（1，普通报销2，差旅报销3，借款，4，劳务5，借款报销）；
+                //第三位代表报销Id;第四位代表报销类型（1，设备费，2，材料费。。）；第伍位时间
                 $code = $subjectId . '1' . $id . '1' . date('Ymd');
                 $array = array('equipment' => $money, 'code' => $code);
-                $array1 = array('equipment' => $money, 'moneyType' => '设备费', 'money' => $money, 'code' => $code);
+                $array1 = array('equipment' => $money, 'moneyType' => '设备费',
+                    'money' => $money, 'code' => $code);
             } elseif (strcmp($data['baoxiao']->type, '材料费') == 0) {
                 $money = $data['baoxiao']->money;
                 $code = $subjectId . '1' . $id . '2' . date('Ymd');
                 $array = array('material' => $money, 'code' => $code);
-                $array1 = array('material' => $money, 'moneyType' => '材料费', 'money' => $money, 'code' => $code);
+                $array1 = array('material' => $money, 'moneyType' => '材料费',
+                    'money' => $money, 'code' => $code);
             } elseif (strcmp($data['baoxiao']->type, '测试化验加工费') == 0) {
                 $money = $data['baoxiao']->money;
                 $code = $subjectId . '1' . $id . '3' . date('Ymd');
                 $array = array('experiment' => $money, 'code' => $code);
-                $array1 = array('experiment' => $money, 'moneyType' => '测试化验加工费', 'money' => $money, 'code' => $code);
+                $array1 = array('experiment' => $money, 'moneyType' => '测试化验加工费',
+                    'money' => $money, 'code' => $code);
             } elseif (strcmp($data['baoxiao']->type, '燃料动力费') == 0) {
                 $money = $data['baoxiao']->money;
                 $code = $subjectId . '1' . $id . '4' . date('Ymd');
                 $array = array('fuel' => $money, 'code' => $code);
-                $array1 = array('fuel' => $money, 'moneyType' => '燃料动力费', 'money' => $money, 'code' => $code);
+                $array1 = array('fuel' => $money, 'moneyType' => '燃料动力费',
+                    'money' => $money, 'code' => $code);
             } elseif (strcmp($data['baoxiao']->type, '差旅费') == 0) {
                 $money = $data['baoxiao']->money;
                 $code = $subjectId . '1' . $id . '5' . date('Ymd');
                 $array = array('travel' => $money, 'code' => $code);
-                $array1 = array('travel' => $money, 'moneyType' => '差旅费', 'money' => $money, 'code' => $code);
+                $array1 = array('travel' => $money, 'moneyType' => '差旅费',
+                    'money' => $money, 'code' => $code);
             } elseif (strcmp($data['baoxiao']->type, '会议费') == 0) {
                 $money = $data['baoxiao']->money;
                 $code = $subjectId . '1' . $id . '6' . date('Ymd');
                 $array = array('conference' => $money, 'code' => $code);
-                $array1 = array('conference' => $money, 'moneyType' => '会议费', 'money' => $money, 'code' => $code);
+                $array1 = array('conference' => $money, 'moneyType' => '会议费',
+                    'money' => $money, 'code' => $code);
             } elseif (strcmp($data['baoxiao']->type, '国际合作交流费') == 0) {
                 $money = $data['baoxiao']->money;
                 $code = $subjectId . '1' . $id . '7' . date('Ymd');
                 $array = array('international' => $money, 'code' => $code);
-                $array1 = array('international' => $money, 'moneyType' => '国际合作交流费', 'money' => $money, 'code' => $code);
+                $array1 = array('international' => $money, 'moneyType' => '国际合作交流费',
+                    'money' => $money, 'code' => $code);
             } elseif (strcmp($data['baoxiao']->type, '出版/文献/信息传播/知识产权事务费') == 0) {
                 $money = $data['baoxiao']->money;
                 $code = $subjectId . '1' . $id . '8' . date('Ymd');
                 $array = array('information' => $money, 'code' => $code);
-                $array1 = array('information' => $money, 'moneyType' => '出版/文献/信息传播/知识产权事务费', 'money' => $money, 'code' => $code);
+                $array1 = array('information' => $money,
+                    'moneyType' => '出版/文献/信息传播/知识产权事务费', 'money' => $money, 'code' => $code);
             } elseif (strcmp($data['baoxiao']->type, '劳务费') == 0) {
                 $money = $data['baoxiao']->money;
                 $code = $subjectId . '1' . $id . '9' . date('Ymd');
                 $array = array('service' => $money, 'code' => $code);
-                $array1 = array('service' => $money, 'moneyType' => '劳务费', 'money' => $money, 'code' => $code);
+                $array1 = array('service' => $money, 'moneyType' => '劳务费',
+                    'money' => $money, 'code' => $code);
             } elseif (strcmp($data['baoxiao']->type, '专家咨询费') == 0) {
                 $money = $data['baoxiao']->money;
                 $code = $subjectId . '1' . $id . '10' . date('Ymd');
                 $array = array('consultative' => $money, 'code' => $code);
-                $array1 = array('consultative' => $money, 'moneyType' => '劳务费', 'money' => $money, 'code' => $code);
+                $array1 = array('consultative' => $money, 'moneyType' => '劳务费',
+                    'money' => $money, 'code' => $code);
             } elseif (strcmp($data['baoxiao']->type, '其它') == 0) {
                 $money = $data['baoxiao']->money;
                 $code = $subjectId . '1' . $id . '11' . date('Ymd');
                 $array = array('other' => $money, 'code' => $code);
-                $array1 = array('other' => $money, 'moneyType' => '其它', 'money' => $money, 'code' => $code);
+                $array1 = array('other' => $money, 'moneyType' => '其它',
+                    'money' => $money, 'code' => $code);
             } elseif (strcmp($data['baoxiao']->type, '间接经费') == 0) {
                 $money = $data['baoxiao']->money;
                 $code = $subjectId . '1' . $id . '12' . date('Ymd');
                 $array = array('indirect_cost' => $money, 'code' => $code);
-                $array1 = array('indirect_cost' => $money, 'moneyType' => '间接经费', 'money' => $money, 'code' => $code);
+                $array1 = array('indirect_cost' => $money, 'moneyType' => '间接经费',
+                    'money' => $money, 'code' => $code);
             }elseif (strcmp($data['baoxiao']->type, '间接经费-用于绩效') == 0) {
                 $money = $data['baoxiao']->money;
                 $code = $subjectId . '1' . $id . '13' . date('Ymd');
                 $array = array('ji_xiao' => $money, 'code' => $code);
-                $array1 = array('ji_xiao' => $money, 'moneyType' => '间接经费-用于绩效', 'money' => $money, 'code' => $code);
+                $array1 = array('ji_xiao' => $money, 'moneyType' => '间接经费-用于绩效',
+                    'money' => $money, 'code' => $code);
             }
             else {
                 echo "类别有误";
@@ -287,15 +307,22 @@ class Baoxiao extends CI_Controller {
             $this->m_baoxiao->update($id, $array);
             $this->m_money_record->update($mc_id, $array1);
             if (strcmp($data['baoxiao']->state, '1') == 0) {
-                $show = 'display';$show2 = 'display:none';
+                $show = 'display'; $show2 = 'display:none';
+                $data['state_show']='草稿';
             } elseif (strcmp($data['baoxiao']->state, '2') == 0) {
-                $show = 'display';$show2 = 'display';
+                $show = 'display'; $show2 = 'display';
+                $data['state_show']='申请信息有误,请重新申报';
             } elseif (strcmp($data['baoxiao']->state, '3') == 0) {
-                $show = 'display:none';$show2 = 'display';
+                $show = 'display:none'; $show2 = 'display';
+                $data['state_show']='已提交,等待审核!';
             } elseif (strcmp($data['baoxiao']->state, '4') == 0) {
-                $show = 'display:none';$show2 = 'display';
+                $show = 'display:none'; $show2 = 'display';
+                $data['state_show']='管理员已经收到!';
+            } elseif (strcmp($data['baoxiao']->state, '5') == 0) {
+                $show = 'display:none'; $show2 = 'display';
+                $data['state_show']='报销完成';
             } else {
-                echo "状态有误";
+                show_404();
             }
             $data['show'] = $show;
             $data['show2'] = $show2;
@@ -352,32 +379,67 @@ class Baoxiao extends CI_Controller {
     }
 
 // 提交信息
+    /* public function submit() {
+         $this->timeOut();
+         $this->load->library('pagination');
+         $bao_id = $this->uri->segment(4);
+         $arraySubmit = array('state' => '3', 'date' => date("Y-m-d"), 'year' => date("Y"), 'month' => date("m"));
+         $this->m_baoxiao->update($bao_id, $arraySubmit);
+         $subjectId = $this->session->userdata('subjectId');
+         $array = array('s_id' => $subjectId);
+         $num = $this->m_baoxiao->getNum($array);
+         $offset = $this->uri->segment(5);
+         $data['baoxiao'] = $this->getBaoxiaoS($array, $offset);
+         $config['base_url'] = base_url() . 'index.php/ordinary/baoxiao/baoxiaoList';
+         $config['total_rows'] = $num;
+         $config['uri_segment'] = 4;
+         $this->pagination->initialize($config);
+         $data['page'] = $this->pagination->create_links();
+         $data['title'] = '报销列表';
+         $data['num'] = $num;
+         $data['searchType'] = $this->getType();
+         $data['Year'] = $this->getSearchYear();
+         $data['Month'] = $this->getSearchMonth();
+         $data['State'] = $this->getState();
+         $this->load->view('common/header3');
+         $this->load->view('ordinary/baoxiao/baoxiaoSearch', $data);
+         $this->load->view('ordinary/baoxiao/baoxiaoList', $data);
+         $this->load->view('common/footer');
+     }
+    */
     public function submit() {
         $this->timeOut();
-        $this->load->library('pagination');
-        $bao_id = $this->uri->segment(4);
-        $arraySubmit = array('state' => '3', 'date' => date("Y-m-d"), 'year' => date("Y"), 'month' => date("m"));
-        $this->m_baoxiao->update($bao_id, $arraySubmit);
-        $subjectId = $this->session->userdata('subjectId');
-        $array = array('s_id' => $subjectId);
-        $num = $this->m_baoxiao->getNum($array);
-        $offset = $this->uri->segment(5);
-        $data['baoxiao'] = $this->getBaoxiaoS($array, $offset);
-        $config['base_url'] = base_url() . 'index.php/ordinary/baoxiao/baoxiaoList';
-        $config['total_rows'] = $num;
-        $config['uri_segment'] = 4;
-        $this->pagination->initialize($config);
-        $data['page'] = $this->pagination->create_links();
-        $data['title'] = '报销列表';
-        $data['num'] = $num;
-        $data['searchType'] = $this->getType();
-        $data['Year'] = $this->getSearchYear();
-        $data['Month'] = $this->getSearchMonth();
-        $data['State'] = $this->getState();
+
+        $id = $this->uri->segment(4);
+        $arraySubmit = array('state' => '3', 'date' => date("Y-m-d"),
+            'year' => date("Y"), 'month' => date("m"));
+        $this->m_baoxiao->update($id, $arraySubmit);
+        $data['baoxiao'] = $this->getBaoxiao($id);
+        if (strcmp($data['baoxiao']->state, '1') == 0) {
+            $show = 'display'; $show2 = 'display:none';
+            $data['state_show']='草稿';
+        } elseif (strcmp($data['baoxiao']->state, '2') == 0) {
+            $show = 'display'; $show2 = 'display';
+            $data['state_show']='申请信息有误,请重新申报';
+        } elseif (strcmp($data['baoxiao']->state, '3') == 0) {
+            $show = 'display:none'; $show2 = 'display';
+            $data['state_show']='已提交,等待审核!';
+        } elseif (strcmp($data['baoxiao']->state, '4') == 0) {
+            $show = 'display:none'; $show2 = 'display';
+            $data['state_show']='管理员已经收到!';
+        } elseif (strcmp($data['baoxiao']->state, '5') == 0) {
+            $show = 'display:none'; $show2 = 'display';
+            $data['state_show']='报销完成';
+        } else {
+            show_404();
+        }
+        $data['show'] = $show;
+        $data['show2'] = $show2;
+
         $this->load->view('common/header3');
-        $this->load->view('ordinary/baoxiao/baoxiaoSearch', $data);
-        $this->load->view('ordinary/baoxiao/baoxiaoList', $data);
+        $this->load->view('ordinary/baoxiao/baoxiaoDetail', $data);
         $this->load->view('common/footer');
+
     }
 
     //按金额查询
@@ -865,7 +927,7 @@ class Baoxiao extends CI_Controller {
         }
         return $data;
     }
-   //显示状态对应的颜色
+    //显示状态对应的颜色
     function getColor($state) {
         switch ($state) {
             case 1:

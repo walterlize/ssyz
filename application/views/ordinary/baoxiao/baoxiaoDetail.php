@@ -37,6 +37,11 @@
                 </td>
             </tr>
             <tr>
+                <td class="td3" colspan="4"
+                    style="color: red;font-size: larger">报销状态：<?=$state_show?></td>
+
+            </tr>
+            <tr>
                 <td colspan="5" class="td3" align="center">
                     <input style="<?= $show ?>"type="button" name="btnEdit" value="修改" onclick="window.location.href = '<?= base_url() ?>index.php/ordinary/baoxiao/baoxiaoEdit/<?= $baoxiao->bao_id ?>';" id="btnSave" class="input" />
                     <input style="<?= $show ?>" type="button" name="btnEdit" value="删除" onclick="javascript:if (confirm('您确定要删除?'))

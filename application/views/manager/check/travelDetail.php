@@ -27,37 +27,38 @@
             <td class="td2">
                 <div align="left">&nbsp;<?= $travel->trainMoneyNum ?>&nbsp;张,共
                     <?= $travel->trainMoney ?>&nbsp;元。</div>
-            </td>    
+            </td>
 
             <td class="td1"><div align="left">飞机票：</div></td>
             <td class="td2">
                 <div align="left">&nbsp;<?= $travel->planeMoneyNum ?>&nbsp;张,共
                     <?= $travel->planeMoney ?> &nbsp;元。</div>
-            </td>    
+            </td>
         </tr>
         <tr>
             <td class="td1"><div align="left">其它交通费用：</div></td>
             <td class="td2">
                 <div align="left">&nbsp;<?= $travel->otherTravelMoneyNum ?>&nbsp;张,共
                     <?= $travel->otherTravelMoney ?> &nbsp;元。</div>
-            </td>    
+            </td>
             <td class="td1"><div align="left">食宿费用费用：</div></td>
             <td class="td2">
                 <div align="left">&nbsp;<?= $travel->accommodationNum ?>&nbsp;张,共
                     <?= $travel->accommodation ?> &nbsp;元。</div>
-            </td>    
+            </td>
         </tr>
         <tr>
             <td class="td1"><div align="left">其它费用：</div></td>
             <td class="td2" colspan="3">
                 <?= $travel->otherMoneyNum ?>&nbsp;张,共
                 <?= $travel->otherMoney?> &nbsp;元。&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                详情：<?= $travel->otherDetail ?> 
-            </td>    
+                详情：<?= $travel->otherDetail ?>
+            </td>
         </tr>
         <tr>
             <td class="td1"><div align="left">申请补助：</div></td>
-            <td class="td3" colspan="3"><div align="left">食宿、交通补助共计<?= $travel->subsidy ?>&nbsp;元。</div>
+            <td class="td3" colspan="3">
+                <div align="left">食宿、交通补助共计<?= $travel->subsidy ?>&nbsp;元。</div>
             </td>
         </tr>
         <tr>
@@ -67,7 +68,14 @@
         </tr>
         <tr>
             <td class="td1"><div align="left">共计（元）：</div></td>
-            <td class="td3" colspan="3"><div align="left">&nbsp;<?= $travel->totalMoney ?>&nbsp;元。</div>
+            <td class="td3" colspan="3">
+                <div align="left">&nbsp;<?= $travel->totalMoney ?>&nbsp;元。</div>
+            </td>
+        </tr>
+        <tr>
+
+            <td class="td3" colspan="4">
+                <div style="color:red;font-size: large">&nbsp;<?= $stateShow ?>&nbsp;</div>
             </td>
         </tr>
 

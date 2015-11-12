@@ -24,6 +24,10 @@
                 <td class="td3"  colspan="3"><div align="left"><?= $baoxiao->description ?></div>
                 </td>
             </tr>
+             <tr>
+                 <td class="td3" colspan="4" style="color: red;font-size: large">当前审核情况：<?=$stateShow?></td>
+
+             </tr>
          
         </table>
     </form>

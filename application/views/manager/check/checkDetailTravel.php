@@ -7,15 +7,16 @@
                 <?= $stateShow ?>&nbsp;&nbsp;&nbsp;&nbsp;通过时间：<?= $travel->date3 ?>
             </td>
         </tr>
-        <tr>  <td class="td1" style="width: 111px"><font color="red">批复情况：</font></td>
+        <tr>
+            <td class="td1" style="color:red;width: 111px">批复情况：</td>
             <td class="td2" colspan="2" align="center"><?= $travel->remark ?></td>
         </tr>
 
         <tr>
             <td colspan="3" class="td3" align="center">
                 <input type="button" name="btnSave" value="修 改" onclick="window.location.href = '<?= base_url(); ?>index.php/manager/check/checkEditTravel/<?= $travel->t_id ?>';" id="btnAdd"class="input"  />
-                <input type="button" name="btnNext" value="返 回" onclick="window.location.href = '<?= base_url(); ?>index.php/manager/check/travelManage';" id="btnSave"class="input"/> 
+                <input type="button" name="btnNext" value="关 闭" onclick="javascript:window.close()" id="btnSave"class="input"/>
             </td></tr>
-        </table>
+    </table>
 
 </div>

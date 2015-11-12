@@ -24,6 +24,12 @@
                 <td class="td3"  colspan="3"><div align="left"><?= $laowu->description ?></div>
                 </td>
             </tr>
+            <tr>
+
+                <td class="td3" colspan="4">
+                    <div style="color:red;font-size: large">&nbsp;<?= $stateShow ?>&nbsp;</div>
+                </td>
+            </tr>
 
         </table>
 

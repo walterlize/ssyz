@@ -18,13 +18,12 @@ class Check extends CI_Controller {
         $this->load->model('m_laowu');
     }
 
-    // 普通报销情况列表
+// 普通报销情况列表
     public function baoxiaoManage() {
         $this->timeOut();
         $subjectId = $this->session->userdata('subjectId');
         $array = array('inherit' => $subjectId);
         $num = $this->m_baoxiao->getNumManage($array);
-        $s1 = $this->uri->segment(4);
         $offset = $this->uri->segment(4);
         $data['baoxiao'] = $this->getBaoxiaoMange($array, $offset);
         $config['base_url'] = base_url() . 'index.php/manager/check/baoxiaoManage';
@@ -46,7 +45,7 @@ class Check extends CI_Controller {
         $this->load->view('common/footer');
     }
 
-    // 普通报销情况列表
+// 普通报销情况列表
     public function travelManage() {
         $this->timeOut();
         $subjectId = $this->session->userdata('subjectId');
@@ -73,7 +72,7 @@ class Check extends CI_Controller {
         $this->load->view('common/footer');
     }
 
-    // 普通报销情况列表
+// 普通报销情况列表
     public function borrowManage() {
         $this->timeOut();
         $subjectId = $this->session->userdata('subjectId');
@@ -103,7 +102,7 @@ class Check extends CI_Controller {
         $this->load->view('common/footer');
     }
 
-    // 普通报销情况列表
+// 普通报销情况列表
     public function borrowBaoxiao() {
         $this->timeOut();
         $subjectId = $this->session->userdata('subjectId');
@@ -132,7 +131,7 @@ class Check extends CI_Controller {
         $this->load->view('common/footer');
     }
 
-    // 普通报销情况列表
+// 普通报销情况列表
     public function laowuManage() {
         $this->timeOut();
         $subjectId = $this->session->userdata('subjectId');
@@ -159,71 +158,91 @@ class Check extends CI_Controller {
         $this->load->view('common/footer');
     }
 
-    //报销详细信息页面
-    public function baoxiaoDetail() {
+//报销详细信息页面
+    public function baoxiaoDetail()
+    {
         $this->timeOut();
         $id = $this->uri->segment(4);
         $data['baoxiao'] = $this->getBaoxiao($id);
         $state = $data['baoxiao']->state;
+        if ($state == '2') {
+            echo "<script>alert('页面不存在,请重新刷新页面!');window.close();</script>";
+        } else {
 
-        if ($state == '4') {
-            $data['stateShow'] = '审核通过，收到发票';
+            if ($state == '4') {
+                $data['stateShow'] = '初审通过，收到发票';
 
-        } elseif ($state == '5') {
-            $data['stateShow'] = '已经报销';
-        } elseif ($state == '3' or $state == '2') {
-            $data['stateShow'] = '用户已经提交,请您审核!';
+            } elseif ($state == '5') {
+                $data['stateShow'] = '已经报销';
+            } elseif ($state == '3') {
+                $data['stateShow'] = '用户已经提交,请您审核!';
+            } else {
+                echo "状态信息有误,请联系管理员";
+            }
+            $this->load->view('common/header3');
+            $this->load->view('manager/check/baoxiaoDetail', $data);
+            $this->load->view('manager/check/check', $data);
+            $this->load->view('common/footer');
         }
-        $this->load->view('common/header3');
-        $this->load->view('manager/check/baoxiaoDetail', $data);
-        $this->load->view('manager/check/check', $data);
-        $this->load->view('common/footer');
     }
 
-    //报销详细信息页面
-    public function travelDetail() {
+//报销详细信息页面
+    public function travelDetail()
+    {
         $this->timeOut();
         $id = $this->uri->segment(4);
         $data['travel'] = $this->getTravel($id);
         $state = $data['travel']->state;
-
-        if ($state == '4') {
-            $data['stateShow'] = '审核通过，收到发票!';
-        } elseif ($state == '3' or $state == '2') {
-            $data['stateShow'] = '未审核，请您审核!';
-        } elseif ($state == '5') {
-            $data['stateShow'] = '已完成报销.';
+        if ($state == '2') {
+            echo "<script>alert('页面不存在,请重新刷新页面!');window.close();</script>";
+        } else {
+            if ($state == '4') {
+                $data['stateShow'] = '初审通过，收到发票';
+            } elseif ($state == '3') {
+                $data['stateShow'] = '未审核，请您审核!';
+            } elseif ($state == '5') {
+                $data['stateShow'] = '已完成报销.';
+            } else{
+                echo "状态信息有误,请联系管理员帮助解决.";
+            }
+            $this->load->view('common/header3');
+            $this->load->view('manager/check/travelDetail', $data);
+            $this->load->view('manager/check/checkTravel', $data);
+            $this->load->view('common/footer');
         }
-        $this->load->view('common/header3');
-        $this->load->view('manager/check/travelDetail', $data);
-        $this->load->view('manager/check/checkTravel', $data);
-        $this->load->view('common/footer');
     }
 
-    //报销详细信息页面
-    public function borrowDetail() {
+//报销详细信息页面
+    public function borrowDetail()
+    {
         $this->timeOut();
         $id = $this->uri->segment(4);
         $data['borrow'] = $this->getBorrow($id);
         $state = $data['borrow']->state;
+        if ($state == '2') {
+            echo "<script>alert('页面不存在,请重新刷新页面!');window.close();</script>";
+        } else {
 
-
-        if ($state == '4') {
-            $data['stateShow'] = '审核通过';
-
-        } elseif ($state == '3' or $state == '2') {
-            $data['stateShow'] = '未审核，请您审核!';
-        }elseif($state=='5'){
-            $date['stateShow']='已完成审核.';
+            if ($state == '4') {
+                $data['stateShow'] = '初审通过,收到发票!';
+            } elseif ($state == '3') {
+                $data['stateShow'] = '未审核，请您审核!';
+            } elseif ($state == '5') {
+                $data['stateShow'] = '已完成审核.';
+            } else{
+                echo "状态信息有误,请联系管理员解决!";
+            }
+            $this->load->view('common/header3');
+            $this->load->view('manager/check/borrowDetail', $data);
+            $this->load->view('manager/check/checkBorrow', $data);
+            $this->load->view('common/footer');
         }
-        $this->load->view('common/header3');
-        $this->load->view('manager/check/borrowDetail', $data);
-        $this->load->view('manager/check/checkBorrow', $data);
-        $this->load->view('common/footer');
     }
 
-    //报销详细信息页面
-    public function laowuDetail() {
+
+//报销详细信息页面
+    public function laowuDetail()
+    {
         $this->timeOut();
         $id = $this->uri->segment(4);
         $data['laowu'] = $this->getLaowu($id);
@@ -231,24 +250,24 @@ class Check extends CI_Controller {
         $money = $data['laowu']->money;
         $tax = $data['laowu']->tax;
         $data['money1'] = $money - $tax;
-        if ($state == '4') {
-            $data['stateShow'] = '收到发票';
-            /* $this->load->view('common/header3');
-              $this->load->view('manager/check/laowuDetail', $data);
-              $this->load->view('manager/check/checkDetailLaowu', $data);
-              $this->load->view('common/footer'); */
-        } elseif ($state == '3' or $state == '2') {
-            $data['stateShow'] = '未审核';
-        } elseif ($state == '5') {
-            $data['stateShow'] = '劳务费/专家咨询费申请成功!';
-        }
+        if ($state == '2') {
+            echo "<script>alert('页面不存在,请重新刷新页面!');window.close();</script>";
+        } else {
+            if ($state == '4') {
+                $data['stateShow'] = '收到发票';
+            } elseif ($state == '3' or $state == '2') {
+                $data['stateShow'] = '未审核';
+            } elseif ($state == '5') {
+                $data['stateShow'] = '劳务费/专家咨询费申请成功!';
+            }
 
-        $this->load->view('common/header3');
-        $this->load->view('manager/check/laowuDetail', $data);
-        $this->load->view('manager/check/checkLaowu', $data);
-        $this->load->view('common/footer');
+            $this->load->view('common/header3');
+            $this->load->view('manager/check/laowuDetail', $data);
+            $this->load->view('manager/check/checkLaowu', $data);
+            $this->load->view('common/footer');
+        }
     }
-    //借款报销详细信息页面
+//借款报销详细信息页面
     public function borrowBaoxiaoDetail() {
         $this->timeOut();
         $id = $this->uri->segment(4);
@@ -274,7 +293,7 @@ class Check extends CI_Controller {
         $this->load->view('ordinary/borrow/baoxiaoDetail', $data);
         $this->load->view('common/footer');
     }
-    //完成详细信息页面
+//完成详细信息页面
     public function completeDetail() {
         $this->timeOut();
         $id = $this->uri->segment(4);
@@ -308,7 +327,7 @@ class Check extends CI_Controller {
         $this->load->view('common/footer');
     }
 
-    //审核编辑
+//审核编辑
     public function checkEditTravel() {
         $id = $this->uri->segment(4);
         $data['baoxiao'] = $this->getTravel($id);
@@ -320,7 +339,7 @@ class Check extends CI_Controller {
         $this->load->view('common/footer');
     }
 
-    // 报销变换显示
+// 报销变换显示
     function changeOption() {
         extract($_REQUEST);
         $subjectId = $this->session->userdata('subjectId');
@@ -496,7 +515,7 @@ class Check extends CI_Controller {
         }
     }
 
-    // 报销变换显示
+// 报销变换显示
     function changeOptionTravel() {
         extract($_REQUEST);
         $subjectId = $this->session->userdata('subjectId');
@@ -650,7 +669,7 @@ class Check extends CI_Controller {
         $this->load->view('common/footer');
     }
 
-    // 报销变换显示
+// 报销变换显示
     function changeOptionBorrow() {
         extract($_REQUEST);
         $subjectId = $this->session->userdata('subjectId');
@@ -956,7 +975,7 @@ class Check extends CI_Controller {
         $this->load->view('common/footer');
 
     }
-    // 报销变换显示
+// 报销变换显示
     function changeOptionLaowu() {
         extract($_REQUEST);
         $subjectId = $this->session->userdata('subjectId');
@@ -1159,149 +1178,281 @@ class Check extends CI_Controller {
     }
 
 // 审核信息
+    /*  public function checkBaoxiao() {
+          $this->timeOut();
+          $bao_id = $this->uri->segment(4);
+          $type = $this->uri->segment(5);
+          if ($type == '1') {
+              $this->m_baoxiao->check($bao_id);
+          } elseif ($type == '2') {
+              $this->m_baoxiao->check2($bao_id);
+          }
+
+          $subjectId = $this->session->userdata('subjectId');
+          $array = array('inherit' => $subjectId);
+          $num = $this->m_baoxiao->getNumManage($array);
+          $offset = $this->uri->segment(6);
+          $data['baoxiao'] = $this->getBaoxiaoMange($array, $offset);
+          $config['base_url'] = base_url() . 'index.php/manager/check/baoxiaoManage';
+          $config['total_rows'] = $num;
+          $config['uri_segment'] = 4;
+          $this->pagination->initialize($config);
+          $data['page'] = $this->pagination->create_links();
+          $data['title'] = '普通报销审核列表';
+          $data['num'] = $num;
+          $data['searchType'] = $this->getType();
+          $data['Year'] = $this->getSearchYear();
+          $data['Month'] = $this->getSearchMonth();
+          $data['State'] = $this->getState();
+          $data['Unit'] = $this->getUnit();
+          //$data['year'] = date("Y");
+          //$data['month'] = date("m");
+          $this->load->view('common/header3');
+          //$this->load->view('manager/check/baoxiaoSearch', $data);
+          $this->load->view('manager/check/baoxiaoDetail', $data);
+          $this->load->view('common/footer');
+      }
+    */
     public function checkBaoxiao() {
         $this->timeOut();
-        $bao_id = $this->uri->segment(4);
+        $id = $this->uri->segment(4);
         $type = $this->uri->segment(5);
         if ($type == '1') {
-            $this->m_baoxiao->check($bao_id);
+            $this->m_baoxiao->check($id);
         } elseif ($type == '2') {
-            $this->m_baoxiao->check2($bao_id);
+            $this->m_baoxiao->check2($id);
         }
 
-        $subjectId = $this->session->userdata('subjectId');
-        $array = array('inherit' => $subjectId);
-        $num = $this->m_baoxiao->getNumManage($array);
-        $offset = $this->uri->segment(6);
-        $data['baoxiao'] = $this->getBaoxiaoMange($array, $offset);
-        $config['base_url'] = base_url() . 'index.php/manager/check/baoxiaoManage';
-        $config['total_rows'] = $num;
-        $config['uri_segment'] = 4;
-        $this->pagination->initialize($config);
-        $data['page'] = $this->pagination->create_links();
-        $data['title'] = '普通报销审核列表';
-        $data['num'] = $num;
-        $data['searchType'] = $this->getType();
-        $data['Year'] = $this->getSearchYear();
-        $data['Month'] = $this->getSearchMonth();
-        $data['State'] = $this->getState();
-        $data['Unit'] = $this->getUnit();
-        //$data['year'] = date("Y");
-        //$data['month'] = date("m");
+
+
+        $data['baoxiao'] = $this->getBaoxiao($id);
+        $state = $data['baoxiao']->state;
+
+        if ($state == '4') {
+            $data['stateShow'] = '审核通过，收到发票';
+
+        } elseif ($state == '5') {
+            $data['stateShow'] = '已经报销';
+        } elseif ($state == '3') {
+            $data['stateShow'] = '用户已经提交,请您审核!';
+        }elseif ($state == '2') {
+            $data['stateShow'] = '提交有误,已经退回';
+        }
         $this->load->view('common/header3');
-        $this->load->view('manager/check/baoxiaoSearch', $data);
-        $this->load->view('manager/check/baoxiaoList', $data);
+        $this->load->view('manager/check/baoxiaoDetail', $data);
+        $this->load->view('manager/check/check', $data);
         $this->load->view('common/footer');
     }
 
+
+
+
 // 审核信息
+    /*   public function checkTravel() {
+           $this->timeOut();
+           $t_id = $this->uri->segment(4);
+           $type = $this->uri->segment(5);
+           if ($type == '1') {
+               $this->m_travel->check($t_id);
+           } elseif ($type == '2') {
+               $this->m_travel->check2($t_id);
+           }
+
+           $subjectId = $this->session->userdata('subjectId');
+           $array = array('inherit' => $subjectId);
+           $num = $this->m_travel->getNumManage($array);
+           $offset = $this->uri->segment(6);
+           $data['baoxiao'] = $this->getTravelMange($array, $offset);
+           $config['base_url'] = base_url() . 'index.php/manager/check/travelManage';
+           $config['total_rows'] = $num;
+           $config['uri_segment'] = 4;
+           $this->pagination->initialize($config);
+           $data['page'] = $this->pagination->create_links();
+           $data['title'] = '差旅报销审核列表';
+           $data['num'] = $num;
+           $data['searchType'] = $this->getTypeTravel();
+           $data['Year'] = $this->getSearchYear();
+           $data['Month'] = $this->getSearchMonth();
+           $data['State'] = $this->getState();
+           $data['Unit'] = $this->getUnit();
+           $data['type1'] = '2';
+
+
+           $this->load->view('common/header3');
+           $this->load->view('manager/check/travelSearch', $data);
+           $this->load->view('manager/check/travelList', $data);
+           $this->load->view('common/footer');
+       }
+    */
     public function checkTravel() {
         $this->timeOut();
-        $t_id = $this->uri->segment(4);
+        $id = $this->uri->segment(4);
         $type = $this->uri->segment(5);
         if ($type == '1') {
-            $this->m_travel->check($t_id);
+            $this->m_travel->check($id);
         } elseif ($type == '2') {
-            $this->m_travel->check2($t_id);
+            $this->m_travel->check2($id);
         }
+        $data['travel'] = $this->getTravel($id);
+        $state = $data['travel']->state;
 
-        $subjectId = $this->session->userdata('subjectId');
-        $array = array('inherit' => $subjectId);
-        $num = $this->m_travel->getNumManage($array);
-        $offset = $this->uri->segment(6);
-        $data['baoxiao'] = $this->getTravelMange($array, $offset);
-        $config['base_url'] = base_url() . 'index.php/manager/check/travelManage';
-        $config['total_rows'] = $num;
-        $config['uri_segment'] = 4;
-        $this->pagination->initialize($config);
-        $data['page'] = $this->pagination->create_links();
-        $data['title'] = '差旅报销审核列表';
-        $data['num'] = $num;
-        $data['searchType'] = $this->getTypeTravel();
-        $data['Year'] = $this->getSearchYear();
-        $data['Month'] = $this->getSearchMonth();
-        $data['State'] = $this->getState();
-        $data['Unit'] = $this->getUnit();
-        $data['type1'] = '2';
-
-
+        if ($state == '4') {
+            $data['stateShow'] = '初审通过，收到发票';
+        } elseif ($state == '3') {
+            $data['stateShow'] = '未审核，请您审核!';
+        } elseif ($state == '5') {
+            $data['stateShow'] = '已完成报销.';
+        } else{
+            echo "状态信息有误,请联系管理员帮助解决.";
+        }
         $this->load->view('common/header3');
-        $this->load->view('manager/check/travelSearch', $data);
-        $this->load->view('manager/check/travelList', $data);
+        $this->load->view('manager/check/travelDetail', $data);
+        $this->load->view('manager/check/checkTravel', $data);
         $this->load->view('common/footer');
+
+
     }
 
 // 审核信息
+    /*  public function checkBorrow() {
+          $this->timeOut();
+          $bao_id = $this->uri->segment(4);
+          $type = $this->uri->segment(5);
+          if ($type == '1') {
+              $this->m_borrow->check($bao_id);
+          } elseif ($type == '2') {
+              $this->m_borrow->check2($bao_id);
+          }
+
+          $subjectId = $this->session->userdata('subjectId');
+          $array = array('inherit' => $subjectId);
+          $num = $this->m_borrow->getNumManage($array);
+          $offset = $this->uri->segment(6);
+          $data['baoxiao'] = $this->getBorrowMange($array, $offset);
+          $config['base_url'] = base_url() . 'index.php/manager/check/borrowManage';
+          $config['total_rows'] = $num;
+          $config['uri_segment'] = 4;
+          $this->pagination->initialize($config);
+          $data['page'] = $this->pagination->create_links();
+          $data['title'] = '汇款/支票审核列表';
+          $data['num'] = $num;
+          $data['searchType'] = $this->getType();
+          $data['Year'] = $this->getSearchYear();
+          $data['Month'] = $this->getSearchMonth();
+          $data['State'] = $this->getState();
+          $data['Unit'] = $this->getUnit();
+          //$data['year'] = date("Y");
+          //$data['month'] = date("m");
+          $this->load->view('common/header3');
+          $this->load->view('manager/check/borrowSearch', $data);
+          $this->load->view('manager/check/borrowList', $data);
+          $this->load->view('common/footer');
+      }
+    */
     public function checkBorrow() {
         $this->timeOut();
-        $bao_id = $this->uri->segment(4);
+        $id = $this->uri->segment(4);
         $type = $this->uri->segment(5);
         if ($type == '1') {
-            $this->m_borrow->check($bao_id);
+            $this->m_borrow->check($id);
         } elseif ($type == '2') {
-            $this->m_borrow->check2($bao_id);
+            $this->m_borrow->check2($id);
         }
 
-        $subjectId = $this->session->userdata('subjectId');
-        $array = array('inherit' => $subjectId);
-        $num = $this->m_borrow->getNumManage($array);
-        $offset = $this->uri->segment(6);
-        $data['baoxiao'] = $this->getBorrowMange($array, $offset);
-        $config['base_url'] = base_url() . 'index.php/manager/check/borrowManage';
-        $config['total_rows'] = $num;
-        $config['uri_segment'] = 4;
-        $this->pagination->initialize($config);
-        $data['page'] = $this->pagination->create_links();
-        $data['title'] = '汇款/支票审核列表';
-        $data['num'] = $num;
-        $data['searchType'] = $this->getType();
-        $data['Year'] = $this->getSearchYear();
-        $data['Month'] = $this->getSearchMonth();
-        $data['State'] = $this->getState();
-        $data['Unit'] = $this->getUnit();
-        //$data['year'] = date("Y");
-        //$data['month'] = date("m");
-        $this->load->view('common/header3');
-        $this->load->view('manager/check/borrowSearch', $data);
-        $this->load->view('manager/check/borrowList', $data);
-        $this->load->view('common/footer');
+        $data['borrow'] = $this->getBorrow($id);
+        $state = $data['borrow']->state;
+        if ($state == '2') {
+            echo "<script>alert('页面不存在,请重新刷新页面!');window.close();</script>";
+        } else {
+
+            if ($state == '4') {
+                $data['stateShow'] = '初审通过,收到发票!';
+            } elseif ($state == '3') {
+                $data['stateShow'] = '未审核，请您审核!';
+            } elseif ($state == '5') {
+                $date['stateShow'] = '已完成审核.';
+            } else{
+                echo "状态信息有误,请联系管理员解决!";
+            }
+            $this->load->view('common/header3');
+            $this->load->view('manager/check/borrowDetail', $data);
+            $this->load->view('manager/check/checkBorrow', $data);
+            $this->load->view('common/footer');
+        }
     }
 
 // 审核信息
+    /* public function checkLaowu() {
+         $this->timeOut();
+         $laowu_id = $this->uri->segment(4);
+         $type = $this->uri->segment(5);
+         if ($type == '1') {
+             $this->m_laowu->check($laowu_id);
+         } elseif ($type == '2') {
+             $this->m_laowu->check2($laowu_id);
+         }
+
+         $subjectId = $this->session->userdata('subjectId');
+         $array = array('inherit' => $subjectId);
+         $num = $this->m_laowu->getNumManage($array);
+         $offset = $this->uri->segment(6);
+         $data['laowu'] = $this->getLaowuMange($array, $offset);
+         $config['base_url'] = base_url() . 'index.php/manager/check/laowuList';
+         $config['total_rows'] = $num;
+         $config['uri_segment'] = 4;
+         $this->pagination->initialize($config);
+         $data['page'] = $this->pagination->create_links();
+         $data['title'] = '劳务费/专家费审核列表';
+         $data['num'] = $num;
+         $data['searchType'] = $this->getType();
+         $data['Year'] = $this->getSearchYear();
+         $data['Month'] = $this->getSearchMonth();
+         $data['State'] = $this->getState();
+         $data['Unit'] = $this->getUnit();
+         //$data['year'] = date("Y");
+         //$data['month'] = date("m");
+         $this->load->view('common/header3');
+         $this->load->view('manager/check/laowuSearch', $data);
+         $this->load->view('manager/check/laowuList', $data);
+         $this->load->view('common/footer');
+     }
+ **/
+
     public function checkLaowu() {
         $this->timeOut();
-        $laowu_id = $this->uri->segment(4);
+        $id = $this->uri->segment(4);
         $type = $this->uri->segment(5);
         if ($type == '1') {
-            $this->m_laowu->check($laowu_id);
+            $this->m_laowu->check($id);
         } elseif ($type == '2') {
-            $this->m_laowu->check2($laowu_id);
+            $this->m_laowu->check2($id);
         }
 
-        $subjectId = $this->session->userdata('subjectId');
-        $array = array('inherit' => $subjectId);
-        $num = $this->m_laowu->getNumManage($array);
-        $offset = $this->uri->segment(6);
-        $data['laowu'] = $this->getLaowuMange($array, $offset);
-        $config['base_url'] = base_url() . 'index.php/manager/check/laowuList';
-        $config['total_rows'] = $num;
-        $config['uri_segment'] = 4;
-        $this->pagination->initialize($config);
-        $data['page'] = $this->pagination->create_links();
-        $data['title'] = '劳务费/专家费审核列表';
-        $data['num'] = $num;
-        $data['searchType'] = $this->getType();
-        $data['Year'] = $this->getSearchYear();
-        $data['Month'] = $this->getSearchMonth();
-        $data['State'] = $this->getState();
-        $data['Unit'] = $this->getUnit();
-        //$data['year'] = date("Y");
-        //$data['month'] = date("m");
-        $this->load->view('common/header3');
-        $this->load->view('manager/check/laowuSearch', $data);
-        $this->load->view('manager/check/laowuList', $data);
-        $this->load->view('common/footer');
+        $id = $this->uri->segment(4);
+        $data['laowu'] = $this->getLaowu($id);
+        $state = $data['laowu']->state;
+        $money = $data['laowu']->money;
+        $tax = $data['laowu']->tax;
+        $data['money1'] = $money - $tax;
+        if ($state == '2') {
+            echo "<script>alert('页面不存在,请重新刷新页面!');window.close();</script>";
+        } else {
+            if ($state == '4') {
+                $data['stateShow'] = '收到发票';
+            } elseif ($state == '3' or $state == '2') {
+                $data['stateShow'] = '未审核';
+            } elseif ($state == '5') {
+                $data['stateShow'] = '劳务费/专家咨询费申请成功!';
+            }
+
+            $this->load->view('common/header3');
+            $this->load->view('manager/check/laowuDetail', $data);
+            $this->load->view('manager/check/checkLaowu', $data);
+            $this->load->view('common/footer');
+        }
     }
+
+
 
     // 报销信息
     public function update() {

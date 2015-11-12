@@ -14,7 +14,7 @@
         <tr>
             <td colspan="3" class="td3" align="center">
                 <input type="button" name="btnSave" value="修 改" onclick="window.location.href = '<?= base_url(); ?>index.php/manager/check/checkEditBorrow/<?= $borrow->b_id ?>';" id="btnAdd"class="input"  />
-                <input type="button" name="btnNext" value="返 回" onclick="window.location.href = '<?= base_url(); ?>index.php/manager/check/borrowManage';" id="btnSave"class="input"/> 
+                <input type="button" name="btnNext" value="关 闭" onclick="javascript:window.close()" id="btnSave"class="input"/>
             </td></tr>
 
 </div>
