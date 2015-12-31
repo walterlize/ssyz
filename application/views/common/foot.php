@@ -8,7 +8,7 @@
 
 <body bgcolor="#003366">
 	<div class="bottom_wrap">
-    	<span>Copyright@ 2015 技术支持：中国农业大学水利与土木工程学院    |     联系我们：<a href="mailto:lize@cau.edu.cn">lize@cau.edu.cn</a>
+    	<span>Copyright@ 2015 网站开发人:walterlize    | 所属单位:中国农业大学水利与土木工程学院
         </span></div>
 </body>
 </html>

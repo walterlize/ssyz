@@ -82,7 +82,9 @@ class Money extends CI_Controller {
 
         $offset = $this->uri->segment(4);
         $data['money'] = $this->getExpenseS($array, $offset);
+        //$data['money_type']=all;
         $config['base_url'] = base_url() . 'index.php/ordinary/money/expenseList';
+
         $config['total_rows'] = $num;
         $config['uri_segment'] = 4;
         $this->pagination->initialize($config);
@@ -139,12 +141,12 @@ class Money extends CI_Controller {
         $su1=get_object_vars($su['0']);
         $sum=$su1['money'];
         $offset = $this->uri->segment(4);
-        $data['money'] = $this->getExpenseS($array, $offset);
-        $config['base_url'] = base_url() . 'index.php/ordinary/money/expenseList';
-        $config['total_rows'] = $num;
-        $config['uri_segment'] = 4;
-        $this->pagination->initialize($config);
-        $data['page'] = $this->pagination->create_links();
+        $data['money'] = $this->getExpenseS_1($array, $offset);
+        //$config['base_url'] = base_url() . 'index.php/ordinary/money/expenseList';
+        //$config['total_rows'] = $num;
+        //$config['uri_segment'] = 4;
+        //$this->pagination->initialize($config);
+        //$data['page'] = $this->pagination->create_links();
         $data['num'] = $num;
         $data['sum'] = $sum;
         $data['title'] = '课题经费花费详情';
@@ -154,7 +156,7 @@ class Money extends CI_Controller {
 
         // $this->load->view('common/header3');
         //$this->load->view('ordinary/money/moneySearch');
-        $this->load->view('ordinary/money/expenseList', $data);
+        $this->load->view('ordinary/money/expenseList_1', $data);
         // $this->load->view('common/footer');
     }
 
@@ -930,6 +932,22 @@ class Money extends CI_Controller {
         $this->timeOut();
         $data = array();
         $result = $this->m_money_record->getMoney_currentS($array, PER_PAGE, $offset);
+
+        foreach ($result as $r) {
+            $arr = array('mc_id' => $r->mc_id, 's_id' => $r->s_id, 'b_id' => $r->b_id,
+                'date' => $r->date, 'money' => $r->money, 'moneyType' => $r->moneyType,
+                'm_type' => $r->m_type
+            );
+            array_push($data, $arr);
+
+        }
+        return $data;
+    }
+    // 不分页获取全部花费经费信息
+    public function getExpenseS_1($array, $offset) {
+        $this->timeOut();
+        $data = array();
+        $result = $this->m_money_record->getMoney_currentS_1($array, $offset);
 
         foreach ($result as $r) {
             $arr = array('mc_id' => $r->mc_id, 's_id' => $r->s_id, 'b_id' => $r->b_id,

@@ -24,7 +24,7 @@
                 <td class="td3">
                     <?= $r['author'] ?></td>
                 <td class="td1">
-                    <?= $subjectUnit ?></td>
+                    <?= $r['subjectUnit'] ?></td>
                 <td class="td3">
                     <?= $r['year'] ?>年<?= $r['month'] ?>月</td>
                 <td class="td1">

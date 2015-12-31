@@ -27,7 +27,7 @@
                         <?= $r['peopleNum'] ?></td>
 
                     <td class="td3">
-                       申报：<?= $r['money'] ?>元，其中缴税：<?= $r['money'] ?>元，实际金额<?=$r['money1']?>元。</td>
+                       申报：<?= $r['money'] ?>元，其中缴税：<?= $r['tax'] ?>元，<p style="color: red">实际金额<?=$r['money1']?>元</p></td>
                     <td class="td1">
                         <p style="color:<?= $r['color'] ?>"><?= $r['state'] ?></p>
                     </td>

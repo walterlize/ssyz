@@ -6,8 +6,9 @@
             <th class="td1">序号</th>
             <th class="td3">标题</th>
             <th class="td1">相关人</th>
-            <th class="td3">发布单位</th>
-            <th class="td1">发布时间</th>
+
+            <th class="td3">发布时间</th>
+            <th class="td1">发布单位</th>
             <th class="td3">状态</th>
             <th class="td1">操作</th>
         </tr>
@@ -20,9 +21,9 @@
                     <td class="td1">
                         <?= $r['author'] ?></td>
                     <td class="td3">
-                        <?= $subjectUnit ?></td>
-                    <td class="td1">
                         <?= $r['year'] ?>年<?=$r['month']?>月</td>
+                    <td class="td1">
+                        <?= $r['subjectUnit'] ?></td>
                     <td class="td3">
                         <?= $r['state'] ?></td>
                     <td class="td1">

@@ -23,7 +23,7 @@
                             <br>
                                 技术支持：中国农业大学 水利与土木工程学院
                                 <br>
-                                    Email：lize@cau.edu.cn
+
 
                                     </div>
                                     </td>

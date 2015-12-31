@@ -75,6 +75,7 @@ class Trend extends CI_Controller {
     public function zhengce() {
 
         $title = '设施养殖数字化智能管理技术设备研究';
+        $title1 = '政策规定下载';
         $num = $this->m_zhengce->getNum(array());
         $offset = $this->uri->segment(4);
 
@@ -84,9 +85,12 @@ class Trend extends CI_Controller {
         $config['uri_segment'] = 4;
         $this->pagination->initialize($config);
         $data['page'] = $this->pagination->create_links();
-        $data['title']=$title;
-        $this->load->view('index/head_2', $data);
-        $this->load->view('outside/zhengceList', $data);
+        $data['title']=$title1;
+        //$this->load->view('index/head_2', $data);
+        //$this->load->view('outside/zhengceList', $data);
+        $this->load->view('index/head', $data);
+        $this->load->view('outside/achievement/left_zhengce');
+        $this->load->view('outside/zhengceList_1', $data);
         $this->load->view('index/footer_1');
     }
     // 课题政策规定详细信息页面

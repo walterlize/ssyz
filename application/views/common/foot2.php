@@ -17,10 +17,7 @@
                         Copyright@ 2015 All rights reserved #
                         <br>
 　联系方式（电话/传真）：18811588750
-                            <br>
-                                技术支持：中国农业大学 水利与土木工程学院
-                                <br>
-                                    Email：lize@cau.edu.cn
+
 
                                     </div>
                                     </td>

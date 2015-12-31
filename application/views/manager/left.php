@@ -11,27 +11,26 @@
                         <ul>
                             <li><a href="<?= base_url(); ?>index.php/manager/subject/subjectDetail" target="mainFrame"><span>课题介绍</span></a></li>
                             <li><a href="<?= base_url(); ?>index.php/manager/subject/subjectManage" target="mainFrame"><span>子课题管理</span></a></li>
-                        </ul></li>
-
-                    <li><a href="#"><span>子课题工作审核</span></a>
-                        <ul>
-                            <!--
-                            <li><a href="<?= base_url(); ?>index.php/manager/workReport/reportList/WeekReport/1" target="mainFrame"><span>工作月报</span></a></li>
-                            <li><a href="<?= base_url(); ?>index.php/manager/workReport/reportList/WorkReport/1" target="mainFrame"><span>工作简报</span></a></li>
-                           -->
-                            <li><a href="<?= base_url(); ?>index.php/manager/workReport/reportListCheck/WeekReport/2" target="mainFrame"><span>子课题工作月报审核</span></a></li>
-                            <li><a href="<?= base_url(); ?>index.php/manager/workReport/reportListCheck/WorkReport/2" target="mainFrame"><span>子课题工作简报审核</span></a></li>
-                        </ul></li>
-                    <li><a href="#"><span>工作报告提交</span></a>
-                        <ul>
-                            <li><a href="<?= base_url(); ?>index.php/manager/workReport/reportList/WeekReport/1" target="mainFrame"><span>工作月报</span></a></li>
-                            <li><a href="<?= base_url(); ?>index.php/manager/workReport/reportList/WorkReport/1" target="mainFrame"><span>工作简报</span></a></li>
-                        </ul></li>
+                        </ul>
+                    </li>
                     <li><a href="#"><span>项目动态</span></a>
                         <ul>
                             <li><a href="<?= base_url(); ?>index.php/manager/trend/trendList" target="mainFrame"><span>项目动态</span></a></li>
                         </ul>
                     </li>
+                    <li><a href="#"><span>工作报告提交</span></a>
+                        <ul>
+                            <li><a href="<?= base_url(); ?>index.php/manager/workReport/reportList/WeekReport/1" target="mainFrame"><span>工作月报</span></a></li>
+                            <li><a href="<?= base_url(); ?>index.php/manager/workReport/reportList/WorkReport/1" target="mainFrame"><span>工作简报</span></a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#"><span>子课题工作审核</span></a>
+                        <ul>
+                            <li><a href="<?= base_url(); ?>index.php/manager/workReport/reportListCheck/WeekReport/2" target="mainFrame"><span>子课题工作月报审核</span></a></li>
+                            <li><a href="<?= base_url(); ?>index.php/manager/workReport/reportListCheck/WorkReport/2" target="mainFrame"><span>子课题工作简报审核</span></a></li>
+                        </ul></li>
+
+
                     <li><a href="#"><span>经费审核</span></a>
                         <ul>
                             <li><a href="<?= base_url(); ?>index.php/manager/check/baoxiaoManage" target="mainFrame"><span>普通报销审核</span></a></li>
@@ -73,7 +72,8 @@
                             <li><a href="<?= base_url(); ?>index.php/manager/award/awardList" target="mainFrame"><span>报奖材料</span></a></li>
                             <li><a href="<?= base_url(); ?>index.php/manager/demonstration/demonstrationList" target="mainFrame"><span>应用示范</span></a></li>
                             <li><a href="<?= base_url(); ?>index.php/manager/other/otherList" target="mainFrame"><span>其他</span></a></li>
-                        </ul></li>
+                        </ul>
+                    </li>
                     <li><a href="<?= base_url(); ?>index.php/manager/user/userList" target="mainFrame"><span>子课题用户管理</span></a>
                     <li><a href="<?= base_url() ?>index.php/user/password" target="mainFrame"><span>修改密码</span></a>
 

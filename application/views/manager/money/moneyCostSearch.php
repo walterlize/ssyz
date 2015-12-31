@@ -47,7 +47,7 @@
     &nbsp;&nbsp;&nbsp;&nbsp;
     <font  >子课题:</font>
     <select id="subject_select" name="subject_select" onchange="expenseMoney_change('year_select', 'month_select','subject_select','search_result', '<?= base_url() ?>index.php/manager/money/changeCostOption')">
-
+        <option value="all"><?=$subjectUnit?></option>
         <?php foreach ($Unit as $r): ?>
             <option value="<?= $r ?>"
                 <?php

@@ -20,8 +20,8 @@
             </div>
             <div class="text_admin_2">
                 <span class="c_left"><a href="<?= base_url(); ?>index.php/ordinary/borrow/baoxiaoList">汇款/支票报销</a></span>
-                <span class="c_center"><a href="<?= base_url(); ?>index.php/ordinary/laowu/laowuNew">劳务/专家费申请</a></span>
-                <span class="c_right"><a href="<?= base_url(); ?>index.php/user/password">密码修改</a></span>
+                <span class="c_left"><a href="<?= base_url(); ?>index.php/ordinary/laowu/laowuNew">劳务/专家费申请</a></span>
+                <span class="c_center"><a href="<?= base_url(); ?>index.php/user/password">密码修改</a></span>
             </div>
 
         </div></br></br></br>

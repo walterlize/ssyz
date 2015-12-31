@@ -31,6 +31,11 @@
     .qqOn {
         FONT-WEIGHT: bold; CURSOR: pointer; COLOR: #003333; PADDING-TOP: 2px
     }
+    //The link color for paper page author:walter
+    a:link { text-decoration:none;color: #000000; font-size:13px;}
+    a:visited {text-decoration:none; color: #000000; font-size:13px;}
+    a:active { text-decoration:none; color:#0000ff; font-size:13px;}
+    a:hover { text-decoration: none; color:#33CC99; font-size:13px; }
 </STYLE>
 
 <SCRIPT type=text/javascript>

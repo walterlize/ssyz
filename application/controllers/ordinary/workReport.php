@@ -158,9 +158,9 @@ class WorkReport extends CI_Controller {
         $result = $this->m_workReport->getOneInfo($id);
         foreach ($result as $r) {
             $data = $r;
-            $data->state = $this->m_workReport->getState($r->state);
-            $data->subjectUnit = $this->session->userdata('subjectUnit');
-            $data->subjectName = $this->session->userdata('subjectName');
+           $data->state = $this->m_workReport->getState($r->state);
+            //$data->subjectUnit = $this->session->userdata('subjectUnit');
+            //$data->subjectName = $this->session->userdata('subjectName');
         }
         return $data;
     }
@@ -190,7 +190,7 @@ class WorkReport extends CI_Controller {
         foreach ($result as $r) {
             $arr = array('workReportId' => $r->workReportId, 'subjectId' => $r->subjectId,
                 'type' => $r->type, 'author' => $r->author,
-                'year' => $r->year, 'title' => $r->title, 'month' => $r->month,
+                'year' => $r->year, 'title' => $r->title, 'month' => $r->month,'subjectUnit' => $r->subjectUnit,
                 'content' => $r->content, 'state' => $this->m_workReport->getState($r->state),
                 'remark' => $r->remark);
             array_push($data, $arr);

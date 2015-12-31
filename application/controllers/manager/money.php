@@ -1310,20 +1310,23 @@ class Money extends CI_Controller {
     function moneySum() {
         $this->timeOut();
         $subjectId = $this->session->userdata('subjectId');
+        $subjectUnit = $this->session->userdata('subjectUnit');
+        $data['subjectUnit']=$subjectUnit;
         $data['Year'] = $this->getSearchYear();
         $data['Month'] = $this->getSearchMonth();
         $data['Unit'] = $this->getUnit();
-        $data['unit']='中国农业大学账户';
+        //$data['unit']='中国农业大学账户';
+        echo "$subjectUnit";
 
         // 计算总预算值
-        $array1=array('subjectUnit' => '中国农业大学账户');
+        $array1=array('subjectId ' => $subjectId) ;
         $data['money1'] = $this->getTotalMoney_By_name($array1);
 
 
         $result=get_object_vars($data['money1']);
         //print_r($result);
         //已支出的情况
-        $array = array('inherit' => $subjectId,'subjectUnit' => '中国农业大学账户');
+        $array = array('inherit' => $subjectId);
         $all=$this->m_totalmoney->getMoney_cost($array);
         $cost=get_object_vars($all[0]);
         $result1=$cost;
@@ -1449,8 +1452,14 @@ class Money extends CI_Controller {
         // 计算总预算值
         $array1=array('subjectUnit' => $subjectUnit);
         $data['money1'] = $this->getTotalMoney_By_name($array1);
+        if($data['money1']==null){
+            echo "此课题还未分配经费,请联系管理员分配经费!";
+            exit;
+        }else{
+            $result=get_object_vars($data['money1']);
+        }
 
-        $result=get_object_vars($data['money1']);
+
         //print_r($result);
         //已支出的情况
 

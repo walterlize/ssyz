@@ -488,7 +488,9 @@ class Travel extends CI_Controller {
         $result = $this->m_travel->getTravelS($array, PER_PAGE, $offset);
 
         foreach ($result as $r) {
-            $arr = array('t_id' => $r->t_id, 'type' => $r->type, 'code' => $r->code, 'date' => $r->date, 'outDate' => $r->outDate, 'backDate' => $r->backDate, 'days' => $r->days, 'peopleNum' => $r->peopleNum, 'totalMoney' => $r->totalMoney,
+            $arr = array('t_id' => $r->t_id, 'type' => $r->type, 'code' => $r->code, 'date' => $r->date,
+                'outDate' => $r->outDate, 'backDate' => $r->backDate, 'days' => $r->days,
+                'peopleNum' => $r->peopleNum, 'totalMoney' => $r->totalMoney,'name'=>$r->name,
                 'state' => $this->m_travel->getState($r->state),'color' => $this->getColor($r->state),
             );
             array_push($data, $arr);

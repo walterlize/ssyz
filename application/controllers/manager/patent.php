@@ -202,8 +202,11 @@ class Patent extends CI_Controller {
         function timeOut(){
             $role = $this->session->userdata('roleId');
 
-            if($role != 2){
-                $this->load->view('logout');
+            if($role != 2) {
+                if ($role != 3) {
+                    $this->load->view('logout');
+
+                }
             }
         }
 }

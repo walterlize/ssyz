@@ -8,7 +8,6 @@
     <div class="line">
     </div>
     中国农业大学水利与土木工程学院 版权所有</br>
-    技术支持：<a href="mailto:lize@cau.edu.cn">lize@cau.edu.cn</a>
     </br> </br>
     Copyright@ 2015
       <!--leader:walterlize-->

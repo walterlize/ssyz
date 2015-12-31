@@ -9,7 +9,7 @@
                 <th class="td1">报销代码</th>
                 <th class="td3">经费类型</th>
                 <th class="td1">差旅时间</th>
-                <th class="td3">差旅人数</th>
+                <th class="td3">差旅报销人</th>
                 <th class="td1">报销金额</th>
                 <th class="td3">报销状态</th>
                 <th class="td1">操作</th>
@@ -32,7 +32,7 @@
                             自：<?= $r['outDate'] ?>至<?= $r['backDate'] ?>,共计<?= $r['days'] ?>天
                         </td>
                         <td class="td3">
-                            <?= $r['peopleNum'] ?>
+                            <?= $r['name'] ?>,共计<?=$r['peopleNum']?>人
                         </td>
                         <td class="td1">
                             <?= $r['totalMoney'] ?>

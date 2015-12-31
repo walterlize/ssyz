@@ -35,7 +35,8 @@ class Frame extends CI_Controller {
         $data['num1'] = $this->m_baoxiao->getNumManage($array);
         $data['num2'] = $this->m_travel->getNumManage($array);
         $data['num3'] = $this->m_borrow->getNumManage($array);
-        $data['num4'] = $this->m_borrow->getNumManage($array);
+        $data['num4'] = $this->m_borrow->getNumManage_2($array);
+        $data['num5'] = $this->m_laowu->getNumManage($array);
 
 
 

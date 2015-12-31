@@ -9,14 +9,16 @@ body, div, dl, dt, dd, ul, ol, li, h1, h2, h3, h4, h5, h6, pre, code, form, fiel
     padding: 0;
 }
 a{text-decoration:underline;}
-a:hover{
+/*a:hover{
     text-decoration:none;
-    color: #000000;
-}
-table {
+    color:red;
     border-collapse: collapse;
     border-spacing: 0;
-}
+}*/
+a:link { text-decoration:none;color: #003366; font-size:18px;}
+a:visited {text-decoration:none; color: #003366; font-size:18px;}
+a:active { text-decoration:none; color:#003366; font-size:18px;}
+a:hover { text-decoration: none; color:#33cc99; font-size:18px; }
 fieldset, img {
     border: 0;
 }
