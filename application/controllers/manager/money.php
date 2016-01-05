@@ -149,7 +149,8 @@ class Money extends CI_Controller {
         $data['Type'] = $this->getType();
         $data['Year'] = $this->getSearchYear();
         $data['Month'] = $this->getSearchMonth();
-        $data['Unit'] = $this->getUnit();
+        $arr = array('inherit' => $subjectId,'type'=>'ordinary');
+        $data['Unit'] = $this->getUnit($arr);
         $this->load->view('common/header3');
         $this->load->view('manager/money/moneySearch', $data);
         $this->load->view('manager/money/expenseList', $data);
@@ -245,7 +246,8 @@ class Money extends CI_Controller {
         $data['Type'] = $this->getType();
         $data['Year'] = $this->getSearchYear();
         $data['Month'] = $this->getSearchMonth();
-        $data['Unit'] = $this->getUnit();
+        $arr = array('inherit' => $subjectId,'type'=>'ordinary');
+        $data['Unit'] = $this->getUnit($arr);
 
         $this->load->view('manager/money/expenseList', $data);
 
@@ -254,6 +256,7 @@ class Money extends CI_Controller {
     //按按照金额,报销代码查询
     public function expenseMoneySearch() {
         $this->timeOut();
+        $subjectId = $this->session->userdata('subjectId');
         $searchType1 = $_POST['searchType'];
         $searchTerm = trim($_POST['searchTerm']);
         if (!get_magic_quotes_gpc()) {
@@ -291,7 +294,8 @@ class Money extends CI_Controller {
         $data['Type'] = $this->getType();
         $data['Year'] = $this->getSearchYear();
         $data['Month'] = $this->getSearchMonth();
-        $data['Unit'] = $this->getUnit();
+        $arr = array('inherit' => $subjectId,'type'=>'ordinary');
+        $data['Unit'] = $this->getUnit($arr);
         $this->load->view('common/header3');
         $this->load->view('manager/money/moneySearch', $data);
         $this->load->view('manager/money/expenseList', $data);
@@ -1314,9 +1318,9 @@ class Money extends CI_Controller {
         $data['subjectUnit']=$subjectUnit;
         $data['Year'] = $this->getSearchYear();
         $data['Month'] = $this->getSearchMonth();
-        $data['Unit'] = $this->getUnit();
-        //$data['unit']='中国农业大学账户';
-        echo "$subjectUnit";
+        $arr = array('inherit' => $subjectId,'type'=>'ordinary');
+        $data['Unit'] = $this->getUnit($arr);
+
 
         // 计算总预算值
         $array1=array('subjectId ' => $subjectId) ;
@@ -1448,7 +1452,8 @@ class Money extends CI_Controller {
 
         $data['Year'] = $this->getSearchYear();
         $data['Month'] = $this->getSearchMonth();
-        $data['Unit'] = $this->getUnit();
+        $arr = array('inherit' => $subjectId,'type'=>'ordinary');
+        $data['Unit'] = $this->getUnit($arr);
         // 计算总预算值
         $array1=array('subjectUnit' => $subjectUnit);
         $data['money1'] = $this->getTotalMoney_By_name($array1);
@@ -2321,9 +2326,31 @@ class Money extends CI_Controller {
         return $data;
     }
     //获取农大报销单位
-    function getUnit() {
+   /* function getUnit() {
         $this->load->model('m_choice');
         $data = $this->m_choice->getBaoxiaoUnit();
+        return $data;
+    }
+   */
+    function getUnit($array) {
+        $this->load->model('m_subject');
+        //Init array of data and data1
+        $data1 = array();
+        //get all message of subject
+        $result = $this->m_subject->getSubject($array);
+
+        foreach ($result as $r) {
+            $arr = array('subjectId'=>$r->subjectId, 'subjectUnit' => $r->subjectUnit,
+            );
+            array_push($data1, $arr);
+        }
+        //get only column of subjectUnit
+        $data = array();
+        $data= array_column($data1,'subjectUnit');
+
+        // print_r($data);
+
+
         return $data;
     }
 

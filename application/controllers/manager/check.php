@@ -23,6 +23,8 @@ class Check extends CI_Controller {
         $this->timeOut();
         $subjectId = $this->session->userdata('subjectId');
         $array = array('inherit' => $subjectId);
+        $arr = array('inherit' => $subjectId,'type'=>'ordinary');
+
         $num = $this->m_baoxiao->getNumManage($array);
         $offset = $this->uri->segment(4);
         $data['baoxiao'] = $this->getBaoxiaoMange($array, $offset);
@@ -37,7 +39,7 @@ class Check extends CI_Controller {
         $data['Year'] = $this->getSearchYear();
         $data['Month'] = $this->getSearchMonth();
         $data['State'] = $this->getState();
-        $data['Unit'] = $this->getUnit();
+        $data['Unit'] = $this->getUnit($arr);
         $data['type1'] = '1';
         $this->load->view('common/header3');
         $this->load->view('manager/check/baoxiaoSearch', $data);
@@ -50,6 +52,7 @@ class Check extends CI_Controller {
         $this->timeOut();
         $subjectId = $this->session->userdata('subjectId');
         $array = array('inherit' => $subjectId);
+        $arr = array('inherit' => $subjectId,'type'=>'ordinary');
         $num = $this->m_travel->getNumManage($array);
         $offset = $this->uri->segment(4);
         $data['baoxiao'] = $this->getTravelMange($array, $offset);
@@ -64,7 +67,7 @@ class Check extends CI_Controller {
         $data['Year'] = $this->getSearchYear();
         $data['Month'] = $this->getSearchMonth();
         $data['State'] = $this->getState();
-        $data['Unit'] = $this->getUnit();
+        $data['Unit'] = $this->getUnit($arr);
         $data['type1'] = '2';
         $this->load->view('common/header3');
         $this->load->view('manager/check/travelSearch', $data);
@@ -77,6 +80,7 @@ class Check extends CI_Controller {
         $this->timeOut();
         $subjectId = $this->session->userdata('subjectId');
         $array = array('inherit' => $subjectId);
+        $arr = array('inherit' => $subjectId,'type'=>'ordinary');
         $num = $this->m_borrow->getNumManage($array);
         $offset = $this->uri->segment(4);
         $data['baoxiao'] = $this->getBorrowMange($array, $offset);
@@ -91,7 +95,7 @@ class Check extends CI_Controller {
         $data['Year'] = $this->getSearchYear();
         $data['Month'] = $this->getSearchMonth();
         $data['State'] = $this->getState();
-        $data['Unit'] = $this->getUnit();
+        $data['Unit'] = $this->getUnit($arr);
         $data['type1'] = '1';
         //$data['year'] = date("Y");
         //$data['month'] = date("m");
@@ -107,6 +111,7 @@ class Check extends CI_Controller {
         $this->timeOut();
         $subjectId = $this->session->userdata('subjectId');
         $array = array('inherit' => $subjectId, 'state' => '5');
+        $arr = array('inherit' => $subjectId,'type'=>'ordinary');
         $num = $this->m_borrow->getNumManage_2($array);
         $offset = $this->uri->segment(4);
         $data['baoxiao'] = $this->getBorrowMange_2($array, $offset);
@@ -121,7 +126,7 @@ class Check extends CI_Controller {
         $data['Year'] = $this->getSearchYear();
         $data['Month'] = $this->getSearchMonth();
         $data['State'] = $this->getState();
-        $data['Unit'] = $this->getUnit();
+        $data['Unit'] = $this->getUnit($arr);
         $data['type1'] = '1';
 
 
@@ -136,6 +141,7 @@ class Check extends CI_Controller {
         $this->timeOut();
         $subjectId = $this->session->userdata('subjectId');
         $array = array('inherit' => $subjectId);
+        $arr = array('inherit' => $subjectId,'type'=>'ordinary');
         $num = $this->m_laowu->getNumManage($array);
         $offset = $this->uri->segment(4);
         $data['laowu'] = $this->getLaowuMange($array, $offset);
@@ -150,7 +156,7 @@ class Check extends CI_Controller {
         $data['Year'] = $this->getSearchYear();
         $data['Month'] = $this->getSearchMonth();
         $data['State'] = $this->getState();
-        $data['Unit'] = $this->getUnit();
+        $data['Unit'] = $this->getUnit($arr);
         $data['type1'] = '4';
         $this->load->view('common/header3');
         $this->load->view('manager/check/laowuSearch', $data);
@@ -399,9 +405,9 @@ class Check extends CI_Controller {
                         }
                     } else {
                         if (strcmp($state, 'all') == 0) {
-                            $array = array('baoxiaoType' => $type, 's_id' => $subjectId, 'month' => $month, 'year' => $year);
+                            $array = array('baoxiaoType' => $type, 'inherit' => $subjectId, 'month' => $month, 'year' => $year);
                         } else {
-                            $array = array('baoxiaoType' => $type, 's_id' => $subjectId, 'state' => $s, 'month' => $month, 'year' => $year);
+                            $array = array('baoxiaoType' => $type, 'inherit' => $subjectId, 'state' => $s, 'month' => $month, 'year' => $year);
                         }
                     }
                 }
@@ -461,9 +467,9 @@ class Check extends CI_Controller {
                         }
                     } else {
                         if (strcmp($state, 'all') == 0) {
-                            $array = array('baoxiaoType' => $type, 's_id' => $subjectId, 'month' => $month, 'year' => $year, 'subjectUnit' => $unit);
+                            $array = array('baoxiaoType' => $type, 'inherit' => $subjectId, 'month' => $month, 'year' => $year, 'subjectUnit' => $unit);
                         } else {
-                            $array = array('baoxiaoType' => $type, 's_id' => $subjectId, 'state' => $s, 'month' => $month, 'year' => $year, 'subjectUnit' => $unit);
+                            $array = array('baoxiaoType' => $type, 'inherit' => $subjectId, 'state' => $s, 'month' => $month, 'year' => $year, 'subjectUnit' => $unit);
                         }
                     }
                 }
@@ -487,7 +493,8 @@ class Check extends CI_Controller {
             $data['Year'] = $this->getSearchYear();
             $data['Month'] = $this->getSearchMonth();
             $data['State'] = $this->getState();
-            $data['Unit'] = $this->getUnit();
+            $arr = array('inherit' => $subjectId,'type'=>'ordinary');
+            $data['Unit'] = $this->getUnit($arr);
             $this->load->view('manager/search/baoxiaoList', $data);
         } elseif ($type == '4') {
             $num = $this->m_laowu->getNumManage($array);
@@ -504,7 +511,8 @@ class Check extends CI_Controller {
             $data['Year'] = $this->getSearchYear();
             $data['Month'] = $this->getSearchMonth();
             $data['State'] = $this->getState();
-            $data['Unit'] = $this->getUnit();
+            $arr = array('inherit' => $subjectId,'type'=>'ordinary');
+            $data['Unit'] = $this->getUnit($arr);
             $data['type1'] = '4';
             $data['year'] = date("Y");
             $data['month'] = date("m");
@@ -575,9 +583,9 @@ class Check extends CI_Controller {
                         }
                     } else {
                         if (strcmp($state, 'all') == 0) {
-                            $array = array('type' => $type, 's_id' => $subjectId, 'month' => $month, 'year' => $year);
+                            $array = array('type' => $type, 'inherit' => $subjectId, 'month' => $month, 'year' => $year);
                         } else {
-                            $array = array('type' => $type, 's_id' => $subjectId, 'state' => $s, 'month' => $month, 'year' => $year);
+                            $array = array('type' => $type, 'inherit' => $subjectId, 'state' => $s, 'month' => $month, 'year' => $year);
                         }
                     }
                 }
@@ -637,9 +645,9 @@ class Check extends CI_Controller {
                         }
                     } else {
                         if (strcmp($state, 'all') == 0) {
-                            $array = array('type' => $type, 's_id' => $subjectId, 'month' => $month, 'year' => $year, 'subjectUnit' => $unit);
+                            $array = array('type' => $type, 'inherit' => $subjectId, 'month' => $month, 'year' => $year, 'subjectUnit' => $unit);
                         } else {
-                            $array = array('type' => $type, 's_id' => $subjectId, 'state' => $s, 'month' => $month, 'year' => $year, 'subjectUnit' => $unit);
+                            $array = array('type' => $type, 'inherit' => $subjectId, 'state' => $s, 'month' => $month, 'year' => $year, 'subjectUnit' => $unit);
                         }
                     }
                 }
@@ -661,7 +669,8 @@ class Check extends CI_Controller {
         $data['Year'] = $this->getSearchYear();
         $data['Month'] = $this->getSearchMonth();
         $data['State'] = $this->getState();
-        $data['Unit'] = $this->getUnit();
+        $arr = array('inherit' => $subjectId,'type'=>'ordinary');
+        $data['Unit'] = $this->getUnit($arr);
         $data['type1'] = '2';
 
 
@@ -729,9 +738,9 @@ class Check extends CI_Controller {
                         }
                     } else {
                         if (strcmp($state, 'all') == 0) {
-                            $array = array('moneyType' => $type, 's_id' => $subjectId, 'month' => $month, 'year' => $year);
+                            $array = array('moneyType' => $type, 'inherit' => $subjectId, 'month' => $month, 'year' => $year);
                         } else {
-                            $array = array('moneyType' => $type, 's_id' => $subjectId, 'state' => $s, 'month' => $month, 'year' => $year);
+                            $array = array('moneyType' => $type, 'inherit' => $subjectId, 'state' => $s, 'month' => $month, 'year' => $year);
                         }
                     }
                 }
@@ -791,9 +800,9 @@ class Check extends CI_Controller {
                         }
                     } else {
                         if (strcmp($state, 'all') == 0) {
-                            $array = array('moneyType' => $type, 's_id' => $subjectId, 'month' => $month, 'year' => $year, 'subjectUnit' => $unit);
+                            $array = array('moneyType' => $type, 'inherit' => $subjectId, 'month' => $month, 'year' => $year, 'subjectUnit' => $unit);
                         } else {
-                            $array = array('moneyType' => $type, 's_id' => $subjectId, 'state' => $s, 'month' => $month, 'year' => $year, 'subjectUnit' => $unit);
+                            $array = array('moneyType' => $type, 'inherit' => $subjectId, 'state' => $s, 'month' => $month, 'year' => $year, 'subjectUnit' => $unit);
                         }
                     }
                 }
@@ -816,7 +825,8 @@ class Check extends CI_Controller {
         $data['Year'] = $this->getSearchYear();
         $data['Month'] = $this->getSearchMonth();
         $data['State'] = $this->getState();
-        $data['Unit'] = $this->getUnit();
+        $arr = array('inherit' => $subjectId,'type'=>'ordinary');
+        $data['Unit'] = $this->getUnit($arr);
         $data['type1'] = '1';
 
         $data['state'] = '已提交';
@@ -885,9 +895,9 @@ class Check extends CI_Controller {
                         }
                     } else {
                         if (strcmp($state, 'all') == 0) {
-                            $array = array('moneyType' => $type, 's_id' => $subjectId, 'state' => 5,'month' => $month, 'year' => $year);
+                            $array = array('moneyType' => $type, 'inherit' => $subjectId, 'state' => 5,'month' => $month, 'year' => $year);
                         } else {
-                            $array = array('moneyType' => $type, 's_id' => $subjectId, 'state' => 5,'state2' => $s ,'month' => $month, 'year' => $year);
+                            $array = array('moneyType' => $type, 'inherit' => $subjectId, 'state' => 5,'state2' => $s ,'month' => $month, 'year' => $year);
                         }
                     }
                 }
@@ -947,9 +957,9 @@ class Check extends CI_Controller {
                         }
                     } else {
                         if (strcmp($state, 'all') == 0) {
-                            $array = array('moneyType' => $type, 's_id' => $subjectId,'state' => 5, 'month' => $month, 'year' => $year, 'subjectUnit' => $unit);
+                            $array = array('moneyType' => $type, 'inherit' => $subjectId,'state' => 5, 'month' => $month, 'year' => $year, 'subjectUnit' => $unit);
                         } else {
-                            $array = array('moneyType' => $type, 's_id' => $subjectId, 'state' => 5,'state2' => $s, 'month' => $month, 'year' => $year, 'subjectUnit' => $unit);
+                            $array = array('moneyType' => $type, 'inherit' => $subjectId, 'state' => 5,'state2' => $s, 'month' => $month, 'year' => $year, 'subjectUnit' => $unit);
                         }
                     }
                 }
@@ -966,7 +976,8 @@ class Check extends CI_Controller {
         $data['Year'] = $this->getSearchYear();
         $data['Month'] = $this->getSearchMonth();
         $data['State'] = $this->getState();
-        $data['Unit'] = $this->getUnit();
+        $arr = array('inherit' => $subjectId,'type'=>'ordinary');
+        $data['Unit'] = $this->getUnit($arr);
         $data['type1'] = '1';
 
         $data['state'] = '已提交';
@@ -1035,9 +1046,9 @@ class Check extends CI_Controller {
                         }
                     } else {
                         if (strcmp($state, 'all') == 0) {
-                            $array = array('type' => $type, 's_id' => $subjectId, 'month' => $month, 'year' => $year);
+                            $array = array('type' => $type, 'inherit' => $subjectId, 'month' => $month, 'year' => $year);
                         } else {
-                            $array = array('type' => $type, 's_id' => $subjectId, 'state' => $s, 'month' => $month, 'year' => $year);
+                            $array = array('type' => $type, 'inherit' => $subjectId, 'state' => $s, 'month' => $month, 'year' => $year);
                         }
                     }
                 }
@@ -1097,9 +1108,9 @@ class Check extends CI_Controller {
                         }
                     } else {
                         if (strcmp($state, 'all') == 0) {
-                            $array = array('type' => $type, 's_id' => $subjectId, 'month' => $month, 'year' => $year, 'subjectUnit' => $unit);
+                            $array = array('type' => $type, 'inherit' => $subjectId, 'month' => $month, 'year' => $year, 'subjectUnit' => $unit);
                         } else {
-                            $array = array('type' => $type, 's_id' => $subjectId, 'state' => $s, 'month' => $month, 'year' => $year, 'subjectUnit' => $unit);
+                            $array = array('type' => $type, 'inherit' => $subjectId, 'state' => $s, 'month' => $month, 'year' => $year, 'subjectUnit' => $unit);
                         }
                     }
                 }
@@ -1122,7 +1133,8 @@ class Check extends CI_Controller {
         $data['Year'] = $this->getSearchYear();
         $data['Month'] = $this->getSearchMonth();
         $data['State'] = $this->getState();
-        $data['Unit'] = $this->getUnit();
+        $arr = array('inherit' => $subjectId,'type'=>'ordinary');
+        $data['Unit'] = $this->getUnit($arr);
         $data['type1'] = '4';
         $data['year'] = date("Y");
         $data['month'] = date("m");
@@ -1178,41 +1190,6 @@ class Check extends CI_Controller {
     }
 
 // 审核信息
-    /*  public function checkBaoxiao() {
-          $this->timeOut();
-          $bao_id = $this->uri->segment(4);
-          $type = $this->uri->segment(5);
-          if ($type == '1') {
-              $this->m_baoxiao->check($bao_id);
-          } elseif ($type == '2') {
-              $this->m_baoxiao->check2($bao_id);
-          }
-
-          $subjectId = $this->session->userdata('subjectId');
-          $array = array('inherit' => $subjectId);
-          $num = $this->m_baoxiao->getNumManage($array);
-          $offset = $this->uri->segment(6);
-          $data['baoxiao'] = $this->getBaoxiaoMange($array, $offset);
-          $config['base_url'] = base_url() . 'index.php/manager/check/baoxiaoManage';
-          $config['total_rows'] = $num;
-          $config['uri_segment'] = 4;
-          $this->pagination->initialize($config);
-          $data['page'] = $this->pagination->create_links();
-          $data['title'] = '普通报销审核列表';
-          $data['num'] = $num;
-          $data['searchType'] = $this->getType();
-          $data['Year'] = $this->getSearchYear();
-          $data['Month'] = $this->getSearchMonth();
-          $data['State'] = $this->getState();
-          $data['Unit'] = $this->getUnit();
-          //$data['year'] = date("Y");
-          //$data['month'] = date("m");
-          $this->load->view('common/header3');
-          //$this->load->view('manager/check/baoxiaoSearch', $data);
-          $this->load->view('manager/check/baoxiaoDetail', $data);
-          $this->load->view('common/footer');
-      }
-    */
     public function checkBaoxiao() {
         $this->timeOut();
         $id = $this->uri->segment(4);
@@ -1248,42 +1225,7 @@ class Check extends CI_Controller {
 
 
 // 审核信息
-    /*   public function checkTravel() {
-           $this->timeOut();
-           $t_id = $this->uri->segment(4);
-           $type = $this->uri->segment(5);
-           if ($type == '1') {
-               $this->m_travel->check($t_id);
-           } elseif ($type == '2') {
-               $this->m_travel->check2($t_id);
-           }
 
-           $subjectId = $this->session->userdata('subjectId');
-           $array = array('inherit' => $subjectId);
-           $num = $this->m_travel->getNumManage($array);
-           $offset = $this->uri->segment(6);
-           $data['baoxiao'] = $this->getTravelMange($array, $offset);
-           $config['base_url'] = base_url() . 'index.php/manager/check/travelManage';
-           $config['total_rows'] = $num;
-           $config['uri_segment'] = 4;
-           $this->pagination->initialize($config);
-           $data['page'] = $this->pagination->create_links();
-           $data['title'] = '差旅报销审核列表';
-           $data['num'] = $num;
-           $data['searchType'] = $this->getTypeTravel();
-           $data['Year'] = $this->getSearchYear();
-           $data['Month'] = $this->getSearchMonth();
-           $data['State'] = $this->getState();
-           $data['Unit'] = $this->getUnit();
-           $data['type1'] = '2';
-
-
-           $this->load->view('common/header3');
-           $this->load->view('manager/check/travelSearch', $data);
-           $this->load->view('manager/check/travelList', $data);
-           $this->load->view('common/footer');
-       }
-    */
     public function checkTravel() {
         $this->timeOut();
         $id = $this->uri->segment(4);
@@ -1314,41 +1256,8 @@ class Check extends CI_Controller {
     }
 
 // 审核信息
-    /*  public function checkBorrow() {
-          $this->timeOut();
-          $bao_id = $this->uri->segment(4);
-          $type = $this->uri->segment(5);
-          if ($type == '1') {
-              $this->m_borrow->check($bao_id);
-          } elseif ($type == '2') {
-              $this->m_borrow->check2($bao_id);
-          }
 
-          $subjectId = $this->session->userdata('subjectId');
-          $array = array('inherit' => $subjectId);
-          $num = $this->m_borrow->getNumManage($array);
-          $offset = $this->uri->segment(6);
-          $data['baoxiao'] = $this->getBorrowMange($array, $offset);
-          $config['base_url'] = base_url() . 'index.php/manager/check/borrowManage';
-          $config['total_rows'] = $num;
-          $config['uri_segment'] = 4;
-          $this->pagination->initialize($config);
-          $data['page'] = $this->pagination->create_links();
-          $data['title'] = '汇款/支票审核列表';
-          $data['num'] = $num;
-          $data['searchType'] = $this->getType();
-          $data['Year'] = $this->getSearchYear();
-          $data['Month'] = $this->getSearchMonth();
-          $data['State'] = $this->getState();
-          $data['Unit'] = $this->getUnit();
-          //$data['year'] = date("Y");
-          //$data['month'] = date("m");
-          $this->load->view('common/header3');
-          $this->load->view('manager/check/borrowSearch', $data);
-          $this->load->view('manager/check/borrowList', $data);
-          $this->load->view('common/footer');
-      }
-    */
+
     public function checkBorrow() {
         $this->timeOut();
         $id = $this->uri->segment(4);
@@ -1382,41 +1291,7 @@ class Check extends CI_Controller {
     }
 
 // 审核信息
-    /* public function checkLaowu() {
-         $this->timeOut();
-         $laowu_id = $this->uri->segment(4);
-         $type = $this->uri->segment(5);
-         if ($type == '1') {
-             $this->m_laowu->check($laowu_id);
-         } elseif ($type == '2') {
-             $this->m_laowu->check2($laowu_id);
-         }
 
-         $subjectId = $this->session->userdata('subjectId');
-         $array = array('inherit' => $subjectId);
-         $num = $this->m_laowu->getNumManage($array);
-         $offset = $this->uri->segment(6);
-         $data['laowu'] = $this->getLaowuMange($array, $offset);
-         $config['base_url'] = base_url() . 'index.php/manager/check/laowuList';
-         $config['total_rows'] = $num;
-         $config['uri_segment'] = 4;
-         $this->pagination->initialize($config);
-         $data['page'] = $this->pagination->create_links();
-         $data['title'] = '劳务费/专家费审核列表';
-         $data['num'] = $num;
-         $data['searchType'] = $this->getType();
-         $data['Year'] = $this->getSearchYear();
-         $data['Month'] = $this->getSearchMonth();
-         $data['State'] = $this->getState();
-         $data['Unit'] = $this->getUnit();
-         //$data['year'] = date("Y");
-         //$data['month'] = date("m");
-         $this->load->view('common/header3');
-         $this->load->view('manager/check/laowuSearch', $data);
-         $this->load->view('manager/check/laowuList', $data);
-         $this->load->view('common/footer');
-     }
- **/
 
     public function checkLaowu() {
         $this->timeOut();
@@ -1482,7 +1357,8 @@ class Check extends CI_Controller {
         $data['Year'] = $this->getSearchYear();
         $data['Month'] = $this->getSearchMonth();
         $data['State'] = $this->getState();
-        $data['Unit'] = $this->getUnit();
+        $arr = array('inherit' => $subjectId,'type'=>'ordinary');
+        $data['Unit'] = $this->getUnit($arr);
 
         $this->load->view('common/header3');
         $this->load->view('manager/check/baoxiaoSearch', $data);
@@ -1517,7 +1393,8 @@ class Check extends CI_Controller {
         $data['Year'] = $this->getSearchYear();
         $data['Month'] = $this->getSearchMonth();
         $data['State'] = $this->getState();
-        $data['Unit'] = $this->getUnit();
+        $arr = array('inherit' => $subjectId,'type'=>'ordinary');
+        $data['Unit'] = $this->getUnit($arr);
 
         $this->load->view('common/header3');
         $this->load->view('manager/check/travelSearch', $data);
@@ -1552,7 +1429,8 @@ class Check extends CI_Controller {
         $data['Year'] = $this->getSearchYear();
         $data['Month'] = $this->getSearchMonth();
         $data['State'] = $this->getState();
-        $data['Unit'] = $this->getUnit();
+        $arr = array('inherit' => $subjectId,'type'=>'ordinary');
+        $data['Unit'] = $this->getUnit($arr);
 
         $this->load->view('common/header3');
         $this->load->view('manager/check/borrowSearch', $data);
@@ -1587,7 +1465,8 @@ class Check extends CI_Controller {
         $data['Year'] = $this->getSearchYear();
         $data['Month'] = $this->getSearchMonth();
         $data['State'] = $this->getState();
-        $data['Unit'] = $this->getUnit();
+        $arr = array('inherit' => $subjectId,'type'=>'ordinary');
+        $data['Unit'] = $this->getUnit($arr);
         $data['type1'] = '1';
         $data['year'] = date("Y");
         $data['month'] = date("m");
@@ -1625,7 +1504,8 @@ class Check extends CI_Controller {
         $data['Year'] = $this->getSearchYear();
         $data['Month'] = $this->getSearchMonth();
         $data['State'] = $this->getState();
-        $data['Unit'] = $this->getUnit();
+        $arr = array('inherit' => $subjectId,'type'=>'ordinary');
+        $data['Unit'] = $this->getUnit($arr);
 
         $this->load->view('common/header3');
         $this->load->view('manager/check/laowuSearch', $data);
@@ -1633,48 +1513,11 @@ class Check extends CI_Controller {
         $this->load->view('common/footer');
     }
 
-    //按报销按照金额,报销代码查询
-    /* public function baoxiaoSearch() {
-         $this->timeOut();
-         $searchType1 = $_POST['searchType'];
-         $searchTerm = trim($_POST['searchTerm']);
-         if (!get_magic_quotes_gpc()) {
-             $searchType1 = addslashes($searchType1);
-             $searchTerm = addslashes($searchTerm);
-         }
-         if ($searchType1 == '1') {
-             $array = array('code' => $searchTerm);
-         } elseif ($searchType1 == '2') {
-             $array = array('money' => $searchTerm);
-         } else {
-             $message = 's_id有误';
-             show_error($message);
-         }
-         $data['searchType'] = $this->getType();
-         $data['Year'] = $this->getSearchYear();
-         $data['Month'] = $this->getSearchMonth();
-         $data['State'] = $this->getState();
-         $data['Unit'] = $this->getUnit();
-         $num = $this->m_baoxiao->getNum($array);
-         $offset = $this->uri->segment(4);
-         $data['baoxiao'] = $this->getBaoxiaoMange($array, $offset);
-         $config['base_url'] = base_url() . 'index.php/manager/check/baoxiaoManage';
-         $config['total_rows'] = $num;
-         $config['uri_segment'] = 4;
-         $this->pagination->initialize($config);
-         $data['page'] = $this->pagination->create_links();
-         $data['title'] = '普通报销审核列表';
-         $data['num'] = $num;
-         $data['type1'] = '1';
-         $this->load->view('common/header3');
-         $this->load->view('manager/check/baoxiaoSearch', $data);
-         $this->load->view('manager/check/baoxiaoList', $data);
-         $this->load->view('common/footer');
-     }
- */
+
     //按报销按照金额,报销代码查询
     public function baoxiaoSearch() {
         $this->timeOut();
+        $subjectId = $this->session->userdata('subjectId');
         $searchType1 = $_POST['searchType'];
         $searchTerm = trim($_POST['searchTerm']);
         if (!get_magic_quotes_gpc()) {
@@ -1689,7 +1532,8 @@ class Check extends CI_Controller {
         $data['Year'] = $this->getSearchYear();
         $data['Month'] = $this->getSearchMonth();
         $data['State'] = $this->getState();
-        $data['Unit'] = $this->getUnit();
+        $arr = array('inherit' => $subjectId,'type'=>'ordinary');
+        $data['Unit'] = $this->getUnit($arr);
 
         $offset = $this->uri->segment(4);
         $result1 = $this->getBaoxiaoMange($array1, $offset);
@@ -1722,6 +1566,7 @@ class Check extends CI_Controller {
     //按差旅报销按照金额,报销代码查询--差旅查询
     public function travelSearch() {
         $this->timeOut();
+        $subjectId = $this->session->userdata('subjectId');
         $searchType1 = $_POST['searchType'];
         $searchTerm = trim($_POST['searchTerm']);
         if (!get_magic_quotes_gpc()) {
@@ -1736,7 +1581,8 @@ class Check extends CI_Controller {
         $data['Year'] = $this->getSearchYear();
         $data['Month'] = $this->getSearchMonth();
         $data['State'] = $this->getState();
-        $data['Unit'] = $this->getUnit();
+        $arr = array('inherit' => $subjectId,'type'=>'ordinary');
+        $data['Unit'] = $this->getUnit($arr);
 
         $offset = $this->uri->segment(4);
         $result1 = $this->getTravelMange($array1, $offset);
@@ -1769,6 +1615,7 @@ class Check extends CI_Controller {
     //借款查询
     public function borrowSearch() {
         $this->timeOut();
+        $subjectId = $this->session->userdata('subjectId');
         $searchType1 = $_POST['searchType'];
         $searchTerm = trim($_POST['searchTerm']);
         if (!get_magic_quotes_gpc()) {
@@ -1783,7 +1630,8 @@ class Check extends CI_Controller {
         $data['Year'] = $this->getSearchYear();
         $data['Month'] = $this->getSearchMonth();
         $data['State'] = $this->getState();
-        $data['Unit'] = $this->getUnit();
+        $arr = array('inherit' => $subjectId,'type'=>'ordinary');
+        $data['Unit'] = $this->getUnit($arr);
 
         $offset = $this->uri->segment(4);
         $result1 = $this->getBorrowMange($array1, $offset);
@@ -1816,6 +1664,7 @@ class Check extends CI_Controller {
     //借款报销查询
     public function borrowBaoxiaoSearch() {
         $this->timeOut();
+        $subjectId = $this->session->userdata('subjectId');
         $searchType1 = $_POST['searchType'];
         $searchTerm = trim($_POST['searchTerm']);
         if (!get_magic_quotes_gpc()) {
@@ -1830,7 +1679,8 @@ class Check extends CI_Controller {
         $data['Year'] = $this->getSearchYear();
         $data['Month'] = $this->getSearchMonth();
         $data['State'] = $this->getState();
-        $data['Unit'] = $this->getUnit();
+        $arr = array('inherit' => $subjectId,'type'=>'ordinary');
+        $data['Unit'] = $this->getUnit($arr);
 
         $offset = $this->uri->segment(4);
         $result1 = $this->getBorrowMange_2($array1, $offset);
@@ -1863,6 +1713,7 @@ class Check extends CI_Controller {
     //劳务费查询
     public function laowuSearch() {
         $this->timeOut();
+        $subjectId = $this->session->userdata('subjectId');
         $searchType1 = $_POST['searchType'];
         $searchTerm = trim($_POST['searchTerm']);
         if (!get_magic_quotes_gpc()) {
@@ -1877,7 +1728,8 @@ class Check extends CI_Controller {
         $data['Year'] = $this->getSearchYear();
         $data['Month'] = $this->getSearchMonth();
         $data['State'] = $this->getState();
-        $data['Unit'] = $this->getUnit();
+        $arr = array('inherit' => $subjectId,'type'=>'ordinary');
+        $data['Unit'] = $this->getUnit($arr);
 
         $offset = $this->uri->segment(4);
         $result1 = $this->getlaowuMange($array1, $offset);
@@ -2109,13 +1961,35 @@ class Check extends CI_Controller {
         return $data;
     }
 
-    //获取农大报销单位
-    function getUnit() {
-        $this->load->model('m_choice');
-        $data = $this->m_choice->getBaoxiaoUnit();
-        return $data;
-    }
+    //获取报销单位
 
+       function getUnit1() {
+         $this->load->model('m_choice');
+         $data = $this->m_choice->getBaoxiaoUnit();
+         return $data;
+     }
+
+    function getUnit($array) {
+    $this->load->model('m_subject');
+    //Init array of data and data1
+    $data1 = array();
+    //get all message of subject
+    $result = $this->m_subject->getSubject($array);
+
+    foreach ($result as $r) {
+        $arr = array('subjectId'=>$r->subjectId, 'subjectUnit' => $r->subjectUnit,
+        );
+        array_push($data1, $arr);
+    }
+    //get only column of subjectUnit
+    $data = array();
+    $data= array_column($data1,'subjectUnit');
+
+    // print_r($data);
+
+
+    return $data;
+}
     // 获取审核状态
     function getState3($state) {
         switch ($state) {

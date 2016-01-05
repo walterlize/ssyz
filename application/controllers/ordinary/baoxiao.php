@@ -699,6 +699,7 @@ class Baoxiao extends CI_Controller {
             );
             array_push($data, $arr);
         }
+        //print_r($data);
         return $data;
     }
     // 分页获取报销经费信息--分类查询用

@@ -52,7 +52,14 @@ class m_subject extends CI_Model {
         $q = $this->db->get();
         return $q->result();
     }
-
+    //获取对应inherit下所有的课题单位
+    function getSubject_name($array) {
+        $this->db->select('subjectUnit');
+        $this->db->from('subject');
+        $this->db->where($array);
+        $q = $this->db->get();
+        return $q->result();
+    }
     function getSubject1() {
         $this->db->select();
         $this->db->from('lz_money_total');
