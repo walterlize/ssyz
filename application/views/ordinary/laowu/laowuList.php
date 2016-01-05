@@ -26,13 +26,13 @@
                     <td class="td1">
                         <?= $r['peopleNum'] ?></td>
 
-                    <td class="td3">
-                       申报：<?= $r['money'] ?>元，其中缴税：<?= $r['tax'] ?>元，<p style="color: red">实际金额<?=$r['money1']?>元</p></td>
+                    <td class="td3">申报：<?= $r['money'] ?>元，其中缴税：<?= $r['tax'] ?>元，<p style="
+                       color: red">实际金额<?=$r['money1']?>元</p></td>
                     <td class="td1">
                         <p style="color:<?= $r['color'] ?>"><?= $r['state'] ?></p>
                     </td>
                     <td class="td3">
-                        <a id="" href="<?= base_url() ?>index.php/ordinary/laowu/laowuDetail/<?= $r['laowu_id'] ?>" target="_blank">编辑</a>
+                        <a id="" href="<?= base_url() ?>index.php/ordinary/laowu/laowuDetail/<?= $r['laowu_id'] ?>" target="_blank">编辑/查看</a>
                     </td>
                 </tr>
             <?php endforeach; ?>

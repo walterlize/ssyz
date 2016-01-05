@@ -40,8 +40,7 @@
             </tr>
             <tr>
                 <td colspan="5" class="td3" align="center">
-
-                    <input type="button" name="btnReturn" value="返 回" onclick="window.location.href = 'javascript:history.go(-1)';" id="btnReturn" class="input" />  
+                    <input onclick="javascript:window.close()" type="button"value="关 闭" class="input">
                 </td>
             </tr>
         </table>

@@ -17,7 +17,14 @@ class Patent extends CI_Controller {
 
             $subjectId = $this->session->userdata('subjectId');
             $this->load->model('m_patent');
-            $array = array('subjectId' => $subjectId);
+            $roleId=$this->session->userdata('roleId');
+            if($roleId==2){
+                $array = array('inherit' => $subjectId);
+            }elseif($roleId==3){
+                $array=array('subjectId'=>$subjectId);
+            }else{
+                echo '专利页面有误,请联系管理员处理';
+            }
 
             $num = $this->m_patent->getNum($array);
             $offset = $this->uri->segment(4);
@@ -177,7 +184,7 @@ class Patent extends CI_Controller {
                     'patentNum' => $r->patentNum, 'author' => $r->author,
                     'patentState' => $r->patentState, 'state' => $this->m_patent->getState($r->state),
                     'applyTime' => $r->applyTime, 'authorizeTime' => $r->authorizeTime,
-                    'workplace' => $r->workplace, 'type' => $r->type,
+                    'workplace' => $r->workplace, 'type' => $r->type,'subjectUnit' => $r->subjectUnit,
                     'remark' => $r->remark);
                 array_push($data, $arr);
             }

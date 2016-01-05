@@ -44,7 +44,7 @@ class m_award extends CI_Model{
 
     function getAward($array){
         $this->db->select();
-        $this->db->from('ws_award_subject');
+        $this->db->from('lz_award_subject');
         $this->db->where($array);
         $q = $this->db->get();
         return $q->result();
@@ -53,20 +53,20 @@ class m_award extends CI_Model{
     function getAwards($array, $per_page, $offset){
         $this->db->select();
         $this->db->where($array);
-        $q = $this->db->get('ws_award_subject', $per_page, $offset);
+        $q = $this->db->get('lz_award_subject', $per_page, $offset);
         return $q->result();
     }
 
     function getOneInfo($id){
         $this->db->select();
-        $this->db->from('ws_award_subject');
+        $this->db->from('lz_award_subject');
         $this->db->where('awardId',  $id);
         $q = $this->db->get();
         return $q->result();
     }
 
     function getNum($array){
-        $this->db->from('ws_award_subject');
+        $this->db->from('lz_award_subject');
         $this->db->where($array);
         return $this->db->count_all_results();
     }

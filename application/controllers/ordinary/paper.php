@@ -83,7 +83,9 @@ class Paper extends CI_Controller {
             $data['show'] = 'display:none';
             $data['types'] = $this->getTypes();
             $data['records'] = $this->getRecords();
-
+            $data['subject']=$this->getSubject($data['subjectId']);
+            $data['subjectUnit']=$data['subject']->subjectUnit;
+            $data['subjectName']=$data['subject']->subjectName;
             $this->load->view('common/header3');
             $this->load->view('manager/achievement/paperEdit', $data);
             $this->load->view('common/footer');
@@ -200,7 +202,16 @@ class Paper extends CI_Controller {
             $data = $this->common->getPaperRecord();
             return $data;
         }
-
+    // 获取单个课题信息
+    public function getSubject($id) {
+        $this->load->model('m_subject');
+        $data = array();
+        $result = $this->m_subject->getOneInfo($id);
+        foreach ($result as $r) {
+            $data = $r;
+        }
+        return $data;
+    }
         // session中的role不存在的时候退出系统
         function timeOut(){
             $role = $this->session->userdata('roleId');

@@ -32,7 +32,7 @@ class m_demonstration extends CI_Model{
 
     function getDemonstration($array){
         $this->db->select();
-        $this->db->from('ws_demonstration_subject');
+        $this->db->from('lz_demonstration_subject');
         $this->db->where($array);
         $q = $this->db->get();
         return $q->result();
@@ -41,20 +41,20 @@ class m_demonstration extends CI_Model{
     function getDemonstrations($array, $per_page, $offset){
         $this->db->select();
         $this->db->where($array);
-        $q = $this->db->get('ws_demonstration_subject', $per_page, $offset);
+        $q = $this->db->get('lz_demonstration_subject', $per_page, $offset);
         return $q->result();
     }
 
     function getOneInfo($id){
         $this->db->select();
-        $this->db->from('ws_demonstration_subject');
+        $this->db->from('lz_demonstration_subject');
         $this->db->where('demonstrationId',  $id);
         $q = $this->db->get();
         return $q->result();
     }
 
     function getNum($array){
-        $this->db->from('ws_demonstration_subject');
+        $this->db->from('lz_demonstration_subject');
         $this->db->where($array);
         return $this->db->count_all_results();
     }

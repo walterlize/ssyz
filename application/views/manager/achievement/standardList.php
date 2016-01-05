@@ -11,10 +11,11 @@
             <th class="td3">状态</th>
             <th class="td1">操作</th>
 		</tr>
-        <?php if(is_array($standard)) foreach($standard as $r):?>
+        <?php if(is_array($standard)) foreach($standard as $key=>$r):?>
         <tr class="RowStyle" align="center">
         	<td class="td1">
-            	<input type="checkbox" /></td>
+            <?=$key+1?>
+            </td>
 			<td class="td3"><?=$r['standardName']?></td>
             <td class="td1"><?=$r['workplace']?></td>
             <td class="td3"><?=$r['author']?></td>

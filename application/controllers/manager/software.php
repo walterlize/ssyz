@@ -17,7 +17,14 @@ class Software extends CI_Controller {
 
             $subjectId = $this->session->userdata('subjectId');
             $this->load->model('m_software');
-            $array = array('subjectId' => $subjectId);
+            $roleId=$this->session->userdata('roleId');
+            if($roleId==2){
+                $array = array('inherit' => $subjectId);
+            }elseif($roleId==3){
+                $array=array('subjectId'=>$subjectId);
+            }else{
+                echo '软件著作权页面有误,请联系管理员处理';
+            }
 
             $num = $this->m_software->getNum($array);
             $offset = $this->uri->segment(4);
@@ -168,7 +175,7 @@ class Software extends CI_Controller {
                 $arr = array('softwareId' => $r->softwareId, 'subjectId' => $r->subjectId,
                     'state' => $r->state, 'softwareName' => $r->softwareName,
                     'author' => $r->author, 'state' => $this->m_software->getState($r->state),
-                    'authorizeNum' => $r->authorizeNum, 'time' => $r->time,
+                    'authorizeNum' => $r->authorizeNum, 'time' => $r->time,'subjectUnit' => $r->subjectUnit,
                     'workplace' => $r->workplace, 'remark' => $r->remark);
                 array_push($data, $arr);
             }

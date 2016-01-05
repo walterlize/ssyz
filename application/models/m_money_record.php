@@ -81,6 +81,14 @@ class m_money_record extends CI_Model {
         $q = $this->db->get('lz_money_current', $per_page, $offset);
         return $q->result();
     }
+    //课题读出当前花费的列表
+    function getMoney_currentS_m1($array,$offset) {
+        $this->db->select();
+        $this->db->where($array);
+        $this->db->order_by("date", "desc");
+        $q = $this->db->get('lz_money_current', $offset);
+        return $q->result();
+    }
     //子课题读出当前花费的列表
     function getMoney_all($array) {
         $this->db->select_sum('money');

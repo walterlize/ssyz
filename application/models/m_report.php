@@ -34,7 +34,7 @@ class m_report extends CI_Model{
 
     function getReport($array){
         $this->db->select();
-        $this->db->from('ws_report_subject');
+        $this->db->from('lz_report_subject');
         $this->db->where($array);
         $q = $this->db->get();
         return $q->result();
@@ -43,20 +43,20 @@ class m_report extends CI_Model{
     function getReports($array, $per_page, $offset){
         $this->db->select();
         $this->db->where($array);
-        $q = $this->db->get('ws_report_subject', $per_page, $offset);
+        $q = $this->db->get('lz_report_subject', $per_page, $offset);
         return $q->result();
     }
 
     function getOneInfo($id){
         $this->db->select();
-        $this->db->from('ws_report_subject');
+        $this->db->from('lz_report_subject');
         $this->db->where('reportId',  $id);
         $q = $this->db->get();
         return $q->result();
     }
 
     function getNum($array){
-        $this->db->from('ws_report_subject');
+        $this->db->from('lz_report_subject');
         $this->db->where($array);
         return $this->db->count_all_results();
     }

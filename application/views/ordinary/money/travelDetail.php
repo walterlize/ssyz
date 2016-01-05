@@ -27,33 +27,33 @@
             <td class="td2">
                 <div align="left">&nbsp;<?= $travel->trainMoneyNum ?>&nbsp;张,共
                     <?= $travel->trainMoney ?>&nbsp;元。</div>
-            </td>    
+            </td>
 
             <td class="td1"><div align="left">飞机票：</div></td>
             <td class="td2">
                 <div align="left">&nbsp;<?= $travel->planeMoneyNum ?>&nbsp;张,共
                     <?= $travel->planeMoney ?> &nbsp;元。</div>
-            </td>    
+            </td>
         </tr>
         <tr>
             <td class="td1"><div align="left">其它交通费用：</div></td>
             <td class="td2">
                 <div align="left">&nbsp;<?= $travel->otherTravelMoney ?>&nbsp;张,共
                     <?= $travel->otherTravelMoneyNum ?> &nbsp;元。</div>
-            </td>    
+            </td>
             <td class="td1"><div align="left">食宿费用费用：</div></td>
             <td class="td2">
                 <div align="left">&nbsp;<?= $travel->accommodation ?>&nbsp;张,共
                     <?= $travel->accommodationNum ?> &nbsp;元。</div>
-            </td>    
+            </td>
         </tr>
         <tr>
             <td class="td1"><div align="left">其它费用：</div></td>
             <td class="td2" colspan="3">
                 <?= $travel->otherMoney ?>&nbsp;张,共
                 <?= $travel->otherMoneyNum ?> &nbsp;元。&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                详情：<?= $travel->otherDetail ?> 
-            </td>    
+                详情：<?= $travel->otherDetail ?>
+            </td>
         </tr>
         <tr>
             <td class="td1"><div align="left">申请补助：</div></td>
@@ -73,7 +73,7 @@
 
         <tr>
             <td colspan="5" class="td3" align="center">
-                <input type="button" name="btnReturn" value="返 回" onclick="window.location.href = 'javascript:history.go(-1)';" id="btnReturn" class="input" />  
+                <input onclick="javascript:window.close()" type="button"value="关 闭" class="input">
             </td>
         </tr>
     </table>

@@ -233,7 +233,7 @@ class Money extends CI_Controller {
         $su1=get_object_vars($su['0']);
         $sum=$su1['money'];
         $offset = $this->uri->segment(4);
-        $data['money'] = $this->getExpenseS($array, $offset);
+        $data['money'] = $this->getExpenseS_1($array, $offset);
         $config['base_url'] = base_url() . 'index.php/manager/money/expenseList';
         $config['total_rows'] = $num;
         $config['uri_segment'] = 4;
@@ -1575,7 +1575,22 @@ class Money extends CI_Controller {
         }
         return $data;
     }
+// 不分页获取全部花费经费信息
+    public function getExpenseS_1($array, $offset) {
+        $this->timeOut();
+        $data = array();
+        $result = $this->m_money_record->getMoney_currentS_m1($array,$offset);
 
+        foreach ($result as $r) {
+            $arr = array('mc_id' => $r->mc_id, 's_id' => $r->s_id, 'b_id' => $r->b_id,'code' => $r->code,
+                'date' => $r->date, 'money' => $r->money, 'moneyType' => $r->moneyType,
+                'm_type' => $r->m_type,'inherit'=>$r->inherit,'subjectUnit' => $r->subjectUnit,
+            );
+            array_push($data, $arr);
+
+        }
+        return $data;
+    }
 // 获取课题信息
     public function getSubjects() {
         $this->load->model('m_subject');

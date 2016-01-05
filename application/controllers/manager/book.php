@@ -17,8 +17,14 @@ class Book extends CI_Controller {
 
             $subjectId = $this->session->userdata('subjectId');
             $this->load->model('m_book');
-            $array = array('subjectId' => $subjectId);
-
+            $roleId=$this->session->userdata('roleId');
+            if($roleId==2){
+                $array = array('inherit' => $subjectId);
+            }elseif($roleId==3){
+                $array=array('subjectId'=>$subjectId);
+            }else{
+                echo '著作页面有误,请联系管理员处理';
+            }
             $num = $this->m_book->getNum($array);
             $offset = $this->uri->segment(4);
 
@@ -174,7 +180,7 @@ class Book extends CI_Controller {
                     'publication' => $r->publication, 'time' => $r->time,
                     'chiefEditor' => $r->chiefEditor, 'state' => $this->m_book->getState($r->state),
                     'associateEditor' => $r->associateEditor, 'superviseEditor' => $r->superviseEditor,
-                    'editorWorkplace' => $r->editorWorkplace, 'type' => $r->type,
+                    'editorWorkplace' => $r->editorWorkplace, 'type' => $r->type,'subjectUnit' => $r->subjectUnit,
                     'remark' => $r->remark);
                 array_push($data, $arr);
             }

@@ -17,8 +17,14 @@ class Report extends CI_Controller {
 
             $subjectId = $this->session->userdata('subjectId');
             $this->load->model('m_report');
-            $array = array('subjectId' => $subjectId);
-
+            $roleId=$this->session->userdata('roleId');
+            if($roleId==2){
+                $array = array('inherit' => $subjectId);
+            }elseif($roleId==3){
+                $array=array('subjectId'=>$subjectId);
+            }else{
+                echo '报告页面有误,请联系管理员处理';
+            }
             $num = $this->m_report->getNum($array);
             $offset = $this->uri->segment(4);
 
@@ -171,7 +177,7 @@ class Report extends CI_Controller {
                     'state' => $r->state, 'reportName' => $r->reportName,
                     'author' => $r->author, 'state' => $this->m_report->getState($r->state),
                     'time' => $r->time, 'workplace' => $r->workplace, 'type' => $r->type,
-                    'remark' => $r->remark);
+                    'subjectUnit' => $r->subjectUnit,'remark' => $r->remark);
                 array_push($data, $arr);
             }
             return $data;

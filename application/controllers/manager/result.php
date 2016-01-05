@@ -17,7 +17,14 @@ class Result extends CI_Controller {
 
             $subjectId = $this->session->userdata('subjectId');
             $this->load->model('m_result');
-            $array = array('subjectId' => $subjectId);
+            $roleId=$this->session->userdata('roleId');
+            if($roleId==2){
+                $array = array('inherit' => $subjectId);
+            }elseif($roleId==3){
+                $array=array('subjectId'=>$subjectId);
+            }else{
+                echo '鉴定成果页面有误,请联系管理员处理';
+            }
 
             $num = $this->m_result->getNum($array);
             $offset = $this->uri->segment(4);
@@ -168,7 +175,7 @@ class Result extends CI_Controller {
                 $arr = array('resultId' => $r->resultId, 'subjectId' => $r->subjectId,
                     'state' => $r->state, 'resultName' => $r->resultName,
                     'author' => $r->author, 'state' => $this->m_result->getState($r->state),
-                    'opinion' => $r->opinion, 'time' => $r->time,
+                    'opinion' => $r->opinion, 'time' => $r->time,'subjectUnit' => $r->subjectUnit,
                     'workplace' => $r->workplace, 'remark' => $r->remark);
                 array_push($data, $arr);
             }

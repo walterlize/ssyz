@@ -17,7 +17,14 @@ class Demonstration extends CI_Controller {
 
             $subjectId = $this->session->userdata('subjectId');
             $this->load->model('m_demonstration');
-            $array = array('subjectId' => $subjectId);
+            $roleId=$this->session->userdata('roleId');
+            if($roleId==2){
+                $array = array('inherit' => $subjectId);
+            }elseif($roleId==3){
+                $array=array('subjectId'=>$subjectId);
+            }else{
+                echo '应用示范页面有误,请联系管理员处理';
+            }
 
             $num = $this->m_demonstration->getNum($array);
             $offset = $this->uri->segment(4);
@@ -167,7 +174,7 @@ class Demonstration extends CI_Controller {
                 $arr = array('demonstrationId' => $r->demonstrationId, 'subjectId' => $r->subjectId,
                     'state' => $r->state, 'introduction' => $r->introduction,
                     'technique' => $r->technique, 'state' => $this->m_demonstration->getState($r->state),
-                    'place' => $r->place, 'area' => $r->area, 'remark' => $r->remark);
+                    'subjectUnit' => $r->subjectUnit,'place' => $r->place, 'area' => $r->area, 'remark' => $r->remark);
                 array_push($data, $arr);
             }
             return $data;

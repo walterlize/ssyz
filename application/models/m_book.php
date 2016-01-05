@@ -40,7 +40,7 @@ class m_book extends CI_Model{
 
     function getBook($array){
         $this->db->select();
-        $this->db->from('ws_book_subject');
+        $this->db->from('lz_book_subject');
         $this->db->where($array);
         $q = $this->db->get();
         return $q->result();
@@ -49,20 +49,20 @@ class m_book extends CI_Model{
     function getBooks($array, $per_page, $offset){
         $this->db->select();
         $this->db->where($array);
-        $q = $this->db->get('ws_book_subject', $per_page, $offset);
+        $q = $this->db->get('lz_book_subject', $per_page, $offset);
         return $q->result();
     }
 
     function getOneInfo($id){
         $this->db->select();
-        $this->db->from('ws_book_subject');
+        $this->db->from('lz_book_subject');
         $this->db->where('bookId',  $id);
         $q = $this->db->get();
         return $q->result();
     }
 
     function getNum($array){
-        $this->db->from('ws_book_subject');
+        $this->db->from('lz_book_subject');
         $this->db->where($array);
         return $this->db->count_all_results();
     }

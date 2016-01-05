@@ -1,7 +1,7 @@
 <div style="margin-left:20px; margin-right:20px">
 <br />
 <h3 class="title_lee">鉴定成果列表</h3>
-<table class="tablist" cellpadding="0" cellspacing="1" style="width:100%;border-collapse:collapse;" border="1">
+<table class="tablist2" cellpadding="0" cellspacing="1" style="width:100%;border-collapse:collapse;" border="1">
 		<tr class="HeaderStyle">
 			<th class="td1">序号</th>
 			<th class="td3">鉴定成果名称</th>

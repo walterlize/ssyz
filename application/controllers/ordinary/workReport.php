@@ -24,7 +24,6 @@ class WorkReport extends CI_Controller {
         $array = array('type' => $type, 'subjectId' => $subjectId);
         $num = $this->m_workReport->getNum($array, $level);
         $offset = $this->uri->segment(6);
-
         $data['workreports'] = $this->getReports($array, $offset, $level);
         $config['base_url'] = base_url() . 'index.php/ordinary/workReport/reportList/' . $type;
         $config['total_rows'] = $num;

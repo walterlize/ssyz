@@ -46,7 +46,7 @@ class m_paper extends CI_Model{
 
     function getPaper($array){
         $this->db->select();
-        $this->db->from('ws_paper_subject');
+        $this->db->from('lz_paper_subject');
 
         $this->db->where($array);
         $q = $this->db->get();
@@ -57,20 +57,20 @@ class m_paper extends CI_Model{
         $this->db->select();
         $this->db->where($array);
         $this->db->order_by("state", "asc");
-        $q = $this->db->get('ws_paper_subject', $per_page, $offset);
+        $q = $this->db->get('lz_paper_subject', $per_page, $offset);
         return $q->result();
     }
 
     function getOneInfo($id){
         $this->db->select();
-        $this->db->from('ws_paper_subject');
+        $this->db->from('lz_paper_subject');
         $this->db->where('paperId',  $id);
         $q = $this->db->get();
         return $q->result();
     }
 
     function getNum($array){
-        $this->db->from('ws_paper_subject');
+        $this->db->from('lz_paper_subject');
         $this->db->where($array);
         return $this->db->count_all_results();
     }

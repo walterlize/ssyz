@@ -17,7 +17,14 @@ class Standard extends CI_Controller {
 
             $subjectId = $this->session->userdata('subjectId');
             $this->load->model('m_standard');
-            $array = array('subjectId' => $subjectId);
+            $roleId=$this->session->userdata('roleId');
+            if($roleId==2){
+                $array = array('inherit' => $subjectId);
+            }elseif($roleId==3){
+                $array=array('subjectId'=>$subjectId);
+            }else{
+                echo '标准页面有误,请联系管理员处理';
+            }
 
             $num = $this->m_standard->getNum($array);
             $offset = $this->uri->segment(4);
@@ -172,7 +179,8 @@ class Standard extends CI_Controller {
                     'state' => $r->state, 'standardName' => $r->standardName,
                     'author' => $r->author, 'state' => $this->m_standard->getState($r->state),
                     'type' => $r->type, 'time' => $r->time, 'introduction' => $r->introduction,
-                    'workplace' => $r->workplace, 'remark' => $r->remark);
+                    'workplace' => $r->workplace, 'subjectUnit' => $r->subjectUnit,'remark' => $r->remark);
+
                 array_push($data, $arr);
             }
             return $data;

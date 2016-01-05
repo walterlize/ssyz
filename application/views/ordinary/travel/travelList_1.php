@@ -42,7 +42,7 @@
                             <p style="color:<?= $r['color'] ?>"><?= $r['state'] ?></p>
                         </td>
                         <td class="td1">
-                            <a id="" href="<?= base_url() ?>index.php/ordinary/travel/travelDetail/<?= $r['t_id'] ?>" target="_blank">编辑</a>
+                            <a id="" href="<?= base_url() ?>index.php/ordinary/travel/travelDetail/<?= $r['t_id'] ?>" target="_blank">编辑/查看</a>
                         </td>
                     </tr>
                 <?php endforeach; ?>

@@ -36,7 +36,7 @@
                         </td>
                         </td>
                         <td class="td1">
-                            <a id="" href="<?= base_url() ?>index.php/ordinary/borrow/baoxiaoDetail/<?= $r['b_id'] ?>" target="_blank">报销</a>
+                            <a id="" href="<?= base_url() ?>index.php/ordinary/borrow/baoxiaoDetail/<?= $r['b_id'] ?>" target="_blank">编辑/查看</a>
                         </td>
                     </tr>
                 <?php endforeach; ?>

@@ -40,7 +40,7 @@
 
                     </td>
                     <td class="td3">
-                        <a id="" href="<?= base_url() ?>index.php/ordinary/baoxiao/baoxiaoDetail/<?= $r['bao_id'] ?>" target="_blank">编辑</a>
+                        <a id="" href="<?= base_url() ?>index.php/ordinary/baoxiao/baoxiaoDetail/<?= $r['bao_id'] ?>" target="_blank">编辑/查看</a>
                     </td>
                 </tr>
             <?php endforeach; ?>

@@ -83,8 +83,8 @@
     <form name="form2" method="post" action="<?= base_url(); ?>index.php/ordinary/laowu/laowuSearch" id="form2">
         查询类型：
         <select name="searchType"  id="searchType" >
+            <option value="2">报销金额</option>
             <option value="1">报销代码</option>
-            <option value="2">金额</option>
         </select>  <input type="text" name="searchTerm" id="searchTerm"  isRequired="true" validEnum="Double1"/>
         <span id="searchTermMsg" class="MsgHide">请按照正确的方式填写金额！</span> </td>
         <input type="submit"onclick="return check_base('form2');" name="submit" value="查询" class="input"/>

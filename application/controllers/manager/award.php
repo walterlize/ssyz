@@ -17,7 +17,14 @@ class Award extends CI_Controller {
 
             $subjectId = $this->session->userdata('subjectId');
             $this->load->model('m_award');
-            $array = array('subjectId' => $subjectId);
+            $roleId=$this->session->userdata('roleId');
+            if($roleId==2){
+                $array = array('inherit' => $subjectId);
+            }elseif($roleId==3){
+                $array=array('subjectId'=>$subjectId);
+            }else{
+                echo '报奖页面有误,请联系管理员处理';
+            }
 
             $num = $this->m_award->getNum($array);
             $offset = $this->uri->segment(4);
@@ -185,7 +192,7 @@ class Award extends CI_Controller {
                     'processWorkplace' => $r->processWorkplace, 'issueDepart' => $r->issueDepart,
                     'organizationDepart' => $r->organizationDepart,
                     'workplace' => $r->workplace, 'type' => $r->type,
-                    'remark' => $r->remark);
+                    'subjectUnit' => $r->subjectUnit,'remark' => $r->remark);
                 array_push($data, $arr);
             }
             return $data;

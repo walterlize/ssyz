@@ -17,7 +17,14 @@ class Other extends CI_Controller {
 
             $subjectId = $this->session->userdata('subjectId');
             $this->load->model('m_other');
-            $array = array('subjectId' => $subjectId);
+            $roleId=$this->session->userdata('roleId');
+            if($roleId==2){
+                $array = array('inherit' => $subjectId);
+            }elseif($roleId==3){
+                $array=array('subjectId'=>$subjectId);
+            }else{
+                echo '其他成果页面有误,请联系管理员处理';
+            }
 
             $num = $this->m_other->getNum($array);
             $offset = $this->uri->segment(4);
@@ -165,7 +172,7 @@ class Other extends CI_Controller {
                 $arr = array('otherId' => $r->otherId, 'subjectId' => $r->subjectId,
                     'state' => $r->state, 'otherName' => $r->otherName,
                     'content' => $r->content, 'state' => $this->m_other->getState($r->state),
-                    'remark' => $r->remark);
+                    'subjectUnit' => $r->subjectUnit,'remark' => $r->remark);
                 array_push($data, $arr);
             }
             return $data;

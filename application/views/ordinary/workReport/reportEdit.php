@@ -1,13 +1,11 @@
 <div style="margin-left:20px; margin-right:20px">
     <br />
-    <h3 class="title_lee">工作月报编辑</h3>
+    <h3 class="title_lee">信息编辑</h3>
     <form name="form1" method="post" action="<?= base_url() ?>index.php/ordinary/workReport/save" id="form1">
         <input type="hidden" value="<?= $workReportId ?>" name="workReportId" id="workReportId" />
         <input type="hidden" value="<?= $subjectId ?>" name="subjectId" id="subjectId" />
         <input type="hidden" value="<?= $inherit?>" name="inherit" id="inherit" />
-
         <input type="hidden" value="<?= $type ?>" name="type" id="type" />
-
         <input type="hidden" value="2" name="level" id="level" />
         <table cellpadding="0" cellspacing="1" class="tablist2">
             <tr>
