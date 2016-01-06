@@ -5,8 +5,8 @@
         <table class="tablist2" cellpadding="0" cellspacing="1" style="width:100%;border-collapse:collapse;" border="1">
             <tr class="HeaderStyle">
                 <th class="td1">序号</th>
-                <th class="td1">申请时间</th>
-                <th class="td3">代码</th>
+                <th class="td3">申请时间</th>
+                <th class="td1">代码</th>
                 <th class="td3">类别</th>
                 <th class="td1">人数</th>
                 <th class="td3">金额（元）</th>
@@ -20,9 +20,9 @@
                     <tr class="RowStyle" align="center">
                         <td class="td1">
                             <?= $key + 1 ?></td>
-                        <td class="td1">
-                            <?= $r['date'] ?></td>
                         <td class="td3">
+                            <?= $r['date'] ?></td>
+                        <td class="td1">
                             <?= $r['code'] ?></td>
                         <td class="td3">
                             <?= $r['type'] ?></td>

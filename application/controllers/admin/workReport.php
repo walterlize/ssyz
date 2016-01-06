@@ -271,7 +271,7 @@ class WorkReport extends CI_Controller {
 
         foreach ($result as $r) {
             $arr = array('workReportId' => $r->workReportId, 'subjectId' => $r->subjectId,
-                'subjectUnit' => $r->subjectUnit,
+                'subjectUnit' => $r->subjectUnit,'subjectName' => $r->subjectName,
                 'type' => $r->type, 'author' => $r->author,
                 'year' => $r->year, 'month' => $r->month, 'title' => $r->title,
                 'content' => $r->content, 'state' => $this->m_workReport->getState($r->state),

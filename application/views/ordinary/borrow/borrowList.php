@@ -31,7 +31,7 @@
                         <td class="td1">
                             <?= $r['money'] ?></td>
                         <td class="td3">
-                            <p style="color="<?= $r['color'] ?>" "> <?= $r['state'] ?></p>
+                            <p style="color:<?= $r['color'] ?>"><?= $r['state'] ?></p>
                         </td>
                         <td class="td1">
                             <a id="" href="<?= base_url() ?>index.php/ordinary/borrow/borrowDetail/<?= $r['b_id'] ?>"  target="_blank">编辑/查看</a>

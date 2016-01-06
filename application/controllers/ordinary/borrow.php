@@ -715,9 +715,14 @@ class Borrow extends CI_Controller {
         $result = $this->m_borrow->getBorrowS($array, PER_PAGE, $offset);
 
         foreach ($result as $r) {
-            $arr = array('b_id' => $r->b_id, 'type' => $r->type, 'code' => $r->code, 'borrowType' => $r->borrowType, 'money' => $r->money, 'b_name' => $r->b_name,
-                'date' => $r->date, 'date4' => $r->date4, 'moneyType' => $r->moneyType, 'contact' => $r->contact, 'state' => $this->m_borrow->getState($r->state),
-                'state2' => $this->m_borrow->getState4($r->state2),'color' => $this->getColor($r->state),'color' => $this->getColor($r->state),
+            $arr = array('b_id' => $r->b_id, 'type' => $r->type, 'code' => $r->code,
+                'borrowType' => $r->borrowType, 'money' => $r->money,
+                'b_name' => $r->b_name, 'date' => $r->date, 'date4' => $r->date4,
+                'moneyType' => $r->moneyType, 'contact' => $r->contact,
+                'state' => $this->m_borrow->getState($r->state),
+                'state2' => $this->m_borrow->getState4($r->state2),
+                'color' => $this->getColor($r->state),
+
             );
             array_push($data, $arr);
         }

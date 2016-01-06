@@ -27,9 +27,7 @@ class Baoxiao extends CI_Controller {
         $array = array('s_id' => $subjectId);
         $num = $this->m_baoxiao->getNum($array);
         $offset = $this->uri->segment(4);
-
         $data['baoxiao'] = $this->getBaoxiaoS($array, $offset);
-        //print_r($data['baoxiao']);
         $config['base_url'] = base_url() . 'index.php/ordinary/baoxiao/baoxiaoList';
         $config['total_rows'] = $num;
         $config['uri_segment'] = 4;
@@ -41,8 +39,6 @@ class Baoxiao extends CI_Controller {
         $data['Year'] = $this->getSearchYear();
         $data['Month'] = $this->getSearchMonth();
         $data['State'] = $this->getState();
-        //$data['year'] = date("Y");
-        //$data['month'] = date("m");
         $this->load->view('common/header3');
         $this->load->view('ordinary/baoxiao/baoxiaoSearch', $data);
         $this->load->view('ordinary/baoxiao/baoxiaoList', $data);
@@ -694,8 +690,10 @@ class Baoxiao extends CI_Controller {
         $result = $this->m_baoxiao->getBaoxiaoS($array, PER_PAGE, $offset);
 
         foreach ($result as $r) {
-            $arr = array('bao_id' => $r->bao_id, 'date' => $r->date, 'type' => $r->type, 'code' => $r->code, 'num' => $r->num, 'money' => $r->money,
-                'baoxiao_name' => $r->baoxiao_name,'state' => $this->m_baoxiao->getState($r->state),'color' => $this->getColor($r->state),
+            $arr = array('bao_id' => $r->bao_id, 'date' => $r->date, 'type' => $r->type,
+                'code' => $r->code, 'num' => $r->num, 'money' => $r->money,
+                'baoxiao_name' => $r->baoxiao_name,'state' => $this->m_baoxiao->getState($r->state),
+                'color' => $this->getColor($r->state),
             );
             array_push($data, $arr);
         }
