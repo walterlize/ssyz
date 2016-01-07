@@ -12,8 +12,9 @@
                 <th class="td3">金额</th>
                 <th class="td1">单位</th>
                 <th class="td3">状态</th>
-                <th class="td1">审核</th>
-                <th class="td3">完成</th>
+                <th class="td1">查看详情</th>
+                <th class="td3">审核</th>
+                <th class="td1">完成</th>
 
 
             </tr>
@@ -43,6 +44,9 @@
                         </td>
                         <td class="td3">
                             <?= $r['state2'] ?>
+                        </td>
+                        <td class="td1">
+                            <a id="" href="<?= base_url() ?>index.php/manager/check/borrowBaoxiaoDetail/<?= $r['b_id'] ?>" target="_blank">详细</a>
                         </td>
                         <td class="td1">
                             <div style="<?= $r['display1'] ?>"> 

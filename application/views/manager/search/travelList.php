@@ -44,7 +44,7 @@
                             <?= $r['state'] ?>
                         </td>
                         <td class="td1">
-                            <a id="" href="<?= base_url() ?>index.php/manager/check/travelDetail/<?= $r['bao_id'] ?>">详细</a>
+                            <a id="" href="<?= base_url() ?>index.php/manager/check/travelDetail/<?= $r['bao_id'] ?>" target="_blank">详细</a>
                         </td>
                         <td class="td3">
                               <div style="<?= $r['display1'] ?>"> 
