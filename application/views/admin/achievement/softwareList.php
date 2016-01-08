@@ -16,13 +16,13 @@
         <tr class="RowStyle" align="center">
         	<td>
             	<?=$key+1?></td>
-			<td class="td1"><?=$r['subjectNum']?></td>
-            <td class="td3"><?=$r['softwareName']?></td>
-            <td class="td1"><?=$r['author']?></td>
-            <td class="td3"><?=$r['authorizeNum']?></td>
-            <td class="td1"><?=$r['time']?></td>
-            <td class="td3"><?=$r['state']?></td>
-            <td class="td1">
+			<td class="td3"><?=$r['subjectNum']?></td>
+            <td class="td1"><?=$r['softwareName']?></td>
+            <td class="td3"><?=$r['author']?></td>
+            <td class="td1"><?=$r['authorizeNum']?></td>
+            <td class="td3"><?=$r['time']?></td>
+            <td class="td1"><?=$r['state']?></td>
+            <td class="td3">
            	  <a id="" href="<?=base_url()?>index.php/admin/software/softwareDetail/<?=$r['softwareId']?>">详细</a>
             </td>
 		</tr>
