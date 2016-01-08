@@ -13,7 +13,7 @@
         <?php if (is_array($workreports)) foreach ($workreports as $key=>$r): ?>
                 <tr class="RowStyle" align="center">
                     <td class="td1">
-                        <input type="checkbox" /></td>
+                        <?=$key+1?></td>
                     <td class="td3">
                         <?= $r['title'] ?></td>
                     <td class="td1">
