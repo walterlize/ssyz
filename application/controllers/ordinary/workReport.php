@@ -25,6 +25,14 @@ class WorkReport extends CI_Controller {
         $num = $this->m_workReport->getNum($array, $level);
         $offset = $this->uri->segment(6);
         $data['workreports'] = $this->getReports($array, $offset, $level);
+        switch ($type) {
+            case "WeekReport":
+                $config['base_url'] = base_url() . 'index.php/ordinary/workReport/reportList/WeekReport/1';
+                break;
+            case "WorkReport":
+                $config['base_url'] = base_url() . 'index.php/ordinary/workReport/reportList/WorkReport/1';
+                break;
+        }
         $config['base_url'] = base_url() . 'index.php/ordinary/workReport/reportList/' . $type;
         $config['total_rows'] = $num;
         $config['uri_segment'] = 5;
@@ -114,7 +122,14 @@ class WorkReport extends CI_Controller {
         $offset = $this->uri->segment(5);
 
         $data['workreports'] = $this->getReports($array, $offset, $level);
-        $config['base_url'] = base_url() . 'index.php/ordinary/workReport/reportList/' . $type;
+        switch ($type) {
+            case "WeekReport":
+                $config['base_url'] = base_url() . 'index.php/ordinary/workReport/reportList/WeekReport/1';
+                break;
+            case "WorkReport":
+                $config['base_url'] = base_url() . 'index.php/ordinary/workReport/reportList/WorkReport/1';
+                break;
+        }
         $config['total_rows'] = $num;
         $config['uri_segment'] = 5;
         $this->pagination->initialize($config);

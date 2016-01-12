@@ -14,17 +14,23 @@
         <?php if (is_array($workreports)) foreach ($workreports as $key=>$r): ?>
                 <tr class="RowStyle" align="center">
                     <td class="td1">
-                        <?=$key+1?></td>
+                        <?=$key+1?>
+                    </td>
                     <td class="td3">
-                        <?= $r['title'] ?></td>
+                        <?= $r['title'] ?>
+                    </td>
                     <td class="td1">
-                        <?= $r['author'] ?></td>
+                        <?= $r['author'] ?>
+                    </td>
                     <td class="td3">
-                        <?= $subjectUnit ?></td>
+                        <?= $subjectUnit ?>
+                    </td>
                     <td class="td1">
-                        <?= $r['year'] ?>年<?= $r['month'] ?>月</td>
+                        <?= $r['year'] ?>年<?= $r['month'] ?>月
+                    </td>
                     <td class="td3">
-                        <?= $r['state'] ?></td>
+                        <?= $r['state'] ?>
+                    </td>
                     <td class="td1">
                         <a id="" href="<?= base_url() ?>index.php/manager/workReport/reportDetail/<?= $r['workReportId'] ?>">详细</a>
                     </td>

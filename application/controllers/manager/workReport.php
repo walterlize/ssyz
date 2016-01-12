@@ -29,7 +29,15 @@ class WorkReport extends CI_Controller {
         $offset = $this->uri->segment(6);
 
         $data['workreports'] = $this->getReports($array, $offset, $level);
-        $config['base_url'] = base_url() . 'index.php/manager/workReport/reportList/' . $type;
+        //$config['base_url'] = base_url() . 'index.php/manager/workReport/reportList/' . $type/.1;
+        switch ($type) {
+            case "WeekReport":
+                $config['base_url'] = base_url() . 'index.php/manager/workReport/reportList/WeekReport/1';
+                break;
+            case "WorkReport":
+                $config['base_url'] = base_url() . 'index.php/manager/workReport/reportList/WorkReport/1';
+                break;
+        }
         $config['total_rows'] = $num;
         $config['uri_segment'] = 6;
         $this->pagination->initialize($config);
@@ -61,7 +69,14 @@ class WorkReport extends CI_Controller {
         $num = $this->m_workReport->getNum($array, $level);
         $offset = $this->uri->segment(6);
         $data['workreports'] = $this->getReports($array, $offset, $level);
-        $config['base_url'] = base_url() . 'index.php/manager/workReport/reportList/' . $type;
+        switch ($type) {
+            case "WeekReport":
+                $config['base_url'] = base_url() . 'index.php/manager/workReport/reportList/WeekReport/1';
+                break;
+            case "WorkReport":
+                $config['base_url'] = base_url() . 'index.php/manager/workReport/reportList/WorkReport/1';
+                break;
+        }
         $config['total_rows'] = $num;
         $config['uri_segment'] = 6;
         $this->pagination->initialize($config);
@@ -158,7 +173,14 @@ class WorkReport extends CI_Controller {
         $offset = $this->uri->segment(7);
 
         $data['workreports'] = $this->getReports($array, $offset, $level);
-        $config['base_url'] = base_url() . 'index.php/manager/workReport/reportList/' . $type;
+        switch ($type) {
+            case "WeekReport":
+                $config['base_url'] = base_url() . 'index.php/manager/workReport/reportList/WeekReport/1';
+                break;
+            case "WorkReport":
+                $config['base_url'] = base_url() . 'index.php/manager/workReport/reportList/WorkReport/1';
+                break;
+        }
         $config['total_rows'] = $num;
         $config['uri_segment'] = 5;
         $this->pagination->initialize($config);
