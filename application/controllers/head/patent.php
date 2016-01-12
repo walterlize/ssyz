@@ -23,7 +23,7 @@ class Patent extends CI_Controller {
             $offset = $this->uri->segment(4);
 
             $data['patent'] = $this->getPatents($array, $offset);
-            $config['base_url'] = base_url().'index.php/outside/patent/patentList';
+            $config['base_url'] = base_url().'index.php/head/patent/patentList';
             $config['total_rows'] = $num;
             $config['uri_segment'] = 4;
             $this->pagination->initialize($config);

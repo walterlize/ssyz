@@ -104,6 +104,7 @@ class m_borrow extends CI_Model {
     function getBorrowS($array, $per_page, $offset) {
         $this->db->select();
         $this->db->where($array);
+        $this->db->order_by("state", "asc");
         $this->db->order_by("date", "asc");
         $q = $this->db->get('borrow', $per_page, $offset);
         return $q->result();
@@ -112,6 +113,7 @@ class m_borrow extends CI_Model {
     function getBorrowS_1($array,$offset) {
         $this->db->select();
         $this->db->where($array);
+        $this->db->order_by("state", "asc");
         $this->db->order_by("date", "asc");
         $q = $this->db->get('borrow',$offset);
         return $q->result();

@@ -22,7 +22,7 @@ class Report extends CI_Controller {
             $offset = $this->uri->segment(4);
 
             $data['report'] = $this->getReports($array, $offset);
-            $config['base_url'] = base_url().'index.php/outside/report/reportList';
+            $config['base_url'] = base_url().'index.php/head/report/reportList';
             $config['total_rows'] = $num;
             $config['uri_segment'] = 4;
             $this->pagination->initialize($config);

@@ -22,7 +22,7 @@ class Standard extends CI_Controller {
             $offset = $this->uri->segment(4);
 
             $data['standard'] = $this->getStandards($array, $offset);
-            $config['base_url'] = base_url().'index.php/outside/standard/standardList';
+            $config['base_url'] = base_url().'index.php/head/standard/standardList';
             $config['total_rows'] = $num;
             $config['uri_segment'] = 4;
             $this->pagination->initialize($config);

@@ -23,7 +23,7 @@ class Book extends CI_Controller {
             $offset = $this->uri->segment(4);
 
             $data['book'] = $this->getBooks($array, $offset);
-            $config['base_url'] = base_url().'index.php/outside/book/bookList';
+            $config['base_url'] = base_url().'index.php/head/book/bookList';
             $config['total_rows'] = $num;
             $config['uri_segment'] = 4;
             $this->pagination->initialize($config);

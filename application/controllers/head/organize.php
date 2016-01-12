@@ -23,7 +23,7 @@ class Organize extends CI_Controller {
         $offset = $this->uri->segment(4);
 
         $data['subject'] = $this->getSubjects($offset);
-        $config['base_url'] = base_url() . 'index.php/outside/subject/index';
+        $config['base_url'] = base_url() . 'index.php/head/subject/index';
         $config['total_rows'] = $num;
         $config['uri_segment'] = 4;
         $this->pagination->initialize($config);
@@ -60,7 +60,7 @@ class Organize extends CI_Controller {
         $offset = $this->uri->segment(4);
 
         $data['expert'] = $this->getExperts($offset);
-        $config['base_url'] = base_url() . 'index.php/outside/subject/expert';
+        $config['base_url'] = base_url() . 'index.php/head/subject/expert';
         $config['total_rows'] = $num;
         $config['uri_segment'] = 4;
         $this->pagination->initialize($config);

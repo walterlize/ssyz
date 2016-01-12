@@ -20,7 +20,7 @@ class Paper extends CI_Controller {
         $num = $this->m_paper->getNum($array);
         $offset = $this->uri->segment(4);
         $data['paper'] = $this->getPapers($array, $offset);
-        $config['base_url'] = base_url().'index.php/outside/paper/paperList';
+        $config['base_url'] = base_url().'index.php/head/paper/paperList';
         $config['total_rows'] = $num;
         $config['uri_segment'] = 4;
         $this->pagination->initialize($config);

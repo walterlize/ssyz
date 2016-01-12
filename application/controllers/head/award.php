@@ -22,7 +22,7 @@ class Award extends CI_Controller {
             $offset = $this->uri->segment(4);
 
             $data['award'] = $this->getAwards($array, $offset);
-            $config['base_url'] = base_url().'index.php/outside/award/awardList';
+            $config['base_url'] = base_url().'index.php/head/award/awardList';
             $config['total_rows'] = $num;
             $config['uri_segment'] = 4;
             $this->pagination->initialize($config);

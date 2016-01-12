@@ -23,7 +23,7 @@ class Result extends CI_Controller {
             $offset = $this->uri->segment(4);
 
             $data['result'] = $this->getResults($array, $offset);
-            $config['base_url'] = base_url().'index.php/outside/result/resultList';
+            $config['base_url'] = base_url().'index.php/head/result/resultList';
             $config['total_rows'] = $num;
             $config['uri_segment'] = 4;
             $this->pagination->initialize($config);

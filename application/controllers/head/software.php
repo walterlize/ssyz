@@ -22,7 +22,7 @@ class Software extends CI_Controller {
             $offset = $this->uri->segment(4);
 
             $data['software'] = $this->getSoftwares($array, $offset);
-            $config['base_url'] = base_url().'index.php/outside/software/softwareList';
+            $config['base_url'] = base_url().'index.php/head/software/softwareList';
             $config['total_rows'] = $num;
             $config['uri_segment'] = 4;
             $this->pagination->initialize($config);

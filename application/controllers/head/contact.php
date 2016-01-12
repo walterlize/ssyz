@@ -22,7 +22,7 @@ class Contact extends CI_Controller {
             $offset = $this->uri->segment(4);
 
             $data['contact'] = $this->getContacts($offset);
-            $config['base_url'] = base_url().'index.php/outside/contact/index';
+            $config['base_url'] = base_url().'index.php/head/contact/index';
             $config['total_rows'] = $num;
             $config['uri_segment'] = 4;
             $this->pagination->initialize($config);

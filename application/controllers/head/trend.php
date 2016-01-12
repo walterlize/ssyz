@@ -24,7 +24,7 @@ class Trend extends CI_Controller {
         $num = $this->m_trend->getNum($array);
         $offset = $this->uri->segment(5);
         $data['trend'] = $this->getTrends($array, $offset);
-        $config['base_url'] = base_url() . 'index.php/outside/trend/index/' . $type;
+        $config['base_url'] = base_url() . 'index.php/head/trend/index/' . $type;
         $config['total_rows'] = $num;
         $config['uri_segment'] = 5;
         $this->pagination->initialize($config);
@@ -54,7 +54,7 @@ class Trend extends CI_Controller {
         $num = $this->m_gonggao->getNum($array);
         $offset = $this->uri->segment(5);
         $data['gonggao'] = $this->getGonggaos($array, $offset);
-        $config['base_url'] = base_url() . 'index.php/outside/trend/index/' . $type;
+        $config['base_url'] = base_url() . 'index.php/head/trend/index/' . $type;
         $config['total_rows'] = $num;
         $config['uri_segment'] = 5;
         $this->pagination->initialize($config);
@@ -80,7 +80,7 @@ class Trend extends CI_Controller {
         $offset = $this->uri->segment(4);
 
         $data['zhengce'] = $this->getZhengces($offset);
-        $config['base_url'] = base_url() . 'index.php/outside/trend/zhengceList';
+        $config['base_url'] = base_url() . 'index.php/head/trend/zhengceList';
         $config['total_rows'] = $num;
         $config['uri_segment'] = 4;
         $this->pagination->initialize($config);

@@ -22,7 +22,7 @@ class Other extends CI_Controller {
             $offset = $this->uri->segment(4);
 
             $data['other'] = $this->getOthers($array, $offset);
-            $config['base_url'] = base_url().'index.php/outside/other/otherList';
+            $config['base_url'] = base_url().'index.php/head/other/otherList';
             $config['total_rows'] = $num;
             $config['uri_segment'] = 4;
             $this->pagination->initialize($config);
